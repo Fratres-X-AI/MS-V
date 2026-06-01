@@ -64,11 +64,19 @@ bash sim/run_pod_round2.sh
 - Empirical MS-V fill performance
 - Toxicology (KPP-12) or cost (KPP-13) — Phase 4
 
-## Canonical visuals (repo)
+## Canonical visuals (repo — user-approved trio)
 
-1. `analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png`
-2. `analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png`
-3. `analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png`
+**Carousel order:** hero → scale → cutaway
+
+| # | File | Raw GitHub URL |
+|---|------|----------------|
+| 1 | `ms_v_v2_hero.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png |
+| 2 | `scale_comparison_v2_inventory.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png |
+| 3 | `ms_v_v2_cutaway_photoreal.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png |
+
+Local paths: `analysis/figures/form_factor/` · Index: `CANONICAL_RENDERS.md` · Gallery: `renders/v2_kpp/index.html`
+
+**Caption (required on every slide):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
 
 ---
 

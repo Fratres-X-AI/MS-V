@@ -4,6 +4,7 @@ __pycache__/
 venv/
 .env
 msv_sync.tar
+*.tgz
 analysis/one_pass.log
 
 # Quick mega smoke outputs — manifest + summary only
