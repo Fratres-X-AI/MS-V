@@ -59,10 +59,12 @@ Full campaign: see [RUNPOD.md](RUNPOD.md) · Seeds: [`sim/config/seeds.yaml`](si
 | [**rtm/verification_matrix.md**](rtm/verification_matrix.md) | KPP/MoE ↔ 38 job IDs with margins |
 | [**rtm/assumption_register.md**](rtm/assumption_register.md) | Literature bounds + OAT sensitivity |
 | [docs/](docs/) | Concept docs 00–08 |
-| [annexes/](annexes/) | Engineering annexes A–E |
+| [annexes/](annexes/) | Engineering annexes A–F (incl. form factor) |
 | [models/](models/) | Cloud physics, sensors, validation |
 | [sim/](sim/) | Monte Carlo runners, seed manifest |
 | [**analysis/CONOPS_REPORT.md**](analysis/CONOPS_REPORT.md) | Five use cases — Phase 1B windows + hardened MoE |
+| [**analysis/FORM_FACTOR_REPORT.md**](analysis/FORM_FACTOR_REPORT.md) | Tier B parametric envelope, pouch fit, STL |
+| [**annexes/F-form-factor-and-ergonomics.md**](annexes/F-form-factor-and-ergonomics.md) | One-page form-factor annex |
 | [proposals/](proposals/) | SRD, TEMP outline |
 
 ---

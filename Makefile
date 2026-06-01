@@ -37,6 +37,10 @@ report:
 
 figures:
 	python analysis/generate_figures.py
+	python analysis/generate_form_factor_assets.py
+
+form-factor:
+	python analysis/generate_form_factor_assets.py
 
 audit: lint test reproduce report figures
 

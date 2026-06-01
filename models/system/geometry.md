@@ -34,4 +34,15 @@ Phase 2 digital representation — not CAD.
 | Carry load (2× MS-V) | 1.7 kg | Plus standard smoke |
 | Pouch fit | Standard grenade pouch (snug) | Phase 2 ergonomic review needed |
 
+## Tier B Digital Representation
+
+Parametric envelope, figures, and STL live under:
+
+- [`form_factor.yaml`](form_factor.yaml) — machine-readable envelope
+- [`envelope.py`](envelope.py) — volume budget + pouch fit
+- [`analysis/figures/form_factor/`](../../analysis/figures/form_factor/) — scale, cutaway, employment, load, pouch
+- [`annexes/F-form-factor-and-ergonomics.md`](../../annexes/F-form-factor-and-ergonomics.md) — one-page annex
+
+Regenerate: `python analysis/generate_form_factor_assets.py` or `make form-factor`
+
 See [params.yaml](../cloud_physics/params.yaml) for simulation inputs.

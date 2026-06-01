@@ -28,6 +28,7 @@ python analysis/generate_verification_matrix.py
 python analysis/summarize_sobol.py
 python analysis/patch_assumption_register_sobol.py
 python analysis/generate_figures.py
+python analysis/generate_form_factor_assets.py
 python sim/run_conops.py --samples "${CONOPS_SAMPLES:-100000}"
 python analysis/summarize_conops.py
 

@@ -44,5 +44,8 @@ jobs:
       - name: Sobol report
         run: python analysis/summarize_sobol.py
 
+      - name: Form factor assets (Tier B)
+        run: python analysis/generate_form_factor_assets.py
+
       - name: Verification matrix (from committed 140M manifest)
         run: python analysis/generate_verification_matrix.py
