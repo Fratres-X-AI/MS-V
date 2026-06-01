@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import os
 from concurrent.futures import ProcessPoolExecutor, as_completed
+from pathlib import Path
 from typing import Callable, Iterable, TypeVar
 
 T = TypeVar("T")
@@ -16,10 +17,47 @@ _BLAS_VARS = (
     "NUMEXPR_NUM_THREADS",
 )
 
+_CGROUP_QUOTA = Path("/sys/fs/cgroup/cpu/cpu.cfs_quota_us")
+_CGROUP_PERIOD = Path("/sys/fs/cgroup/cpu/cpu.cfs_period_us")
+_CGROUP_V2_MAX = Path("/sys/fs/cgroup/cpu.max")
+
+
+def _cgroup_vcpu() -> int | None:
+    """Return vCPU cap from cgroup when the host exposes more cores than rented."""
+    try:
+        if _CGROUP_QUOTA.is_file() and _CGROUP_PERIOD.is_file():
+            quota = int(_CGROUP_QUOTA.read_text(encoding="utf-8").strip())
+            period = int(_CGROUP_PERIOD.read_text(encoding="utf-8").strip())
+            if quota > 0 and period > 0:
+                return max(1, round(quota / period))
+    except (OSError, ValueError):
+        pass
+    try:
+        if _CGROUP_V2_MAX.is_file():
+            parts = _CGROUP_V2_MAX.read_text(encoding="utf-8").strip().split()
+            if len(parts) == 2 and parts[0] != "max":
+                quota, period = int(parts[0]), int(parts[1])
+                if quota > 0 and period > 0:
+                    return max(1, round(quota / period))
+    except (OSError, ValueError):
+        pass
+    return None
+
+
+def effective_vcpu() -> int:
+    """Authoritative rented vCPU count: env override > cgroup > os.cpu_count()."""
+    raw = os.environ.get("RUNPOD_CPU_COUNT", "").strip()
+    if raw:
+        return max(1, int(raw))
+    cgroup = _cgroup_vcpu()
+    if cgroup is not None:
+        return cgroup
+    return os.cpu_count() or 1
+
 
 def runpod_worker_count() -> int:
     """Rented pod policy: use every core except one."""
-    return max(1, (os.cpu_count() or 1) - 1)
+    return max(1, effective_vcpu() - 1)
 
 
 def pin_blas_threads(n: int) -> None:
@@ -33,9 +71,16 @@ def _pool_worker_init() -> None:
 
 
 def log_runpod_capacity() -> int:
-    cores = os.cpu_count() or 1
+    host = os.cpu_count() or 1
+    vcpu = effective_vcpu()
     workers = runpod_worker_count()
-    print(f"[RunPod] vCPU={cores} -> workers={workers} (max parallel, minus 1)")
+    src = "RUNPOD_CPU_COUNT" if os.environ.get("RUNPOD_CPU_COUNT") else (
+        "cgroup" if vcpu != host else "host"
+    )
+    print(
+        f"[RunPod] host_cpus={host} effective_vcpu={vcpu} ({src}) "
+        f"-> workers={workers} (max parallel, minus 1)"
+    )
     return workers
 
 

@@ -4,7 +4,9 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
-WORKERS="${1:-31}"
+# 32 vCPU pod -> 31 workers (n-1). Override: RUNPOD_CPU_COUNT=32 bash one_pass.sh
+export RUNPOD_CPU_COUNT="${RUNPOD_CPU_COUNT:-32}"
+WORKERS="${1:-$((RUNPOD_CPU_COUNT - 1))}"
 SOBOL_N="${2:-8192}"
 LOG="${ROOT}/analysis/one_pass.log"
 
@@ -47,7 +49,7 @@ p.write_text(json.dumps({
     "mega_total_samples": mega.get("total_samples"),
     "sobol_n_base": sobol.get("n_base"),
     "sobol_n_evaluations": sobol.get("n_evaluations"),
-    "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION",
+    "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY - NOT VALIDATION",
 }, indent=2))
 print(f"Wrote {p}")
 PY

@@ -1,7 +1,7 @@
 {
   "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
   "model_version": "phase2_v1_full_physics",
-  "n_samples_per_case": 50000,
+  "n_samples_per_case": 100000,
   "use_cases": [
     {
       "use_case_id": "casualty_recovery",
@@ -11,7 +11,7 @@
       "model_version": "phase2_v1_full_physics",
       "physics_tier": "phase2",
       "config": {
-        "n_samples": 50000,
+        "n_samples": 100000,
         "seed": 4242,
         "n_ms_v": 2,
         "n_hc": 1
@@ -21,17 +21,17 @@
         120
       ],
       "moe": {
-        "lock_met_fraction": 0.19696,
-        "obscured_fraction": 0.64582,
-        "friendly_blinded_fraction": 0.64168,
-        "coverage_p50": 0.6442516613601341,
-        "threat_distance_p50_m": 2.7642849043686093,
-        "radial_fraction_p50": 0.44090946668860065,
-        "edge_of_plume_fraction": 0.50884,
-        "in_plume_core_fraction": 0.2059,
+        "lock_met_fraction": 0.14943,
+        "obscured_fraction": 0.62726,
+        "friendly_blinded_fraction": 0.70372,
+        "coverage_p50": 0.5910322515512992,
+        "threat_distance_p50_m": 2.761631980746585,
+        "radial_fraction_p50": 0.40214070927221324,
+        "edge_of_plume_fraction": 0.53178,
+        "in_plume_core_fraction": 0.19474,
         "effective_lock_p10": 105.0,
         "effective_lock_p50": 105.0,
-        "build_up_p90": 14.34433126322804
+        "build_up_p90": 14.336084498755284
       },
       "kpp_in_window": {
         "build_up_before_window": true,
@@ -39,27 +39,27 @@
       },
       "sensor_diagnostics": {
         "t_vis_p50": 2.511886431509577e-16,
-        "t_nir_p50": 4.461199551789808e-16,
-        "t_mwir_p50": 3.7346389443366834e-13,
-        "netd_floor_p50": 0.10001366317469165,
-        "lock_prob_obscured_fraction": 0.64582
+        "t_nir_p50": 2.3216534330516e-16,
+        "t_mwir_p50": 2.5098666674937945e-13,
+        "netd_floor_p50": 0.10003289496947843,
+        "lock_prob_obscured_fraction": 0.62726
       },
       "physics_diagnostics": {
-        "cl_center_p50": 18.895921935588376,
-        "cl_threat_p50": 7.7330527983948585,
-        "cl_threat_mid_window_p50": 7.0585691229537275,
-        "cl_mid_window_p50": 17.178861483817144,
-        "duration_p10": 169.81956671158665,
-        "phase2_psd_diameter_um_p50": 2.8501768246764776,
+        "cl_center_p50": 20.709907746080617,
+        "cl_threat_p50": 7.847465953492398,
+        "cl_threat_mid_window_p50": 7.169225112285783,
+        "cl_mid_window_p50": 18.82769877896988,
+        "duration_p10": 169.93806530898303,
+        "phase2_psd_diameter_um_p50": 2.8555945612916416,
         "phase2_settling_velocity_p50_m_s": 0.005,
-        "phase2_hygroscopic_growth_p50": 1.0223523007418835,
-        "phase2_coagulation_factor_p50": 0.983946769824023,
-        "phase2_wind_shear_dilution_p50": 0.81078682556725,
-        "phase2_merge_factor_p50": 0.6198582806920636,
-        "phase2_buoyancy_rise_p50_m": 1.177876534356779,
-        "phase2_washout_active_fraction": 0.01134,
-        "phase2_throw_range_p50_m": 21.510462281772703,
-        "phase2_fuze_delay_p50_s": 1.3481226637697659
+        "phase2_hygroscopic_growth_p50": 1.022740995444006,
+        "phase2_coagulation_factor_p50": 0.9835537332578118,
+        "phase2_wind_shear_dilution_p50": 0.8110572283577011,
+        "phase2_merge_factor_p50": 0.53,
+        "phase2_buoyancy_rise_p50_m": 1.1789730675980072,
+        "phase2_washout_active_fraction": 0.01075,
+        "phase2_throw_range_p50_m": 21.510794398643746,
+        "phase2_fuze_delay_p50_s": 1.3528790923722849
       }
     },
     {
@@ -70,7 +70,7 @@
       "model_version": "phase2_v1_full_physics",
       "physics_tier": "phase2",
       "config": {
-        "n_samples": 50000,
+        "n_samples": 100000,
         "seed": 4243,
         "n_ms_v": 3,
         "n_hc": 2
@@ -80,17 +80,17 @@
         120
       ],
       "moe": {
-        "lock_met_fraction": 0.38858,
-        "obscured_fraction": 0.82336,
-        "friendly_blinded_fraction": 0.48692,
-        "coverage_p50": 0.8424721594901372,
-        "threat_distance_p50_m": 2.8612180771595384,
-        "radial_fraction_p50": 0.6660857111519607,
-        "edge_of_plume_fraction": 0.33058,
-        "in_plume_core_fraction": 0.30038,
+        "lock_met_fraction": 0.31461,
+        "obscured_fraction": 0.79836,
+        "friendly_blinded_fraction": 0.5644,
+        "coverage_p50": 0.8242907408309323,
+        "threat_distance_p50_m": 2.8317525498645146,
+        "radial_fraction_p50": 0.6384175873204487,
+        "edge_of_plume_fraction": 0.36066,
+        "in_plume_core_fraction": 0.28384,
         "effective_lock_p10": 105.0,
         "effective_lock_p50": 105.0,
-        "build_up_p90": 14.32509584430217
+        "build_up_p90": 14.330603473610207
       },
       "kpp_in_window": {
         "build_up_before_window": true,
@@ -98,27 +98,27 @@
       },
       "sensor_diagnostics": {
         "t_vis_p50": 1.1481536214968864e-18,
-        "t_nir_p50": 3.966053734919574e-19,
-        "t_mwir_p50": 1.1006773402060608e-15,
-        "netd_floor_p50": 0.10010249792842027,
-        "lock_prob_obscured_fraction": 0.82336
+        "t_nir_p50": 3.298829629555614e-20,
+        "t_mwir_p50": 1.7442514626325197e-16,
+        "netd_floor_p50": 0.09994274271654768,
+        "lock_prob_obscured_fraction": 0.79836
       },
       "physics_diagnostics": {
-        "cl_center_p50": 15.082619328058152,
-        "cl_threat_p50": 9.299437665952786,
-        "cl_threat_mid_window_p50": 8.468295082133636,
-        "cl_mid_window_p50": 13.719150968637805,
-        "duration_p10": 169.95276882161104,
-        "phase2_psd_diameter_um_p50": 2.863288152918132,
+        "cl_center_p50": 16.816270763633717,
+        "cl_threat_p50": 9.809215744925726,
+        "cl_threat_mid_window_p50": 8.944549012766492,
+        "cl_mid_window_p50": 15.275346835494808,
+        "duration_p10": 169.8749034372468,
+        "phase2_psd_diameter_um_p50": 2.857799056622346,
         "phase2_settling_velocity_p50_m_s": 0.005,
-        "phase2_hygroscopic_growth_p50": 1.022709178726715,
-        "phase2_coagulation_factor_p50": 0.9820492092135056,
-        "phase2_wind_shear_dilution_p50": 0.8109939384289377,
-        "phase2_merge_factor_p50": 0.8876223112475662,
-        "phase2_buoyancy_rise_p50_m": 1.1771357775991105,
-        "phase2_washout_active_fraction": 0.01218,
-        "phase2_throw_range_p50_m": 21.508436986449084,
-        "phase2_fuze_delay_p50_s": 1.3494744375569738
+        "phase2_hygroscopic_growth_p50": 1.0224223355103401,
+        "phase2_coagulation_factor_p50": 0.9821051197415627,
+        "phase2_wind_shear_dilution_p50": 0.8110839851160805,
+        "phase2_merge_factor_p50": 0.7914942150412176,
+        "phase2_buoyancy_rise_p50_m": 1.1796677747679007,
+        "phase2_washout_active_fraction": 0.01151,
+        "phase2_throw_range_p50_m": 21.500515899657138,
+        "phase2_fuze_delay_p50_s": 1.3500646179588949
       }
     },
     {
@@ -129,7 +129,7 @@
       "model_version": "phase2_v1_full_physics",
       "physics_tier": "phase2",
       "config": {
-        "n_samples": 50000,
+        "n_samples": 100000,
         "seed": 4244,
         "n_ms_v": 2,
         "n_hc": 1
@@ -139,17 +139,17 @@
         90
       ],
       "moe": {
-        "lock_met_fraction": 0.19514,
-        "obscured_fraction": 0.6517,
-        "friendly_blinded_fraction": 0.64376,
-        "coverage_p50": 0.6506323573681241,
-        "threat_distance_p50_m": 2.743342972462867,
-        "radial_fraction_p50": 0.4460391503614831,
-        "edge_of_plume_fraction": 0.50562,
-        "in_plume_core_fraction": 0.20828,
+        "lock_met_fraction": 0.14843,
+        "obscured_fraction": 0.62921,
+        "friendly_blinded_fraction": 0.70372,
+        "coverage_p50": 0.5939357884694145,
+        "threat_distance_p50_m": 2.760008503008912,
+        "radial_fraction_p50": 0.40408242855377186,
+        "edge_of_plume_fraction": 0.53057,
+        "in_plume_core_fraction": 0.1964,
         "effective_lock_p10": 75.0,
         "effective_lock_p50": 75.0,
-        "build_up_p90": 14.32061054505563
+        "build_up_p90": 14.33287977567606
       },
       "kpp_in_window": {
         "build_up_before_window": true,
@@ -157,27 +157,27 @@
       },
       "sensor_diagnostics": {
         "t_vis_p50": 2.511886431509577e-16,
-        "t_nir_p50": 1.2297294078988886e-16,
-        "t_mwir_p50": 1.228760256085261e-13,
-        "netd_floor_p50": 0.10011209298002141,
-        "lock_prob_obscured_fraction": 0.6517
+        "t_nir_p50": 1.0216853387319265e-16,
+        "t_mwir_p50": 1.1197056337132878e-13,
+        "netd_floor_p50": 0.10000323925427858,
+        "lock_prob_obscured_fraction": 0.62921
       },
       "physics_diagnostics": {
-        "cl_center_p50": 18.92708979711208,
-        "cl_threat_p50": 7.795811004123472,
-        "cl_threat_mid_window_p50": 7.277441660944321,
-        "cl_mid_window_p50": 17.63253019815557,
-        "duration_p10": 169.7952162836962,
-        "phase2_psd_diameter_um_p50": 2.8823818375783166,
+        "cl_center_p50": 20.713565810908506,
+        "cl_threat_p50": 7.850026461984788,
+        "cl_threat_mid_window_p50": 7.344282396925912,
+        "cl_mid_window_p50": 19.312333830390372,
+        "duration_p10": 169.99628553829308,
+        "phase2_psd_diameter_um_p50": 2.8586661256140973,
         "phase2_settling_velocity_p50_m_s": 0.005,
-        "phase2_hygroscopic_growth_p50": 1.0227071789232152,
-        "phase2_coagulation_factor_p50": 0.9836058647925076,
-        "phase2_wind_shear_dilution_p50": 0.8089209346356696,
-        "phase2_merge_factor_p50": 0.6188763638773309,
-        "phase2_buoyancy_rise_p50_m": 1.1794726611414523,
-        "phase2_washout_active_fraction": 0.01206,
-        "phase2_throw_range_p50_m": 21.521922927049538,
-        "phase2_fuze_delay_p50_s": 1.3507113679079348
+        "phase2_hygroscopic_growth_p50": 1.0228956709476171,
+        "phase2_coagulation_factor_p50": 0.9834423567870747,
+        "phase2_wind_shear_dilution_p50": 0.8092182884274949,
+        "phase2_merge_factor_p50": 0.53,
+        "phase2_buoyancy_rise_p50_m": 1.1776201700130962,
+        "phase2_washout_active_fraction": 0.01112,
+        "phase2_throw_range_p50_m": 21.50639237913775,
+        "phase2_fuze_delay_p50_s": 1.349107043291186
       }
     },
     {
@@ -188,7 +188,7 @@
       "model_version": "phase2_v1_full_physics",
       "physics_tier": "phase2",
       "config": {
-        "n_samples": 50000,
+        "n_samples": 100000,
         "seed": 4245,
         "n_ms_v": 2,
         "n_hc": 1
@@ -198,17 +198,17 @@
         60
       ],
       "moe": {
-        "lock_met_fraction": 0.2001,
-        "obscured_fraction": 0.65226,
-        "friendly_blinded_fraction": 0.63974,
-        "coverage_p50": 0.6450778971588571,
-        "threat_distance_p50_m": 2.7741165798991574,
-        "radial_fraction_p50": 0.44156753248430886,
-        "edge_of_plume_fraction": 0.509,
-        "in_plume_core_fraction": 0.20718,
+        "lock_met_fraction": 0.14976,
+        "obscured_fraction": 0.63264,
+        "friendly_blinded_fraction": 0.70159,
+        "coverage_p50": 0.5968500963541723,
+        "threat_distance_p50_m": 2.750841685861257,
+        "radial_fraction_p50": 0.4060504169282563,
+        "edge_of_plume_fraction": 0.53024,
+        "in_plume_core_fraction": 0.19881,
         "effective_lock_p10": 45.0,
         "effective_lock_p50": 45.0,
-        "build_up_p90": 14.327281288863228
+        "build_up_p90": 14.331556712693283
       },
       "kpp_in_window": {
         "build_up_before_window": true,
@@ -216,27 +216,27 @@
       },
       "sensor_diagnostics": {
         "t_vis_p50": 2.511886431509577e-16,
-        "t_nir_p50": 1.0028704010173678e-16,
-        "t_mwir_p50": 1.0182368001043233e-13,
-        "netd_floor_p50": 0.10010949988109469,
-        "lock_prob_obscured_fraction": 0.65226
+        "t_nir_p50": 4.765642268429733e-17,
+        "t_mwir_p50": 6.080410591465264e-14,
+        "netd_floor_p50": 0.09998621208495835,
+        "lock_prob_obscured_fraction": 0.63264
       },
       "physics_diagnostics": {
-        "cl_center_p50": 18.843496733612554,
-        "cl_threat_p50": 7.650846572062662,
-        "cl_threat_mid_window_p50": 7.336309601379897,
-        "cl_mid_window_p50": 18.021475210484795,
-        "duration_p10": 169.67860564335854,
-        "phase2_psd_diameter_um_p50": 2.84867241713531,
+        "cl_center_p50": 20.65847777762123,
+        "cl_threat_p50": 7.819425306181579,
+        "cl_threat_mid_window_p50": 7.502296199458108,
+        "cl_mid_window_p50": 19.758045599551686,
+        "duration_p10": 170.00317298463108,
+        "phase2_psd_diameter_um_p50": 2.860009260485482,
         "phase2_settling_velocity_p50_m_s": 0.005,
-        "phase2_hygroscopic_growth_p50": 1.0228106509168937,
-        "phase2_coagulation_factor_p50": 0.9835322003918889,
-        "phase2_wind_shear_dilution_p50": 0.8101479754666203,
-        "phase2_merge_factor_p50": 0.6208553516174926,
-        "phase2_buoyancy_rise_p50_m": 1.1791701821978178,
-        "phase2_washout_active_fraction": 0.01142,
-        "phase2_throw_range_p50_m": 21.469874671309785,
-        "phase2_fuze_delay_p50_s": 1.3499578387400875
+        "phase2_hygroscopic_growth_p50": 1.0224468839413852,
+        "phase2_coagulation_factor_p50": 0.9837109065814149,
+        "phase2_wind_shear_dilution_p50": 0.8095338692799834,
+        "phase2_merge_factor_p50": 0.53,
+        "phase2_buoyancy_rise_p50_m": 1.1765745252426936,
+        "phase2_washout_active_fraction": 0.01211,
+        "phase2_throw_range_p50_m": 21.509110907122988,
+        "phase2_fuze_delay_p50_s": 1.3495223179389282
       }
     },
     {
@@ -247,7 +247,7 @@
       "model_version": "phase2_v1_full_physics",
       "physics_tier": "phase2",
       "config": {
-        "n_samples": 50000,
+        "n_samples": 100000,
         "seed": 4246,
         "n_ms_v": 2,
         "n_hc": 2
@@ -257,17 +257,17 @@
         120
       ],
       "moe": {
-        "lock_met_fraction": 0.62872,
-        "obscured_fraction": 0.6471,
-        "friendly_blinded_fraction": 0.63824,
-        "coverage_p50": 0.64112430536621,
-        "threat_distance_p50_m": 2.7790727894888336,
-        "radial_fraction_p50": 0.4384351033475191,
-        "edge_of_plume_fraction": 0.51022,
-        "in_plume_core_fraction": 0.20626,
-        "effective_lock_p10": 105.67537993029089,
+        "lock_met_fraction": 0.60826,
+        "obscured_fraction": 0.62617,
+        "friendly_blinded_fraction": 0.70482,
+        "coverage_p50": 0.5898290789867355,
+        "threat_distance_p50_m": 2.769585833204215,
+        "radial_fraction_p50": 0.4013416102968145,
+        "edge_of_plume_fraction": 0.53338,
+        "in_plume_core_fraction": 0.19701,
+        "effective_lock_p10": 105.66765019520291,
         "effective_lock_p50": 108.0,
-        "build_up_p90": 14.324620069709109
+        "build_up_p90": 14.332349804797088
       },
       "kpp_in_window": {
         "build_up_before_window": true,
@@ -275,27 +275,27 @@
       },
       "sensor_diagnostics": {
         "t_vis_p50": 1.1481536214968864e-18,
-        "t_nir_p50": 7.28302530983645e-16,
-        "t_mwir_p50": 4.312254700500837e-13,
-        "netd_floor_p50": 0.09997051877252872,
-        "lock_prob_obscured_fraction": 0.6471
+        "t_nir_p50": 3.774792793719704e-16,
+        "t_mwir_p50": 3.170275953079071e-13,
+        "netd_floor_p50": 0.10001885065567878,
+        "lock_prob_obscured_fraction": 0.62617
       },
       "physics_diagnostics": {
-        "cl_center_p50": 18.793189467633596,
-        "cl_threat_p50": 7.586914075291401,
-        "cl_threat_mid_window_p50": 6.950262310431862,
-        "cl_mid_window_p50": 17.126457043776067,
-        "duration_p10": 169.77416728742605,
-        "phase2_psd_diameter_um_p50": 2.849627031188102,
+        "cl_center_p50": 20.685179130346192,
+        "cl_threat_p50": 7.738742206667858,
+        "cl_threat_mid_window_p50": 7.0719253975228735,
+        "cl_mid_window_p50": 18.853357489490957,
+        "duration_p10": 170.0479394478882,
+        "phase2_psd_diameter_um_p50": 2.848197004828502,
         "phase2_settling_velocity_p50_m_s": 0.005,
-        "phase2_hygroscopic_growth_p50": 1.0219736024046449,
-        "phase2_coagulation_factor_p50": 0.9842706643794548,
-        "phase2_wind_shear_dilution_p50": 0.8084919519013427,
-        "phase2_merge_factor_p50": 0.6212716069968709,
-        "phase2_buoyancy_rise_p50_m": 1.1781950617287211,
-        "phase2_washout_active_fraction": 0.01086,
-        "phase2_throw_range_p50_m": 21.488806437020585,
-        "phase2_fuze_delay_p50_s": 1.346015414499698
+        "phase2_hygroscopic_growth_p50": 1.0224042429024784,
+        "phase2_coagulation_factor_p50": 0.9839506360737533,
+        "phase2_wind_shear_dilution_p50": 0.8091594561190225,
+        "phase2_merge_factor_p50": 0.53,
+        "phase2_buoyancy_rise_p50_m": 1.1761333705180346,
+        "phase2_washout_active_fraction": 0.01093,
+        "phase2_throw_range_p50_m": 21.498487082985275,
+        "phase2_fuze_delay_p50_s": 1.3495420093316937
       }
     }
   ]

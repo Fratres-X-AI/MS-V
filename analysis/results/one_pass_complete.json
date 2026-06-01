@@ -1,10 +1,8 @@
 {
-  "completed_at": "2026-06-01T19:28:50.450557+00:00",
+  "completed_at": "2026-06-01T21:56:29.938070+00:00",
   "mega_jobs_pass": 38,
   "mega_total_samples": 140000000,
-  "sobol_n_base": 256,
-  "sobol_n_evaluations": 6656,
-  "physics_tier": "phase2",
-  "model_version": "phase2_v1_full_physics",
-  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION"
+  "sobol_n_base": 8192,
+  "sobol_n_evaluations": 212992,
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY - NOT VALIDATION"
 }

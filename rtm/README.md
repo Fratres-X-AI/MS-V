@@ -11,7 +11,8 @@ Submission-grade audit trail for MS-V Phase 1 M&S.
 | [`uncertainty_register.md`](uncertainty_register.md) | Quantitative bound definitions |
 | [`decision_log.md`](decision_log.md) | Modeling decisions D-001–D-016 |
 | [`audit_log.md`](audit_log.md) | Phase 0 doc cross-check |
-| [`glossary.md`](glossary.md) | Symbols, units, abbreviations |
+| [`human_factors_notes.md`](../analysis/human_factors_notes.md) | KPP-08 throw ballistics |
+| [`fill_physics_test_plan.md`](../analysis/fill_physics_test_plan.md) | TRL 3 bench test plan |
 
 ## Reviewer quick path (< 2 min)
 

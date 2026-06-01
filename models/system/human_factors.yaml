@@ -2,14 +2,14 @@
 # STATUS: Literature-order bounds — NOT VALIDATION
 
 throw_range_m:
-  min: 18.0
+  min: 20.0
   max: 25.0
-  reference: "KPP-08; heavier than AN-M8 (~850 g)"
+  reference: "KPP-08; heavier than AN-M8 (~850 g) — stressed floor at 20 m"
 
 load_penalty:
   # Additional throw error when carrying full combat load
   lateral_error_multiplier: 1.12
-  range_reduction_m: 1.5
+  range_reduction_m: 1.0
 
 posture:
   standing_fraction: 0.55

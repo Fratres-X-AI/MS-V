@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from sim.engine import load_params  # noqa: E402
-from sim.runpod_util import log_runpod_capacity, pin_blas_threads  # noqa: E402
+from sim.runpod_util import log_runpod_capacity, pin_blas_threads, _pool_worker_init  # noqa: E402
 from sim.sobol_model import (  # noqa: E402
     build_sobol_problem,
     evaluate_physics_batch,
@@ -70,7 +70,7 @@ def evaluate_saltelli_matrix(
     # Params passed via load in worker to avoid pickle issues
     tasks = [(idx, chunk, str(ROOT / "models" / "cloud_physics" / "params.yaml"), n_grenades) for idx, chunk in chunks]
 
-    with ProcessPoolExecutor(max_workers=workers) as pool:
+    with ProcessPoolExecutor(max_workers=workers, initializer=_pool_worker_init) as pool:
         futs = {pool.submit(_eval_chunk, t): t[0] for t in tasks}
         for fut in as_completed(futs):
             order.append(fut.result())

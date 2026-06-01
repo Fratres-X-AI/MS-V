@@ -42,8 +42,8 @@ Default engine: `physics_tier: phase2` · `sensor_model: v6_probabilistic_lock`
 | CFD plume / LES | Parametric Gaussian + shear scalars |
 | Classified threat sensor curves | v6 logistic lock-break is planning surrogate |
 | Toxicity / KPP-11 | Not in MC scope |
-| Sobol on phase2 | `sobol_model.py` still v4 (campaign continuity) |
-| 140M mega suite | Locked v4 via `load_mega_params()` |
+| Sobol on phase2 | `sobol_model.py` uses lumped v4 coupling for Saltelli speed; mega suite uses phase2 |
+| 140M mega suite | **phase2 + v6** via `load_mega_params()` (default engine profile) |
 
 ---
 

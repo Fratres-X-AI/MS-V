@@ -73,4 +73,19 @@ Single-grenade or MS-V-only employment is **not** the acceptance standard.
 2. Single-grenade duration and area  
 3. **Combined employment vs FPV/fiber-optic surrogate** (MoE gate)  
 4. Environmental matrix  
-5. Respiratory safety characterization  
+5. Respiratory safety characterization
+
+---
+
+## Traceability
+
+- Verification matrix: [
+tm/verification_matrix.md](../rtm/verification_matrix.md)
+- Requirements CSV: [
+tm/requirements_traceability.csv](../rtm/requirements_traceability.csv)
+- Assumptions: [
+tm/assumption_register.md](../rtm/assumption_register.md)
+- Mega suite report: [nalysis/MEGA_SUITE_REPORT.md](../analysis/MEGA_SUITE_REPORT.md)
+- Sobol sensitivity: [nalysis/SOBOL_SENSITIVITY_REPORT.md](../analysis/SOBOL_SENSITIVITY_REPORT.md)
+- Reproduce gate: [REPRODUCE.md](../REPRODUCE.md)
+

@@ -29,7 +29,7 @@ pip install -r requirements-lock.txt
 
 ### Parallelism policy
 
-All RunPod runs auto-detect vCPU and use **`workers = vCPU - 1`** (32 → 31). Override: `--workers 4`.
+All RunPod runs use **`workers = vCPU - 1`** (32 → **31**). Set `RUNPOD_CPU_COUNT=32` on the pod when `nproc` reports the host (e.g. 256) instead of rented vCPU. Override: `--workers 4`.
 
 ## Mega Suite (140M sensitivity campaign)
 
@@ -74,6 +74,6 @@ scp user@pod:/workspace/MS-V/rtm/verification_matrix.md ./rtm/
 |----------|------|------|-----|---------|---------|-----------|
 | Initial 2M | 213.173.107.24:36432 | 32 | — | 31 | 12M | ~1 s |
 | Mega 140M | 213.173.107.24:36432 | 32 | — | 31 | 140M | ~9 s |
-| Full refresh + Sobol N=8192 | 91.199.227.82:40566 | 256 | 2 TiB | 255 | 140M + 212k Sobol | see pod log |
+| Full refresh + Sobol N=8192 | 91.199.227.82:15218 | 32 | 125 GiB | **31** | 140M + 212k Sobol | see pod log |
 
 Document local vs pod: NumPy vectorized MC is CPU-bound; pod wall time scales with workers until memory bandwidth limits.

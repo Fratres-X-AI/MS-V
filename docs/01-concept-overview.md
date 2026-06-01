@@ -60,3 +60,18 @@ Typical event: **2–3 MS-V + 1–2 visual smoke.** Primary targets: **FPV and f
 | [02 — Operational Requirements](02-operational-requirements.md) | KPPs and MoE |
 | [07 — Limitations](07-limitations-and-risks.md) | What it won't do |
 | [Annex A](../annexes/A-baseline-grenade-comparison.md) | vs. AN-M8 / M83 |
+
+---
+
+## Traceability
+
+- Verification matrix: [
+tm/verification_matrix.md](../rtm/verification_matrix.md)
+- Requirements CSV: [
+tm/requirements_traceability.csv](../rtm/requirements_traceability.csv)
+- Assumptions: [
+tm/assumption_register.md](../rtm/assumption_register.md)
+- Mega suite report: [nalysis/MEGA_SUITE_REPORT.md](../analysis/MEGA_SUITE_REPORT.md)
+- Sobol sensitivity: [nalysis/SOBOL_SENSITIVITY_REPORT.md](../analysis/SOBOL_SENSITIVITY_REPORT.md)
+- Reproduce gate: [REPRODUCE.md](../REPRODUCE.md)
+

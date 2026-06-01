@@ -2,7 +2,8 @@
 # Full RunPod compute campaign — mega suite + Sobol GSA
 set -euo pipefail
 cd "$(dirname "$0")/.."
-WORKERS="${1:-255}"
+export RUNPOD_CPU_COUNT="${RUNPOD_CPU_COUNT:-32}"
+WORKERS="${1:-$((RUNPOD_CPU_COUNT - 1))}"
 SOBOL_N="${2:-8192}"
 
 echo "=== MS-V Pod Full Run (workers=$WORKERS sobol_N=$SOBOL_N) ==="

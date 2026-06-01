@@ -3,7 +3,7 @@
 # Usage: bash pull_from_pod.sh [host] [port]
 set -euo pipefail
 HOST="${1:-91.199.227.82}"
-PORT="${2:-40566}"
+PORT="${2:-15218}"
 KEY="${SSH_KEY:-$HOME/.ssh/id_ed25519}"
 REMOTE="/workspace/MS-V"
 LOCAL="$(cd "$(dirname "$0")" && pwd)"

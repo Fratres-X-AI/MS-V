@@ -188,11 +188,13 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_mega_params(root: Path) -> dict:
-    """Mega suite campaign locked to phase1_v3/v4 for manifest continuity."""
+    """Mega suite uses current engine defaults (phase2 + v6 sensor)."""
     p = load_params(root)
     p.setdefault("sim", {})
-    p["sim"]["physics_tier"] = "v4"
-    p["sim"]["sensor_model"] = "v4_band_integrated"
+    tier = p["sim"].get("physics_tier", "phase2")
+    sensor = p["sim"].get("sensor_model", "v6_probabilistic_lock")
+    p["sim"]["physics_tier"] = tier
+    p["sim"]["sensor_model"] = sensor
     return p
 
 
@@ -202,6 +204,8 @@ def main() -> None:
     pin_blas_threads(workers)
 
     base = load_mega_params(ROOT)
+    campaign_tier = base["sim"]["physics_tier"]
+    campaign_sensor = base["sim"]["sensor_model"]
     specs = build_sweep_jobs(base, quick=args.quick)
     jobs = [spec_to_job(base, s) for s in specs]
 
@@ -219,9 +223,12 @@ def main() -> None:
     manifest: dict = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION",
-        "model_version": "phase1_v3_cl_ramp",
+        "model_version": "phase2_v1_full_physics",
+        "physics_tier": campaign_tier,
+        "sensor_model": campaign_sensor,
         "workers": workers,
-        "vcpu": __import__("os").cpu_count(),
+        "effective_vcpu": int(__import__("os").environ.get("RUNPOD_CPU_COUNT") or 0) or None,
+        "host_cpus": __import__("os").cpu_count(),
         "total_jobs": len(jobs),
         "total_samples": total_samples,
         "elapsed_s": None,
@@ -249,6 +256,8 @@ def main() -> None:
             "build_up_p90": result["kpp_02_build_up_s"]["p90"],
             "moe_lock_frac": result["moe"]["lock_break_ge_60s_fraction"],
             "good_thickness_frac": result["physics_diagnostics"]["good_thickness_fraction"],
+            "throw_p10_m": result.get("kpp_08_throw_range_m", {}).get("p10"),
+            "sensor_saturation": result.get("sensor_diagnostics", {}).get("surrogate_saturated"),
         }
         summary_rows.append(row)
         status = "PASS" if row["all_kpp_pass"] else "FAIL"

@@ -45,7 +45,14 @@ Define the empirical test program required to convert the literature-parameter s
 | TRL 3b — Chamber | 3–6 mo | Combined plume, MoE surrogate |
 | TRL 4 — Range | 6–12 mo | Relevant-environment validation |
 
-## 6. References
+## 6. Traceability
+
+- Verification matrix: [`rtm/verification_matrix.md`](../../rtm/verification_matrix.md)
+- Fill physics plan: [`analysis/fill_physics_test_plan.md`](../../analysis/fill_physics_test_plan.md)
+- Human factors: [`analysis/human_factors_notes.md`](../../analysis/human_factors_notes.md)
+- TRL gate: [`proposals/trl_gate_external.md`](../trl_gate_external.md)
+
+## 7. References
 
 - [`rtm/verification_matrix.md`](../rtm/verification_matrix.md)
 - [`rtm/assumption_register.md`](../rtm/assumption_register.md)

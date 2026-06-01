@@ -356,9 +356,20 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
     moe_60s = lock_break_moe_met(lock_break, moe["lock_break_duration_threshold_s"])
 
     area_sqft = area / 0.092903
+    throw_arr: np.ndarray | None = None
+    fuze_arr: np.ndarray | None = None
+    if physics_tier == "phase2" and p2_result is not None:
+        throw_arr = p2_result.deployment.throw_range_m
+        fuze_arr = p2_result.deployment.fuze_delay_s
 
     def pct(x: np.ndarray, q: float) -> float:
         return float(np.percentile(x, q))
+
+    lock_frac = float(np.mean(moe_60s))
+    degraded_frac = float(np.mean(moe_mask))
+    surrogate_saturated = lock_frac >= 0.999 and degraded_frac >= 0.999
+    sensor_extra["surrogate_saturated"] = surrogate_saturated
+    sensor_extra["lock_break_ge_60s_fraction"] = lock_frac
 
     bu_max = kpp.get("build_up_p90_max_s", 15.0)
     dur_min = kpp.get("duration_p10_min_s", 120.0)
@@ -394,6 +405,22 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
         "kpp_02_build_up_s": {"p10": pct(build_up_kpp, 10), "p50": pct(build_up_kpp, 50), "p90": pct(build_up_kpp, 90)},
         "kpp_03_duration_effective_s": {"p10": pct(duration, 10), "p50": pct(duration, 50), "p90": pct(duration, 90)},
         "kpp_04_screening_area_sqft": {"p10": pct(area_sqft, 10), "p50": pct(area_sqft, 50), "p90": pct(area_sqft, 90)},
+        **(
+            {
+                "kpp_08_throw_range_m": {
+                    "p10": pct(throw_arr, 10),
+                    "p50": pct(throw_arr, 50),
+                    "p90": pct(throw_arr, 90),
+                },
+                "kpp_07_fuze_delay_s": {
+                    "p10": pct(fuze_arr, 10),
+                    "p50": pct(fuze_arr, 50),
+                    "p90": pct(fuze_arr, 90),
+                },
+            }
+            if throw_arr is not None and fuze_arr is not None
+            else {}
+        ),
         "transmittance": {
             "VIS_p50": pct(t_vis, 50),
             "NIR_p50": pct(t_nir, 50),
@@ -428,6 +455,20 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
             "duration_p10_ge_120s": pct(duration, 10) >= dur_min,
             "area_p10_ge_30_sqft": pct(area_sqft, 10) >= area_min,
             "moe_lock_break_p50_ge_60s": pct(lock_break, 50) >= lock_min,
+            **(
+                {"throw_p10_ge_20m": pct(throw_arr, 10) >= kpp.get("throw_p10_min_m", 20.0)}
+                if throw_arr is not None
+                else {}
+            ),
+            **(
+                {
+                    "fuze_delay_m201_band": (
+                        float(np.min(fuze_arr)) >= 0.7 and float(np.max(fuze_arr)) <= 2.0
+                    ),
+                }
+                if fuze_arr is not None
+                else {}
+            ),
         },
         "raw_burn_duration_s": {"p10": pct(raw_duration, 10), "p50": pct(raw_duration, 50), "p90": pct(raw_duration, 90)},
         "peak_cl_g_m2": {"p10": pct(cl_peak, 10), "p50": pct(cl_peak, 50), "p90": pct(cl_peak, 90)},
