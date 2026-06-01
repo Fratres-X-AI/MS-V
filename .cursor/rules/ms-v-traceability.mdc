@@ -1,0 +1,32 @@
+# MS-V — Cursor / HQ engineering standards
+# Enforces submission-grade traceability for DIU/OTA/SBIR artifacts
+
+## Maturity label (mandatory on all sim outputs)
+Every simulation artifact must state: **LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION**
+
+## Traceability (blocking)
+- Every KPP/MoE claim → `rtm/verification_matrix.md` job ID + seed
+- Every parameter bound → `rtm/assumption_register.md` with source citation
+- Every modeling choice → `rtm/decision_log.md`
+- Requirements → `rtm/requirements_traceability.csv`
+
+## Reproducibility
+- Seeds: `sim/config/seeds.yaml` (authoritative — never use Python `hash()` for seeds)
+- Reproduce gate: `python -m sim.reproduce` must pass before merge
+- Pinned deps: `requirements-lock.txt` / `environment.yml`
+- CI quick mega → `analysis/results/mega_suite_quick/` (never overwrite committed 140M manifest)
+
+## Sensitivity analysis
+- Global: `sim/run_sobol.py` (Saltelli + SALib Sobol indices)
+- OAT sweeps: 38 jobs in mega suite
+- Do **not** claim Sobol without running `sim/run_sobol.py`
+- MoE 100% pass = surrogate saturation (A-013) — disclose always
+
+## Code changes
+- Validate params via `models/params_validation.py` before MC runs
+- Type hints on public functions in `sim/` and `models/`
+- No magic numbers — use `params.yaml` or named constants
+- Match existing style; minimal diffs
+
+## External claims (forbidden without evidence)
+- TRL 4+, military ready, field validation, empirical MS-V fill performance

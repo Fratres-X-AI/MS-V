@@ -1,0 +1,594 @@
+{
+  "generated_at": "2026-06-01T19:28:37.421351+00:00",
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "method": "Saltelli + Sobol (SALib)",
+  "n_base": 256,
+  "n_evaluations": 6656,
+  "seed": 4242,
+  "n_grenades": 3,
+  "workers": 2,
+  "problem": {
+    "num_vars": 12,
+    "names": [
+      "wind_mph",
+      "temp_c",
+      "humidity_rh",
+      "filler_mass_g",
+      "burn_rate_g_s",
+      "yield_factor",
+      "screening_area_sqft",
+      "cloud_depth_m",
+      "alpha_vis",
+      "alpha_nir",
+      "alpha_mwir",
+      "build_up_time_s"
+    ],
+    "bounds": [
+      [
+        0,
+        15
+      ],
+      [
+        -20,
+        50
+      ],
+      [
+        20,
+        95
+      ],
+      [
+        624,
+        680
+      ],
+      [
+        2.9,
+        4.2
+      ],
+      [
+        0.22,
+        0.52
+      ],
+      [
+        30,
+        40
+      ],
+      [
+        2.0,
+        4.0
+      ],
+      [
+        4.0,
+        12.0
+      ],
+      [
+        3.0,
+        10.0
+      ],
+      [
+        2.0,
+        9.0
+      ],
+      [
+        8,
+        15
+      ]
+    ],
+    "sample_scaled": true
+  },
+  "outputs": {
+    "duration_s": {
+      "Y_mean": 187.7197882660275,
+      "Y_std": 22.121427650725284,
+      "Y_p10": 159.78954492102315,
+      "Y_p50": 186.33251435631303,
+      "Y_p90": 219.30613953087786,
+      "status": "OK",
+      "S1": {
+        "wind_mph": -8.795903352226899e-05,
+        "temp_c": 0.13650333495838893,
+        "humidity_rh": 1.9554165756913445e-06,
+        "filler_mass_g": 0.049273854739286305,
+        "burn_rate_g_s": 0.8284929548485982,
+        "yield_factor": 1.5312423954960075e-05,
+        "screening_area_sqft": 1.4867975631424297e-05,
+        "cloud_depth_m": 0.0004505164122183914,
+        "alpha_vis": -1.9558032053861157e-05,
+        "alpha_nir": 7.921805983418088e-05,
+        "alpha_mwir": 0.00012853798095616075,
+        "build_up_time_s": 0.00017099286461777475
+      },
+      "ST": {
+        "wind_mph": 4.1743657577853135e-06,
+        "temp_c": 0.13239841898901208,
+        "humidity_rh": 1.3030741497694573e-08,
+        "filler_mass_g": 0.044872131064155066,
+        "burn_rate_g_s": 0.8288955175385125,
+        "yield_factor": 9.030913239722624e-06,
+        "screening_area_sqft": 1.1219152150585747e-06,
+        "cloud_depth_m": 5.705003900725818e-06,
+        "alpha_vis": 5.912548341570231e-08,
+        "alpha_nir": 3.7494544025443616e-06,
+        "alpha_mwir": 1.402256665731995e-05,
+        "build_up_time_s": 4.658183075403432e-06
+      },
+      "S1_conf": {
+        "wind_mph": 0.0003444575960162726,
+        "temp_c": 0.05854198362137646,
+        "humidity_rh": 1.9314212682877994e-05,
+        "filler_mass_g": 0.03501037594562605,
+        "burn_rate_g_s": 0.13697729706464878,
+        "yield_factor": 0.00048481477882237673,
+        "screening_area_sqft": 0.00018042122395307454,
+        "cloud_depth_m": 0.0004912076334810189,
+        "alpha_vis": 4.4665087125553286e-05,
+        "alpha_nir": 0.00034109144149021636,
+        "alpha_mwir": 0.0007002375848677963,
+        "build_up_time_s": 0.0004149338471952668
+      },
+      "ST_conf": {
+        "wind_mph": 1.204820094842054e-06,
+        "temp_c": 0.024651713172322794,
+        "humidity_rh": 3.995641860400279e-09,
+        "filler_mass_g": 0.008274998222456255,
+        "burn_rate_g_s": 0.11286081545736013,
+        "yield_factor": 2.148407407202959e-06,
+        "screening_area_sqft": 3.507039324402447e-07,
+        "cloud_depth_m": 1.864239027128503e-06,
+        "alpha_vis": 4.737630969950164e-08,
+        "alpha_nir": 1.488601713505815e-06,
+        "alpha_mwir": 4.410817039189966e-06,
+        "build_up_time_s": 1.1944635900198824e-06
+      },
+      "rank_by_ST": [
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.8284929548485982,
+          "ST": 0.8288955175385125
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.13650333495838893,
+          "ST": 0.13239841898901208
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.049273854739286305,
+          "ST": 0.044872131064155066
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": 0.00012853798095616075,
+          "ST": 1.402256665731995e-05
+        },
+        {
+          "name": "yield_factor",
+          "S1": 1.5312423954960075e-05,
+          "ST": 9.030913239722624e-06
+        },
+        {
+          "name": "cloud_depth_m",
+          "S1": 0.0004505164122183914,
+          "ST": 5.705003900725818e-06
+        },
+        {
+          "name": "build_up_time_s",
+          "S1": 0.00017099286461777475,
+          "ST": 4.658183075403432e-06
+        },
+        {
+          "name": "wind_mph",
+          "S1": -8.795903352226899e-05,
+          "ST": 4.1743657577853135e-06
+        },
+        {
+          "name": "alpha_nir",
+          "S1": 7.921805983418088e-05,
+          "ST": 3.7494544025443616e-06
+        },
+        {
+          "name": "screening_area_sqft",
+          "S1": 1.4867975631424297e-05,
+          "ST": 1.1219152150585747e-06
+        },
+        {
+          "name": "alpha_vis",
+          "S1": -1.9558032053861157e-05,
+          "ST": 5.912548341570231e-08
+        },
+        {
+          "name": "humidity_rh",
+          "S1": 1.9554165756913445e-06,
+          "ST": 1.3030741497694573e-08
+        }
+      ]
+    },
+    "build_up_s": {
+      "Y_mean": 10.119999997131528,
+      "Y_std": 1.7782388513827425,
+      "Y_p10": 7.659202143549919,
+      "Y_p50": 10.118931817747653,
+      "Y_p90": 12.578937938213349,
+      "status": "OK",
+      "S1": {
+        "wind_mph": 0.0,
+        "temp_c": 0.0,
+        "humidity_rh": 0.0,
+        "filler_mass_g": 0.0,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.0,
+        "screening_area_sqft": 0.0,
+        "cloud_depth_m": 0.0,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.9999942974291407
+      },
+      "ST": {
+        "wind_mph": 0.0,
+        "temp_c": 0.0,
+        "humidity_rh": 0.0,
+        "filler_mass_g": 0.0,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.0,
+        "screening_area_sqft": 0.0,
+        "cloud_depth_m": 0.0,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.9999942779600429
+      },
+      "S1_conf": {
+        "wind_mph": 0.0,
+        "temp_c": 0.0,
+        "humidity_rh": 0.0,
+        "filler_mass_g": 0.0,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.0,
+        "screening_area_sqft": 0.0,
+        "cloud_depth_m": 0.0,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.15389818834313232
+      },
+      "ST_conf": {
+        "wind_mph": 0.0,
+        "temp_c": 0.0,
+        "humidity_rh": 0.0,
+        "filler_mass_g": 0.0,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.0,
+        "screening_area_sqft": 0.0,
+        "cloud_depth_m": 0.0,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.1375269475473836
+      },
+      "rank_by_ST": [
+        {
+          "name": "build_up_time_s",
+          "S1": 0.9999942974291407,
+          "ST": 0.9999942779600429
+        },
+        {
+          "name": "wind_mph",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "humidity_rh",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "yield_factor",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "screening_area_sqft",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "cloud_depth_m",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_vis",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_nir",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": 0.0,
+          "ST": 0.0
+        }
+      ]
+    },
+    "lock_break_s": {
+      "Y_mean": 187.7197882660275,
+      "Y_std": 22.121427650725284,
+      "Y_p10": 159.78954492102315,
+      "Y_p50": 186.33251435631303,
+      "Y_p90": 219.30613953087786,
+      "status": "OK",
+      "S1": {
+        "wind_mph": -8.795903352226899e-05,
+        "temp_c": 0.13650333495838893,
+        "humidity_rh": 1.9554165756913445e-06,
+        "filler_mass_g": 0.049273854739286305,
+        "burn_rate_g_s": 0.8284929548485982,
+        "yield_factor": 1.5312423954960075e-05,
+        "screening_area_sqft": 1.4867975631424297e-05,
+        "cloud_depth_m": 0.0004505164122183914,
+        "alpha_vis": -1.9558032053861157e-05,
+        "alpha_nir": 7.921805983418088e-05,
+        "alpha_mwir": 0.00012853798095616075,
+        "build_up_time_s": 0.00017099286461777475
+      },
+      "ST": {
+        "wind_mph": 4.1743657577853135e-06,
+        "temp_c": 0.13239841898901208,
+        "humidity_rh": 1.3030741497694573e-08,
+        "filler_mass_g": 0.044872131064155066,
+        "burn_rate_g_s": 0.8288955175385125,
+        "yield_factor": 9.030913239722624e-06,
+        "screening_area_sqft": 1.1219152150585747e-06,
+        "cloud_depth_m": 5.705003900725818e-06,
+        "alpha_vis": 5.912548341570231e-08,
+        "alpha_nir": 3.7494544025443616e-06,
+        "alpha_mwir": 1.402256665731995e-05,
+        "build_up_time_s": 4.658183075403432e-06
+      },
+      "S1_conf": {
+        "wind_mph": 0.0003825489423287541,
+        "temp_c": 0.05546586762427451,
+        "humidity_rh": 1.9211008227457886e-05,
+        "filler_mass_g": 0.03514222861443241,
+        "burn_rate_g_s": 0.13952786360686503,
+        "yield_factor": 0.000579459521941207,
+        "screening_area_sqft": 0.00019245300709545197,
+        "cloud_depth_m": 0.00044916546383202445,
+        "alpha_vis": 4.285946978923801e-05,
+        "alpha_nir": 0.0003842796036356356,
+        "alpha_mwir": 0.0007576428958287023,
+        "build_up_time_s": 0.00046877529566167423
+      },
+      "ST_conf": {
+        "wind_mph": 1.1363612483513148e-06,
+        "temp_c": 0.024979278361204255,
+        "humidity_rh": 4.282136760961592e-09,
+        "filler_mass_g": 0.007335310165770763,
+        "burn_rate_g_s": 0.10396521185125175,
+        "yield_factor": 2.5928937955819902e-06,
+        "screening_area_sqft": 4.1715982697130445e-07,
+        "cloud_depth_m": 1.8982020529248498e-06,
+        "alpha_vis": 3.966233802379057e-08,
+        "alpha_nir": 1.7521259048635277e-06,
+        "alpha_mwir": 4.205389599945298e-06,
+        "build_up_time_s": 1.4593895590221968e-06
+      },
+      "rank_by_ST": [
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.8284929548485982,
+          "ST": 0.8288955175385125
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.13650333495838893,
+          "ST": 0.13239841898901208
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.049273854739286305,
+          "ST": 0.044872131064155066
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": 0.00012853798095616075,
+          "ST": 1.402256665731995e-05
+        },
+        {
+          "name": "yield_factor",
+          "S1": 1.5312423954960075e-05,
+          "ST": 9.030913239722624e-06
+        },
+        {
+          "name": "cloud_depth_m",
+          "S1": 0.0004505164122183914,
+          "ST": 5.705003900725818e-06
+        },
+        {
+          "name": "build_up_time_s",
+          "S1": 0.00017099286461777475,
+          "ST": 4.658183075403432e-06
+        },
+        {
+          "name": "wind_mph",
+          "S1": -8.795903352226899e-05,
+          "ST": 4.1743657577853135e-06
+        },
+        {
+          "name": "alpha_nir",
+          "S1": 7.921805983418088e-05,
+          "ST": 3.7494544025443616e-06
+        },
+        {
+          "name": "screening_area_sqft",
+          "S1": 1.4867975631424297e-05,
+          "ST": 1.1219152150585747e-06
+        },
+        {
+          "name": "alpha_vis",
+          "S1": -1.9558032053861157e-05,
+          "ST": 5.912548341570231e-08
+        },
+        {
+          "name": "humidity_rh",
+          "S1": 1.9554165756913445e-06,
+          "ST": 1.3030741497694573e-08
+        }
+      ]
+    },
+    "moe_met": {
+      "Y_mean": 1.0,
+      "Y_std": 0.0,
+      "Y_p10": 1.0,
+      "Y_p50": 1.0,
+      "Y_p90": 1.0,
+      "status": "DEGENERATE \u2014 zero variance (surrogate saturation)",
+      "rank_by_ST": []
+    },
+    "cl_peak": {
+      "Y_mean": 22.862157232655612,
+      "Y_std": 8.407268927341734,
+      "Y_p10": 13.007465403382033,
+      "Y_p50": 21.553688430147776,
+      "Y_p90": 34.508895660033055,
+      "status": "OK",
+      "S1": {
+        "wind_mph": 0.2226368667255025,
+        "temp_c": 0.0,
+        "humidity_rh": 0.00017214355754622746,
+        "filler_mass_g": 0.0031642264714655173,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.37109445407507374,
+        "screening_area_sqft": 0.030287432167980625,
+        "cloud_depth_m": 0.31506696023858727,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.0
+      },
+      "ST": {
+        "wind_mph": 0.2331568440855906,
+        "temp_c": 0.0,
+        "humidity_rh": 0.0007020818350543937,
+        "filler_mass_g": 0.005113839243692482,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.400568549719893,
+        "screening_area_sqft": 0.05798945633439893,
+        "cloud_depth_m": 0.3301531068284533,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.0
+      },
+      "S1_conf": {
+        "wind_mph": 0.0700409736593195,
+        "temp_c": 0.0,
+        "humidity_rh": 0.003916418915288323,
+        "filler_mass_g": 0.01024575979189637,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.09881577787951325,
+        "screening_area_sqft": 0.03865764810852513,
+        "cloud_depth_m": 0.08837962511985402,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.0
+      },
+      "ST_conf": {
+        "wind_mph": 0.04569730566620668,
+        "temp_c": 0.0,
+        "humidity_rh": 0.00015117029221973908,
+        "filler_mass_g": 0.0010613920524945517,
+        "burn_rate_g_s": 0.0,
+        "yield_factor": 0.06740361427766614,
+        "screening_area_sqft": 0.011768226066326494,
+        "cloud_depth_m": 0.07464066280919765,
+        "alpha_vis": 0.0,
+        "alpha_nir": 0.0,
+        "alpha_mwir": 0.0,
+        "build_up_time_s": 0.0
+      },
+      "rank_by_ST": [
+        {
+          "name": "yield_factor",
+          "S1": 0.37109445407507374,
+          "ST": 0.400568549719893
+        },
+        {
+          "name": "cloud_depth_m",
+          "S1": 0.31506696023858727,
+          "ST": 0.3301531068284533
+        },
+        {
+          "name": "wind_mph",
+          "S1": 0.2226368667255025,
+          "ST": 0.2331568440855906
+        },
+        {
+          "name": "screening_area_sqft",
+          "S1": 0.030287432167980625,
+          "ST": 0.05798945633439893
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.0031642264714655173,
+          "ST": 0.005113839243692482
+        },
+        {
+          "name": "humidity_rh",
+          "S1": 0.00017214355754622746,
+          "ST": 0.0007020818350543937
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_vis",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_nir",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": 0.0,
+          "ST": 0.0
+        },
+        {
+          "name": "build_up_time_s",
+          "S1": 0.0,
+          "ST": 0.0
+        }
+      ]
+    }
+  },
+  "elapsed_s": 0.53
+}

@@ -10,7 +10,7 @@
     "n_grenades": 3,
     "model_version": "phase1_v4_sensor",
     "params_file": "models/cloud_physics/params.yaml",
-    "params_sha256_16": "1e13643384564920",
+    "params_sha256_16": "b29b63d5253b5b38",
     "assumption_ids": [
       "A-001",
       "A-002",
@@ -18,9 +18,19 @@
       "A-004",
       "A-005",
       "A-006",
-      "A-009"
+      "A-009",
+      "A-013",
+      "A-017",
+      "A-019",
+      "A-021",
+      "A-022",
+      "A-023",
+      "A-024",
+      "A-025",
+      "A-026",
+      "A-027"
     ],
-    "generated_at": "2026-06-01T18:58:25.060665+00:00"
+    "generated_at": "2026-06-01T19:29:17.241917+00:00"
   },
   "config": {
     "n_samples": 100000,
@@ -65,7 +75,10 @@
     "cl_peak_p10": 13.170175056610963,
     "cl_required_p90": 0.7064852968037153,
     "time_to_threshold_p50_s": 0.19793448367840188,
-    "build_up_p50_s": 10.10520228011192
+    "build_up_p50_s": 10.10520228011192,
+    "physics_tier": "v4",
+    "plume_coverage_p50": 1.0,
+    "friendly_blinded_fraction": 0.0
   },
   "moe": {
     "fused_eoir_degraded_fraction": 1.0,

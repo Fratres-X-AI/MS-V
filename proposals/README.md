@@ -4,9 +4,11 @@ Phase 5 deliverables for DIU CSO, OTA, SBIR submission.
 
 | Path | Purpose |
 |------|---------|
-| `srd/` | System Requirements Document |
-| `temp/` | Test & Evaluation Master Plan outline |
-| `narratives/` | CSO/OTA/SBIR proposal drafts |
+| [`srd/MS-V-SRD.md`](srd/MS-V-SRD.md) | System Requirements Document (draft) |
+| [`temp/MS-V-TEMP-outline.md`](temp/MS-V-TEMP-outline.md) | TRL 3 Test & Evaluation Master Plan outline |
+| `narratives/` | CSO/OTA/SBIR proposal drafts (TBD) |
+
+**Traceability:** All requirements map to [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) and 38 job IDs in [`sim/config/seeds.yaml`](../sim/config/seeds.yaml).
 
 ## Positioning
 

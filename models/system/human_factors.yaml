@@ -1,0 +1,21 @@
+# MS-V Human Factors — deployment kinematics inputs
+# STATUS: Literature-order bounds — NOT VALIDATION
+
+throw_range_m:
+  min: 18.0
+  max: 25.0
+  reference: "KPP-08; heavier than AN-M8 (~850 g)"
+
+load_penalty:
+  # Additional throw error when carrying full combat load
+  lateral_error_multiplier: 1.12
+  range_reduction_m: 1.5
+
+posture:
+  standing_fraction: 0.55
+  kneeling_fraction: 0.35
+  prone_fraction: 0.10
+
+stress:
+  # Under fire — wider dispersion
+  lateral_error_multiplier: 1.25

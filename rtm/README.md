@@ -1,16 +1,27 @@
 # Requirements Traceability Matrix (RTM)
 
-Phase 0 deliverable. Links every KPP, MoE, assumption, and limitation to source document or explicit rationale.
+Submission-grade audit trail for MS-V Phase 1 M&S.
 
-## Files
+| Artifact | Purpose |
+|----------|---------|
+| [`requirements_traceability.csv`](requirements_traceability.csv) | Req → job ID → seed → pass status |
+| [`verification_matrix.md`](verification_matrix.md) | KPP/MoE with quantified margins + 38 jobs |
+| [`verification_matrix.csv`](verification_matrix.csv) | Machine-readable job registry |
+| [`assumption_register.md`](assumption_register.md) | Literature bounds + OAT + **Sobol** ranks |
+| [`uncertainty_register.md`](uncertainty_register.md) | Quantitative bound definitions |
+| [`decision_log.md`](decision_log.md) | Modeling decisions D-001–D-016 |
+| [`audit_log.md`](audit_log.md) | Phase 0 doc cross-check |
+| [`glossary.md`](glossary.md) | Symbols, units, abbreviations |
 
-| File | Purpose |
-|------|---------|
-| [requirements_traceability.csv](requirements_traceability.csv) | Machine-readable RTM |
-| [decision_log.md](decision_log.md) | Design decisions and open trades |
-| [assumption_register.md](assumption_register.md) | All modeling and design assumptions |
-| [verification_matrix.md](verification_matrix.md) | KPP → test/sim method mapping (Phase 5) |
+## Reviewer quick path (< 2 min)
 
-## Status
+1. Open `verification_matrix.md` → find KPP row → job ID + margin  
+2. Open `assumption_register.md` → find assumption → TRL 3 test priority  
+3. Run `python -m sim.reproduce` → golden checksum gate  
+4. Sobol: `analysis/SOBOL_SENSITIVITY_REPORT.md`
 
-**Phase 0 — in progress.** Seed from [Annex B](../annexes/B-kpp-targets.md).
+## Seeds & config control
+
+- `sim/config/seeds.yaml` — 38 mega-suite jobs  
+- `sim/config/sobol.yaml` — Sobol campaign settings  
+- `models/cloud_physics/params.yaml` — literature bounds (SHA in manifests)

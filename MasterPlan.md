@@ -196,10 +196,43 @@ See [`RUNPOD.md`](RUNPOD.md).
 | TRL | Description | MS-V status |
 |-----|-------------|-------------|
 | 1 | Basic principles observed | **Complete** (literature + concept) |
-| 2 | Technology concept formulated | **Current** (v2 docs) |
-| 3 | Analytical/experimental critical function proof | **Target** (Phase 1 M&S) |
+| 2 | Technology concept formulated | **Current** (140M sensitivity study complete) |
+| 3 | Analytical/experimental critical function proof | **Target** — path defined below |
 | 4 | Component validation in lab environment | **Requires external funding + lab** |
 | 5+ | Relevant environment / fielded | **Out of scope internally** |
+
+---
+
+## Path to Validation (TRL 3 Test Plan)
+
+Sensitivity data from the 140M mega suite **dictates** physical test priority — not marketing claims.
+
+### High-risk variables (OAT ranking)
+
+| Rank | Variable | Simulation signal | TRL 3 action |
+|------|----------|-------------------|--------------|
+| 1 | Burn rate upper bound | `sweep_burn_hi_4.4` — duration p10 +27.0% margin (tightest binding) | Burn cup gravimetric across 2.9–4.4 g/s |
+| 2 | Hot temperature (35–50 °C) | `sweep_temp_hot` — −7 s vs nominal at p10 | Chamber burn tests at temperature extremes |
+| 3 | Adversarial stack | `baseline_10M_adversarial` — +19.7% margin at p10 | Combined worst-case T/RH/wind/burn |
+| — | Humidity > 75% RH | Low OAT on duration; yield penalty modeled | Chamber RH sweeps (P1) |
+| — | α(λ) sweeps | **Non-binding** in surrogate — **does not reduce spectrometry priority** | P0 spectrometer still required (A-013) |
+
+### Explicit non-claims
+
+- 100% MoE pass across 38 jobs is **surrogate saturation**, not lock-break confirmation.
+- KPP-06 tri-band pass is **non-discriminative** until α(λ) is measured on MS-V fill.
+- Sim pass inside literature bounds ≠ design confirmation.
+
+### Artifacts for reviewers
+
+| Artifact | Location |
+|----------|----------|
+| Verification matrix (38 jobs, quantified margins) | [`rtm/verification_matrix.md`](rtm/verification_matrix.md) |
+| Assumption register (OAT ranks, KPP impact) | [`rtm/assumption_register.md`](rtm/assumption_register.md) |
+| Seed manifest | [`sim/config/seeds.yaml`](sim/config/seeds.yaml) |
+| One-step reproduce | [`run_all.sh`](run_all.sh) · `make reproduce` |
+| TEMP outline | [`proposals/temp/MS-V-TEMP-outline.md`](proposals/temp/MS-V-TEMP-outline.md) |
+| SRD draft | [`proposals/srd/MS-V-SRD.md`](proposals/srd/MS-V-SRD.md) |
 
 ---
 
@@ -222,3 +255,21 @@ See [`RUNPOD.md`](RUNPOD.md).
 - **All sim outputs** labeled: literature-parameter sensitivity study, not validation
 - **MoE claims** require combined MS-V + visual smoke in model and doctrine
 - **Version control** all params, assumptions, and results under `/rtm/` and `/analysis/`
+
+---
+
+## Claim → Evidence Cross-Reference
+
+| External claim | Evidence artifact | Job / method |
+|----------------|-------------------|--------------|
+| Duration ≥ 120 s (p10) | `rtm/verification_matrix.md` | `baseline_10M_g3_n10000000` |
+| Burn rate drives duration variance | `analysis/SOBOL_SENSITIVITY_REPORT.md` | Sobol ST(burn)≈0.83 |
+| 38/38 jobs KPP-pass (literature bounds) | `analysis/MEGA_SUITE_REPORT.md` | 140M mega suite |
+| Adversarial tail margin +19.7% | `analysis/tail_risk_analysis.md` | `baseline_10M_adversarial_g3` |
+| MoE 100% pass | `rtm/assumption_register.md` A-013 | **Surrogate saturation — not validation** |
+| Reproducible baseline stats | `python -m sim.reproduce` | `analysis/reproduce_golden.json` |
+| TRL 3 test priority | `proposals/temp/MS-V-TEMP-outline.md` | Sobol + OAT ranked |
+| Requirements mapping | `rtm/requirements_traceability.csv` | per-row job provenance |
+
+**RunPod 140M campaign spec:** 32 vCPU pod (213.173.107.24) · 31 workers · ~9 s wall time.  
+**Current pod (Sobol refresh):** 256 vCPU · 2 TiB RAM · `91.199.227.82:40566` · see `RUNPOD.md`.

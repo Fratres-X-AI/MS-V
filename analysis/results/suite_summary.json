@@ -1,12 +1,42 @@
 {
-  "generated_at": "2026-06-01T18:47:21.528077+00:00",
+  "generated_at": "2026-06-01T19:28:27.120575+00:00",
   "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
   "n_samples_per_scenario": 100000,
   "scenarios": {
     "single_grenade": {
       "label": "single_grenade",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "single_grenade",
+        "seed": 42,
+        "n_samples": 100000,
+        "n_grenades": 1,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:27.291863+00:00"
+      },
       "config": {
         "n_samples": 100000,
         "seed": 42,
@@ -18,14 +48,14 @@
         "humidity_rh_p50": 57.56741535269268
       },
       "kpp_02_build_up_s": {
-        "p10": 7.663231935458866,
-        "p50": 10.117560508362693,
-        "p90": 12.580307650658561
+        "p10": 7.651253134423759,
+        "p50": 10.108765684520355,
+        "p90": 12.58399228879595
       },
       "kpp_03_duration_effective_s": {
-        "p10": 159.89543960208303,
-        "p50": 185.7791508701792,
-        "p90": 218.93953557658338
+        "p10": 169.67800304473928,
+        "p50": 197.672159281481,
+        "p90": 233.23951264004782
       },
       "kpp_04_screening_area_sqft": {
         "p10": 31.01538298747317,
@@ -33,27 +63,57 @@
         "p90": 38.995487940936066
       },
       "transmittance": {
-        "VIS_p50": 1.5422428621071028e-53,
-        "NIR_p50": 2.005643697824979e-43,
-        "MWIR_p50": 1.4307800697712492e-36,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 5.034206713168191e-38,
+        "NIR_p50": 1.1363314266012783e-28,
+        "MWIR_p50": 6.776818600153296e-24,
+        "fraction_below_threshold": 0.58231
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 1.859211380580958e-08,
+        "t_mwir_p50": 4.2448025329278823e-07,
+        "netd_floor_p50": 0.10003238606979498,
+        "lock_prob_obscured_fraction": 0.58231
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 651.8802713160619,
         "burn_rate_g_s_p50": 3.503160735516663,
-        "cl_peak_p10": 9.660259419603676,
-        "cl_required_p90": 0.7023901148026968,
-        "time_to_threshold_p50_s": 0.26980276825114397,
-        "build_up_p50_s": 10.117560508362693
+        "cl_peak_p10": 5.488266036358716,
+        "cl_required_p90": 0.5308788653871281,
+        "time_to_threshold_p50_s": 0.46501024092912596,
+        "build_up_p50_s": 11.859611197385068,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.5417010725942197,
+        "friendly_blinded_fraction": 0.89929,
+        "threat_distance_p50_m": 2.757309383037989,
+        "radial_fraction_p50": 0.37188004892096627,
+        "los_cloud_fraction_p50": 0.5417010725942197,
+        "edge_of_plume_fraction": 0.55055,
+        "in_plume_core_fraction": 0.18655,
+        "cl_threat_p50": 3.45115588638864,
+        "cl_center_p50": 9.885828211137344,
+        "phase2_psd_diameter_um_p50": 2.867441475600782,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0227022460580781,
+        "phase2_coagulation_factor_p50": 0.9864559903109433,
+        "phase2_wind_shear_dilution_p50": 0.8090653663537118,
+        "phase2_merge_factor_p50": 1.0,
+        "phase2_buoyancy_rise_p50_m": 1.177102518391982,
+        "phase2_washout_active_fraction": 0.01126,
+        "phase2_throw_range_p50_m": 21.500598937847805,
+        "phase2_fuze_delay_p50_s": 1.347997958474319
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.58231,
+        "lock_break_ge_60s_fraction": 0.58231,
         "lock_break_duration_s": {
-          "p10": 159.89543960208303,
-          "p50": 185.7791508701792,
-          "p90": 218.93953557658338
+          "p10": 0.0,
+          "p50": 173.18857324757636,
+          "p90": 225.1356510267331
         }
       },
       "kpp_checks": {
@@ -63,20 +123,50 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.2077327056893,
-        "p50": 186.09140517490687,
-        "p90": 219.26596701144413
+        "p10": 162.48248753112506,
+        "p50": 188.73367664797854,
+        "p90": 222.37927688787437
       },
       "peak_cl_g_m2": {
-        "p10": 9.660259419603676,
-        "p50": 15.754013662809855,
-        "p90": 25.418965820511655
+        "p10": 5.488266036358716,
+        "p50": 9.885828211137344,
+        "p90": 17.393927798545636
       }
     },
     "two_grenade_group": {
       "label": "two_grenade_group",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "two_grenade_group",
+        "seed": 43,
+        "n_samples": 100000,
+        "n_grenades": 2,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:27.492041+00:00"
+      },
       "config": {
         "n_samples": 100000,
         "seed": 43,
@@ -88,14 +178,14 @@
         "humidity_rh_p50": 57.65073185506236
       },
       "kpp_02_build_up_s": {
-        "p10": 7.658549970055405,
-        "p50": 10.126490733720683,
-        "p90": 12.593552051342947
+        "p10": 7.660927873855826,
+        "p50": 10.13744539740209,
+        "p90": 12.597348967282802
       },
       "kpp_03_duration_effective_s": {
-        "p10": 160.05898548348912,
-        "p50": 185.56022064151853,
-        "p90": 218.64023506271337
+        "p10": 170.06515908213552,
+        "p50": 197.6611244271711,
+        "p90": 233.17354578682603
       },
       "kpp_04_screening_area_sqft": {
         "p10": 51.06120240129028,
@@ -103,27 +193,57 @@
         "p90": 64.25831713268389
       },
       "transmittance": {
-        "VIS_p50": 7.578759835945841e-65,
-        "NIR_p50": 1.2631582813089714e-52,
-        "MWIR_p50": 2.6101428612723063e-44,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 1.1371902689485298e-53,
+        "NIR_p50": 2.4136625565363833e-40,
+        "MWIR_p50": 1.398252469284898e-33,
+        "fraction_below_threshold": 0.65541
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 2.0861234768212758e-17,
+        "t_mwir_p50": 2.9372288357307804e-14,
+        "netd_floor_p50": 0.1001209194747998,
+        "lock_prob_obscured_fraction": 0.65541
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 652.1224553578136,
         "burn_rate_g_s_p50": 3.5085232786504976,
-        "cl_peak_p10": 11.741549100875742,
-        "cl_required_p90": 0.7043143658507309,
-        "time_to_threshold_p50_s": 0.22162876770230108,
-        "build_up_p50_s": 10.126490733720683
+        "cl_peak_p10": 10.104169720620245,
+        "cl_required_p90": 0.532644174975292,
+        "time_to_threshold_p50_s": 0.2446482712437711,
+        "build_up_p50_s": 11.887203586063684,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.642311904137156,
+        "friendly_blinded_fraction": 0.99634,
+        "threat_distance_p50_m": 2.777467476081924,
+        "radial_fraction_p50": 0.4393716749652614,
+        "los_cloud_fraction_p50": 0.642311904137156,
+        "edge_of_plume_fraction": 0.50984,
+        "in_plume_core_fraction": 0.20882,
+        "cl_threat_p50": 7.65770148559853,
+        "cl_center_p50": 18.87253141384769,
+        "phase2_psd_diameter_um_p50": 2.8640903782238185,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0229521955651872,
+        "phase2_coagulation_factor_p50": 0.9834453627750581,
+        "phase2_wind_shear_dilution_p50": 0.809675013057917,
+        "phase2_merge_factor_p50": 0.6199016661218145,
+        "phase2_buoyancy_rise_p50_m": 1.1771926766296987,
+        "phase2_washout_active_fraction": 0.0112,
+        "phase2_throw_range_p50_m": 21.493022437783267,
+        "phase2_fuze_delay_p50_s": 1.3502178929809006
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.65541,
+        "lock_break_ge_60s_fraction": 0.65541,
         "lock_break_duration_s": {
-          "p10": 160.05898548348912,
-          "p50": 185.56022064151853,
-          "p90": 218.64023506271337
+          "p10": 0.0,
+          "p50": 179.83696814577405,
+          "p90": 226.86672568549315
         }
       },
       "kpp_checks": {
@@ -133,20 +253,50 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.31508040215874,
-        "p50": 185.81751664987698,
-        "p90": 218.8897211363007
+        "p10": 162.59135943423806,
+        "p50": 188.45589923922614,
+        "p90": 221.99768877920962
       },
       "peak_cl_g_m2": {
-        "p10": 11.741549100875742,
-        "p50": 19.200775678573102,
-        "p90": 30.818848890082165
+        "p10": 10.104169720620245,
+        "p50": 18.87253141384769,
+        "p90": 34.43354412007673
       }
     },
     "three_grenade_group": {
       "label": "three_grenade_group",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "three_grenade_group",
+        "seed": 44,
+        "n_samples": 100000,
+        "n_grenades": 3,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:27.685418+00:00"
+      },
       "config": {
         "n_samples": 100000,
         "seed": 44,
@@ -158,14 +308,14 @@
         "humidity_rh_p50": 57.383585066509816
       },
       "kpp_02_build_up_s": {
-        "p10": 7.661826394805378,
-        "p50": 10.10520228011192,
-        "p90": 12.576524927092827
+        "p10": 7.662994952214817,
+        "p50": 10.119508560257572,
+        "p90": 12.582694417157409
       },
       "kpp_03_duration_effective_s": {
-        "p10": 160.02319943288856,
-        "p50": 185.53318481508148,
-        "p90": 218.69245153373174
+        "p10": 169.90252553933908,
+        "p50": 197.48607104852192,
+        "p90": 233.07984474033591
       },
       "kpp_04_screening_area_sqft": {
         "p10": 68.37552597033888,
@@ -173,27 +323,57 @@
         "p90": 86.051200866655
       },
       "transmittance": {
-        "VIS_p50": 1.6998940302185039e-72,
-        "NIR_p50": 1.0969572270237785e-58,
-        "MWIR_p50": 2.55554101629072e-49,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 2.2311665996060452e-51,
+        "NIR_p50": 1.2664265032583673e-38,
+        "MWIR_p50": 2.7215173547107483e-32,
+        "fraction_below_threshold": 0.82286
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 8.290810307127207e-21,
+        "t_mwir_p50": 5.285078101078692e-17,
+        "netd_floor_p50": 0.10003203203665809,
+        "lock_prob_obscured_fraction": 0.82286
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 652.1491361501778,
         "burn_rate_g_s_p50": 3.5099141867589525,
-        "cl_peak_p10": 13.170175056610963,
-        "cl_required_p90": 0.7064852968037153,
-        "time_to_threshold_p50_s": 0.19793448367840188,
-        "build_up_p50_s": 10.10520228011192
+        "cl_peak_p10": 8.342808038115033,
+        "cl_required_p90": 0.5332067544387056,
+        "time_to_threshold_p50_s": 0.3037463902459021,
+        "build_up_p50_s": 11.86420810155014,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.8401698538892098,
+        "friendly_blinded_fraction": 0.9888,
+        "threat_distance_p50_m": 2.875265461255289,
+        "radial_fraction_p50": 0.6624829460516419,
+        "los_cloud_fraction_p50": 0.8401698538892098,
+        "edge_of_plume_fraction": 0.3356,
+        "in_plume_core_fraction": 0.29982,
+        "cl_threat_p50": 9.23315645888674,
+        "cl_center_p50": 15.132024386106409,
+        "phase2_psd_diameter_um_p50": 2.8612262885649544,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0221507551995295,
+        "phase2_coagulation_factor_p50": 0.9824028768569013,
+        "phase2_wind_shear_dilution_p50": 0.8096217857870587,
+        "phase2_merge_factor_p50": 0.8874448385724009,
+        "phase2_buoyancy_rise_p50_m": 1.1788985701263963,
+        "phase2_washout_active_fraction": 0.01163,
+        "phase2_throw_range_p50_m": 21.483328279861194,
+        "phase2_fuze_delay_p50_s": 1.3459966684958955
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.82286,
+        "lock_break_ge_60s_fraction": 0.82286,
         "lock_break_duration_s": {
-          "p10": 160.02319943288856,
-          "p50": 185.53318481508148,
-          "p90": 218.69245153373174
+          "p10": 0.0,
+          "p50": 189.8943135338982,
+          "p90": 230.4109030585601
         }
       },
       "kpp_checks": {
@@ -203,14 +383,14 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.24769896062452,
-        "p50": 185.76071939102695,
-        "p90": 218.9266974698315
+        "p10": 162.52302125823985,
+        "p50": 188.3982955284249,
+        "p90": 222.03519013167497
       },
       "peak_cl_g_m2": {
-        "p10": 13.170175056610963,
-        "p50": 21.462586185319168,
-        "p90": 34.38312464595224
+        "p10": 8.342808038115033,
+        "p50": 15.132024386106409,
+        "p90": 26.91610557365777
       }
     }
   },
@@ -218,7 +398,37 @@
     "calm_0_5mph": {
       "label": "wind_calm_0_5mph",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "wind_calm_0_5mph",
+        "seed": 52,
+        "n_samples": 50000,
+        "n_grenades": 3,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:27.805782+00:00"
+      },
       "config": {
         "n_samples": 50000,
         "seed": 52,
@@ -230,14 +440,14 @@
         "humidity_rh_p50": 57.28127990129369
       },
       "kpp_02_build_up_s": {
-        "p10": 7.657430379085356,
-        "p50": 10.11762072113133,
-        "p90": 12.579497226235523
+        "p10": 7.6606544183456835,
+        "p50": 10.109239925848225,
+        "p90": 12.584518879056025
       },
       "kpp_03_duration_effective_s": {
-        "p10": 160.00146358723086,
-        "p50": 185.52708895520485,
-        "p90": 218.5974864197255
+        "p10": 169.9745203628276,
+        "p50": 197.61204881159026,
+        "p90": 233.128690694026
       },
       "kpp_04_screening_area_sqft": {
         "p10": 68.3625870772313,
@@ -245,27 +455,57 @@
         "p90": 85.97470201634965
       },
       "transmittance": {
-        "VIS_p50": 8.020265068611437e-88,
-        "NIR_p50": 5.370902901448476e-71,
-        "MWIR_p50": 6.337821071966774e-60,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 1.2610923500689203e-77,
+        "NIR_p50": 2.307513148834129e-58,
+        "MWIR_p50": 1.1435572957206195e-48,
+        "fraction_below_threshold": 0.99292
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 1.5862159941282387e-32,
+        "t_mwir_p50": 1.5250714684818623e-26,
+        "netd_floor_p50": 0.10001167493374946,
+        "lock_prob_obscured_fraction": 0.99292
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 652.067236437999,
         "burn_rate_g_s_p50": 3.510198564194865,
-        "cl_peak_p10": 16.559079180795287,
-        "cl_required_p90": 0.7040741734815786,
-        "time_to_threshold_p50_s": 0.16331533154902017,
-        "build_up_p50_s": 10.11762072113133
+        "cl_peak_p10": 12.595504623038428,
+        "cl_required_p90": 0.5315917525705296,
+        "time_to_threshold_p50_s": 0.22452602571024088,
+        "build_up_p50_s": 11.864112994134713,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.9052058112010748,
+        "friendly_blinded_fraction": 1.0,
+        "threat_distance_p50_m": 2.2538220393090347,
+        "radial_fraction_p50": 0.7765894744863234,
+        "los_cloud_fraction_p50": 0.9052058112010748,
+        "edge_of_plume_fraction": 0.12526,
+        "in_plume_core_fraction": 0.38208,
+        "cl_threat_p50": 14.726954120692248,
+        "cl_center_p50": 20.477322130731643,
+        "phase2_psd_diameter_um_p50": 2.8607994804780104,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0218438397038812,
+        "phase2_coagulation_factor_p50": 0.9794355563223419,
+        "phase2_wind_shear_dilution_p50": 0.9367612490975514,
+        "phase2_merge_factor_p50": 0.8872609048112873,
+        "phase2_buoyancy_rise_p50_m": 1.178796727813348,
+        "phase2_washout_active_fraction": 0.01054,
+        "phase2_throw_range_p50_m": 21.502351119083606,
+        "phase2_fuze_delay_p50_s": 1.3505514853556762
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.99292,
+        "lock_break_ge_60s_fraction": 0.99292,
         "lock_break_duration_s": {
-          "p10": 160.00146358723086,
-          "p50": 185.52708895520485,
-          "p90": 218.5974864197255
+          "p10": 169.39652490353916,
+          "p50": 197.3135812609658,
+          "p90": 233.02035533384952
         }
       },
       "kpp_checks": {
@@ -275,20 +515,50 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.19259893727528,
-        "p50": 185.70462955248632,
-        "p90": 218.79098027821064
+        "p10": 162.46713888161793,
+        "p50": 188.34140928244045,
+        "p90": 221.89754592110611
       },
       "peak_cl_g_m2": {
-        "p10": 16.559079180795287,
-        "p50": 25.969137216150088,
-        "p90": 39.90345380192726
+        "p10": 12.595504623038428,
+        "p50": 20.477322130731643,
+        "p90": 33.01990792868055
       }
     },
     "moderate_5_10mph": {
       "label": "wind_moderate_5_10mph",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "wind_moderate_5_10mph",
+        "seed": 52,
+        "n_samples": 50000,
+        "n_grenades": 3,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:27.904862+00:00"
+      },
       "config": {
         "n_samples": 50000,
         "seed": 52,
@@ -300,14 +570,14 @@
         "humidity_rh_p50": 57.28127990129369
       },
       "kpp_02_build_up_s": {
-        "p10": 7.657430379085356,
-        "p50": 10.11762072113133,
-        "p90": 12.579497226235523
+        "p10": 7.6606544183456835,
+        "p50": 10.109239925848225,
+        "p90": 12.584518879056025
       },
       "kpp_03_duration_effective_s": {
-        "p10": 159.96677565079503,
-        "p50": 185.49370801375602,
-        "p90": 218.56244764245716
+        "p10": 169.89963499946788,
+        "p50": 197.51079816277445,
+        "p90": 233.0323318261202
       },
       "kpp_04_screening_area_sqft": {
         "p10": 68.3625870772313,
@@ -315,27 +585,57 @@
         "p90": 85.97470201634965
       },
       "transmittance": {
-        "VIS_p50": 1.3309173834161662e-73,
-        "NIR_p50": 1.5430259547341736e-59,
-        "MWIR_p50": 3.198855195436599e-50,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 3.176904117667914e-52,
+        "NIR_p50": 2.9860423167390055e-39,
+        "MWIR_p50": 8.86688333948017e-33,
+        "fraction_below_threshold": 0.85232
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 4.062994875026069e-21,
+        "t_mwir_p50": 2.4124665595588048e-17,
+        "netd_floor_p50": 0.10001167493374946,
+        "lock_prob_obscured_fraction": 0.85232
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 652.067236437999,
         "burn_rate_g_s_p50": 3.510198564194865,
-        "cl_peak_p10": 13.838661724207574,
-        "cl_required_p90": 0.7040741734815786,
-        "time_to_threshold_p50_s": 0.19504092962975067,
-        "build_up_p50_s": 10.11762072113133
+        "cl_peak_p10": 9.523664002268863,
+        "cl_required_p90": 0.5315917525705296,
+        "time_to_threshold_p50_s": 0.29763770695243325,
+        "build_up_p50_s": 11.864112994134713,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.8607761525960056,
+        "friendly_blinded_fraction": 0.99896,
+        "threat_distance_p50_m": 2.69435331215828,
+        "radial_fraction_p50": 0.6958019727995318,
+        "los_cloud_fraction_p50": 0.8607761525960056,
+        "edge_of_plume_fraction": 0.33134,
+        "in_plume_core_fraction": 0.35046,
+        "cl_threat_p50": 9.387327259196315,
+        "cl_center_p50": 15.424374170407564,
+        "phase2_psd_diameter_um_p50": 2.8607994804780104,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0218438397038812,
+        "phase2_coagulation_factor_p50": 0.9820315692140423,
+        "phase2_wind_shear_dilution_p50": 0.8100945824308848,
+        "phase2_merge_factor_p50": 0.8872609048112873,
+        "phase2_buoyancy_rise_p50_m": 1.178796727813348,
+        "phase2_washout_active_fraction": 0.01054,
+        "phase2_throw_range_p50_m": 21.502351119083606,
+        "phase2_fuze_delay_p50_s": 1.3505514853556762
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.85232,
+        "lock_break_ge_60s_fraction": 0.85232,
         "lock_break_duration_s": {
-          "p10": 159.96677565079503,
-          "p50": 185.49370801375602,
-          "p90": 218.56244764245716
+          "p10": 0.0,
+          "p50": 191.31729405396715,
+          "p90": 230.6696933496107
         }
       },
       "kpp_checks": {
@@ -345,20 +645,50 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.19259893727528,
-        "p50": 185.70462955248632,
-        "p90": 218.79098027821064
+        "p10": 162.46713888161793,
+        "p50": 188.34140928244045,
+        "p90": 221.89754592110611
       },
       "peak_cl_g_m2": {
-        "p10": 13.838661724207574,
-        "p50": 21.75185806192964,
-        "p90": 33.467420195029966
+        "p10": 9.523664002268863,
+        "p50": 15.424374170407564,
+        "p90": 24.741809781119517
       }
     },
     "high_10_15mph": {
       "label": "wind_high_10_15mph",
       "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-      "model_version": "phase1_v3_cl_ramp",
+      "study_type": "literature_parameter_sensitivity",
+      "model_version": "phase2_v1_full_physics",
+      "traceability": {
+        "job_id": "wind_high_10_15mph",
+        "seed": 52,
+        "n_samples": 50000,
+        "n_grenades": 3,
+        "model_version": "phase2_v1_full_physics",
+        "params_file": "models/cloud_physics/params.yaml",
+        "params_sha256_16": "defae1d5d5d12bea",
+        "assumption_ids": [
+          "A-001",
+          "A-002",
+          "A-003",
+          "A-004",
+          "A-005",
+          "A-006",
+          "A-009",
+          "A-013",
+          "A-017",
+          "A-019",
+          "A-021",
+          "A-022",
+          "A-023",
+          "A-024",
+          "A-025",
+          "A-026",
+          "A-027"
+        ],
+        "generated_at": "2026-06-01T19:28:28.004151+00:00"
+      },
       "config": {
         "n_samples": 50000,
         "seed": 52,
@@ -370,14 +700,14 @@
         "humidity_rh_p50": 57.28127990129369
       },
       "kpp_02_build_up_s": {
-        "p10": 7.657430379085356,
-        "p50": 10.11762072113133,
-        "p90": 12.579497226235523
+        "p10": 7.6606544183456835,
+        "p50": 10.109239925848225,
+        "p90": 12.584518879056025
       },
       "kpp_03_duration_effective_s": {
-        "p10": 159.90471123648382,
-        "p50": 185.43239372060776,
-        "p90": 218.51351585366055
+        "p10": 169.77965025826987,
+        "p50": 197.3646027638093,
+        "p90": 232.8696774537598
       },
       "kpp_04_screening_area_sqft": {
         "p10": 68.3625870772313,
@@ -385,27 +715,57 @@
         "p90": 85.97470201634965
       },
       "transmittance": {
-        "VIS_p50": 1.8880210785990617e-59,
-        "NIR_p50": 4.567609000716542e-48,
-        "MWIR_p50": 1.5076322037477777e-40,
-        "fraction_below_threshold": 1.0
+        "VIS_p50": 7.197563558145822e-26,
+        "NIR_p50": 1.4977287716441117e-19,
+        "MWIR_p50": 2.4949669739390946e-16,
+        "fraction_below_threshold": 0.63244
+      },
+      "sensor_diagnostics": {
+        "vis_contrast_p50": 0.9999999999999998,
+        "nir_contrast_p50": 1.0,
+        "mwir_contrast_p50": 1.0,
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 8.753488816587352e-10,
+        "t_mwir_p50": 3.406612490666655e-08,
+        "netd_floor_p50": 0.10001167493374946,
+        "lock_prob_obscured_fraction": 0.63244
       },
       "physics_diagnostics": {
         "good_thickness_fraction": 1.0,
         "filler_mass_g_p50": 652.067236437999,
         "burn_rate_g_s_p50": 3.510198564194865,
-        "cl_peak_p10": 11.114094583982524,
-        "cl_required_p90": 0.7040741734815786,
-        "time_to_threshold_p50_s": 0.24207641683262926,
-        "build_up_p50_s": 10.11762072113133
+        "cl_peak_p10": 6.634860283705674,
+        "cl_required_p90": 0.5315917525705296,
+        "time_to_threshold_p50_s": 0.42289820200268735,
+        "build_up_p50_s": 11.864112994134713,
+        "physics_tier": "phase2",
+        "plume_coverage_p50": 0.5900939218463485,
+        "friendly_blinded_fraction": 0.96432,
+        "threat_distance_p50_m": 4.286430230496874,
+        "radial_fraction_p50": 0.40151723540333306,
+        "los_cloud_fraction_p50": 0.5900939218463485,
+        "edge_of_plume_fraction": 0.53924,
+        "in_plume_core_fraction": 0.17116,
+        "cl_threat_p50": 4.063737185079302,
+        "cl_center_p50": 10.8769298696226,
+        "phase2_psd_diameter_um_p50": 2.8607994804780104,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0218438397038812,
+        "phase2_coagulation_factor_p50": 0.9850489652787773,
+        "phase2_wind_shear_dilution_p50": 0.6834279157642181,
+        "phase2_merge_factor_p50": 0.8872609048112873,
+        "phase2_buoyancy_rise_p50_m": 1.178796727813348,
+        "phase2_washout_active_fraction": 0.01054,
+        "phase2_throw_range_p50_m": 21.502351119083606,
+        "phase2_fuze_delay_p50_s": 1.3505514853556762
       },
       "moe": {
-        "fused_eoir_degraded_fraction": 1.0,
-        "lock_break_ge_60s_fraction": 1.0,
+        "fused_eoir_degraded_fraction": 0.63244,
+        "lock_break_ge_60s_fraction": 0.63244,
         "lock_break_duration_s": {
-          "p10": 159.90471123648382,
-          "p50": 185.43239372060776,
-          "p90": 218.51351585366055
+          "p10": 0.0,
+          "p50": 177.848172850482,
+          "p90": 226.00359135487716
         }
       },
       "kpp_checks": {
@@ -415,14 +775,14 @@
         "moe_lock_break_p50_ge_60s": true
       },
       "raw_burn_duration_s": {
-        "p10": 160.19259893727528,
-        "p50": 185.70462955248632,
-        "p90": 218.79098027821064
+        "p10": 162.46713888161793,
+        "p50": 188.34140928244045,
+        "p90": 221.89754592110611
       },
       "peak_cl_g_m2": {
-        "p10": 11.114094583982524,
-        "p50": 17.526213661152077,
-        "p90": 27.033325798688406
+        "p10": 6.634860283705674,
+        "p50": 10.8769298696226,
+        "p90": 17.561913254140883
       }
     }
   }

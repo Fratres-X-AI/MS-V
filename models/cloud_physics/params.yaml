@@ -104,7 +104,8 @@ kpp:
   lock_break_p50_min_s: 60.0
 
 sim:
-  sensor_model: v4_band_integrated  # v3_scalar = legacy cloud_evolution mask
+  physics_tier: phase2  # v4 | phase1b | phase2 (full microphysics stack)
+  sensor_model: v6_probabilistic_lock  # v3_scalar | v4_band_integrated | v5_threat_hardened | v6_probabilistic_lock
   assumption_ids:
     - A-001
     - A-002
@@ -113,3 +114,105 @@ sim:
     - A-005
     - A-006
     - A-009
+    - A-013
+    - A-017
+    - A-019
+    - A-021
+    - A-022
+    - A-023
+    - A-024
+    - A-025
+    - A-026
+    - A-027
+
+# Phase 2 — full microphysics stack (see analysis/PHYSICS_IMPLEMENTATION_STATUS.md)
+phase1b:
+  throw_offset_m:
+    min: 0.0
+    max: 4.0
+  settling_velocity_m_s: 0.02
+  hc_grenade_fill_g: 539.0
+  hc_yield_factor:
+    min: 0.28
+    max: 0.48
+  hc_alpha_vis:
+    low: 6.0
+    high: 12.0
+  friendly_thermal_max_cl_g_m2: 5.5
+  # Edge-of-plume threat geometry (UAS LOS pierces plume cross-section)
+  threat_orbit_fraction:
+    min: 0.0
+    max: 1.05
+  wind_plume_shift_max_m: 5.0
+  plume_spread_factor: 3.2
+  plume_edge_exponent: 1.4
+  squad_radial_fraction:
+    min: 0.65
+    max: 1.05
+  hc_plume_width_factor: 1.35
+  hc_plume_edge_exponent: 1.6
+  edge_radius_fraction: 0.75
+  core_radius_fraction: 0.35
+
+# Phase 2 — microphysics, atmosphere, spectral, deployment, layered plumes
+phase2:
+  microphysics:
+    psd:
+      log_sigma: 0.45
+    particle_density_kg_m3: 1500.0
+    hygroscopic_ref_rh: 50.0
+    hygroscopic_growth_per_rh: 0.003
+    coagulation_ref_rh: 50.0
+    coagulation_rate: 0.0012
+  cloud_structure:
+    vertical_sigma_factor: 0.35
+    wind_shear_ref_mph: 15.0
+    wind_shear_coeff: 0.38
+    merge_radius_m: 4.0
+    buoyancy_rise_per_g_s: 0.35
+  atmosphere:
+    extinction_ref_rh: 50.0
+    extinction_boost_per_rh: 0.0018
+    washout:
+      washout_rh_threshold: 88.0
+      washout_probability_at_max_rh: 0.12
+      duration_factor_when_active: 0.72
+    stability:
+      unstable_dilution: 0.88
+      stable_trapping: 1.06
+  spectral:
+    mie_d_ref_um: 2.0
+    multiple_scatter_onset_cl: 8.0
+    multiple_scatter_max_boost: 0.18
+  burn_dynamics:
+    ignition_boost: 1.35
+    tail_reduction: 0.72
+    ignition_fraction: 0.08
+    tail_fraction: 0.15
+    ignition_delay_s: 0.4
+    post_burn_dissipate_boost: 0.35
+  deployment:
+    throw_range_m:
+      min: 18.0
+      max: 25.0
+    lateral_dispersion:
+      lateral_error_fraction: 0.12
+    fuze_delay_s:
+      min: 0.7
+      max: 2.0
+    posture_height_m:
+      min: 0.3
+      max: 1.4
+  diurnal:
+    reference_c: 20.0
+    contrast_scale_per_c: 0.004
+  model_form:
+    # Structural uncertainty — alternative ramp exponents sampled per draw
+    ramp_exponent:
+      min: 0.85
+      max: 1.15
+
+# Reproduce harness locks legacy v4 metrics
+reproduce:
+  physics_tier: v4
+  sensor_model: v4_band_integrated

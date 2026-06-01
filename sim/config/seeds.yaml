@@ -1,0 +1,121 @@
+# MS-V Monte Carlo Seed Manifest
+# MATURITY: Configuration Control — Sensitivity Study Complete (140M campaign)
+# All jobs use NumPy default_rng(seed) per sim/engine.py SimConfig.
+# Global base seed in models/cloud_physics/params.yaml monte_carlo.seed = 42
+
+campaign:
+  id: mega_suite_140M
+  model_version_baseline: phase1_v3_cl_ramp
+  model_version_current: phase1_v4_sensor
+  disclaimer: LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION
+
+global:
+  base_seed: 42
+  local_suite_seed: 42
+  reproduce_single_grenade_seed: 42
+  reproduce_three_grenade_seed: 44
+
+# Wind jobs: seeds 217/210/208 are authoritative from sim/config/seeds.yaml.
+# NOTE: The original 140M campaign used Python hash(label) for wind seeds (non-portable).
+# Re-runs with seeds.yaml produce deterministic wind-bin statistics; archived manifest
+# statistics remain valid for duration/KPP conclusions (wind not binding in v3).
+
+jobs:
+  # --- 10M baselines (employment) ---
+  - job_id: baseline_10M_g1_n10000000
+    label: baseline_10M_g1
+    seed: 43
+    n_samples: 10000000
+    n_grenades: 1
+    category: baseline_employment
+  - job_id: baseline_10M_g2_n10000000
+    label: baseline_10M_g2
+    seed: 44
+    n_samples: 10000000
+    n_grenades: 2
+    category: baseline_employment
+  - job_id: baseline_10M_g3_n10000000
+    label: baseline_10M_g3
+    seed: 45
+    n_samples: 10000000
+    n_grenades: 3
+    category: baseline_employment
+  - job_id: baseline_10M_single_g1_duration_n10000000
+    label: baseline_10M_single_g1_duration
+    seed: 51
+    n_samples: 10000000
+    n_grenades: 1
+    category: baseline_employment
+
+  # --- 10M wind bins (3 grenade) ---
+  - job_id: baseline_10M_wind_calm_g3_n10000000
+    label: baseline_10M_wind_calm_g3
+    seed: 217
+    n_samples: 10000000
+    n_grenades: 3
+    category: baseline_wind
+    wind_mph: [0, 5]
+  - job_id: baseline_10M_wind_moderate_g3_n10000000
+    label: baseline_10M_wind_moderate_g3
+    seed: 210
+    n_samples: 10000000
+    n_grenades: 3
+    category: baseline_wind
+    wind_mph: [5, 10]
+  - job_id: baseline_10M_wind_high_g3_n10000000
+    label: baseline_10M_wind_high_g3
+    seed: 208
+    n_samples: 10000000
+    n_grenades: 3
+    category: baseline_wind
+    wind_mph: [10, 15]
+
+  # --- 10M adversarial ---
+  - job_id: baseline_10M_adversarial_g3_n10000000
+    label: baseline_10M_adversarial_g3
+    seed: 999
+    n_samples: 10000000
+    n_grenades: 3
+    category: stress_adversarial
+
+  # --- 2M visual smoke sweep ---
+  - { job_id: sweep_vis_smoke_1.0_g3_n2000000, label: sweep_vis_smoke_1.0_g3, seed: 310, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.0 }
+  - { job_id: sweep_vis_smoke_1.1_g3_n2000000, label: sweep_vis_smoke_1.1_g3, seed: 311, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.1 }
+  - { job_id: sweep_vis_smoke_1.2_g3_n2000000, label: sweep_vis_smoke_1.2_g3, seed: 312, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.2 }
+  - { job_id: sweep_vis_smoke_1.3_g3_n2000000, label: sweep_vis_smoke_1.3_g3, seed: 313, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.3 }
+  - { job_id: sweep_vis_smoke_1.4_g3_n2000000, label: sweep_vis_smoke_1.4_g3, seed: 314, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.4 }
+  - { job_id: sweep_vis_smoke_1.5_g3_n2000000, label: sweep_vis_smoke_1.5_g3, seed: 315, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.5 }
+  - { job_id: sweep_vis_smoke_1.6_g3_n2000000, label: sweep_vis_smoke_1.6_g3, seed: 316, n_samples: 2000000, n_grenades: 3, category: sweep_visual_smoke, visual_smoke_factor: 1.6 }
+
+  # --- 2M yield sweep ---
+  - { job_id: sweep_yield_lo_0.18_g3_n2000000, label: sweep_yield_lo_0.18_g3, seed: 418, n_samples: 2000000, n_grenades: 3, category: sweep_yield, yield_min: 0.18 }
+  - { job_id: sweep_yield_lo_0.22_g3_n2000000, label: sweep_yield_lo_0.22_g3, seed: 422, n_samples: 2000000, n_grenades: 3, category: sweep_yield, yield_min: 0.22 }
+  - { job_id: sweep_yield_lo_0.26_g3_n2000000, label: sweep_yield_lo_0.26_g3, seed: 426, n_samples: 2000000, n_grenades: 3, category: sweep_yield, yield_min: 0.26 }
+  - { job_id: sweep_yield_lo_0.30_g3_n2000000, label: sweep_yield_lo_0.30_g3, seed: 430, n_samples: 2000000, n_grenades: 3, category: sweep_yield, yield_min: 0.30 }
+  - { job_id: sweep_yield_lo_0.34_g3_n2000000, label: sweep_yield_lo_0.34_g3, seed: 434, n_samples: 2000000, n_grenades: 3, category: sweep_yield, yield_min: 0.34 }
+
+  # --- 2M burn rate sweep ---
+  - { job_id: sweep_burn_hi_3.6_g3_n2000000, label: sweep_burn_hi_3.6_g3, seed: 536, n_samples: 2000000, n_grenades: 3, category: sweep_burn_rate, burn_max_g_s: 3.6 }
+  - { job_id: sweep_burn_hi_3.8_g3_n2000000, label: sweep_burn_hi_3.8_g3, seed: 538, n_samples: 2000000, n_grenades: 3, category: sweep_burn_rate, burn_max_g_s: 3.8 }
+  - { job_id: sweep_burn_hi_4.0_g3_n2000000, label: sweep_burn_hi_4.0_g3, seed: 540, n_samples: 2000000, n_grenades: 3, category: sweep_burn_rate, burn_max_g_s: 4.0 }
+  - { job_id: sweep_burn_hi_4.2_g3_n2000000, label: sweep_burn_hi_4.2_g3, seed: 542, n_samples: 2000000, n_grenades: 3, category: sweep_burn_rate, burn_max_g_s: 4.2 }
+  - { job_id: sweep_burn_hi_4.4_g3_n2000000, label: sweep_burn_hi_4.4_g3, seed: 544, n_samples: 2000000, n_grenades: 3, category: sweep_burn_rate, burn_max_g_s: 4.4 }
+
+  # --- 2M alpha sweep ---
+  - { job_id: sweep_alpha_tight_g3_n2000000, label: sweep_alpha_tight_g3, seed: 601, n_samples: 2000000, n_grenades: 3, category: sweep_alpha }
+  - { job_id: sweep_alpha_wide_g3_n2000000, label: sweep_alpha_wide_g3, seed: 602, n_samples: 2000000, n_grenades: 3, category: sweep_alpha }
+  - { job_id: sweep_alpha_pessimistic_g3_n2000000, label: sweep_alpha_pessimistic_g3, seed: 603, n_samples: 2000000, n_grenades: 3, category: sweep_alpha }
+
+  # --- 2M seed convergence ---
+  - { job_id: convergence_seed_42_g3_n2000000, label: convergence_seed_42_g3, seed: 42, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_137_g3_n2000000, label: convergence_seed_137_g3, seed: 137, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_271_g3_n2000000, label: convergence_seed_271_g3, seed: 271, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_999_g3_n2000000, label: convergence_seed_999_g3, seed: 999, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_2027_g3_n2000000, label: convergence_seed_2027_g3, seed: 2027, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_4099_g3_n2000000, label: convergence_seed_4099_g3, seed: 4099, n_samples: 2000000, n_grenades: 3, category: convergence }
+  - { job_id: convergence_seed_8191_g3_n2000000, label: convergence_seed_8191_g3, seed: 8191, n_samples: 2000000, n_grenades: 3, category: convergence }
+
+  # --- 2M temperature sweep ---
+  - { job_id: sweep_temp_cold_g3_n2000000, label: sweep_temp_cold_g3, seed: 680, n_samples: 2000000, n_grenades: 3, category: sweep_temperature, temp_c: [-20, 0] }
+  - { job_id: sweep_temp_nominal_g3_n2000000, label: sweep_temp_nominal_g3, seed: 705, n_samples: 2000000, n_grenades: 3, category: sweep_temperature, temp_c: [5, 35] }
+  - { job_id: sweep_temp_hot_g3_n2000000, label: sweep_temp_hot_g3, seed: 735, n_samples: 2000000, n_grenades: 3, category: sweep_temperature, temp_c: [35, 50] }

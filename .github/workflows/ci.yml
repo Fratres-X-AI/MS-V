@@ -18,7 +18,13 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install -r requirements-lock.txt
+        run: pip install -r requirements-lock.txt ruff pytest
+
+      - name: Lint (ruff)
+        run: ruff check sim models analysis tests
+
+      - name: Unit tests
+        run: pytest tests/ -q
 
       - name: Reproducibility harness
         run: python -m sim.reproduce
@@ -30,7 +36,13 @@ jobs:
         run: python sim/validate_stress.py
 
       - name: Quick mega-suite smoke (38 jobs)
-        run: python sim/run_mega_suite.py --quick --workers 2
+        run: python sim/run_mega_suite.py --quick --workers 2 --out analysis/results/mega_suite_quick
 
-      - name: Tail-risk analysis report
-        run: python analysis/analyze_tail_risk.py
+      - name: Sobol global sensitivity (quick)
+        run: python sim/run_sobol.py --quick --workers 2
+
+      - name: Sobol report
+        run: python analysis/summarize_sobol.py
+
+      - name: Verification matrix (from committed 140M manifest)
+        run: python analysis/generate_verification_matrix.py

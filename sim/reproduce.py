@@ -58,7 +58,7 @@ def _extract_metrics(result: dict) -> dict[str, float]:
 
 
 def run_baseline_jobs() -> dict[str, dict]:
-    params = load_params(ROOT)
+    params = load_params(ROOT, profile="reproduce")
     local_n = params["profiles"]["local"]["n_samples"]
     seed = params["monte_carlo"]["seed"]
     jobs = {

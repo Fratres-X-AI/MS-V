@@ -3,8 +3,17 @@ __pycache__/
 .venv/
 venv/
 .env
+msv_sync.tar
+analysis/one_pass.log
+
+# Quick mega smoke outputs — manifest + summary only
+analysis/results/mega_suite_quick/*_n25000.json
+!analysis/results/mega_suite_quick/manifest.json
+!analysis/results/mega_suite_quick/summary.csv
 
 # Large MC raw outputs — keep manifest + summary only (see analysis/RESULTS_DATA_POLICY.md)
+analysis/results/sobol/param_values.npy
+analysis/results/sobol/*.npy
 analysis/results/mega_suite/*_n10000000.json
 analysis/results/mega_suite/*_n2000000.json
 analysis/results/mega_suite/*_n50000.json
@@ -12,7 +21,8 @@ analysis/results/mega_suite/*_n25000.json
 analysis/results/runpod/**/*.json
 analysis/results/runpod_v2/**/*.json
 analysis/results/runpod_v3/**/*.json
-!analysis/results/mega_suite/manifest.json
+!analysis/results/sobol/sobol_results.json
+!analysis/results/sobol/sobol_rankings.json
 !analysis/results/mega_suite/summary.csv
 !analysis/results/runpod/manifest.json
 !analysis/results/runpod_v2/manifest.json

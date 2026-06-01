@@ -1,0 +1,302 @@
+{
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "model_version": "phase2_v1_full_physics",
+  "n_samples_per_case": 50000,
+  "use_cases": [
+    {
+      "use_case_id": "casualty_recovery",
+      "use_case_name": "Casualty Recovery",
+      "doc_ref": "docs/04 UC1",
+      "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+      "model_version": "phase2_v1_full_physics",
+      "physics_tier": "phase2",
+      "config": {
+        "n_samples": 50000,
+        "seed": 4242,
+        "n_ms_v": 2,
+        "n_hc": 1
+      },
+      "window_s": [
+        15,
+        120
+      ],
+      "moe": {
+        "lock_met_fraction": 0.19696,
+        "obscured_fraction": 0.64582,
+        "friendly_blinded_fraction": 0.64168,
+        "coverage_p50": 0.6442516613601341,
+        "threat_distance_p50_m": 2.7642849043686093,
+        "radial_fraction_p50": 0.44090946668860065,
+        "edge_of_plume_fraction": 0.50884,
+        "in_plume_core_fraction": 0.2059,
+        "effective_lock_p10": 105.0,
+        "effective_lock_p50": 105.0,
+        "build_up_p90": 14.34433126322804
+      },
+      "kpp_in_window": {
+        "build_up_before_window": true,
+        "lock_met_majority": false
+      },
+      "sensor_diagnostics": {
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 4.461199551789808e-16,
+        "t_mwir_p50": 3.7346389443366834e-13,
+        "netd_floor_p50": 0.10001366317469165,
+        "lock_prob_obscured_fraction": 0.64582
+      },
+      "physics_diagnostics": {
+        "cl_center_p50": 18.895921935588376,
+        "cl_threat_p50": 7.7330527983948585,
+        "cl_threat_mid_window_p50": 7.0585691229537275,
+        "cl_mid_window_p50": 17.178861483817144,
+        "duration_p10": 169.81956671158665,
+        "phase2_psd_diameter_um_p50": 2.8501768246764776,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0223523007418835,
+        "phase2_coagulation_factor_p50": 0.983946769824023,
+        "phase2_wind_shear_dilution_p50": 0.81078682556725,
+        "phase2_merge_factor_p50": 0.6198582806920636,
+        "phase2_buoyancy_rise_p50_m": 1.177876534356779,
+        "phase2_washout_active_fraction": 0.01134,
+        "phase2_throw_range_p50_m": 21.510462281772703,
+        "phase2_fuze_delay_p50_s": 1.3481226637697659
+      }
+    },
+    {
+      "use_case_id": "break_contact",
+      "use_case_name": "Break Contact / Exfil",
+      "doc_ref": "docs/04 UC2",
+      "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+      "model_version": "phase2_v1_full_physics",
+      "physics_tier": "phase2",
+      "config": {
+        "n_samples": 50000,
+        "seed": 4243,
+        "n_ms_v": 3,
+        "n_hc": 2
+      },
+      "window_s": [
+        15,
+        120
+      ],
+      "moe": {
+        "lock_met_fraction": 0.38858,
+        "obscured_fraction": 0.82336,
+        "friendly_blinded_fraction": 0.48692,
+        "coverage_p50": 0.8424721594901372,
+        "threat_distance_p50_m": 2.8612180771595384,
+        "radial_fraction_p50": 0.6660857111519607,
+        "edge_of_plume_fraction": 0.33058,
+        "in_plume_core_fraction": 0.30038,
+        "effective_lock_p10": 105.0,
+        "effective_lock_p50": 105.0,
+        "build_up_p90": 14.32509584430217
+      },
+      "kpp_in_window": {
+        "build_up_before_window": true,
+        "lock_met_majority": false
+      },
+      "sensor_diagnostics": {
+        "t_vis_p50": 1.1481536214968864e-18,
+        "t_nir_p50": 3.966053734919574e-19,
+        "t_mwir_p50": 1.1006773402060608e-15,
+        "netd_floor_p50": 0.10010249792842027,
+        "lock_prob_obscured_fraction": 0.82336
+      },
+      "physics_diagnostics": {
+        "cl_center_p50": 15.082619328058152,
+        "cl_threat_p50": 9.299437665952786,
+        "cl_threat_mid_window_p50": 8.468295082133636,
+        "cl_mid_window_p50": 13.719150968637805,
+        "duration_p10": 169.95276882161104,
+        "phase2_psd_diameter_um_p50": 2.863288152918132,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.022709178726715,
+        "phase2_coagulation_factor_p50": 0.9820492092135056,
+        "phase2_wind_shear_dilution_p50": 0.8109939384289377,
+        "phase2_merge_factor_p50": 0.8876223112475662,
+        "phase2_buoyancy_rise_p50_m": 1.1771357775991105,
+        "phase2_washout_active_fraction": 0.01218,
+        "phase2_throw_range_p50_m": 21.508436986449084,
+        "phase2_fuze_delay_p50_s": 1.3494744375569738
+      }
+    },
+    {
+      "use_case_id": "mask_infil",
+      "use_case_name": "Mask Infil / Approach",
+      "doc_ref": "docs/04 UC3",
+      "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+      "model_version": "phase2_v1_full_physics",
+      "physics_tier": "phase2",
+      "config": {
+        "n_samples": 50000,
+        "seed": 4244,
+        "n_ms_v": 2,
+        "n_hc": 1
+      },
+      "window_s": [
+        15,
+        90
+      ],
+      "moe": {
+        "lock_met_fraction": 0.19514,
+        "obscured_fraction": 0.6517,
+        "friendly_blinded_fraction": 0.64376,
+        "coverage_p50": 0.6506323573681241,
+        "threat_distance_p50_m": 2.743342972462867,
+        "radial_fraction_p50": 0.4460391503614831,
+        "edge_of_plume_fraction": 0.50562,
+        "in_plume_core_fraction": 0.20828,
+        "effective_lock_p10": 75.0,
+        "effective_lock_p50": 75.0,
+        "build_up_p90": 14.32061054505563
+      },
+      "kpp_in_window": {
+        "build_up_before_window": true,
+        "lock_met_majority": false
+      },
+      "sensor_diagnostics": {
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 1.2297294078988886e-16,
+        "t_mwir_p50": 1.228760256085261e-13,
+        "netd_floor_p50": 0.10011209298002141,
+        "lock_prob_obscured_fraction": 0.6517
+      },
+      "physics_diagnostics": {
+        "cl_center_p50": 18.92708979711208,
+        "cl_threat_p50": 7.795811004123472,
+        "cl_threat_mid_window_p50": 7.277441660944321,
+        "cl_mid_window_p50": 17.63253019815557,
+        "duration_p10": 169.7952162836962,
+        "phase2_psd_diameter_um_p50": 2.8823818375783166,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0227071789232152,
+        "phase2_coagulation_factor_p50": 0.9836058647925076,
+        "phase2_wind_shear_dilution_p50": 0.8089209346356696,
+        "phase2_merge_factor_p50": 0.6188763638773309,
+        "phase2_buoyancy_rise_p50_m": 1.1794726611414523,
+        "phase2_washout_active_fraction": 0.01206,
+        "phase2_throw_range_p50_m": 21.521922927049538,
+        "phase2_fuze_delay_p50_s": 1.3507113679079348
+      }
+    },
+    {
+      "use_case_id": "bounding_overwatch",
+      "use_case_name": "Bounding Overwatch",
+      "doc_ref": "docs/04 UC4",
+      "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+      "model_version": "phase2_v1_full_physics",
+      "physics_tier": "phase2",
+      "config": {
+        "n_samples": 50000,
+        "seed": 4245,
+        "n_ms_v": 2,
+        "n_hc": 1
+      },
+      "window_s": [
+        15,
+        60
+      ],
+      "moe": {
+        "lock_met_fraction": 0.2001,
+        "obscured_fraction": 0.65226,
+        "friendly_blinded_fraction": 0.63974,
+        "coverage_p50": 0.6450778971588571,
+        "threat_distance_p50_m": 2.7741165798991574,
+        "radial_fraction_p50": 0.44156753248430886,
+        "edge_of_plume_fraction": 0.509,
+        "in_plume_core_fraction": 0.20718,
+        "effective_lock_p10": 45.0,
+        "effective_lock_p50": 45.0,
+        "build_up_p90": 14.327281288863228
+      },
+      "kpp_in_window": {
+        "build_up_before_window": true,
+        "lock_met_majority": false
+      },
+      "sensor_diagnostics": {
+        "t_vis_p50": 2.511886431509577e-16,
+        "t_nir_p50": 1.0028704010173678e-16,
+        "t_mwir_p50": 1.0182368001043233e-13,
+        "netd_floor_p50": 0.10010949988109469,
+        "lock_prob_obscured_fraction": 0.65226
+      },
+      "physics_diagnostics": {
+        "cl_center_p50": 18.843496733612554,
+        "cl_threat_p50": 7.650846572062662,
+        "cl_threat_mid_window_p50": 7.336309601379897,
+        "cl_mid_window_p50": 18.021475210484795,
+        "duration_p10": 169.67860564335854,
+        "phase2_psd_diameter_um_p50": 2.84867241713531,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0228106509168937,
+        "phase2_coagulation_factor_p50": 0.9835322003918889,
+        "phase2_wind_shear_dilution_p50": 0.8101479754666203,
+        "phase2_merge_factor_p50": 0.6208553516174926,
+        "phase2_buoyancy_rise_p50_m": 1.1791701821978178,
+        "phase2_washout_active_fraction": 0.01142,
+        "phase2_throw_range_p50_m": 21.469874671309785,
+        "phase2_fuze_delay_p50_s": 1.3499578387400875
+      }
+    },
+    {
+      "use_case_id": "hasty_defense",
+      "use_case_name": "Hasty Defense",
+      "doc_ref": "docs/04 UC5",
+      "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+      "model_version": "phase2_v1_full_physics",
+      "physics_tier": "phase2",
+      "config": {
+        "n_samples": 50000,
+        "seed": 4246,
+        "n_ms_v": 2,
+        "n_hc": 2
+      },
+      "window_s": [
+        12,
+        120
+      ],
+      "moe": {
+        "lock_met_fraction": 0.62872,
+        "obscured_fraction": 0.6471,
+        "friendly_blinded_fraction": 0.63824,
+        "coverage_p50": 0.64112430536621,
+        "threat_distance_p50_m": 2.7790727894888336,
+        "radial_fraction_p50": 0.4384351033475191,
+        "edge_of_plume_fraction": 0.51022,
+        "in_plume_core_fraction": 0.20626,
+        "effective_lock_p10": 105.67537993029089,
+        "effective_lock_p50": 108.0,
+        "build_up_p90": 14.324620069709109
+      },
+      "kpp_in_window": {
+        "build_up_before_window": true,
+        "lock_met_majority": true
+      },
+      "sensor_diagnostics": {
+        "t_vis_p50": 1.1481536214968864e-18,
+        "t_nir_p50": 7.28302530983645e-16,
+        "t_mwir_p50": 4.312254700500837e-13,
+        "netd_floor_p50": 0.09997051877252872,
+        "lock_prob_obscured_fraction": 0.6471
+      },
+      "physics_diagnostics": {
+        "cl_center_p50": 18.793189467633596,
+        "cl_threat_p50": 7.586914075291401,
+        "cl_threat_mid_window_p50": 6.950262310431862,
+        "cl_mid_window_p50": 17.126457043776067,
+        "duration_p10": 169.77416728742605,
+        "phase2_psd_diameter_um_p50": 2.849627031188102,
+        "phase2_settling_velocity_p50_m_s": 0.005,
+        "phase2_hygroscopic_growth_p50": 1.0219736024046449,
+        "phase2_coagulation_factor_p50": 0.9842706643794548,
+        "phase2_wind_shear_dilution_p50": 0.8084919519013427,
+        "phase2_merge_factor_p50": 0.6212716069968709,
+        "phase2_buoyancy_rise_p50_m": 1.1781950617287211,
+        "phase2_washout_active_fraction": 0.01086,
+        "phase2_throw_range_p50_m": 21.488806437020585,
+        "phase2_fuze_delay_p50_s": 1.346015414499698
+      }
+    }
+  ]
+}

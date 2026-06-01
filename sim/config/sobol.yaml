@@ -1,0 +1,17 @@
+# MS-V Sobol global sensitivity configuration
+campaign:
+  id: sobol_phase1_3grenade
+  disclaimer: LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION
+
+settings:
+  n_base: 8192          # Saltelli N — 8192 * 26 = 212,992 evaluations
+  n_base_quick: 256     # CI smoke
+  seed: 4242
+  n_grenades: 3
+  calc_second_order: true
+  outputs:
+    - duration_s
+    - build_up_s
+    - lock_break_s
+    - moe_met
+    - cl_peak

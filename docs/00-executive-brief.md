@@ -91,6 +91,14 @@ MS-V is the **multispectral obscuration layer** at squad level. Vehicle systems 
 
 ## Status
 
-Conceptual design package (v2). Proposed KPPs — not fielded requirements. Full documentation in [README](../README.md).
+**TRL 2** — literature-parameter sensitivity study complete (140M samples, 38 jobs, Saltelli Sobol). **NOT field validation.**
 
-**Repository:** https://github.com/Fratres-X-AI/MS-V · **Master plan:** [MasterPlan.md](../MasterPlan.md)
+| Finding | Evidence |
+|---------|----------|
+| Duration KPP (p10 ≥ 120 s) | +33% margin nominal; +27% worst burn sweep |
+| Dominant variance driver | Burn rate (Sobol ST ≈ 0.83) → TRL 3 burn cup first |
+| MoE lock-break | 100% in model — **surrogate saturates; not confirmed** |
+
+**Limitations upfront:** No MS-V fill empirical data. MoE pass is non-discriminative until UAS instrumented test.
+
+**Repository:** https://github.com/Fratres-X-AI/MS-V · **Audit trail:** [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) · **Master plan:** [MasterPlan.md](../MasterPlan.md)

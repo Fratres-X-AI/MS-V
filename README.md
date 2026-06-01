@@ -4,7 +4,7 @@ Hand-thrown. Pin-pull. Squad-layer **drone manipulation** — not another smoke 
 
 MS-V generates a dense **visual + infrared** cloud to break UAS observation when detection, EW, and kinetic layers are degraded, jammed, or saturated. Carried **in addition to** standard signal smoke. Employed as **2–3 MS-V + visual smoke** against FPV and fiber-optic guided drones.
 
-> **Conceptual design — TRL 2.** Proposed targets, not fielded requirements.  
+> **Conceptual design — TRL 2.** Literature-parameter sensitivity study complete (140M samples). **NOT validation.**  
 > **Master plan:** [**MasterPlan.md**](MasterPlan.md) · **One-pager:** [Executive Brief](docs/00-executive-brief.md)
 
 **Repository:** https://github.com/Fratres-X-AI/MS-V
@@ -15,18 +15,21 @@ MS-V generates a dense **visual + infrared** cloud to break UAS observation when
 
 | | |
 |--|--|
-| **Maturity** | TRL 2 + local M&S (100k samples) |
-| **Today** | RunPod scale — see [RUNPOD.md](RUNPOD.md) |
+| **Maturity** | TRL 2 — Sensitivity Study Complete (38 jobs, 140M samples) |
+| **Evidence** | [`analysis/MEGA_SUITE_REPORT.md`](analysis/MEGA_SUITE_REPORT.md) · [`rtm/verification_matrix.md`](rtm/verification_matrix.md) |
+| **Reproduce** | `bash one_pass.sh` or `make one-pass` (RunPod/local) |
 
 ## Quick Start
 
 ```bash
-pip install -r requirements.txt
-python sim/run_suite_local.py      # 100k local suite
-python analysis/summarize_results.py
+pip install -r requirements-lock.txt
+python -m sim.reproduce              # golden checksum gate
+python sim/run_suite_local.py        # 100k local suite
+python sim/run_mega_suite.py --quick # CI-scale mega smoke test
+python analysis/generate_verification_matrix.py
 ```
 
-Results: [`analysis/RESULTS_SUMMARY.md`](analysis/RESULTS_SUMMARY.md) · Gap analysis: [`analysis/kpp_gap_analysis.md`](analysis/kpp_gap_analysis.md)
+Full campaign: see [RUNPOD.md](RUNPOD.md) · Seeds: [`sim/config/seeds.yaml`](sim/config/seeds.yaml)
 
 ## Why MS-V
 
@@ -51,39 +54,37 @@ Results: [`analysis/RESULTS_SUMMARY.md`](analysis/RESULTS_SUMMARY.md) · Gap ana
 
 | Path | Purpose |
 |------|---------|
-| [**MasterPlan.md**](MasterPlan.md) | Phased plan, TRL honesty, local completion status |
-| [**RUNPOD.md**](RUNPOD.md) | Scale-up instructions when pod is rented |
+| [**MasterPlan.md**](MasterPlan.md) | Phased plan, TRL 3 path, governance |
+| [**RUNPOD.md**](RUNPOD.md) | Scale-up + one-step `run_all.sh` |
+| [**rtm/verification_matrix.md**](rtm/verification_matrix.md) | KPP/MoE ↔ 38 job IDs with margins |
+| [**rtm/assumption_register.md**](rtm/assumption_register.md) | Literature bounds + OAT sensitivity |
 | [docs/](docs/) | Concept docs 00–08 |
 | [annexes/](annexes/) | Engineering annexes A–E |
-| [rtm/](rtm/) | Requirements traceability, decisions, assumptions |
-| [models/](models/) | Cloud physics, sensors, system params |
-| [sim/](sim/) | Monte Carlo runners |
-| [analysis/](analysis/) | Results, risk, cost (Phase 4) |
-| [proposals/](proposals/) | SRD, TEMP, SBIR/CSO (Phase 5) |
-| [data/](data/baseline_grenades.json) | Baseline specs JSON |
+| [models/](models/) | Cloud physics, sensors, validation |
+| [sim/](sim/) | Monte Carlo runners, seed manifest |
+| [**analysis/CONOPS_REPORT.md**](analysis/CONOPS_REPORT.md) | Five use cases — Phase 1B windows + hardened MoE |
+| [proposals/](proposals/) | SRD, TEMP outline |
 
 ---
 
-## Quick Start (Phase 1)
+## Reviewer Audit Trail (2-minute lookup)
 
-```bash
-pip install -r requirements.txt
-python sim/run_monte_carlo.py
-```
+| Step | Artifact | Command |
+|------|----------|---------|
+| 1 | Requirement → job → margin | `rtm/verification_matrix.md` |
+| 2 | Assumption → Sobol rank → TRL 3 test | `rtm/assumption_register.md` |
+| 3 | Global sensitivity (Saltelli) | `analysis/SOBOL_SENSITIVITY_REPORT.md` |
+| 4 | Reproduce statistics | `make reproduce` or `python -m sim.reproduce` |
+| 5 | Known MoE gap | A-013 in assumption register |
 
-Output: `analysis/results/monte_carlo_baseline.json` (literature-parameter sensitivity — not validation).
+**Dominant finding:** Sobol ST ≈ 0.83 on `burn_rate_g_s` for KPP-03 duration — TRL 3 must prioritize burn cup testing.
 
 ---
 
 ## Layered Defense
 
 ```
-Detect → EW → MS-V + Signal Smoke → Kinetic
+Detect → EW → MS-V + smoke → kinetic window
 ```
 
----
-
-## Sources
-
-[TM 43-0001-29](https://www.militarynewbie.com/wp-content/uploads/2013/11/TM-43-0001-29-Army-Ammunition-Data-Sheets-for-Grenades.pdf) · [FM 3-50 Ch. 7](https://www.globalsecurity.org/military/library/policy/army/fm/3-50/Ch7.htm) · [ECBC bispectral grenade (2014)](https://www.army.mil/article/116366/ecbc_develops_the_u_s_armys_first_bispectral_obscurants_grenade)
-
+See [CONOPS](docs/04-conops-use-cases.md) · [Limitations](docs/07-limitations-and-risks.md)

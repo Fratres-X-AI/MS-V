@@ -1,0 +1,51 @@
+# CONOPS use cases — docs/04-conops-use-cases.md
+use_cases:
+  - id: casualty_recovery
+    name: Casualty Recovery
+    n_ms_v: 2
+    n_hc: 1
+    window_start_s: 15
+    window_end_s: 120
+    min_lock_s: 60
+    movement_required_s: 45
+    doc_ref: docs/04 UC1
+
+  - id: break_contact
+    name: Break Contact / Exfil
+    n_ms_v: 3
+    n_hc: 2
+    window_start_s: 15
+    window_end_s: 120
+    min_lock_s: 60
+    movement_required_s: 90
+    doc_ref: docs/04 UC2
+
+  - id: mask_infil
+    name: Mask Infil / Approach
+    n_ms_v: 2
+    n_hc: 1
+    window_start_s: 15
+    window_end_s: 90
+    min_lock_s: 45
+    movement_required_s: 60
+    doc_ref: docs/04 UC3
+
+  - id: bounding_overwatch
+    name: Bounding Overwatch
+    n_ms_v: 2
+    n_hc: 1
+    window_start_s: 15
+    window_end_s: 60
+    min_lock_s: 30
+    movement_required_s: 30
+    doc_ref: docs/04 UC4
+
+  - id: hasty_defense
+    name: Hasty Defense
+    n_ms_v: 2
+    n_hc: 2
+    window_start_s: 12
+    window_end_s: 120
+    min_lock_s: 60
+    movement_required_s: 0
+    doc_ref: docs/04 UC5

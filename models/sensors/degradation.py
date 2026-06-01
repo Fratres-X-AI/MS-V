@@ -12,8 +12,6 @@ from typing import Any
 import numpy as np
 import yaml
 
-from models.cloud_physics.extinction import transmittance
-
 
 def load_sensor_params(root: Path | None = None) -> dict[str, Any]:
     root = root or Path(__file__).resolve().parents[2]

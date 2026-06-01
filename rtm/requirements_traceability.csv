@@ -1,20 +1,18 @@
-req_id,type,description,source_doc,verification_method,status,sim_ref
-KPP-01,KPP,Weight ~850 g,annexes/B-kpp-targets.md,Mass measurement,UNVERIFIED,
-KPP-02,KPP,Build-up <=15 s,annexes/B-kpp-targets.md,Sim kpp_02_build_up_s,IN_PROGRESS,analysis/results/*.json
-KPP-03,KPP,Duration >=120 s,annexes/B-kpp-targets.md,Sim kpp_03_duration_effective_s,IN_PROGRESS,analysis/results/*.json
-KPP-04,KPP,Screening 30-40 sq ft,annexes/B-kpp-targets.md,Sim kpp_04_screening_area_sqft,IN_PROGRESS,analysis/results/*.json
-KPP-05,KPP,Group 2-3 grenades,annexes/B-kpp-targets.md,Employment scenarios,IN_PROGRESS,two/three_grenade_group.json
-KPP-06,KPP,VIS+NIR+MWIR,annexes/B-kpp-targets.md,Transmittance bands,IN_PROGRESS,sim/engine.py
-KPP-07,KPP,Fuze M201A1 compatible,docs/03-design-constraints.md,Engineering review,UNVERIFIED,
-KPP-08,KPP,Throw >=20 m,docs/03-design-constraints.md,Human factors test,UNVERIFIED,
-KPP-09,KPP,Temp -20 to +50 C,annexes/B-kpp-targets.md,Environmental sim,PLANNED,Phase 1 ext
-KPP-10,KPP,Wind <=15 mph,annexes/B-kpp-targets.md,Wind sensitivity sim,IN_PROGRESS,wind_sensitivity.json
-KPP-11,KPP,Respiratory irritation acceptable,docs/03-design-constraints.md,Toxicology study,UNVERIFIED,
-KPP-12,KPP,Cost $75-150,docs/03-design-constraints.md,Cost model,PLANNED,analysis/cost_model/
-MOE-01,MoE,Degrade FPV/fiber-optic 2-3 MS-V+smoke,docs/02-operational-requirements.md,Combined employment sim,IN_PROGRESS,moe.lock_break_ge_60s
-MOE-02,MoE,CASEVAC/break contact window,docs/04-conops-use-cases.md,CONOPS sim,PLANNED,sim/conops/
-LIM-01,Limitation,Not standalone,docs/07-limitations-and-risks.md,Doctrine,ACCEPTED,
-LIM-02,Limitation,Not RF defeat,docs/07-limitations-and-risks.md,Architecture,ACCEPTED,
-LIM-03,Limitation,TRL 2-3 internal ceiling,MasterPlan.md,Program review,ACCEPTED,
-ASM-001,Assumption,Yield factor 0.22-0.52,rtm/assumption_register.md,Literature,UNVALIDATED,params.yaml
-ASM-002,Assumption,Visual smoke factor 1.3,rtm/assumption_register.md,Placeholder,UNVALIDATED,params.yaml
+req_id,type,description,source_doc,criterion,pass_fail_rule,primary_job_id,primary_seed,n_samples,model_version,evidence_file,verification_status,notes
+KPP-01,KPP,Weight ~850 g,annexes/B-kpp-targets.md,850 g design mass,Mass measurement,N/A,N/A,0,N/A,data/baseline_grenades.json,UNVERIFIED,Not in MC — Phase 2 prototype
+KPP-02,KPP,Build-up <=15 s,annexes/B-kpp-targets.md,p90 <= 15 s,p90(build_up) <= 15,baseline_10M_g3_n10000000,45,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,+16.1% headroom (p90=12.58s)
+KPP-03,KPP,Duration >=120 s,annexes/B-kpp-targets.md,p10 >= 120 s at good thickness,p10(duration) >= 120,baseline_10M_g3_n10000000,45,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,+33.3% margin p10=160s; tightest sweep_burn_hi_4.4 +27.0%
+KPP-04,KPP,Screening 30-40 sq ft,annexes/B-kpp-targets.md,p10 >= 30 sq ft single grenade,p10(area) >= 30,baseline_10M_g1_n10000000,43,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,+3.4% at p10 single grenade
+KPP-05,KPP,Group 2-3 grenades,annexes/B-kpp-targets.md,2-3 MS-V employment,n_grenades in {2,3},baseline_10M_g2_n10000000; baseline_10M_g3_n10000000,44;45,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,Employment doctrine
+KPP-06,KPP,VIS+NIR+MWIR,annexes/B-kpp-targets.md,Tri-band attenuation,T bands below threshold,baseline_10M_g3_n10000000,45,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SURROGATE_SATURATED,100% pass non-discriminative — TRL 3 spectrometry required
+KPP-07,KPP,Fuze M201A1,docs/03-design-constraints.md,M201A1 compatible,Engineering review,N/A,N/A,0,N/A,N/A,UNVERIFIED,Not in MC
+KPP-08,KPP,Throw >=20 m,docs/03-design-constraints.md,>=20 m stressed throw,Range test,N/A,N/A,0,N/A,N/A,UNVERIFIED,Phase 2 HF
+KPP-09,KPP,Temp -20 to +50 C,annexes/B-kpp-targets.md,Operate across military temp,sweep_temp_* jobs,sweep_temp_cold_g3_n2000000; sweep_temp_hot_g3_n2000000,680;735,2000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,Hot bin tightest duration margin
+KPP-10,KPP,Wind <=15 mph,annexes/B-kpp-targets.md,Wind tolerance,baseline_10M_wind_*_g3,baseline_10M_wind_high_g3_n10000000,208,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SENSITIVITY_PASS,Duration not wind-bound in v3
+KPP-11,KPP,Respiratory acceptable,docs/03-design-constraints.md,Non-lethal irritation,Toxicology,N/A,N/A,0,N/A,N/A,UNVERIFIED,Phase 4 safety
+KPP-12,KPP,Cost $75-150,annexes/B-kpp-targets.md,Unit cost target,Cost model,N/A,N/A,0,N/A,N/A,PLANNED,Phase 4
+MOE-01,MoE,Fused EO/IR lock >=60 s,docs/02-operational-requirements.md,lock_break >= 60 s with 2-3 MS-V+smoke,mean(lock_break>=60) target,baseline_10M_g3_n10000000,45,10000000,phase1_v3_cl_ramp,analysis/results/mega_suite/manifest.json,SURROGATE_SATURATED,100% all 38 jobs — A-013 limits claim
+MOE-02,MoE,CASEVAC window,docs/04-conops-use-cases.md,T+15-135 s movement,CONOPS timeline,PLANNED,PLANNED,0,N/A,sim/conops/,NOT_RUN,Phase 3 after 1B freeze
+LIM-01,Limitation,Not standalone,docs/07-limitations-and-risks.md,Requires visual smoke,Doctrine,ACCEPTED,N/A,0,N/A,N/A,ACCEPTED,
+LIM-02,Limitation,Not RF defeat,docs/07-limitations-and-risks.md,Obscuration only,Architecture,ACCEPTED,N/A,0,N/A,N/A,ACCEPTED,
+LIM-03,Limitation,TRL 2-3 ceiling,MasterPlan.md,No empirical validation,Program,ACCEPTED,N/A,0,N/A,N/A,ACCEPTED,
