@@ -28,3 +28,6 @@ jobs:
 
       - name: Quick mega-suite smoke (38 jobs)
         run: python sim/run_mega_suite.py --quick --workers 2
+
+      - name: Tail-risk analysis report
+        run: python analysis/analyze_tail_risk.py

@@ -1,11 +1,11 @@
 """Surrogate sensor models for Phase 1 MoE studies.
 
-Representative FPV visible and thermal channels — not specific threat systems.
+DEPRECATED: Use fpv_thermal.py (Phase 1B). Kept for backward compatibility.
 """
 
 from __future__ import annotations
 
-from models.cloud_physics.extinction import effective_obscuration
+from models.cloud_physics.extinction import effective_obscuration, transmittance
 
 
 def fpv_visible_degraded(
@@ -15,7 +15,8 @@ def fpv_visible_degraded(
     threshold: float = 0.15,
 ) -> bool:
     """FPV visible channel degraded if combined VIS obscuration effective."""
-    t_vis_eff = min(t_vis ** visual_smoke_factor, 1.0)
+    t_vis = transmittance(alpha_vis, cl_g_m2)
+    t_vis_eff = t_vis ** max(visual_smoke_factor, 1.0)
     return t_vis_eff < threshold
 
 

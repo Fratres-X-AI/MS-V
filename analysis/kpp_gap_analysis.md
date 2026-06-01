@@ -1,7 +1,8 @@
 # KPP Gap Analysis — Phase 1 M&S (v3 CL-Ramp Model)
 
 > LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION  
-> Model: `phase1_v3_cl_ramp` — Beer-Lambert threshold + CL ramp during build-up.
+> Model: `phase1_v3_cl_ramp` — Beer-Lambert threshold + CL ramp during build-up.  
+> **Pass ≠ design confirmation.** See [`REMEDIATION_PLAN.md`](REMEDIATION_PLAN.md) and [`tail_risk_analysis.md`](tail_risk_analysis.md).
 
 ## Summary (100k samples)
 

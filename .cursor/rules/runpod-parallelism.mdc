@@ -1,0 +1,35 @@
+---
+description: RunPod runs must max out rented CPU (n-1 workers)
+globs: sim/run_runpod.py,sim/**/runpod*.py,RUNPOD.md
+alwaysApply: false
+---
+
+# RunPod CPU Utilization
+
+Rented RunPod pods are ephemeral — use them hard. Every RunPod run must squeeze **max parallel capacity minus one core**.
+
+## Worker count
+
+```python
+workers = max(1, (os.cpu_count() or 1) - 1)
+# 32 vCPU → 31 workers | 28 vCPU → 27 workers
+```
+
+Never default to 1 worker when more cores exist. Never leave a core "for the OS" beyond this one reserved slot.
+
+## Threading vs processes
+
+- **Multiple independent jobs** (scenarios, sweeps, wind bins): `ProcessPoolExecutor(max_workers=workers)`. Pin BLAS/OpenMP to **1 thread per worker** in child init to avoid oversubscription.
+- **Single large vectorized job**: one process, set `OMP_NUM_THREADS`, `MKL_NUM_THREADS`, `OPENBLAS_NUM_THREADS`, and `NUMEXPR_NUM_THREADS` to `workers`.
+
+## Required behavior in RunPod scripts
+
+- Auto-detect vCPU; do not require manual `--workers` unless overriding for debugging.
+- Log detected cores and chosen worker count at startup.
+- Document the policy in `RUNPOD.md`.
+
+## Do not
+
+- Run scenarios sequentially on multi-core pods when they can run in parallel.
+- Oversubscribe (e.g. 31 processes × 31 BLAS threads each).
+- Assume GPU — Phase 1 engine is CPU/NumPy only.

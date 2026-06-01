@@ -2,15 +2,17 @@
 
 **Program:** MS-V Veil (Multispectral Obscurant Grenade)  
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
-**Current maturity:** Concept Documentation (v2) + **Phase 0/1 local M&S complete**  
-**Realistic ceiling (internal):** TRL 2–3 — physics-informed conceptual design + Monte Carlo M&S package  
-**Last updated:** 2026-05-24
+**Current maturity:** Concept Documentation (v2) + **Phase 1 v3 M&S complete (conditional)** + **Phase 1B remediation active**  
+**Realistic ceiling (internal):** TRL 2–3 — literature-parameter sensitivity + path to analytical TRL 3 after 1B  
+**Last updated:** 2026-06-01
 
 ---
 
 ## Status Summary
 
-All current content is **textual design goals and unvalidated assumptions**. No models, simulations, empirical data, or prototypes exist yet.
+Phase 0 complete. Phase 1 v3 Monte Carlo complete (140M mega suite — **all KPP pass inside literature bounds only**). Phase 1B remediation plan active to close sensor, geometry, and uncertainty gaps before Phase 3 CONOPS.
+
+**Critical:** Sim pass ≠ design confirmation. See [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md).
 
 ### What We Can Reach (Cursor + RunPod Python/GPU + GitHub)
 
@@ -62,23 +64,22 @@ All current content is **textual design goals and unvalidated assumptions**. No 
 
 ---
 
-### Phase 1 — Physics-Based Cloud & Sensor Degradation Modeling (3–6 weeks) — HIGHEST PRIORITY
+### Phase 1 — v3 COMPLETE | Phase 1B — IN PROGRESS
 
-**Goal:** First quantitative evidence supporting or refuting v2 KPPs.
+**Goal:** Quantitative KPP sensitivity **within stated uncertainty** — not field validation.
 
-| Task | Output |
-|------|--------|
-| Wavelength-dependent extinction + cloud evolution model | [`models/cloud_physics/`](models/cloud_physics/) |
-| Monte Carlo: particle gen, size distribution, settling, wind, build-up, duration | [`sim/`](sim/) |
-| Single + 2–3 grenade groups; wind 0–15 mph; −20°C to +50°C; humidity range | Sim results |
-| Sensor degradation: FPV visible + uncooled/cooled thermal transmittance | [`models/sensors/`](models/sensors/) |
-| Statistical distributions for KPP-02, KPP-03, KPP-04, MoE | [`analysis/`](analysis/) |
+| Task | Output | Status |
+|------|--------|--------|
+| Cloud physics v3 CL-ramp | [`models/cloud_physics/`](models/cloud_physics/) | Done |
+| Mega suite 140M samples | [`analysis/MEGA_SUITE_REPORT.md`](analysis/MEGA_SUITE_REPORT.md) | Done |
+| Tail-risk + uncertainty | [`analysis/tail_risk_analysis.md`](analysis/tail_risk_analysis.md), [`rtm/uncertainty_register.md`](rtm/uncertainty_register.md) | Done |
+| Sensor models FPV + thermal | [`models/sensors/fpv_thermal.py`](models/sensors/fpv_thermal.py) | **1B-2 scaffold** |
+| Geometry / settling / combined plumes | TBD | **1B-3 planned** |
+| Remediation plan | [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) | Active |
 
-**Tools:** Python (NumPy/SciPy), vectorized Monte Carlo on RunPod.
+**Gap/Risk:** MoE saturates 100% in v3; no empirical fill data. **Do not advance Phase 3 until 1B freeze.**
 
-**Gap/Risk:** Literature parameters only; wide uncertainty; wind/humidity poorly constrained.
-
-**Maturity after:** Sensitivity studies under stated environmental envelope.
+**Maturity after 1B:** Honest analytical TRL 3 characterization.
 
 ---
 
