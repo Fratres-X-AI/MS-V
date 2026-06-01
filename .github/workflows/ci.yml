@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ms-v-simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run local simulation suite (100k)
+        run: python sim/run_suite_local.py
+
+      - name: Adversarial stress validation
+        run: python sim/validate_stress.py
+
+      - name: Quick mega-suite smoke (38 jobs)
+        run: python sim/run_mega_suite.py --quick --workers 2

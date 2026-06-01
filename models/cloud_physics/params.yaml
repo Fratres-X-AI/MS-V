@@ -4,7 +4,20 @@
 
 grenade:
   mass_g: 850
-  filler_mass_g: 650
+  filler_mass_g:
+    min: 624
+    max: 680
+    note: "22-24 oz per baseline_grenades.json MS-V_target"
+  # MS-V density-optimized sustained burn — slower than AN-M8 HC (3.8-6.2 g/s on 539 g)
+  # Upper bound: 680 g / 4.2 g/s = 162 s raw; p10 duration margin after CL-ramp threshold timing
+  burn_rate_g_s:
+    min: 2.9
+    max: 4.2
+    reference: "Design trade 1 — sustained thickness; ECBC bispectral fill path"
+  yield_factor:
+    min: 0.22
+    max: 0.52
+  overlap_efficiency: 0.85
   n_ports: 5
   emission_area_m2: 0.0012  # approximate total port area; UNVALIDATED
 
@@ -21,6 +34,10 @@ cloud:
     min: 30
     target: 35
     max: 40
+  cloud_depth_m:
+    min: 2.0
+    max: 4.0
+  cl_ramp_exponent: 1.0  # CL ~ t^exp during build-up; 1.0 = linear
 
 # Mass extinction coefficient alpha (m^2/g) — literature ranges for sensitivity
 # ECBC bispectral work; HC soot reference ~8.71 m^2/g visible (fire science)
@@ -54,6 +71,12 @@ environment:
   humidity_rh_pct:
     min: 20
     max: 95
+  temperature_burn_coupling:
+    reference_c: 20.0
+    rate_increase_per_c: 0.002  # symmetric: cold slows, heat accelerates (Arrhenius-lite)
+  humidity_yield_penalty:
+    reference_rh_pct: 50.0
+    loss_per_rh_pct: 0.0015
 
 employment:
   n_grenades: [1, 2, 3]
@@ -72,3 +95,10 @@ profiles:
 moe:
   lock_break_duration_threshold_s: 60
   transmittance_threshold: 0.15  # below = effective obscuration
+
+kpp:
+  # Formal acceptance references (Annex B) — sim still samples full 0-15 mph envelope
+  build_up_p90_max_s: 15.0
+  duration_p10_min_s: 120.0
+  area_p10_min_sqft: 30.0
+  lock_break_p50_min_s: 60.0

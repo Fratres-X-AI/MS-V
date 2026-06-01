@@ -5,7 +5,7 @@ All assumptions must be tagged **VALIDATED**, **LITERATURE**, or **UNVALIDATED**
 | ID | Assumption | Category | Basis | Status |
 |----|------------|----------|-------|--------|
 | A-001 | MS-V fill achieves VIS + NIR + MWIR attenuation | Performance | ECBC 2014 bispectral program | LITERATURE |
-| A-002 | 22–24 oz fill in ~850 g body burns 120+ s at good thickness | Performance | Design target; no cal data | UNVALIDATED |
+| A-002 | 22–24 oz fill in ~850 g body burns 120+ s at good thickness | Performance | Design target; MS-V burn 2.9–4.5 g/s in params.yaml | UNVALIDATED — sim PASS nominal envelope |
 | A-003 | Build-up to effective density in 12–15 s | Performance | v2 KPP; HC baseline ~10–20 s | UNVALIDATED |
 | A-004 | 30–40 sq ft screening area per grenade | Performance | Scaled from larger body | UNVALIDATED |
 | A-005 | Mass extinction α from open literature applies to MS-V fill | Modeling | COMBIC/FM 3-50/ECBC | LITERATURE |

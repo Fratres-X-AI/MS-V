@@ -1,0 +1,70 @@
+{
+  "label": "convergence_seed_4099_g3_n2000000",
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "model_version": "phase1_v3_cl_ramp",
+  "config": {
+    "n_samples": 2000000,
+    "seed": 4099,
+    "n_grenades": 3
+  },
+  "environment_sampled": {
+    "wind_mph_p50": 7.508551675155709,
+    "temp_c_p50": 14.980019591263332,
+    "humidity_rh_p50": 57.502335119974504
+  },
+  "kpp_02_build_up_s": {
+    "p10": 7.655622261371224,
+    "p50": 10.118074213813442,
+    "p90": 12.5830816785116
+  },
+  "kpp_03_duration_effective_s": {
+    "p10": 160.02177328967824,
+    "p50": 185.6055824773356,
+    "p90": 218.78310768427212
+  },
+  "kpp_04_screening_area_sqft": {
+    "p10": 68.36627417626192,
+    "p50": 77.18480005257187,
+    "p90": 86.01408503310442
+  },
+  "transmittance": {
+    "VIS_p50": 1.1591649183739098e-72,
+    "NIR_p50": 6.40650169213181e-59,
+    "MWIR_p50": 1.736897768402467e-49,
+    "fraction_below_threshold": 1.0
+  },
+  "physics_diagnostics": {
+    "good_thickness_fraction": 1.0,
+    "filler_mass_g_p50": 651.9587031548136,
+    "burn_rate_g_s_p50": 3.5082751481279604,
+    "cl_peak_p10": 13.139120448407002,
+    "cl_required_p90": 0.7024475487105957,
+    "time_to_threshold_p50_s": 0.19739417527482717,
+    "build_up_p50_s": 10.118074213813442
+  },
+  "moe": {
+    "fused_eoir_degraded_fraction": 1.0,
+    "lock_break_ge_60s_fraction": 1.0,
+    "lock_break_duration_s": {
+      "p10": 160.02177328967824,
+      "p50": 185.6055824773356,
+      "p90": 218.78310768427212
+    }
+  },
+  "kpp_checks": {
+    "build_up_p90_le_15s": true,
+    "duration_p10_ge_120s": true,
+    "area_p10_ge_30_sqft": true,
+    "moe_lock_break_p50_ge_60s": true
+  },
+  "raw_burn_duration_s": {
+    "p10": 160.25576087684126,
+    "p50": 185.8357846318564,
+    "p90": 219.01064902923082
+  },
+  "peak_cl_g_m2": {
+    "p10": 13.139120448407002,
+    "p50": 21.51310622914772,
+    "p90": 34.4765199385148
+  }
+}

@@ -12,11 +12,27 @@ pip install -r requirements.txt
 
 ## Recommended Instance
 
-- **CPU:** 8+ vCPU sufficient (NumPy vectorized — GPU optional unless we add CuPy later)
-- **RAM:** 4 GB+
+- **CPU:** rent big — 16–32 vCPU. NumPy vectorized; **GPU not required**.
+- **RAM:** 4 GB+ (scale with sample count)
 - **Storage:** 10 GB
 
-GPU not required for current Phase 1 engine.
+### Parallelism policy
+
+All RunPod runs auto-detect vCPU and use **`workers = vCPU - 1`** (32 → 31, 28 → 27). Scenarios run in parallel across workers; BLAS pinned to 1 thread per worker to avoid oversubscription. Override only for debug: `--workers 4`.
+
+Log line at startup: `[RunPod] vCPU=32 -> workers=31 (max parallel, minus 1)`
+
+## Mega Suite (full sensitivity campaign)
+
+```bash
+# 38 jobs, ~140M total samples — baselines + sweeps + convergence
+python sim/run_mega_suite.py --workers 31
+python analysis/summarize_mega_suite.py
+```
+
+Outputs: `analysis/results/mega_suite/` + `analysis/MEGA_SUITE_REPORT.md`
+
+Includes: 10M-sample baselines, visual-smoke/yield/burn/alpha/temp sweeps, 7-seed convergence, adversarial stress.
 
 ## Run Full Scale
 

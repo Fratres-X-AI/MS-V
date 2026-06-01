@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-01T18:27:14.904525+00:00",
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "n_samples": 2000000,
+  "seed": 42,
+  "vcpu": 128,
+  "workers": 31,
+  "elapsed_s": 1.23,
+  "outputs": [
+    "analysis/results/runpod/grenades_1_n2000000.json",
+    "analysis/results/runpod/grenades_2_n2000000.json",
+    "analysis/results/runpod/grenades_3_n2000000.json",
+    "analysis/results/runpod/wind_calm_3grenade_n2000000.json",
+    "analysis/results/runpod/wind_moderate_3grenade_n2000000.json",
+    "analysis/results/runpod/wind_high_3grenade_n2000000.json"
+  ]
+}
