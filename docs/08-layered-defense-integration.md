@@ -1,31 +1,19 @@
 # 08 — Layered Defense Integration
 
-MS-V operates as the **multispectral obscuration layer** in an integrated counter-UAS architecture. It is always employed alongside standard visual smoke and complements detection, EW, and kinetic layers.
-
----
-
-## Layered Defense Model
+MS-V = **multispectral obscuration layer**. Always with visual smoke. Never alone for MoE.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    THREAT: Hostile UAS                       │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-              ┌────────────▼────────────┐
-              │    DETECTION LAYER      │
-              │  Acoustic, RF, EO/IR    │
-              └────────────┬────────────┘
-                           │
-              ┌────────────▼────────────┐
-              │   NON-KINETIC LAYER     │
-              │  EW  │  MS-V + Sig Smoke │
-              └────────────┬────────────┘
-                           │
-              ┌────────────▼────────────┐
-              │    KINETIC LAYER        │
-              │  MKFS, small arms, AD   │
-              └─────────────────────────┘
+Detect → EW (optional) → MS-V + Signal Smoke → Kinetic (MKFS)
 ```
+
+| Layer | MS-V role |
+|-------|-----------|
+| Detection | Cues when to throw — MS-V does not detect |
+| EW | Jams RF; MS-V defeats EO/IR — complementary |
+| Visual smoke | **Required partner** for FPV/fiber-optic MoE |
+| Kinetic | MS-V buys time; kinetic closes kill chain |
+
+**Primary target:** FPV and fiber-optic drones (EW-resistant → obscuration is the answer).
 
 ---
 

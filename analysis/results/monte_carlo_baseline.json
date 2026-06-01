@@ -1,0 +1,19 @@
+{
+  "label": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "n_samples": 10000,
+  "moe_fused_eoir_degraded_fraction": 1.0,
+  "build_up_time_s": {
+    "p10": 8.696307508371557,
+    "p50": 11.512452122577262,
+    "p90": 14.312222767141835
+  },
+  "duration_effective_s": {
+    "p10": 95.90864408147576,
+    "p50": 120.03967803710103,
+    "p90": 144.15532233318743
+  },
+  "kpp_checks": {
+    "build_up_p90_le_15s": true,
+    "duration_p10_ge_120s": false
+  }
+}

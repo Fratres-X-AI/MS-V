@@ -1,51 +1,62 @@
 # 01 — Concept Overview
 
-## Purpose
+## In One Sentence
 
-MS-V is a hand-thrown multispectral obscurant grenade designed as a **squad-layer tool for drone manipulation**. It rapidly generates a dense visual and infrared screening cloud optimized for disrupting drone observation, breaking thermal and visual locks, and creating uncertainty during contact, casualty recovery, and small unit movement.
+MS-V is a hand-thrown multispectral obscurant grenade that lets squads **break drone visual and thermal locks** when nothing else in the kit can — carried alongside standard smoke, thrown the same way, focused only on obscuration.
 
-## Problem Statement
+---
 
-Modern small unit operations are increasingly shaped by persistent drone observation. Cheap UAS with electro-optical and infrared sensors provide overwatch, target acquisition, and cueing for precision fires. When detection and engagement layers are degraded, jammed, or saturated, soldiers currently lack a fast, squad-portable tool to break visual and thermal observation quickly.
+## The Problem
 
-Current inventory smoke grenades (AN-M8, M18, M83) produce effective **visual** screening but provide **no meaningful infrared attenuation**. Thermal imagers acquire and track targets through HC smoke. Fiber-optic and FPV-guided drones that fuse visible and thermal channels are particularly difficult to defeat with visual smoke or EW alone.
+Persistent drone observation shapes small-unit fights. When detection, EW, and kinetic layers are **degraded, jammed, or saturated**, soldiers lack a squad-portable way to break **both** visual and thermal observation quickly.
 
-**MS-V fills that specific gap** as a complementary obscuration layer — not a replacement for detection, jamming, or kinetic defeat.
+Inventory smoke (AN-M8, M83) handles visible screening. **Thermal imagers see through it.** FPV and fiber-optic drones fuse visible and IR — visual smoke alone or EW alone is not enough.
 
-## MS-V Role
+MS-V closes that gap. It does not replace the rest of the layered defense.
 
-MS-V is carried **in addition to** standard signal smoke:
+---
+
+## What MS-V Is / Is Not
+
+| Is | Is Not |
+|----|--------|
+| Squad-layer drone manipulation tool | General-purpose smoke grenade |
+| VIS + NIR + MWIR obscurant | RF jammer or detector |
+| Carried **with** standard signal smoke | Replacement for AN-M8 / M18 |
+| Hand-thrown, M201A1, pin-pull | New launcher or complex arming |
+| 2+ min dense screen (with 2–3 grenades) | Instant or area-denial weapon |
+
+---
+
+## Role in the Kit
 
 | System | Role |
 |--------|------|
-| AN-M8 / M83 | Visual screening, signaling, coordination |
-| M18 | Colored signaling, marking |
-| **MS-V** | Multispectral screening — VIS + NIR + MWIR |
+| AN-M8 / M83 | Visual screening, signaling |
+| M18 | Colored marking |
+| **MS-V** | Multispectral screen — the IR layer inventory smoke lacks |
 
-MS-V prioritizes **fast cloud build-up and density** for **2+ minutes** of effective screening, allowing soldiers to actively manipulate drone behavior and line-of-sight when earlier layers are ineffective or overwhelmed. It is employed in **groups of 2–3** with standard visual smoke for best effect against FPV and fiber-optic guided drones.
+Typical event: **2–3 MS-V + 1–2 visual smoke.** Primary targets: **FPV and fiber-optic drones** that resist jamming.
+
+---
 
 ## Design Philosophy
 
-Simple and soldier-first:
+1. **Reliable** — burning-type architecture, M201A1 fuze, existing smoke TTPs  
+2. **Producible** — $75–150 target; ECBC-validated bispectral fill path  
+3. **Soldier-portable** — ~850 g; 1–2 per soldier alongside standard smoke  
+4. **Obscuration only** — no detection, jamming, or kinetic defeat  
+5. **Honest** — non-lethal respiratory irritation accepted; 12–15 s build-up; not standalone  
 
-1. **Reliable** — pin-pull, hand-throw, M201A1-compatible fuze; proven burning-type architecture
-2. **Producible** — target $75–150 unit cost; build on ECBC-validated bispectral approaches
-3. **Soldier-portable** — ~850 g (~25% larger than standard smoke); issue 1–2 per soldier
-4. **Obscuration only** — does not detect, jam, or kinetically defeat threats
-5. **Complementary** — always paired with visual smoke for multispectral screening against modern drones
+**Priority:** density + duration (2+ min thick cloud) over ultra-fast opacity.
 
-Respiratory irritation from the obscurant cloud is **acceptable (non-lethal)** but must be documented and minimized where possible without sacrificing multispectral performance.
+---
 
-## Document Map
+## Further Reading
 
-| Section | Content |
-|---------|---------|
-| [02 — Operational Requirements](02-operational-requirements.md) | Mission, KPPs, MoE |
-| [03 — Design Constraints](03-design-constraints.md) | Form factor, safety, logistics |
-| [04 — CONOPS / Use Cases](04-conops-use-cases.md) | Five employment scenarios |
-| [05 — Key Design Trades](05-key-design-trades.md) | Engineering trade-offs |
-| [06 — System Description](06-system-description.md) | Components and functioning |
-| [07 — Limitations and Risks](07-limitations-and-risks.md) | Honest capability limits |
-| [08 — Layered Defense Integration](08-layered-defense-integration.md) | Detection, EW, kinetic layers |
-
-See [Annex A](../annexes/A-baseline-grenade-comparison.md) for baseline inventory comparison and [Annex B](../annexes/B-kpp-targets.md) for KPP targets.
+| Doc | Topic |
+|-----|-------|
+| [00 — Executive Brief](00-executive-brief.md) | One-page shareable summary |
+| [02 — Operational Requirements](02-operational-requirements.md) | KPPs and MoE |
+| [07 — Limitations](07-limitations-and-risks.md) | What it won't do |
+| [Annex A](../annexes/A-baseline-grenade-comparison.md) | vs. AN-M8 / M83 |

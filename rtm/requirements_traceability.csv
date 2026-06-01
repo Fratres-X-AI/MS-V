@@ -1,0 +1,12 @@
+req_id,type,description,source_doc,source_ref,verification_method,status
+KPP-01,KPP,Weight ~850 g,annexes/B-kpp-targets.md,KPP-01,Mass measurement,UNVERIFIED
+KPP-02,KPP,Build-up <=15 s effective density,annexes/B-kpp-targets.md,KPP-02,Sim + field test,UNVERIFIED
+KPP-03,KPP,Duration >=120 s at good thickness,annexes/B-kpp-targets.md,KPP-03,Sim + field test,UNVERIFIED
+KPP-04,KPP,Screening area 30-40 sq ft per grenade,annexes/B-kpp-targets.md,KPP-04,Sim + grid test,UNVERIFIED
+KPP-05,KPP,Employment group 2-3 grenades,annexes/B-kpp-targets.md,KPP-05,CONOPS sim,UNVERIFIED
+KPP-06,KPP,Spectrum VIS+NIR+MWIR,annexes/B-kpp-targets.md,KPP-06,Spectral transmittance test,UNVERIFIED
+MOE-01,MoE,Degrade FPV/fiber-optic observation 2-3 MS-V + smoke,docs/02-operational-requirements.md,MoE,Combined employment sim,UNVERIFIED
+MOE-02,MoE,CASEVAC/break contact/reposition window,docs/04-conops-use-cases.md,All use cases,CONOPS sim,UNVERIFIED
+LIM-01,Limitation,Not standalone without visual smoke,docs/07-limitations-and-risks.md,Hard Limits,Doctrine review,ACCEPTED
+LIM-02,Limitation,Not RF defeat,docs/07-limitations-and-risks.md,Threat matrix,Architecture review,ACCEPTED
+LIM-03,Limitation,TRL 2-3 ceiling internal,MasterPlan.md,Status Summary,Program review,ACCEPTED

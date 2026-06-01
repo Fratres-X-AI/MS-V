@@ -43,6 +43,7 @@ URLs: see v1 bibliography entries in project history; primary TM at [militarynew
 
 | Document | Path |
 |----------|------|
+| Executive Brief | [docs/00-executive-brief.md](../docs/00-executive-brief.md) |
 | Concept Overview | [docs/01-concept-overview.md](../docs/01-concept-overview.md) |
 | Operational Requirements | [docs/02-operational-requirements.md](../docs/02-operational-requirements.md) |
 | Design Constraints | [docs/03-design-constraints.md](../docs/03-design-constraints.md) |
@@ -64,7 +65,8 @@ URLs: see v1 bibliography entries in project history; primary TM at [militarynew
 | Version | Date | Changes |
 |---------|------|---------|
 | v1 | Initial build | 500 g, ≤8 s build-up, 60–90 s duration |
-| v2 | Current | ~850 g, 12–15 s build-up, 120+ s duration, density+duration priority, combined employment MoE |
+| v2 | Spec revision | ~850 g, 12–15 s build-up, 120+ s duration, density+duration priority, combined employment MoE |
+| v2.1 | Tightening pass | Executive brief, sharper README/concept/CONOPS/limitations for external sharing |
 
 ---
 

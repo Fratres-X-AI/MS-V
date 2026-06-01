@@ -1,0 +1,68 @@
+# MS-V Cloud Physics — Default Parameters (Literature-Bound)
+# STATUS: UNVALIDATED sensitivity-study defaults. Not calibrated to MS-V fill.
+# Sources: Annex D, FM 3-50, COMBIC/ECBC references, assumption register A-005
+
+grenade:
+  mass_g: 850
+  filler_mass_g: 650
+  n_ports: 5
+  emission_area_m2: 0.0012  # approximate total port area; UNVALIDATED
+
+cloud:
+  build_up_time_s:
+    min: 8
+    target: 12
+    max: 15
+  duration_effective_s:
+    min: 90
+    target: 120
+    max: 150
+  screening_area_sqft:
+    min: 30
+    target: 35
+    max: 40
+
+# Mass extinction coefficient alpha (m^2/g) — literature ranges for sensitivity
+# ECBC bispectral work; HC soot reference ~8.71 m^2/g visible (fire science)
+extinction_coefficient_m2_per_g:
+  VIS:
+    low: 4.0
+    mid: 8.0
+    high: 12.0
+  NIR:
+    low: 3.0
+    mid: 6.0
+    high: 10.0
+  MWIR:
+    low: 2.0
+    mid: 5.0
+    high: 9.0
+
+particle:
+  diameter_um:
+    min: 0.5
+    max: 5.0
+  settling_velocity_m_s: 0.02  # UNVALIDATED order-of-magnitude
+
+environment:
+  wind_speed_mph:
+    min: 0
+    max: 15
+  temperature_c:
+    min: -20
+    max: 50
+  humidity_rh_pct:
+    min: 20
+    max: 95
+
+employment:
+  n_grenades: [1, 2, 3]
+  visual_smoke_factor: 1.3  # multiplier for combined VIS MoE; UNVALIDATED
+
+monte_carlo:
+  n_samples: 10000
+  seed: 42
+
+moe:
+  lock_break_duration_threshold_s: 60
+  transmittance_threshold: 0.15  # below = effective obscuration

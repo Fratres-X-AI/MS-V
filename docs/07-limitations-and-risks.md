@@ -1,109 +1,64 @@
 # 07 — Limitations and Risks
 
-Honest assessment of what MS-V cannot do well and key program risks (v2).
+## Bottom Line
+
+MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes of combined visual-thermal cover** when employed correctly (2–3 grenades + visual smoke). It will not defeat every drone, every condition, or every threat alone.
 
 ---
 
-## Operational Limitations
+## Hard Limits
 
-### Not Standalone — Requires Visual Smoke
-
-MS-V alone does **not** meet MoE against FPV and fiber-optic guided drones. Combined employment with AN-M8/M83 is **required**, not optional. Units that employ MS-V without visual smoke will not achieve designed effectiveness.
-
-### Build-up Time (12–15 s)
-
-Drone may maintain visual or thermal lock for **12–15 seconds** after throw before effective density is achieved. This is not instant defeat. Soldiers must throw early — before movement begins — not as a last-second reaction.
-
-### RF-Linked and Autonomous Threats
-
-| Threat | MS-V Effect | Required Layer |
-|--------|-------------|----------------|
-| RF-controlled drone | None on datalink | EW |
-| Autonomous (pre-programmed) | None on navigation | Kinetic / deception |
-| Fiber-optic guided | Partial alone; effective combined | MS-V + visual smoke |
-| EO/IR fused tracker | Degraded combined | MS-V + visual smoke |
-
-### Committed Kinetic Attack
-
-MS-V creates obscuration; it does not destroy attack drones. One-way attack UAS may still impact during or after screen deployment. Kinetic layer (MKFS) required for committed attack profiles.
-
-### Wind and Weather
-
-| Condition | Impact |
-|-----------|--------|
-| Wind > 15 mph | Not recommended; rapid dissipation |
-| Heavy rain | Duration reduced 30–50% |
-| High convection | Cloud lifts; reduced ground coverage |
-
-Cloud performance degrades above 15 mph — doctrine must emphasize wind assessment before employment.
-
-### Weight and Throw
-
-At **~850 g**, MS-V is:
-- Harder to throw accurately under stress than 454 g M83 or 680 g AN-M8
-- More burdensome to carry 2× (1.7 kg) alongside standard smoke load
-- May fit tightly in standard grenade pouches
-
-Average throw range **20–25 m**, not the 35 m achievable with M18.
-
-### Respiratory Irritation
-
-**Accepted but significant limitation.** MS-V will likely irritate eyes, throat, and lungs more than M83 TA smoke. Requires:
-- PPE guidance (mask in dense cloud)
-- Employment standoff doctrine
-- Safety data sheet and training brief
-- Downwind awareness for adjacent friendly forces
-
-This is a **non-lethal accepted trade** — not a defect to hide, but a factor commanders must weigh.
-
-### Friendly Force Degradation
-
-MS-V degrades friendly thermal optics and worsens visible opacity when combined with visual smoke. Friendly UAS overwatch cannot see through MS-V cloud. Coordinate with all friendly sensors before employment.
-
-### Non-EO/IR Sensors
-
-No effect on: millimeter-wave radar, acoustic detection, RF emissions detection, GPS navigation, seismic sensors.
+| Limit | Reality |
+|-------|---------|
+| **Not standalone** | MS-V without visual smoke fails MoE vs FPV/fiber-optic |
+| **Not instant** | 12–15 s build-up — throw before you move, not during |
+| **Not RF defeat** | Jamming is EW's job |
+| **Not kinetic kill** | Attack drones need MKFS / kinetic layer |
+| **Not all-weather** | > 15 mph wind, heavy rain = degraded |
+| **Not friendly-blind** | Degrades own thermal optics in/near cloud |
+| **Heavier** | ~850 g; 20–25 m throw; 1.7 kg for two |
 
 ---
 
-## What MS-V Cannot Do (Summary)
+## Accepted Trades
 
-1. Detect or cue on threats
-2. Jam RF or GPS
-3. Kinetically defeat air threats
-4. Work standalone against FPV/fiber-optic drones
-5. Provide instant (< 12 s) opacity
-6. Screen platoon-sized areas with one grenade
-7. Operate effectively above 15 mph wind or in heavy rain
-8. Protect friendly thermal optics inside the cloud
-9. Replace signal smoke for marking and coordination
-10. Replace vehicle obscurant systems for large-area screening
+**Respiratory irritation** — stronger IR fill likely irritates more than M83 TA. Non-lethal, documented, minimized where possible. Mask in dense cloud; brief open-air exposure tolerable with PPE guidance.
+
+**Weight** — 850 g is the price of 120+ s dense multispectral burn. Less comfortable than standard smoke; still within 1–2 per soldier load.
+
+**Build-up** — 12–15 s means the drone may hold lock briefly. Doctrine: employ early.
 
 ---
 
-## Program and Fielding Risks
+## Threat Matrix
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
-| Fill does not meet 120+ s + MWIR together | Medium | High | 850 g envelope; ECBC fill path; Option C fallback |
-| Irritation exceeds acceptable threshold | Medium | High | Safety testing early; reformulation if needed |
-| Cost exceeds $150 | Medium | Medium | Option C fill; volume scaling |
-| Soldiers confuse MS-V with signal smoke | Medium | High | Distinct markings; training |
-| Over-reliance without visual smoke pairing | High | High | Doctrine; MoE requires combined employment |
-| Build-up exceeds 15 s in field conditions | Medium | Medium | Accept up to 18 s if duration KPP met |
-| 850 g too heavy for 2× issue | Low–medium | Medium | 1 per soldier + platoon pool option |
-| Enemy adapts (mm-wave, acoustic fusion) | Low (near-term) | Medium | Monitor threat; MS-V is current-threat focused |
+| Threat | MS-V alone | MS-V + visual smoke | Other layer needed |
+|--------|------------|---------------------|-------------------|
+| FPV (RF + EO/IR) | Partial | **Effective (target)** | EW optional |
+| Fiber-optic guided | Partial | **Effective (target)** | None for RF |
+| RF-linked observer | Partial | Partial | **EW** |
+| Autonomous navigation | None | None | **Kinetic / deception** |
+| One-way attack | Obscuration only | Obscuration only | **Kinetic** |
+| mm-wave / acoustic | None | None | Other |
 
 ---
 
-## Realistic Expectations
+## Program Risks
 
-MS-V is a **tactical enabler** for drone manipulation at the squad layer:
+| Risk | Mitigation |
+|------|------------|
+| Fill won't meet 120+ s + MWIR together | 850 g envelope; ECBC fill path; Option C fallback |
+| Irritation exceeds acceptable threshold | Early safety testing; reformulate if needed |
+| Soldiers skip visual smoke pairing | Doctrine; MoE requires combined employment |
+| Cost > $150 | Option C fill; volume scaling |
+| Confusion with signal smoke | Distinct markings; training |
 
-- Provides **120+ seconds** of dense multispectral screening when employed correctly (2–3 grenades + visual smoke)
-- **Breaks or degrades** FPV and fiber-optic drone observation during critical movement windows
-- **Complements** detection, EW, signal smoke, and kinetic layers
-- Requires **honest training** on irritation, combined employment, and wind limits
-- Is **not** a silver bullet against all drone threats
+---
+
+## What Success Looks Like
+
+A squad under drone overwatch throws 2–3 MS-V + visual smoke, moves for 60–120 seconds under combined cover, and **breaks or degrades** FPV/fiber-optic observation long enough to recover a casualty, break contact, or reach defilade.
+
+What success is **not**: one grenade, no visual smoke, instant opacity, all drone types, all weather, no irritation.
 
 See [08 — Layered Defense Integration](08-layered-defense-integration.md) for system context.

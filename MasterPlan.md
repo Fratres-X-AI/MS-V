@@ -1,0 +1,228 @@
+# Defense Projects HQ — MS-V Master Plan
+
+**Program:** MS-V Veil (Multispectral Obscurant Grenade)  
+**Repository:** https://github.com/Fratres-X-AI/MS-V  
+**Current maturity:** Concept Documentation (v2)  
+**Realistic ceiling (internal):** TRL 2–3 — physics-informed conceptual design + Monte Carlo M&S package  
+**Last updated:** 2026-05-24
+
+---
+
+## Status Summary
+
+All current content is **textual design goals and unvalidated assumptions**. No models, simulations, empirical data, or prototypes exist yet.
+
+### What We Can Reach (Cursor + RunPod Python/GPU + GitHub)
+
+- Complete, traceable, physics-informed conceptual design
+- Monte Carlo simulation package
+- Credible whitepaper, CSO/OTA proposal, or SBIR narrative for **externally funded** prototype work
+
+### What We Cannot Reach Internally
+
+| Cannot do | Why |
+|-----------|-----|
+| TRL 4+ (breadboard validation in relevant environment) | No lab, range, or hardware |
+| Fabricate hardware | No manufacturing capability |
+| Live obscurant or sensor testing | No range time |
+| Toxicological qualification | No lab access |
+| MIL-STD safety certification | No qualification path |
+| "Military ready" claims | No empirical backing |
+
+**Any claim beyond a high-quality conceptual + M&S package is false.**
+
+---
+
+## Critical Gaps (Cannot Close Internally)
+
+1. Fill chemistry and aerosol physics (particle size, extinction vs wavelength, burn rate)
+2. Empirical validation of cloud density, duration, spectral attenuation
+3. Quantitative respiratory irritation / toxicity margins
+4. Structural integrity, fuze function, throw accuracy for 7.1 × 3.1 in / ~850 g form factor
+5. Access to classified/restricted DoD obscurant program data and threat sensor models
+6. Safety certification or environmental qualification path
+
+---
+
+## Phased Plan
+
+### Phase 0 — Audit & Requirements Baseline (1–2 weeks)
+
+**Goal:** Clean, auditable requirements baseline.
+
+| Task | Output |
+|------|--------|
+| Cross-check docs 01–08 and annexes A–E against cited sources | Audit log |
+| Build Requirements Traceability Matrix (RTM) | [`rtm/`](rtm/) |
+| Extract Decision Log / Open Trades register | [`rtm/decision_log.md`](rtm/decision_log.md) |
+
+**Gap/Risk:** Unquantified assumptions; potential internal inconsistencies; no independent technical review.
+
+**Maturity after:** Auditable requirements baseline.
+
+---
+
+### Phase 1 — Physics-Based Cloud & Sensor Degradation Modeling (3–6 weeks) — HIGHEST PRIORITY
+
+**Goal:** First quantitative evidence supporting or refuting v2 KPPs.
+
+| Task | Output |
+|------|--------|
+| Wavelength-dependent extinction + cloud evolution model | [`models/cloud_physics/`](models/cloud_physics/) |
+| Monte Carlo: particle gen, size distribution, settling, wind, build-up, duration | [`sim/`](sim/) |
+| Single + 2–3 grenade groups; wind 0–15 mph; −20°C to +50°C; humidity range | Sim results |
+| Sensor degradation: FPV visible + uncooled/cooled thermal transmittance | [`models/sensors/`](models/sensors/) |
+| Statistical distributions for KPP-02, KPP-03, KPP-04, MoE | [`analysis/`](analysis/) |
+
+**Tools:** Python (NumPy/SciPy), vectorized Monte Carlo on RunPod.
+
+**Gap/Risk:** Literature parameters only; wide uncertainty; wind/humidity poorly constrained.
+
+**Maturity after:** Sensitivity studies under stated environmental envelope.
+
+---
+
+### Phase 2 — System Architecture & Digital Representation (2–4 weeks, parallel after Phase 0)
+
+**Goal:** Traceable system architecture with quantified interfaces.
+
+| Task | Output |
+|------|--------|
+| Component breakdown: body, fill chamber, ports, M201A1 interface | [`models/system/`](models/system/) |
+| Parametric geometry for cloud + human-factors models | Geometry params |
+| Logistics: carry weight, pouch fit, throw range, training burden | Human-factors notes |
+
+**Gap/Risk:** No structural/ergonomic validation; 25% larger form factor effects unquantified.
+
+---
+
+### Phase 3 — Layered Defense & CONOPS Simulation (3–4 weeks, after Phase 1 core)
+
+**Goal:** Validated CONOPS with measurable effectiveness claims and clear limitations.
+
+| Task | Output |
+|------|--------|
+| Kill-chain model: detect → EW → MS-V + smoke → kinetic window | [`sim/conops/`](sim/conops/) |
+| Quantitative simulation of five use cases ([doc 04](docs/04-conops-use-cases.md)) | MoE distributions |
+| Friendly-force degradation (own thermal blinded) | Integration model |
+
+**Gap/Risk:** Surrogate sensor/pilot models only; no real FPV/fiber-optic threat data.
+
+---
+
+### Phase 4 — Risk, Cost, Safety & Producibility (2–3 weeks)
+
+**Goal:** Complete risk register and producibility assessment.
+
+| Task | Output |
+|------|--------|
+| Expand risk register (likelihood/impact/mitigation) | [`analysis/risk_register.md`](analysis/risk_register.md) |
+| Unit cost model vs $75–150 target | [`analysis/cost_model/`](analysis/cost_model/) |
+| Fill chemistry from open literature + supply chain | [`analysis/fill_candidates.md`](analysis/fill_candidates.md) |
+| Paper toxicity assessment plan + SDS outline | [`analysis/safety/`](analysis/safety/) |
+| Manufacturing feasibility (sheet metal, fill loading, fuze compat) | [`analysis/producibility.md`](analysis/producibility.md) |
+
+**Gap/Risk:** No quantitative safety margin; cost target aggressive; no actual safety testing path.
+
+---
+
+### Phase 5 — Artifact Generation & External Engagement (2–4 weeks, ongoing)
+
+**Goal:** Submission-ready conceptual design package with simulation evidence.
+
+| Deliverable | Location |
+|-------------|----------|
+| System Requirements Document (SRD) | [`proposals/srd/`](proposals/srd/) |
+| Verification matrix | [`rtm/verification_matrix.md`](rtm/verification_matrix.md) |
+| TEMP outline | [`proposals/temp/`](proposals/temp/) |
+| CONOPS (updated with sim evidence) | [`docs/04-conops-use-cases.md`](docs/04-conops-use-cases.md) |
+| Assumption register | [`rtm/assumption_register.md`](rtm/assumption_register.md) |
+| DIU CSO / OTA / SBIR narrative | [`proposals/`](proposals/) |
+
+**Positioning:** Model-supported concept for **funded prototype development** — not a ready system.
+
+---
+
+## Repository Structure (Target)
+
+```
+MS-V/
+├── MasterPlan.md              ← this file
+├── README.md
+├── docs/                      ← concept docs 00–08
+├── annexes/                   ← A–E
+├── data/                      ← baseline_grenades.json
+├── rtm/                       ← traceability, decisions, assumptions
+├── models/
+│   ├── cloud_physics/         ← extinction, dispersion, settling
+│   ├── sensors/               ← FPV, thermal surrogate models
+│   └── system/                ← geometry, logistics params
+├── sim/                       ← Monte Carlo runners, CONOPS sim
+├── analysis/                  ← results, risk, cost, safety
+└── proposals/                 ← SRD, TEMP, SBIR/CSO drafts
+```
+
+---
+
+## Today's Work Session — Immediate Actions
+
+### Decision (recommended)
+
+**Execute Phase 0 audit in parallel with Phase 1 skeleton.** Freeze KPP definitions in RTM while building sim scaffold — do not wait for perfect audit to start modeling.
+
+### Phase 0 (today)
+
+- [ ] Begin source audit: TM 43-0001-29, FM 3-50, ECBC 2014 vs docs 01–08
+- [ ] Seed RTM from [Annex B KPPs](annexes/B-kpp-targets.md)
+- [ ] Open decision log with known trades from [Annex C](annexes/C-trades-matrix.md)
+
+### Phase 1 scope (freeze before coding)
+
+| Parameter | Value |
+|-----------|-------|
+| Wavelength bands | VIS 0.4–0.7 µm, NIR 0.7–1.4 µm, MWIR 3–5 µm |
+| Surrogate sensors | FPV visible camera; uncooled LWIR; cooled MWIR |
+| Environment | Wind 0–15 mph, −20°C to +50°C, humidity 20–95% RH |
+| Employment | 1 grenade + 2–3 grenade groups |
+| Output metrics | Build-up time, duration, screening area, MoE lock-break probability >60 s |
+| Literature α bounds | ECBC bispectral range + COMBIC/FM 3-50 references |
+
+### Phase 1 (today)
+
+- [ ] Run Monte Carlo skeleton ([`sim/run_monte_carlo.py`](sim/run_monte_carlo.py))
+- [ ] Define default params ([`models/cloud_physics/params.yaml`](models/cloud_physics/params.yaml))
+- [ ] Document assumptions in [`rtm/assumption_register.md`](rtm/assumption_register.md)
+
+---
+
+## TRL Roadmap (Honest)
+
+| TRL | Description | MS-V status |
+|-----|-------------|-------------|
+| 1 | Basic principles observed | **Complete** (literature + concept) |
+| 2 | Technology concept formulated | **Current** (v2 docs) |
+| 3 | Analytical/experimental critical function proof | **Target** (Phase 1 M&S) |
+| 4 | Component validation in lab environment | **Requires external funding + lab** |
+| 5+ | Relevant environment / fielded | **Out of scope internally** |
+
+---
+
+## Key Document Index
+
+| Doc | Purpose |
+|-----|---------|
+| [Executive Brief](docs/00-executive-brief.md) | External one-pager |
+| [Concept](docs/01-concept-overview.md) | Problem and philosophy |
+| [Requirements](docs/02-operational-requirements.md) | KPPs and MoE |
+| [Limitations](docs/07-limitations-and-risks.md) | What we won't claim |
+| [Annex B — KPPs](annexes/B-kpp-targets.md) | Verification targets |
+| [Annex D — Spectrum](annexes/D-spectrum-and-cloud-model.md) | Bands and cloud phases |
+
+---
+
+## Governance
+
+- **No "military ready" language** in any external artifact without TRL 4+ evidence
+- **All sim outputs** labeled: literature-parameter sensitivity study, not validation
+- **MoE claims** require combined MS-V + visual smoke in model and doctrine
+- **Version control** all params, assumptions, and results under `/rtm/` and `/analysis/`

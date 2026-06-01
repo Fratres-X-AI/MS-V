@@ -2,7 +2,7 @@
   "metadata": {
     "source": "TM 43-0001-29, Army Ammunition Data Sheets: Grenades",
     "notes": "Baseline US inventory smoke grenades. MS-V targets are proposed design goals (v2), not fielded specifications.",
-    "revision": "v2 — density + duration priority; ~850 g form factor"
+    "revision": "v2.1 — tightened for external sharing; executive brief added"
   },
   "grenades": {
     "AN-M8": {
