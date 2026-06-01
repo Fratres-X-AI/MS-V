@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from sim.engine import load_params  # noqa: E402
-from sim.runpod_util import log_runpod_capacity, pin_blas_threads, _pool_worker_init  # noqa: E402
+from sim.runpod_util import _pool_worker_init, log_runpod_capacity, pin_blas_threads  # noqa: E402
 from sim.sobol_model import (  # noqa: E402
     build_sobol_problem,
     evaluate_physics_batch,

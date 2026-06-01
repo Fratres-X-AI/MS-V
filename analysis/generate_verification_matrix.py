@@ -68,7 +68,6 @@ def main() -> None:
 
     rows = manifest["summary"]
     primary = next(r for r in rows if r["label"] == "baseline_10M_g3_n10000000")
-    g1 = next(r for r in rows if r["label"] == "baseline_10M_g1_n10000000")
     g2 = next(r for r in rows if r["label"] == "baseline_10M_g2_n10000000")
     adversarial = next(r for r in rows if r["label"] == "baseline_10M_adversarial_g3_n10000000")
     wind_high = next(r for r in rows if r["label"] == "baseline_10M_wind_high_g3_n10000000")

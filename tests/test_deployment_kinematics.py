@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import numpy as np
-
 from models.cloud_physics.deployment_kinematics import resolve_deployment_state
 
 
