@@ -1,7 +1,27 @@
 {
   "label": "single_grenade",
   "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
-  "model_version": "phase1_v3_cl_ramp",
+  "study_type": "literature_parameter_sensitivity",
+  "model_version": "phase1_v4_sensor",
+  "traceability": {
+    "job_id": "single_grenade",
+    "seed": 42,
+    "n_samples": 100000,
+    "n_grenades": 1,
+    "model_version": "phase1_v4_sensor",
+    "params_file": "models/cloud_physics/params.yaml",
+    "params_sha256_16": "1e13643384564920",
+    "assumption_ids": [
+      "A-001",
+      "A-002",
+      "A-003",
+      "A-004",
+      "A-005",
+      "A-006",
+      "A-009"
+    ],
+    "generated_at": "2026-06-01T18:58:25.151902+00:00"
+  },
   "config": {
     "n_samples": 100000,
     "seed": 42,
@@ -32,6 +52,11 @@
     "NIR_p50": 2.005643697824979e-43,
     "MWIR_p50": 1.4307800697712492e-36,
     "fraction_below_threshold": 1.0
+  },
+  "sensor_diagnostics": {
+    "vis_contrast_p50": 0.9999999999999998,
+    "nir_contrast_p50": 1.0,
+    "mwir_contrast_p50": 1.0
   },
   "physics_diagnostics": {
     "good_thickness_fraction": 1.0,

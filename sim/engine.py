@@ -19,7 +19,6 @@ from models.cloud_physics.burn_model import (
 from models.cloud_physics.cloud_evolution import (
     build_up_time_s,
     cl_threshold_g_m2,
-    time_to_spectral_threshold_s,
     duration_at_good_thickness_s,
     good_thickness_mask,
     lock_break_duration_estimate_s,
@@ -27,8 +26,11 @@ from models.cloud_physics.cloud_evolution import (
     moe_fused_eoir_mask,
     peak_concentration_length_g_m2,
     screening_area_m2,
+    time_to_spectral_threshold_s,
     transmittance_bands,
 )
+from models.sensors.degradation import moe_fused_degraded_mask, sensor_diagnostics
+from sim.manifest_util import build_traceability
 
 
 @dataclass
@@ -51,7 +53,35 @@ def _sample_alpha(rng: np.random.Generator, n: int, band: str, params: dict) -> 
     return rng.uniform(spec["low"], spec["high"], size=n)
 
 
+def _resolve_moe_mask(
+    params: dict,
+    t_vis: np.ndarray,
+    t_nir: np.ndarray,
+    t_mwir: np.ndarray,
+    alpha_vis: np.ndarray,
+    alpha_nir: np.ndarray,
+    alpha_mwir: np.ndarray,
+    cl_peak: np.ndarray,
+    visual_smoke_factor: float,
+    threshold: float,
+) -> tuple[np.ndarray, str]:
+    sim_cfg = params.get("sim", {})
+    model = sim_cfg.get("sensor_model", "v4_band_integrated")
+    if model == "v3_scalar":
+        mask = moe_fused_eoir_mask(t_vis, t_nir, t_mwir, threshold, visual_smoke_factor)
+        return mask, "phase1_v3_cl_ramp"
+    contrast = 1.0 - threshold
+    mask = moe_fused_degraded_mask(
+        alpha_vis, alpha_nir, alpha_mwir, cl_peak,
+        visual_smoke_factor=visual_smoke_factor,
+        contrast_threshold=contrast,
+    )
+    return mask, "phase1_v4_sensor"
+
+
 def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
+    root = Path(__file__).resolve().parents[1]
+    params_path = root / "models" / "cloud_physics" / "params.yaml"
     rng = np.random.default_rng(config.seed)
     n = config.n_samples
     g = params["grenade"]
@@ -60,6 +90,7 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
     emp = params["employment"]
     moe = params["moe"]
     kpp = params.get("kpp", {})
+    sim_cfg = params.get("sim", {})
 
     wind_mph = rng.uniform(env["wind_speed_mph"]["min"], env["wind_speed_mph"]["max"], size=n)
     temp_c = rng.uniform(env["temperature_c"]["min"], env["temperature_c"]["max"], size=n)
@@ -98,8 +129,10 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
     thickness_met = good_thickness_mask(cl_peak, cl_required)
 
     t_vis, t_nir, t_mwir = transmittance_bands(alpha_vis, alpha_nir, alpha_mwir, cl_peak)
-    moe_mask = moe_fused_eoir_mask(
-        t_vis, t_nir, t_mwir, moe["transmittance_threshold"], emp["visual_smoke_factor"]
+    moe_mask, model_version = _resolve_moe_mask(
+        params, t_vis, t_nir, t_mwir,
+        alpha_vis, alpha_nir, alpha_mwir, cl_peak,
+        emp["visual_smoke_factor"], moe["transmittance_threshold"],
     )
 
     build_up = build_up_time_s(
@@ -123,10 +156,22 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
     area_min = kpp.get("area_p10_min_sqft", 30.0)
     lock_min = kpp.get("lock_break_p50_min_s", 60.0)
 
+    trace = build_traceability(
+        job_id=config.label,
+        seed=config.seed,
+        n_samples=n,
+        n_grenades=config.n_grenades,
+        model_version=model_version,
+        params_path=params_path,
+        assumption_ids=list(sim_cfg.get("assumption_ids", [])),
+    )
+
     return {
         "label": config.label,
         "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION",
-        "model_version": "phase1_v3_cl_ramp",
+        "study_type": "literature_parameter_sensitivity",
+        "model_version": model_version,
+        "traceability": trace,
         "config": {
             "n_samples": n,
             "seed": config.seed,
@@ -146,6 +191,9 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
             "MWIR_p50": pct(t_mwir, 50),
             "fraction_below_threshold": float(np.mean(moe_mask)),
         },
+        "sensor_diagnostics": sensor_diagnostics(
+            alpha_vis, alpha_nir, alpha_mwir, cl_peak, emp["visual_smoke_factor"]
+        ),
         "physics_diagnostics": {
             "good_thickness_fraction": float(np.mean(thickness_met)),
             "filler_mass_g_p50": pct(filler_mass, 50),

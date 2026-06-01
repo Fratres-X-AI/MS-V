@@ -1,0 +1,17 @@
+{
+  "harness": "sim.reproduce",
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.0.2"
+  },
+  "golden_file": "analysis/reproduce_golden.json",
+  "tolerance": 0.0001,
+  "validation_errors": [
+    "single_grenade.duration_p10: got 159.89543960208303, expected 159.9125",
+    "single_grenade.duration_p50: got 185.7791508701792, expected 185.4964",
+    "single_grenade.build_up_p90: got 12.580307650658561, expected 12.5842",
+    "single_grenade.area_p10: got 31.01538298747317, expected 30.0"
+  ],
+  "validation_pass": false
+}

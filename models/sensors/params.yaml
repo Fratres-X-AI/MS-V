@@ -1,0 +1,40 @@
+# MS-V Sensor Surrogate Parameters
+# MATURITY: Preliminary Model — NOT validated against threat systems
+# STATUS: Literature/surrogate only; requires range test for TRL 4+
+
+sensor_model:
+  id: v4_band_integrated
+  disclaimer: SURROGATE SENSOR MODEL — NOT THREAT REPRESENTATION
+
+bands:
+  VIS:
+    wavelength_um: [0.45, 0.55, 0.65]
+    weights: [0.30, 0.40, 0.30]
+    threat: FPV visible camera
+  NIR:
+    wavelength_um: [0.85, 1.05, 1.25]
+    weights: [0.33, 0.34, 0.33]
+    threat: NVG / low-light FPV
+  MWIR:
+    wavelength_um: [3.5, 4.5, 5.0]
+    weights: [0.25, 0.50, 0.25]
+    threat: Cooled military UAS FLIR
+  LWIR:
+    wavelength_um: [8.0, 10.0, 12.0]
+    weights: [0.25, 0.50, 0.25]
+    threat: Uncooled commercial thermal
+
+degradation:
+  transmittance_threshold: 0.15  # T below = obscured (planning surrogate)
+  min_contrast_fraction: 0.15     # 1 - T above = usable contrast
+  visual_smoke_factor_default: 1.3
+  require_all_bands: true           # VIS+NIR+MWIR for fused MoE (KPP-06)
+
+uncooled_thermal:
+  uses_band: LWIR
+  netd_mk: 50.0                   # UNVALIDATED surrogate
+
+cooled_thermal:
+  uses_band: MWIR
+
+# Alpha sampling uses parent params.yaml extinction bands per wavelength bucket

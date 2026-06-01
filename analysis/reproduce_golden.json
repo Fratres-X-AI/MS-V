@@ -1,0 +1,32 @@
+{
+  "description": "Golden metrics for sim.reproduce — phase1_v4_sensor",
+  "model_version": "phase1_v4_sensor",
+  "jobs": {
+    "three_grenade_group": {
+      "seed": 44,
+      "n_samples": 100000,
+      "n_grenades": 3,
+      "metrics": {
+        "duration_p10": 160.02319943288856,
+        "duration_p50": 185.53318481508148,
+        "build_up_p90": 12.576524927092827,
+        "area_p10": 68.37552597033888,
+        "moe_lock_frac": 1.0,
+        "moe_degraded_frac": 1.0
+      }
+    },
+    "single_grenade": {
+      "seed": 42,
+      "n_samples": 100000,
+      "n_grenades": 1,
+      "metrics": {
+        "duration_p10": 159.89543960208303,
+        "duration_p50": 185.7791508701792,
+        "build_up_p90": 12.580307650658561,
+        "area_p10": 31.01538298747317,
+        "moe_lock_frac": 1.0,
+        "moe_degraded_frac": 1.0
+      }
+    }
+  }
+}

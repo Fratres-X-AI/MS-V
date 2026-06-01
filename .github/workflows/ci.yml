@@ -18,7 +18,10 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-lock.txt
+
+      - name: Reproducibility harness
+        run: python -m sim.reproduce
 
       - name: Run local simulation suite (100k)
         run: python sim/run_suite_local.py
