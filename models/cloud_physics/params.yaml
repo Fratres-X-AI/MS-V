@@ -63,6 +63,12 @@ monte_carlo:
   n_samples: 10000
   seed: 42
 
+profiles:
+  local:
+    n_samples: 100000
+  runpod:
+    n_samples: 2000000
+
 moe:
   lock_break_duration_threshold_s: 60
   transmittance_threshold: 0.15  # below = effective obscuration

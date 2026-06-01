@@ -2,7 +2,7 @@
 
 **Program:** MS-V Veil (Multispectral Obscurant Grenade)  
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
-**Current maturity:** Concept Documentation (v2)  
+**Current maturity:** Concept Documentation (v2) + **Phase 0/1 local M&S complete**  
 **Realistic ceiling (internal):** TRL 2–3 — physics-informed conceptual design + Monte Carlo M&S package  
 **Last updated:** 2026-05-24
 
@@ -166,32 +166,27 @@ MS-V/
 
 ## Today's Work Session — Immediate Actions
 
-### Decision (recommended)
+### Completed locally (2026-05-24)
 
-**Execute Phase 0 audit in parallel with Phase 1 skeleton.** Freeze KPP definitions in RTM while building sim scaffold — do not wait for perfect audit to start modeling.
+- [x] Phase 0 audit log — [`rtm/audit_log.md`](rtm/audit_log.md)
+- [x] RTM expanded — [`rtm/requirements_traceability.csv`](rtm/requirements_traceability.csv)
+- [x] Physics-based cloud model — [`models/cloud_physics/`](models/cloud_physics/)
+- [x] Vectorized Monte Carlo engine — [`sim/engine.py`](sim/engine.py)
+- [x] Local suite (100k × 4 scenarios) — [`sim/run_suite_local.py`](sim/run_suite_local.py)
+- [x] Results summary + charts — [`analysis/RESULTS_SUMMARY.md`](analysis/RESULTS_SUMMARY.md)
+- [x] KPP gap analysis — [`analysis/kpp_gap_analysis.md`](analysis/kpp_gap_analysis.md)
+- [x] Risk register seed — [`analysis/risk_register.md`](analysis/risk_register.md)
+- [x] RunPod handoff — [`RUNPOD.md`](RUNPOD.md)
 
-### Phase 0 (today)
+### RunPod (when rented)
 
-- [ ] Begin source audit: TM 43-0001-29, FM 3-50, ECBC 2014 vs docs 01–08
-- [ ] Seed RTM from [Annex B KPPs](annexes/B-kpp-targets.md)
-- [ ] Open decision log with known trades from [Annex C](annexes/C-trades-matrix.md)
+```bash
+pip install -r requirements.txt
+python sim/run_runpod.py --samples 2000000
+python analysis/summarize_results.py
+```
 
-### Phase 1 scope (freeze before coding)
-
-| Parameter | Value |
-|-----------|-------|
-| Wavelength bands | VIS 0.4–0.7 µm, NIR 0.7–1.4 µm, MWIR 3–5 µm |
-| Surrogate sensors | FPV visible camera; uncooled LWIR; cooled MWIR |
-| Environment | Wind 0–15 mph, −20°C to +50°C, humidity 20–95% RH |
-| Employment | 1 grenade + 2–3 grenade groups |
-| Output metrics | Build-up time, duration, screening area, MoE lock-break probability >60 s |
-| Literature α bounds | ECBC bispectral range + COMBIC/FM 3-50 references |
-
-### Phase 1 (today)
-
-- [ ] Run Monte Carlo skeleton ([`sim/run_monte_carlo.py`](sim/run_monte_carlo.py))
-- [ ] Define default params ([`models/cloud_physics/params.yaml`](models/cloud_physics/params.yaml))
-- [ ] Document assumptions in [`rtm/assumption_register.md`](rtm/assumption_register.md)
+See [`RUNPOD.md`](RUNPOD.md).
 
 ---
 

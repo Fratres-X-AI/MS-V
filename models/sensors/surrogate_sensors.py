@@ -15,8 +15,8 @@ def fpv_visible_degraded(
     threshold: float = 0.15,
 ) -> bool:
     """FPV visible channel degraded if combined VIS obscuration effective."""
-    effective_alpha = alpha_vis * visual_smoke_factor
-    return effective_obscuration(effective_alpha, cl_g_m2, threshold)
+    t_vis_eff = min(t_vis ** visual_smoke_factor, 1.0)
+    return t_vis_eff < threshold
 
 
 def thermal_degraded(

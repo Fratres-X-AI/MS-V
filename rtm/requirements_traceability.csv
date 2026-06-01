@@ -1,12 +1,20 @@
-req_id,type,description,source_doc,source_ref,verification_method,status
-KPP-01,KPP,Weight ~850 g,annexes/B-kpp-targets.md,KPP-01,Mass measurement,UNVERIFIED
-KPP-02,KPP,Build-up <=15 s effective density,annexes/B-kpp-targets.md,KPP-02,Sim + field test,UNVERIFIED
-KPP-03,KPP,Duration >=120 s at good thickness,annexes/B-kpp-targets.md,KPP-03,Sim + field test,UNVERIFIED
-KPP-04,KPP,Screening area 30-40 sq ft per grenade,annexes/B-kpp-targets.md,KPP-04,Sim + grid test,UNVERIFIED
-KPP-05,KPP,Employment group 2-3 grenades,annexes/B-kpp-targets.md,KPP-05,CONOPS sim,UNVERIFIED
-KPP-06,KPP,Spectrum VIS+NIR+MWIR,annexes/B-kpp-targets.md,KPP-06,Spectral transmittance test,UNVERIFIED
-MOE-01,MoE,Degrade FPV/fiber-optic observation 2-3 MS-V + smoke,docs/02-operational-requirements.md,MoE,Combined employment sim,UNVERIFIED
-MOE-02,MoE,CASEVAC/break contact/reposition window,docs/04-conops-use-cases.md,All use cases,CONOPS sim,UNVERIFIED
-LIM-01,Limitation,Not standalone without visual smoke,docs/07-limitations-and-risks.md,Hard Limits,Doctrine review,ACCEPTED
-LIM-02,Limitation,Not RF defeat,docs/07-limitations-and-risks.md,Threat matrix,Architecture review,ACCEPTED
-LIM-03,Limitation,TRL 2-3 ceiling internal,MasterPlan.md,Status Summary,Program review,ACCEPTED
+req_id,type,description,source_doc,verification_method,status,sim_ref
+KPP-01,KPP,Weight ~850 g,annexes/B-kpp-targets.md,Mass measurement,UNVERIFIED,
+KPP-02,KPP,Build-up <=15 s,annexes/B-kpp-targets.md,Sim kpp_02_build_up_s,IN_PROGRESS,analysis/results/*.json
+KPP-03,KPP,Duration >=120 s,annexes/B-kpp-targets.md,Sim kpp_03_duration_effective_s,IN_PROGRESS,analysis/results/*.json
+KPP-04,KPP,Screening 30-40 sq ft,annexes/B-kpp-targets.md,Sim kpp_04_screening_area_sqft,IN_PROGRESS,analysis/results/*.json
+KPP-05,KPP,Group 2-3 grenades,annexes/B-kpp-targets.md,Employment scenarios,IN_PROGRESS,two/three_grenade_group.json
+KPP-06,KPP,VIS+NIR+MWIR,annexes/B-kpp-targets.md,Transmittance bands,IN_PROGRESS,sim/engine.py
+KPP-07,KPP,Fuze M201A1 compatible,docs/03-design-constraints.md,Engineering review,UNVERIFIED,
+KPP-08,KPP,Throw >=20 m,docs/03-design-constraints.md,Human factors test,UNVERIFIED,
+KPP-09,KPP,Temp -20 to +50 C,annexes/B-kpp-targets.md,Environmental sim,PLANNED,Phase 1 ext
+KPP-10,KPP,Wind <=15 mph,annexes/B-kpp-targets.md,Wind sensitivity sim,IN_PROGRESS,wind_sensitivity.json
+KPP-11,KPP,Respiratory irritation acceptable,docs/03-design-constraints.md,Toxicology study,UNVERIFIED,
+KPP-12,KPP,Cost $75-150,docs/03-design-constraints.md,Cost model,PLANNED,analysis/cost_model/
+MOE-01,MoE,Degrade FPV/fiber-optic 2-3 MS-V+smoke,docs/02-operational-requirements.md,Combined employment sim,IN_PROGRESS,moe.lock_break_ge_60s
+MOE-02,MoE,CASEVAC/break contact window,docs/04-conops-use-cases.md,CONOPS sim,PLANNED,sim/conops/
+LIM-01,Limitation,Not standalone,docs/07-limitations-and-risks.md,Doctrine,ACCEPTED,
+LIM-02,Limitation,Not RF defeat,docs/07-limitations-and-risks.md,Architecture,ACCEPTED,
+LIM-03,Limitation,TRL 2-3 internal ceiling,MasterPlan.md,Program review,ACCEPTED,
+ASM-001,Assumption,Yield factor 0.22-0.52,rtm/assumption_register.md,Literature,UNVALIDATED,params.yaml
+ASM-002,Assumption,Visual smoke factor 1.3,rtm/assumption_register.md,Placeholder,UNVALIDATED,params.yaml
