@@ -2,10 +2,11 @@
 
 > LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION
 
-- **Model:** phase1_v3_cl_ramp
+- **Model:** phase2_v1_full_physics
+- **Physics tier:** phase2 · **Sensor:** unknown
 - **Jobs:** 38 | **Total samples:** 140,000,000
 - **Pass:** 38/38 all-KPP-pass
-- **Elapsed:** 9.02s on 128 vCPU (31 workers)
+- **Workers:** None (RunPod policy: vCPU−1)
 
 ## Summary Table
 

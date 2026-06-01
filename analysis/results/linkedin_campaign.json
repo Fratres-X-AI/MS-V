@@ -1,0 +1,8 @@
+{
+  "completed_at": "2026-06-01T22:06:57.673549+00:00",
+  "mega_model": "phase2_v1_full_physics",
+  "mega_samples": 140000000,
+  "conops_samples": null,
+  "moe_sobol_n_base": 4096,
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION"
+}

@@ -1,7 +1,7 @@
 # Sobol Global Sensitivity Report — MS-V Phase 1
 
 > **MATURITY:** Literature-parameter deterministic physics — **NOT VALIDATION**
-> **Method:** Saltelli + Sobol (SALib) · N=8,192 · evaluations=212,992
+> **Method:** Saltelli + Sobol (SALib) · N=16,384 · evaluations=425,984
 > **Scenario:** 3 grenades · seed=4242
 
 ## Interpretation
@@ -17,18 +17,18 @@
 |------|-----------|-----|-----|----------------|
 | 1 | `burn_rate_g_s` | 0.8321 | 0.8340 | P0 burn cup |
 | 2 | `temp_c` | 0.1212 | 0.1227 | P0 chamber T |
-| 3 | `filler_mass_g` | 0.0446 | 0.0452 | P0 burn cup |
-| 4 | `alpha_mwir` | 0.0000 | 0.0000 | P0 spectrometry |
+| 3 | `filler_mass_g` | 0.0447 | 0.0452 | P0 burn cup |
+| 4 | `alpha_mwir` | -0.0000 | 0.0000 | P0 spectrometry |
 | 5 | `yield_factor` | 0.0000 | 0.0000 | P0 gravimetric yield |
 | 6 | `cloud_depth_m` | 0.0000 | 0.0000 | P1 geometry |
-| 7 | `build_up_time_s` | 0.0000 | 0.0000 | P1 high-speed video |
+| 7 | `build_up_time_s` | -0.0000 | 0.0000 | P1 high-speed video |
 | 8 | `wind_mph` | 0.0000 | 0.0000 | P2 range plume |
-| 9 | `alpha_nir` | 0.0000 | 0.0000 | P0 spectrometry |
+| 9 | `alpha_nir` | -0.0000 | 0.0000 | P0 spectrometry |
 | 10 | `screening_area_sqft` | 0.0000 | 0.0000 | P1 lidar geometry |
 | 11 | `alpha_vis` | -0.0000 | 0.0000 | P0 spectrometry |
 | 12 | `humidity_rh` | 0.0000 | 0.0000 | P1 chamber RH |
 
-- Duration Y: mean=187.7s p10=159.9s p50=185.6s p90=218.7s
+- Duration Y: mean=187.7s p10=160.0s p50=185.6s p90=218.8s
 
 ## KPP-02 Build-up — top 5 by ST
 

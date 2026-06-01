@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-01T21:57:18.566228+00:00",
+  "generated_at": "2026-06-01T23:14:57.037773+00:00",
   "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
   "model_version": "phase2_v1_full_physics",
   "physics_tier": "phase2",
-  "sensor_model": "unknown",
+  "sensor_model": "v6_probabilistic_lock",
   "workers": null,
   "total_jobs": 38,
   "total_samples": 140000000,

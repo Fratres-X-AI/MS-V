@@ -1,0 +1,134 @@
+{
+  "generated_at": "2026-06-01T23:17:04.240077+00:00",
+  "disclaimer": "LITERATURE-PARAMETER SENSITIVITY STUDY \u2014 NOT VALIDATION",
+  "method": "Saltelli + Sobol (SALib) on phase2_v1_full_physics + v6_probabilistic_lock",
+  "physics_tier": "phase2",
+  "sensor_model": "v6_probabilistic_lock",
+  "n_base": 8192,
+  "mc_n_per_row": 5000,
+  "n_evaluations": 114688,
+  "seed": 4242,
+  "n_grenades": 3,
+  "workers": 31,
+  "problem": {
+    "num_vars": 6,
+    "names": [
+      "burn_rate_g_s",
+      "filler_mass_g",
+      "temp_c",
+      "humidity_rh",
+      "alpha_vis",
+      "alpha_mwir"
+    ],
+    "bounds": [
+      [
+        2.9,
+        4.2
+      ],
+      [
+        624,
+        680
+      ],
+      [
+        -20,
+        50
+      ],
+      [
+        20,
+        95
+      ],
+      [
+        4.0,
+        12.0
+      ],
+      [
+        2.0,
+        9.0
+      ]
+    ],
+    "sample_scaled": true
+  },
+  "outputs": {
+    "moe_met": {
+      "Y_mean": 0.8000144810267855,
+      "Y_std": 0.008022541979247715,
+      "Y_p10": 0.7898,
+      "Y_p50": 0.7998,
+      "Y_p90": 0.8106,
+      "status": "OK",
+      "rank_by_ST": [
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.2780164792754218,
+          "ST": 0.7748178378631428
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": 0.08850283228052065,
+          "ST": 0.6163718925334551
+        },
+        {
+          "name": "humidity_rh",
+          "S1": 0.07694948662057828,
+          "ST": 0.5826105640952535
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.05345742487452432,
+          "ST": 0.5728483320250957
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.015147938546637705,
+          "ST": 0.5213905780499491
+        },
+        {
+          "name": "alpha_vis",
+          "S1": -0.000709517139250283,
+          "ST": 0.5107693779379915
+        }
+      ]
+    },
+    "duration_p50": {
+      "Y_mean": 200.33227432664077,
+      "Y_std": 23.537456486898208,
+      "Y_p10": 170.77060815177293,
+      "Y_p50": 198.06582984206295,
+      "Y_p90": 233.4384838475011,
+      "status": "OK",
+      "rank_by_ST": [
+        {
+          "name": "burn_rate_g_s",
+          "S1": 0.8318230639580483,
+          "ST": 0.833729598724098
+        },
+        {
+          "name": "temp_c",
+          "S1": 0.12139850024785953,
+          "ST": 0.12287726376903084
+        },
+        {
+          "name": "filler_mass_g",
+          "S1": 0.04478431815003615,
+          "ST": 0.04538331498136201
+        },
+        {
+          "name": "humidity_rh",
+          "S1": -5.7955624340810195e-06,
+          "ST": 3.6642532364399455e-07
+        },
+        {
+          "name": "alpha_mwir",
+          "S1": -2.097006403589559e-06,
+          "ST": 2.3983604568534848e-08
+        },
+        {
+          "name": "alpha_vis",
+          "S1": -1.3614574944397083e-06,
+          "ST": 2.379968587980764e-08
+        }
+      ]
+    }
+  },
+  "elapsed_s": 112.64
+}
