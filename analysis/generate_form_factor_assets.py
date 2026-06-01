@@ -281,6 +281,10 @@ def main() -> None:
     for k, p in stl_paths.items():
         print(f"STL {k}: {p}")
 
+    from analysis.generate_3d_renders import main as render_main  # noqa: E402
+
+    render_main()
+
 
 if __name__ == "__main__":
     main()

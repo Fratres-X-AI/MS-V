@@ -98,14 +98,14 @@
     "packing": "16 per packing box"
   },
   "MS-V_target": {
-    "name": "MS-V Multispectral Obscurant Grenade (proposed, v2)",
+    "name": "MS-V Multispectral Obscurant Grenade (proposed, v2 KPP)",
     "type": "burning",
     "weight_g": 850,
     "filler_g": [624, 680],
     "filler_oz": [22, 24],
     "length_in": 7.1,
     "diameter_in": 3.1,
-    "size_note": "~25% larger envelope than AN-M8/M83",
+    "size_note": "KPP-01/09 design target ~25% larger than AN-M8/M83; see v3_existing_container in form_factor.yaml for production-reuse alternate",
     "body": "sheet metal",
     "fuze": "M201A1-compatible",
     "fuze_delay_s": [0.7, 2.0],

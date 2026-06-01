@@ -37,11 +37,26 @@ class PouchFitResult:
     notes: str
 
 
-def load_form_factor(root: Path | None = None) -> dict[str, Any]:
+def load_form_factor(root: Path | str | None = None, variant: str | None = None) -> dict[str, Any]:
+    if isinstance(root, str) and variant is None:
+        variant, root = root, None
     root = root or Path(__file__).resolve().parents[2]
+    if not isinstance(root, Path):
+        root = Path(root)
     path = root / "models" / "system" / "form_factor.yaml"
     with path.open(encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        raw = yaml.safe_load(f)
+    key = variant or raw.get("primary_variant", "v2_kpp")
+    var = raw["variants"][key]
+    return {
+        **var,
+        "pouch": raw["pouch"],
+        "cloud_employment": raw.get("cloud_employment", {}),
+        "disclaimer": raw.get("disclaimer", ""),
+        "variant_key": key,
+        "variant_label": var.get("label", key),
+        "all_variant_keys": list(raw["variants"].keys()),
+    }
 
 
 def in_to_mm(inches: float) -> float:

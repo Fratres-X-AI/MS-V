@@ -82,10 +82,13 @@ def export_ms_v_stl(out_path: Path, *, segments: int = 64) -> Path:
 
 
 def export_comparison_stl(out_dir: Path) -> dict[str, Path]:
-    root = Path(__file__).resolve().parents[2]
-    baselines = json.loads((root / "data" / "baseline_grenades.json").read_text(encoding="utf-8"))
-    an_m8 = baselines["grenades"]["AN-M8"]
-    ms_v = baselines["MS-V_target"]
+    spec = load_form_factor()
+    body = spec["ms_v"]["body"]
+    an_m8 = json.loads(
+        (Path(__file__).resolve().parents[2] / "data" / "baseline_grenades.json").read_text(
+            encoding="utf-8",
+        ),
+    )["grenades"]["AN-M8"]
     out_dir.mkdir(parents=True, exist_ok=True)
     paths: dict[str, Path] = {}
 
@@ -98,6 +101,6 @@ def export_comparison_stl(out_dir: Path) -> dict[str, Path]:
         _write_binary_stl(p, v, f)
         paths[name] = p
 
-    _one("ms_v_body", ms_v["length_in"], ms_v["diameter_in"], 0.0)
-    _one("an_m8_reference", an_m8["length_in"], an_m8["diameter_in"], 120.0)
+    _one("ms_v_body", body["length_in"], body["diameter_in"], 0.0)
+    _one("an_m8_reference", an_m8["length_in"], an_m8["diameter_in"], 100.0)
     return paths

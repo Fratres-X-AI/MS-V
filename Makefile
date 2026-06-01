@@ -42,6 +42,12 @@ figures:
 form-factor:
 	python analysis/generate_form_factor_assets.py
 
+engineering-figures:
+	python analysis/generate_engineering_drawings.py
+
+renders3d:
+	python analysis/generate_3d_renders.py
+
 audit: lint test reproduce report figures
 
 ci: reproduce

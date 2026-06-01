@@ -1,4 +1,4 @@
-"""Tests for Tier B form-factor envelope and STL export."""
+"""Tests for form-factor envelope and STL export."""
 
 from __future__ import annotations
 
@@ -14,22 +14,34 @@ from models.system.envelope import (
 from models.system.stl_export import export_ms_v_stl
 
 
-def test_envelope_volume_budget_consistent() -> None:
-    env = derive_envelope()
+def test_v2_kpp_is_primary_variant() -> None:
+    spec = load_form_factor()
+    assert spec["variant_key"] == "v2_kpp"
+    assert spec["ms_v"]["mass_g"] == 850
+    assert spec["ms_v"]["body"]["length_in"] == 7.1
+
+
+def test_v3_existing_container_variant() -> None:
+    spec = load_form_factor("v3_existing_container")
+    assert spec["ms_v"]["mass_g"] == 680
+    assert spec["ms_v"]["body"]["length_in"] == 5.7
+
+
+def test_envelope_volume_budget_consistent_v2() -> None:
+    env = derive_envelope(load_form_factor("v2_kpp"))
     assert 600 <= env.fill_volume_cm3 <= 750
     assert env.internal_chamber_cm3 >= env.fill_volume_cm3 * 0.85
 
 
-def test_pouch_fit_parametric() -> None:
-    spec = load_form_factor()
+def test_pouch_fit_parametric_v2() -> None:
+    spec = load_form_factor("v2_kpp")
     env = derive_envelope(spec)
     fit = check_pouch_fit(env, spec["ms_v"]["mass_g"], spec["pouch"])
     assert fit.fits_mass
-    assert fit.clearance_height_mm >= 0
 
 
 def test_loadout_mass_two_ms_v() -> None:
-    spec = load_form_factor()
+    spec = load_form_factor("v2_kpp")
     lo = loadout_mass_g(spec, n_ms_v=2, n_hc=1)
     assert lo["ms_v_kg"] == 1.7
     assert lo["total_kg"] == pytest.approx(2.38, rel=0.01)

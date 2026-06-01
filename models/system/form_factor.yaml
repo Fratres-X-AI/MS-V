@@ -1,66 +1,101 @@
-# MS-V Form Factor — parametric envelope (Tier B digital representation)
-# STATUS: Engineering estimate — NOT validated against CAD or range test
-# Sources: TM 43-0001-29 baselines, docs/03, KPP-08, trade study v2
+# MS-V Form Factor — parametric envelope (Tier B/C)
+# STATUS: Engineering estimate — NOT VALIDATION
+#
+# Two explicit tracks (see analysis/VISUAL_CONCEPT_ASSESSMENT.md):
+#   v2_kpp              — Annex B / MasterPlan design target (~850 g, 7.1 × 3.1 in)
+#   v3_existing_container — production reuse in AN-M8/M18 body (680 g, 5.7 × 2.5 in)
 
 disclaimer: LITERATURE-PARAMETER ENGINEERING ESTIMATE — NOT VALIDATION
+primary_variant: v2_kpp
 
-ms_v:
-  mass_g: 850
-  filler_mass_g:
-    min: 624
-    max: 680
-  filler_density_g_cm3:
-    min: 0.88
-    max: 1.05
-    reference: bispectral pyrotechnic composite order-of-magnitude
-  body:
-    material: sheet_steel
-    wall_thickness_mm: 2.0
-    length_in: 7.1
-    diameter_in: 3.1
-  fuze:
-    type: M201A1-compatible
-    stack_height_mm: 28
-    outer_diameter_mm: 52
-  ports:
-    top: 4
-    bottom: 1
-    port_diameter_mm: 8
-    total_emission_area_m2: 0.0012
+variants:
+  v2_kpp:
+    label: KPP design target (Annex B, MasterPlan)
+    envelope:
+      match_baseline: none
+      delta_vs_an_m8: "~25% larger L×D for bispectral fill mass"
+    ms_v:
+      mass_g: 850
+      filler_mass_g:
+        min: 624
+        max: 680
+      filler_density_g_cm3:
+        min: 0.88
+        max: 1.05
+      body:
+        material: sheet_steel
+        wall_thickness_mm: 2.0
+        length_in: 7.1
+        diameter_in: 3.1
+      fuze:
+        type: M201A1-compatible
+        stack_height_mm: 28
+        outer_diameter_mm: 52
+      ports:
+        top: 4
+        bottom: 1
+        port_diameter_mm: 8
+        total_emission_area_m2: 0.0012
+      spectrum_bands: [VIS, NIR, MWIR]
+    throw:
+      kpp_id: KPP-08
+      range_m:
+        min: 20
+        max: 25
+      sim_p50_m: 21.5
+    loadout:
+      ms_v_mass_g: 850
+      an_m8_mass_g: 680
 
-# Standard inventory reference (TM 43-0001-29)
-baseline_reference: AN-M8
+  v3_existing_container:
+    label: Production / sourcing reuse path
+    envelope:
+      match_baseline: AN-M8
+      production_strategy: existing_container_reuse
+      delta_vs_an_m8: Same outer shell; MS-V delta is filler composition only
+    ms_v:
+      mass_g: 680
+      filler_mass_g:
+        min: 260
+        max: 320
+      filler_density_g_cm3:
+        min: 0.88
+        max: 1.05
+      body:
+        material: sheet_steel
+        wall_thickness_mm: 2.0
+        length_in: 5.7
+        diameter_in: 2.5
+      fuze:
+        type: M201A1-compatible
+        stack_height_mm: 28
+        outer_diameter_mm: 42
+      ports:
+        top: 4
+        bottom: 1
+        port_diameter_mm: 6
+        total_emission_area_m2: 0.0008
+      spectrum_bands: [VIS, NIR, MWIR]
+    throw:
+      kpp_id: KPP-08
+      range_m:
+        min: 20
+        max: 25
+      sim_p50_m: 24.0
+    loadout:
+      ms_v_mass_g: 680
+      an_m8_mass_g: 680
 
 pouch:
-  # Common MOLLE single/double grenade pouch — literature / vendor envelope (conservative)
   id: molle_grenade_pouch_typical
   inner_width_mm: 90
   inner_depth_mm: 95
   inner_height_mm: 185
   max_recommended_mass_g: 900
-  note: MS-V 79 mm dia × 180 mm may fit snug; verify with issued pouch NSN
-
-throw:
-  kpp_id: KPP-08
-  range_m:
-    min: 20
-    max: 25
-  sim_p50_m: 21.5
-  reference_grenade: M18
-  reference_range_m: 35
-
-loadout:
-  ms_v_per_soldier: [1, 2]
-  visual_smoke_per_event: [1, 2]
-  ms_v_mass_g: 850
-  an_m8_mass_g: 680
 
 cloud_employment:
   screening_area_sqft:
     min: 30
     max: 40
-  throw_offset_m:
-    min: 0
-    max: 4
   typical_n_ms_v: 2
   typical_n_hc: 1
