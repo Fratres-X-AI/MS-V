@@ -1,129 +1,155 @@
 # LinkedIn Campaign Brief — MS-V Veil
 
-> **Use this for posting.** All numbers from pod campaign `2026-06-01T22:06:57Z` @ 31 workers.  
-> **Mandatory disclaimer:** Literature-parameter sensitivity study — **NOT field validation.**
-
-## Pod Round 3 (2026-06-01T23:22:46Z)
-
-| Job | N | Dur p10 | MoE |
-|-----|---|---------|-----|
-| burn_worst_50M | 50M | **161.8s** | 80.3% |
-| adversarial_20M | 20M | **152.3s** | **55.1%** |
-| baseline_confirm_50M | 50M | **169.9s** | 80.1% |
-| burn seed stability | 2×10M | 161.8s ±0.01s | stable |
-
-**140M focused tail-risk samples** — burn-worst p10 stable at 50M (seed spread 0.01s).
-
-See `analysis/DEEP_DIVE_REPORT.md`
-
-```bash
-bash sim/run_pod_round3.sh
-```
+> **Read first:** [`docs/linkedin-posting-guide.md`](../docs/linkedin-posting-guide.md)  
+> **Visual check:** [`analysis/LINKEDIN_VISUAL_VERIFICATION.md`](LINKEDIN_VISUAL_VERIFICATION.md)  
+> **Mandatory disclaimer:** Literature-parameter **TRL 2 sensitivity study** — **NOT field validation.**
 
 ---
 
-## Pod Round 2 (2026-06-01T23:18:21Z)
+## Posting readiness (2026-06-02)
 
-| Campaign | Scale | Notes |
-|----------|-------|-------|
-| Mega refresh | 140M | phase2/v6, 38/38 pass |
-| CONOPS | **1M** samples × 5 cases | Stable lock-met fractions |
-| MoE Sobol phase2 | N=**8192**, mc_n=**5000** → **573M** inner MC | burn_rate ST=0.82 on MoE |
-| Duration Sobol | N=**32768** | Tighter burn-rate indices |
-| Wind deep-dive | 2M × 3 wind bins × 3 grenade counts | `analysis/results/runpod/` |
+| Post type | Ready? |
+|-----------|--------|
+| **Option C** — problem only, no numbers | **Yes** (safest first post) |
+| **Option B** — short M&S with surrogate caveats | **Yes** (recommended) |
+| **Carousel** (3 canonical images + caption) | **Yes** |
+| **Option A** — technical deep-dive | **Use with caution** — expert audience only |
+| **Repo link in first post** | **Defer** — see posting guide Phase 2 |
 
-```bash
-export RUNPOD_CPU_COUNT=32
-bash sim/run_pod_round2.sh
-```
+Campaign numbers below are from pod runs `2026-06-01` @ 31 workers (`phase2_v1_full_physics` + v6 probabilistic sensor). **No new pod run required for posting.**
 
 ---
 
-## Headline metrics (safe to cite)
+## MoE / lock-break — required framing (read before any post)
 
-| Metric | Value | Source |
-|--------|-------|--------|
-| Mega-suite samples | **140M** (38 jobs, all pass) | `manifest.json` |
-| Physics stack | **phase2** microphysics + **v6** probabilistic EO/IR lock-break | engine |
-| Duration margin (p10, 3× MS-V) | **+41.6%** vs 120 s KPP | verification matrix |
-| MoE lock-break ≥60 s (baseline g3) | **80.1%** (discriminative — not saturated) | mega suite |
-| Adversarial stack MoE | **55.1%** (stress case) | mega suite |
-| CONOPS Monte Carlo | **500k** samples × 5 use cases | pod campaign |
-| MoE Sobol (phase2 engine) | **172M** inner MC (57k Saltelli × 3k) | `sobol_moe_phase2` |
-| Top MoE driver (ST) | **burn_rate_g_s 0.82** · α_MWIR 0.68 · humidity 0.68 | MoE Sobol report |
+**Do not say "80% drone defeat" or "breaks lock" as fact.**
 
-## What changed vs earlier posts
+| What we measured | What it is NOT |
+|------------------|----------------|
+| Fraction of MC samples where a **planning surrogate** (fused EO/IR transmittance < τ) stays below threshold for ≥60 s | Measured UAS lock-break or Pk |
+| ~**80%** under **nominal** literature stack in mega job `baseline_10M_g3` | Validated operational effectiveness |
+| ~**55%** under **adversarial** stack (`adversarial_20M_g3`) | Worst-case field performance |
 
-- MoE is **no longer 100% saturated** — v6 probabilistic sensor + phase2 physics gives **real spread** (55–98% across wind/employment cases).
-- **KPP-08 throw** closed in MC (p10 ≥ 20 m stressed).
-- Full **KPP-01–14 + MOE-01/02** traceability matrix published.
+Traceability: assumption **A-013** · matrix note on `surrogate_saturated` · [`rtm/verification_matrix.md`](../rtm/verification_matrix.md)
 
-## Still do NOT claim
+**"Phase 2"** = **model tier** in code (microphysics pipeline), not program Phase II or field test.
 
-- Field validation, TRL 4+, military ready
-- Empirical MS-V fill performance
-- Toxicology (KPP-12) or cost (KPP-13) — Phase 4
+---
 
-## Canonical visuals (repo — user-approved trio)
+## Headline metrics (conservative citations)
+
+| Metric | Value | Safe framing |
+|--------|-------|----------------|
+| Mega-suite samples | 140M (38 jobs) | "Monte Carlo sensitivity campaign" |
+| Model stack | phase2 microphysics + v6 probabilistic sensor path | "Literature-bound M&S" |
+| Duration p10 (3× g3) | ~170 s | "Model p10 at bounded parameters" |
+| vs 120 s KPP | +~42% margin in sim | "Headroom in sensitivity study" |
+| MoE surrogate (nominal / stress) | ~80% / ~55% lock-met **fraction** | "Surrogate metric — not field MoE" |
+| Sobol (MoE phase2) | burn_rate ST ≈ 0.82 | "Prioritizes TRL 3 burn cup" |
+
+Pod detail (optional footnotes): Round 2 CONOPS 1M, MoE Sobol N=8192 · Round 3 tail-risk 50M stable — see `DEEP_DIVE_REPORT.md`.
+
+---
+
+## Canonical visuals
 
 **Carousel order:** hero → scale → cutaway
 
-| # | File | Raw GitHub URL |
-|---|------|----------------|
-| 1 | `ms_v_v2_hero.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png |
-| 2 | `scale_comparison_v2_inventory.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png |
-| 3 | `ms_v_v2_cutaway_photoreal.png` | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png |
+| # | Raw GitHub URL |
+|---|----------------|
+| 1 | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png |
+| 2 | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png |
+| 3 | https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png |
 
-Local paths: `analysis/figures/form_factor/` · Index: `CANONICAL_RENDERS.md` · Gallery: `renders/v2_kpp/index.html`
-
-**Caption (required on every slide):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
+**Caption (every image):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
 
 ---
 
-## Draft LinkedIn post (copy/edit)
+## Option C — safest first post (recommended week 1)
 
-**Option A — technical audience**
+**No repo link. No performance percentages.**
 
-We just closed a 140-million-sample sensitivity campaign on MS-V Veil — a squad-portable multispectral obscurant grenade concept (~850 g, VIS+NIR+MWIR) designed to break fused FPV/thermal UAS lock when paired with standard visual smoke.
+Standard smoke hides you from the eye. It does not hide you from a thermal camera — and fiber-optic FPV does not care about your jammer.
 
-This is **modeling & simulation**, not field validation. But the rigor is real:
+We are developing **MS-V Veil**, a hand-thrown **multispectral obscurant concept** meant to pair with inventory visual smoke: same grenadier TTP, layered under detection → EW → obscuration → kinetic.
 
-→ **140M Monte Carlo** runs across 38 scenarios (burn, temp, wind, adversarial stacks)  
-→ **Phase 2 microphysics** — aerosol PSD, humidity growth, plume merge, deployment kinematics  
-→ **Probabilistic EO/IR lock-break** — MoE now **discriminates** (80% nominal, 55% adversarial — not fake 100%)  
-→ **Global sensitivity (Sobol)** — burn rate dominates duration *and* lock-break; MWIR extinction second for MoE  
-→ **500k-sample CONOPS** — five kill-chain use cases with honest lock-met fractions  
+This is **early concept work (TRL 2)** — not a product, not field validation. We published a literature-bound Monte Carlo study and full requirements traceability for partners who care about honest sensitivity analysis.
 
-Key result: at literature-bound parameters, MS-V holds **~170 s p10 effective duration** (3-grenade employment) with **+42% headroom** on the 120 s KPP — while showing where stress breaks MoE (high wind + adversarial stack).
+If you work counter-UAS, obscurants, or squad force protection — happy to connect.
 
-Next gate: TRL 3 bench (burn cup, α(λ), throw range, UAS surrogate) — sim points the experiments.
-
-Repo: github.com/Fratres-X-AI/MS-V  
-#defense #modeling #counterUAS #smoke #simulation
+#defenseinnovation #counterUAS #simulation
 
 ---
 
-**Option B — shorter / executive**
+## Option B — recommended (short + honest numbers)
 
-MS-V Veil: hand-thrown multispectral smoke for the drone era.
+**Repo link optional — add in Phase 2 per posting guide.**
 
-We ran **140M+ Monte Carlo samples** on cloud physics, sensor degradation, and five CONOPS kill chains — a literature-parameter **sensitivity study**, not field proof.
+Standard smoke is VIS-only. Thermal and fused EO/IR UAS still see you.
 
-What the model says at bounded assumptions:
-• ~**2.8 min** effective screen (p10) with 3 grenades + visual smoke  
-• **80%** fused EO/IR lock-break under nominal conditions — **55%** under adversarial stress  
-• Burn rate and MWIR extinction drive both duration and MoE — guides TRL 3 test priority  
+**MS-V Veil** is a squad-portable **multispectral obscurant concept** (~850 g design target) — hand-thrown, paired with AN-M8/M83 visual smoke, same basic TTP as inventory smoke.
 
-Form factor: ~850 g, AN-M8-class employment. Full traceability matrix in repo.
+We completed a **140-million-sample Monte Carlo sensitivity study** (literature-parameter bounds, **not field test**):
 
-Looking for partners on fill characterization + range validation.  
-#defenseinnovation #counterUAS
+• Model duration margin (p10, 3-grenade employment) ~**2.8 min** vs 120 s requirement — **in sim only**  
+• **Planning surrogate** for fused EO/IR "lock-met" shows spread (**~80%** nominal stack · **~55%** stress stack) — **not measured UAS defeat**  
+• Global sensitivity: **burn rate** dominates — points TRL 3 bench to burn cup first  
+
+Concept art and traceability are on GitHub under **evaluation license (CEL)** — not commercial/production rights.
+
+Looking for fill-characterization and range partners for TRL 3 bench.
+
+#defenseinnovation #counterUAS #modeling
+
+*(Add when ready: Open evaluation: https://github.com/Fratres-X-AI/MS-V)*
 
 ---
 
-## Pod re-run command
+## Option A — technical audience only (use with care)
+
+**Not recommended as first public post.**
+
+We published a **140M-sample literature-bound sensitivity study** for **MS-V Veil** — a hand-thrown multispectral obscurant **concept** (~850 g v2 KPP) intended to degrade fused FPV/thermal observation when employed with standard visual smoke.
+
+**This is M&S, not validation.**
+
+→ 38-scenario Monte Carlo campaign (`phase2` model tier + probabilistic EO/IR **surrogate**)  
+→ Duration p10 ~**170 s** (3× employment) vs 120 s KPP — **inside modeled bounds only**  
+→ Surrogate lock-met fractions **~80% / ~55%** (nominal vs adversarial stack) — **planning metric A-013, not range data**  
+→ Sobol: **burn_rate** ST ≈ 0.83 on duration — guides bench priority  
+
+Next gate: TRL 3 fill bench + UAS surrogate (see repo DOC-11). No claim of military ready or empirical fill performance.
+
+Repo (CEL, evaluation only): https://github.com/Fratres-X-AI/MS-V  
+#defense #modeling #counterUAS #simulation
+
+---
+
+## Still do NOT claim
+
+- Field validation, TRL 4+, military ready, procurement authority  
+- Empirical MS-V fill performance or measured α(λ)  
+- "Drone defeat rate" from MoE percentages  
+- Standalone employment without visual smoke  
+- Toxicology (KPP-12) or unit cost (KPP-13)  
+
+---
+
+## Appendix — pod campaign log (not for LinkedIn copy)
+
+<details>
+<summary>Round 2–3 metrics (internal reference)</summary>
+
+| Campaign | Scale | Notes |
+|----------|-------|-------|
+| Mega refresh | 140M | phase2/v6, 38/38 pass in model |
+| CONOPS | 1M × 5 cases | CONOPS_REPORT |
+| MoE Sobol phase2 | N=8192 | burn_rate ST=0.82 on MoE surrogate |
+| burn_worst_50M | 50M | dur p10 161.8s stable |
 
 ```bash
 export RUNPOD_CPU_COUNT=32
-bash sim/run_linkedin_campaign.sh
+bash sim/run_linkedin_campaign.sh   # optional refresh only
 ```
+
+</details>

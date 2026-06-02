@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.2 — LinkedIn readiness closure (2026-06-02)
+
+- Conservative **LinkedIn campaign brief** (Options C/B/A, MoE surrogate framing, no pod required).
+- **Posting guide**, **visual verification** checklist, **capture brief**, **partner FAQ**.
+- CI: `tests/test_linkedin_readiness.py`.
+
 ## v2.0.1 — CEL license (2026-06-01)
 
 - Replaced MIT with **Concept Evaluation License (CEL)** — evaluation-only public access; commercial/production under PCA.

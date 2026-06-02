@@ -53,3 +53,11 @@ Assumptions: [`rtm/assumption_register.md`](../rtm/assumption_register.md)
 Seeds: [`sim/config/seeds.yaml`](../sim/config/seeds.yaml)  
 TRL gate: [`proposals/trl_gate_external.md`](../trl_gate_external.md)  
 Reproduce: [`REPRODUCE.md`](../REPRODUCE.md)
+
+## 7. External engagement
+
+| Audience | Document |
+|----------|----------|
+| Capture / primes | [`capture-brief.md`](../capture-brief.md) |
+| Repo reviewers | [`partner-evaluation-faq.md`](../partner-evaluation-faq.md) |
+| Public posting | [`linkedin-posting-guide.md`](../docs/linkedin-posting-guide.md) |
