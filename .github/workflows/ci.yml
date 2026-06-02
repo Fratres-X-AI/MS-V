@@ -49,3 +49,6 @@ jobs:
 
       - name: Verification matrix (from committed 140M manifest)
         run: python analysis/generate_verification_matrix.py
+
+      - name: Partner validation template JSON
+        run: python -c "import json; json.load(open('data/partner_validation_results.template.json'))"

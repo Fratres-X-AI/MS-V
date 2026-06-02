@@ -1,0 +1,62 @@
+# MS-V licensing (dual structure)
+
+This repository uses a **two-tier** license model so the concept stays open while
+**defense primes and pyrotechnic partners** can team under clear commercial terms.
+
+| Tier | Document | Who |
+|------|----------|-----|
+| **Public** | MIT below | Anyone — read, fork, study, improve the open concept |
+| **Prime / Program** | [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) | U.S. primes, fill vendors, and integrators under a signed Prime Collaboration Agreement |
+
+**Partnership guide:** [docs/licensing-and-partnership.md](docs/licensing-and-partnership.md)  
+**Inquiry:** [Partnership issue template](https://github.com/Fratres-X-AI/MS-V/issues/new?template=partnership_inquiry.yml)
+
+---
+
+## MIT License (public tier)
+
+Copyright (c) 2026 Fratres-X-AI
+
+SPDX-License-Identifier: MIT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+The MIT license does **not** include trademark rights, patent licenses, production
+authorization for munitions or obscurant systems, or exclusive Program rights. See
+[LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md).
+
+---
+
+## MS-V program notice
+
+This repository contains the **MS-V Veil (Multispectral Obscurant Grenade)** open
+concept — documentation, Monte Carlo models, structured data, and concept art for a
+**TRL 2 sensitivity study** (140M samples, literature-parameter bounds).
+
+- All specifications, performance figures, MoE percentages, and cloud physics outputs
+  are **model-supported and notional** unless and until validated by bench or range test.
+- Content is **not** authorization to procure, manufacture, export, field, or employ
+  any munition or obscurant system.
+- Concept art and diagrams are **illustrative** design references, not build drawings,
+  AMCCOM-approved marking packages, or technical data packages.
+- Inventory grenade names (AN-M8, M83, M201A1) are cited for trade-study context only;
+  no endorsement is implied.
+
+For prime teaming, fill characterization, or production licensing, use the partnership
+guide and inquiry links above — not an informal email without a PCA.

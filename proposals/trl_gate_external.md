@@ -31,3 +31,5 @@
 
 - SRD: [`proposals/srd/MS-V-SRD.md`](srd/MS-V-SRD.md)
 - TEMP outline: [`proposals/temp/MS-V-TEMP-outline.md`](temp/MS-V-TEMP-outline.md)
+- Partner validation plan: [`docs/11-partner-validation-and-trl-gates.md`](../docs/11-partner-validation-and-trl-gates.md)
+- Licensing: [`docs/licensing-and-partnership.md`](../docs/licensing-and-partnership.md)

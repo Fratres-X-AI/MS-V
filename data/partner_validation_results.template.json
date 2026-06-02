@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "program": "MS-V Veil",
+  "status": "pending",
+  "updated_at": null,
+  "partner": {
+    "organization": null,
+    "pca_reference": null,
+    "contact": null
+  },
+  "notes": "Copy to partner_validation_results.json when partner data exists. Do NOT commit fabricated measurements. Classified data requires separate handling.",
+  "phase_1_prototype": {
+    "body_prototype": {
+      "status": "pending",
+      "date": null,
+      "dims_mm": { "length": null, "diameter": null },
+      "mass_g_empty": null,
+      "pass": null,
+      "artifacts": []
+    },
+    "mass_balance": {
+      "status": "pending",
+      "projected_loaded_mass_g": null,
+      "pass": null
+    },
+    "fuze_interface": {
+      "status": "pending",
+      "fuze_type": "M201A1-compatible",
+      "pass": null
+    },
+    "throw_screening": {
+      "status": "pending",
+      "n_throws": null,
+      "p50_m": null,
+      "pass": null
+    }
+  },
+  "phase_2_validation": {
+    "fill_burn_cup": {
+      "status": "pending",
+      "fill_batch_id": null,
+      "duration_p10_s": null,
+      "temperature_c": null,
+      "rh_pct": null,
+      "pass": null,
+      "artifacts": []
+    },
+    "spectral_extinction": {
+      "status": "pending",
+      "alpha_vis_m2_g": null,
+      "alpha_nir_m2_g": null,
+      "alpha_mwir_m2_g": null,
+      "pass": null
+    },
+    "throw_range": {
+      "status": "pending",
+      "n_throws": null,
+      "p10_m": null,
+      "p50_m": null,
+      "posture": null,
+      "pass": null
+    },
+    "uas_surrogate": {
+      "status": "pending",
+      "lock_break_duration_s_nominal": null,
+      "lock_break_duration_s_adversarial": null,
+      "pass": null
+    },
+    "environmental_chamber": {
+      "status": "pending",
+      "temp_c_min": null,
+      "temp_c_max": null,
+      "pass": null
+    }
+  },
+  "rtm_updates_required": [
+    "KPP-03",
+    "KPP-06",
+    "KPP-08",
+    "KPP-10",
+    "KPP-12",
+    "MOE-01"
+  ]
+}

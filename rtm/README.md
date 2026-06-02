@@ -21,6 +21,14 @@ Submission-grade audit trail for MS-V Phase 1 M&S.
 3. Run `python -m sim.reproduce` → golden checksum gate  
 4. Sobol: `analysis/SOBOL_SENSITIVITY_REPORT.md`
 
+## Partner / prime handoff
+
+| Artifact | Purpose |
+|----------|---------|
+| [Licensing & partnership](../docs/licensing-and-partnership.md) | IP tiers, PCA, diligence index |
+| [DOC-11 partner validation](../docs/11-partner-validation-and-trl-gates.md) | Bench/range gates |
+| [partner_validation_results.template.json](../data/partner_validation_results.template.json) | Partner data schema (`status: pending`) |
+
 ## Seeds & config control
 
 - `sim/config/seeds.yaml` — 38 mega-suite jobs  

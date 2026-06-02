@@ -2,8 +2,8 @@
 
 **Program:** MS-V Veil (Multispectral Obscurant Grenade)  
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
-**Current maturity:** Concept Documentation (v2) + **Phase 1 v3 M&S complete (conditional)** + **Phase 1B remediation active**  
-**Realistic ceiling (internal):** TRL 2–3 — literature-parameter sensitivity + path to analytical TRL 3 after 1B  
+**Current maturity:** TRL 2 — **Sensitivity study complete** (140M samples, full RTM, partner handoff pack v2.0)  
+**Realistic ceiling (internal):** TRL 2–3 — literature-parameter M&S + path to analytical TRL 3 after partner bench/range  
 **Last updated:** 2026-06-01
 
 ---
