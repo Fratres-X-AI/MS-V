@@ -1,62 +1,113 @@
 # MS-V licensing (dual structure)
 
-This repository uses a **two-tier** license model so the concept stays open while
-**defense primes and pyrotechnic partners** can team under clear commercial terms.
+This repository uses a **two-tier** license model: **Concept Evaluation License (CEL)**
+for public access, and **Prime Collaboration Agreement (PCA)** terms for development
+and production.
 
 | Tier | Document | Who |
 |------|----------|-----|
-| **Public** | MIT below | Anyone — read, fork, study, improve the open concept |
-| **Prime / Program** | [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) | U.S. primes, fill vendors, and integrators under a signed Prime Collaboration Agreement |
+| **Public — evaluation only** | CEL below | Qualified reviewers — read, internal trade study, capture |
+| **Prime / Program** | [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) | U.S. primes, fill vendors, integrators under signed PCA |
 
 **Partnership guide:** [docs/licensing-and-partnership.md](docs/licensing-and-partnership.md)  
 **Inquiry:** [Partnership issue template](https://github.com/Fratres-X-AI/MS-V/issues/new?template=partnership_inquiry.yml)
 
 ---
 
-## MIT License (public tier)
+## Concept Evaluation License (CEL)
 
-Copyright (c) 2026 Fratres-X-AI
+**Version 1.0 · May 2026**  
+**Copyright (c) 2026 Fratres-X-AI. All rights reserved.**
 
-SPDX-License-Identifier: MIT
+SPDX-License-Identifier: LicenseRef-MS-V-CEL-1.0
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+By accessing, cloning, downloading, or using this repository (the **Materials**),
+you agree to the terms below. If you do not agree, do not use the Materials.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+### 1. Definitions
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+| Term | Meaning |
+|------|---------|
+| **Materials** | All content in this repository: documentation, source code, data, models, figures, RTM, and concept art. |
+| **Evaluation Use** | Non-commercial internal review for trade studies, capture, architecture assessment, academic reference, or partnership diligence. |
+| **Commercial Use** | Any use intended for or directed toward monetary compensation, product sale, manufacturing, government deliverable, or competitive offering. |
+| **Production** | Manufacture, assembly, fill, packaging, or delivery of munitions, obscurants, or related articles derived from the Materials. |
 
-The MIT license does **not** include trademark rights, patent licenses, production
-authorization for munitions or obscurant systems, or exclusive Program rights. See
+### 2. Grant (evaluation only)
+
+Subject to this CEL, Fratres-X-AI grants you a **limited, non-exclusive, non-transferable,
+revocable** license to:
+
+- Access and read the Materials  
+- Copy the Materials **only** for Evaluation Use within your organization  
+- Reference the Materials in internal briefings with appropriate **not validation** disclaimers  
+- Fork the repository **only** for private Evaluation Use (not public redistribution of derivatives)
+
+### 3. Restrictions
+
+You **may not**, without a signed [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) PCA or
+separate written agreement from Fratres-X-AI:
+
+- Use the Materials for **Commercial Use** or **Production**  
+- Manufacture, field, export, or procure any munition or obscurant system based on the Materials  
+- Sublicense, sell, or publicly distribute modified versions of the Materials  
+- Remove copyright, license, or program notices  
+- Use **MS-V**, **Veil**, or associated branding as your product name or imply endorsement  
+- Represent M&S outputs as field-tested, validated, or procurement-ready  
+- Upload export-controlled or classified data into public forks or issues  
+
+### 4. No patent or trademark license
+
+This CEL grants **no** patent, trademark, or trade-dress rights. All Background IP
+remains the property of Fratres-X-AI unless assigned in a PCA.
+
+### 5. Contributions
+
+Contributions to this repository are governed by [CONTRIBUTING.md](CONTRIBUTING.md).
+By contributing, you grant Fratres-X-AI the rights needed to include your contribution
+under this CEL and applicable PCA terms.
+
+### 6. Development and production
+
+Any **development**, **prototype**, **bench test**, **range test**, or **production**
+requires a signed **Prime Collaboration Agreement** under
 [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md).
+
+### 7. Export control
+
+Materials are **unclassified and notional**. You are responsible for compliance with
+U.S. export control and sanctions laws (e.g. ITAR/EAR). Nothing here authorizes export
+or foreign disclosure of controlled technical data.
+
+### 8. Disclaimer
+
+THE MATERIALS ARE PROVIDED **“AS IS”** FOR ENGINEERING EVALUATION ONLY. ALL PERFORMANCE
+FIGURES ARE **LITERATURE-PARAMETER M&S** UNLESS AND UNTIL VALIDATED BY TEST.
+FRATRES-X-AI DISCLAIMS ALL WARRANTIES. USE AT YOUR OWN RISK.
+
+### 9. Termination
+
+This license **terminates automatically** if you breach any term. Upon termination,
+you must cease use and destroy copies except as required by law or PCA.
+
+### 10. Governing law
+
+This CEL is governed by the laws of the State of Delaware, U.S.A., without regard to
+conflict-of-law rules. Disputes shall be resolved in courts of competent jurisdiction
+in Delaware unless a PCA specifies otherwise.
 
 ---
 
 ## MS-V program notice
 
-This repository contains the **MS-V Veil (Multispectral Obscurant Grenade)** open
-concept — documentation, Monte Carlo models, structured data, and concept art for a
-**TRL 2 sensitivity study** (140M samples, literature-parameter bounds).
+This repository contains the **MS-V Veil (Multispectral Obscurant Grenade)** concept —
+documentation, Monte Carlo models, and concept art for a **TRL 2 sensitivity study**.
 
-- All specifications, performance figures, MoE percentages, and cloud physics outputs
-  are **model-supported and notional** unless and until validated by bench or range test.
-- Content is **not** authorization to procure, manufacture, export, field, or employ
-  any munition or obscurant system.
-- Concept art and diagrams are **illustrative** design references, not build drawings,
-  AMCCOM-approved marking packages, or technical data packages.
-- Inventory grenade names (AN-M8, M83, M201A1) are cited for trade-study context only;
-  no endorsement is implied.
+- All specifications and M&S outputs are **notional** unless validated by partner test.  
+- Content is **not** authorization to procure, manufacture, export, field, or employ any system.  
+- Concept art is **illustrative** — not build drawings or AMCCOM-approved marking packages.  
 
-For prime teaming, fill characterization, or production licensing, use the partnership
-guide and inquiry links above — not an informal email without a PCA.
+For prime teaming or production licensing: [Licensing & partnership](docs/licensing-and-partnership.md).
+
+*This license is for discussion and repository governance. It is not legal advice.
+Consult counsel before relying on enforceability.*

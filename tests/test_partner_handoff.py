@@ -31,6 +31,13 @@ def test_partner_handoff_artifacts_exist() -> None:
         assert path.is_file(), f"missing partner handoff artifact: {rel}"
 
 
+def test_license_is_cel_not_mit() -> None:
+    text = (ROOT / "LICENSE").read_text(encoding="utf-8")
+    assert "Concept Evaluation License" in text
+    assert "SPDX-License-Identifier: LicenseRef-MS-V-CEL-1.0" in text
+    assert "SPDX-License-Identifier: MIT" not in text
+
+
 def test_partner_validation_template_is_valid_json() -> None:
     data = json.loads(TEMPLATE.read_text(encoding="utf-8"))
     assert data["status"] == "pending"

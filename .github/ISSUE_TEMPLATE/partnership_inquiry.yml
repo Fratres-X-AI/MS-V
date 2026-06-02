@@ -6,8 +6,8 @@ body:
   - type: markdown
     value: |
       Use this form for **prime contractor**, **pyrotechnic/fill vendor**, **integrator**, or **government lab** teaming interest.
-      Public repo use is covered by the [MIT License](../LICENSE).
-      Production and Program rights are under [LICENSE-COMMERCIAL.md](../LICENSE-COMMERCIAL.md).
+      Public repo access is governed by the [Concept Evaluation License (CEL)](../LICENSE).
+      Commercial use and production require [LICENSE-COMMERCIAL.md](../LICENSE-COMMERCIAL.md) / PCA.
 
       See also: [Licensing & partnership guide](../docs/licensing-and-partnership.md).
 

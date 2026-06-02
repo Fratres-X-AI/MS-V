@@ -90,7 +90,7 @@ Detect → EW → MS-V + smoke → kinetic window
 
 ## Slide 10 — IP & prime partnership
 
-- **Open concept:** MIT on repo (transparency, capture, community review)  
+- **Evaluation access:** CEL on repo (internal trade study, capture, diligence — not commercial use)  
 - **Prime path:** [LICENSE-COMMERCIAL](../LICENSE-COMMERCIAL.md) — evaluation → development → production under **PCA**  
 - **Background IP** (concept + M&S) · **Foreground IP** (fill, prototype) — defined up front  
 - Guide: [Licensing & partnership](licensing-and-partnership.md)  

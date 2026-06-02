@@ -1,12 +1,12 @@
 # Contributing to MS-V Veil
 
-Thank you for improving the MS-V open concept.
+Thank you for improving the MS-V concept.
 
 ## License
 
 By contributing documentation, data, code, or visuals to this repository, you
-agree that your contribution is licensed under the
-[MIT License](LICENSE) for public distribution.
+agree that your contribution may be distributed under the
+[Concept Evaluation License (CEL)](LICENSE) for public evaluation access.
 
 If your employer or contract requires different terms, **do not contribute** until
 you have written approval from Fratres-X-AI (see

@@ -159,7 +159,7 @@ See [CONOPS](docs/04-conops-use-cases.md) · [Limitations](docs/07-limitations-a
 
 | Tier | Document |
 |------|----------|
-| **Open concept** | [LICENSE](LICENSE) — MIT (docs, M&S, art) |
+| **Evaluation access** | [LICENSE](LICENSE) — CEL (docs, M&S, art — evaluation only) |
 | **Prime / Program** | [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) — development & production under PCA |
 
 **Teaming with a prime or fill vendor?** [Licensing & partnership](docs/licensing-and-partnership.md) · [Partnership inquiry](https://github.com/Fratres-X-AI/MS-V/issues/new?template=partnership_inquiry.yml)

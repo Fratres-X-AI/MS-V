@@ -7,7 +7,7 @@ This document describes **commercial and prime-partnership licensing** for the
 **MS-V Veil (Multispectral Obscurant Grenade)** background intellectual property. It
 **does not** replace a signed agreement. Executed terms prevail.
 
-Public read-only use of the repository remains under the [MIT License](LICENSE).
+Public evaluation access to the repository remains under the [Concept Evaluation License (CEL)](LICENSE).
 
 ---
 
@@ -24,15 +24,15 @@ Public read-only use of the repository remains under the [MIT License](LICENSE).
 
 ## 2. Licensing model (two tiers)
 
-### Tier A — Public (MIT)
+### Tier A — Public (CEL)
 
-Anyone may use, copy, modify, and distribute repository content under
-[LICENSE](LICENSE), subject to the MS-V program notice (sensitivity study; no
-procurement authority).
+Qualified parties may access repository content under the
+[Concept Evaluation License (LICENSE)](LICENSE) for **Evaluation Use only** —
+internal trade study, capture, and diligence. No commercial use or production.
 
 ### Tier B — Prime collaboration (this document)
 
-Fratres-X-AI offers **structured rights** beyond MIT for qualified partners that
+Fratres-X-AI offers **structured rights** beyond CEL for qualified partners that
 execute a PCA. Typical grants (negotiated per deal):
 
 | Phase | Purpose | Typical rights |
@@ -41,7 +41,7 @@ execute a PCA. Typical grants (negotiated per deal):
 | **Development** | Prototype fill, bench test, range validation | Non-exclusive or field-limited exclusive **development license**; joint Foreground IP terms |
 | **Production** | Manufacture for a named Program | **Sublicense** or **exclusive field-of-use** for defined configuration, geography, and term |
 
-MIT alone does **not** grant trademark use, patent licenses, or production
+CEL alone does **not** grant trademark use, patent licenses, commercial use, or production
 authorization for munitions or obscurant systems.
 
 ---

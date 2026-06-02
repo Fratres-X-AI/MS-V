@@ -47,7 +47,7 @@ Squad and SOF face **FPV, fiber-optic, and thermal UAS** that see through standa
 
 https://github.com/Fratres-X-AI/MS-V
 
-**Open concept:** MIT · **Prime / Program:** [LICENSE-COMMERCIAL](../LICENSE-COMMERCIAL.md) · [Partnership guide](licensing-and-partnership.md)
+**Evaluation access:** CEL · **Prime / Program:** [LICENSE-COMMERCIAL](../LICENSE-COMMERCIAL.md) · [Partnership guide](licensing-and-partnership.md)
 
 **Deep dives:** [Annex F](../annexes/F-form-factor-and-ergonomics.md) · [CONOPS](../docs/04-conops-use-cases.md) · [Verification matrix](../rtm/verification_matrix.md) · [Pitch deck outline](pitch-deck-outline.md)
 

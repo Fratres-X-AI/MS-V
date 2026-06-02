@@ -7,7 +7,7 @@
 
 ## Why this repo is structured for prime collaboration
 
-MS-V is published as an **open concept** so the community can review the trade space,
+MS-V is published under **CEL** so qualified parties can review the trade space for evaluation,
 while **production rights, patents, trademarks, fill formulations, and Program-specific exclusivity**
 are handled through a **Prime Collaboration Agreement (PCA)**.
 
@@ -15,7 +15,7 @@ That split is intentional:
 
 | Goal | Mechanism |
 |------|-----------|
-| Transparency & capture support | Public **MIT** license on docs, models, and art |
+| Transparency & capture support | Public **CEL** (evaluation only) on docs, models, and art |
 | Prime can evaluate without fear of “toxic” terms | Clear **evaluation** tier; NDA optional |
 | You keep control of the concept | **Background IP** stays with Fratres-X-AI unless assigned |
 | Partner can invest in fill + range validation | Negotiated **development** and **production** licenses |
@@ -65,7 +65,7 @@ Typical scope:
 
 ```mermaid
 flowchart LR
-  subgraph public [Public MIT]
+  subgraph public [Public CEL]
     Repo[Repo docs + M&S + art]
   end
   subgraph bg [Background IP]
@@ -83,19 +83,21 @@ flowchart LR
 
 ---
 
-## What MIT does and does not do
+## What CEL does and does not do
 
-**MIT allows:** copy, modify, merge, publish, and distribute the repository for any purpose with attribution.
+**CEL allows:** read, internal evaluation, trade study, capture support, and private forks for diligence — with attribution and program notices.
 
-**MIT does not grant:**
+**CEL does not grant:**
 
+- Commercial use, manufacturing, or production
+- Public redistribution of modified Materials
 - Trademark use for **MS-V** or **Veil**
-- Patent license for future filings on Background or Foreground IP
-- **Exclusive** production rights
+- Patent license for Background or Foreground IP
+- **Exclusive** Program rights
 - **Export** or **fielding** authorization for munitions or obscurants
 - Representation that M&S figures are validated or procurement-ready
 
-Primes that need those rights should pursue **Tier B** in [LICENSE-COMMERCIAL.md](../LICENSE-COMMERCIAL.md).
+Partners that need development or production rights should pursue **Tier B** in [LICENSE-COMMERCIAL.md](../LICENSE-COMMERCIAL.md).
 
 ---
 

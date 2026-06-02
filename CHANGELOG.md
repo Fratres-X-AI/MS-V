@@ -1,8 +1,13 @@
 # Changelog
 
+## v2.0.1 — CEL license (2026-06-01)
+
+- Replaced MIT with **Concept Evaluation License (CEL)** — evaluation-only public access; commercial/production under PCA.
+- Updated LICENSE, LICENSE-COMMERCIAL, CONTRIBUTING, partnership docs, and inquiry template.
+
 ## v2.0.0 — Partner handoff pack (RADR-parity) (2026-06-01)
 
-- **Prime / creator handoff:** [LICENSE](LICENSE) (MIT) + [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md), [CONTRIBUTING.md](CONTRIBUTING.md), [partnership issue template](.github/ISSUE_TEMPLATE/partnership_inquiry.yml).
+- **Prime / creator handoff:** [LICENSE](LICENSE) (CEL) + [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md), [CONTRIBUTING.md](CONTRIBUTING.md), [partnership issue template](.github/ISSUE_TEMPLATE/partnership_inquiry.yml).
 - **Partner docs:** [Licensing & partnership](docs/licensing-and-partnership.md), [MS-V one-pager](docs/MS-V-one-pager.md), [Pitch deck outline](docs/pitch-deck-outline.md), [DOC-10 prototype gates](docs/10-phase-1-prototype-gates.md), [DOC-11 partner validation](docs/11-partner-validation-and-trl-gates.md).
 - **Visuals catalog:** [visuals/README.md](visuals/README.md), [V2-KPP-SPEC](visuals/grenade/V2-KPP-SPEC.md); README gallery with authoritative concept trio.
 - **Partner data schema:** [`data/partner_validation_results.template.json`](data/partner_validation_results.template.json) (`status: pending` — no fabricated test data).
