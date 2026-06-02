@@ -1,8 +1,9 @@
 # MS-V Veil — Capture Brief (Primes & Sponsors)
 
-**Version:** 1.0 · 2026-06-02  
+**Version:** 1.1 · 2026-06-02  
 **Maturity:** TRL 2 sensitivity study — **NOT field validation**  
-**License:** Public repo under [CEL](../LICENSE); development/production under [PCA](../LICENSE-COMMERCIAL.md)
+**License:** Public repo under [CEL](../LICENSE); development/production under [PCA](../LICENSE-COMMERCIAL.md)  
+**Full review path:** [External review ready](../docs/EXTERNAL_REVIEW_READY.md)
 
 ---
 

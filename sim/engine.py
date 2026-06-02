@@ -343,7 +343,7 @@ def run_vectorized(params: dict, config: SimConfig) -> dict[str, Any]:
             settling = p1b.get("settling_velocity_m_s", params.get("particle", {}).get("settling_velocity_m_s", 0.02))
         duration = duration_until_cl_below_threshold(
             cl_peak, cl_required, build_up, raw_duration, time_at_threshold, thickness_met,
-            settling_velocity_m_s=float(np.median(settling)) if hasattr(settling, "__len__") else settling,
+            settling_velocity_m_s=settling,
             depth_m=depth,
         )
         if physics_tier == "phase2" and p2_result is not None:

@@ -38,6 +38,8 @@ Index: [`analysis/figures/form_factor/CANONICAL_RENDERS.md`](../analysis/figures
 |--------|-------|
 | Requirement (KPP-08) | **≥ 20 m** (objective 25 m) |
 | Phase 2 deployment model (p50, 850 g) | **~21.5 m** |
+| Tier B report (regenerated) | [`analysis/FORM_FACTOR_REPORT.md`](../analysis/FORM_FACTOR_REPORT.md) |
+| System API | [`models/system/kinematics.py`](../models/system/kinematics.py) |
 
 Range test required for TRL 3+ closure (A-012).
 
@@ -74,3 +76,7 @@ Regenerate: `python analysis/generate_engineering_drawings.py`
 - Pouch NSN verification at v2 envelope
 
 **Assumptions:** A-012 (throw), form-factor geometry in `rtm/assumption_register.md`
+
+---
+
+*Traceability: [rtm/verification_matrix.md](../rtm/verification_matrix.md) · M&S: NOT VALIDATION · Report: [FORM_FACTOR_REPORT.md](../analysis/FORM_FACTOR_REPORT.md)*

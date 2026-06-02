@@ -19,7 +19,7 @@
 | A-010 | Respiratory irritation acceptable non-lethal | Design acceptance | not in MC | N/A | KPP-12 High | **P0** — tox panel | UNVALIDATED |
 | A-011 | M201A1 fuze compatible | Inventory commonality | fuze delay 0.7–2 s (not MC) | N/A | KPP-07 Medium | P2 — fuze interface | UNVALIDATED |
 | A-012 | Throw 20–25 m for 850 g under stress | KPP-08; heavier than AN-M8 | not in MC | N/A | KPP-08 High | **P0** — HF range test | UNVALIDATED |
-| A-013 | Surrogate MoE threshold τ=0.15 discriminates lock-break | Planning surrogate only | T or contrast < 0.15 | **Non-binding** (100% all jobs) | MOE-01 **Critical gap** | **P0** — UAS surrogate test | UNVALIDATED |
+| A-013 | Surrogate MoE / v6 probabilistic lock-break | Planning surrogate only; **not** field defeat rate | v6: ~**80%** nominal / ~**55%** adversarial lock-met (phase2 mega); v3 tier often **saturated** | **Discriminative in v6** when `surrogate_saturated=false`; still UNVALIDATED empirically | MOE-01 **Critical gap** | **P0** — UAS surrogate test (gate 2D) | UNVALIDATED |
 | A-014 | Aerosol yield fraction 0.22–0.52 | Literature order-of-magnitude; burn model | uniform yield; humidity penalty | **Low** (no MoE variance) | MoE Medium | P0 — gravimetric yield | UNVALIDATED |
 | A-015 | Temperature ±0.2%/°C burn rate coupling | Arrhenius-lite surrogate | −20 to +50 °C | **Rank 2** (hot bin −7 s p10 vs nominal) | KPP-03,10 Medium | P0 — burn cup | UNVALIDATED |
 | A-016 | Humidity yield penalty above 50% RH | Hygroscopic agglomeration (surrogate) | 20–95% RH | **Low** in OAT | KPP-03 Low | P1 — chamber | UNVALIDATED |

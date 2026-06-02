@@ -93,13 +93,14 @@ See [08 — Layered Defense Integration](08-layered-defense-integration.md).
 
 ## Traceability
 
-- Verification matrix: [
-tm/verification_matrix.md](../rtm/verification_matrix.md)
-- Requirements CSV: [
-tm/requirements_traceability.csv](../rtm/requirements_traceability.csv)
-- Assumptions: [
-tm/assumption_register.md](../rtm/assumption_register.md)
-- Mega suite report: [nalysis/MEGA_SUITE_REPORT.md](../analysis/MEGA_SUITE_REPORT.md)
-- Sobol sensitivity: [nalysis/SOBOL_SENSITIVITY_REPORT.md](../analysis/SOBOL_SENSITIVITY_REPORT.md)
+- Verification matrix: [rtm/verification_matrix.md](../rtm/verification_matrix.md)
+- Requirements CSV: [rtm/requirements_traceability.csv](../rtm/requirements_traceability.csv)
+- Assumptions: [rtm/assumption_register.md](../rtm/assumption_register.md)
+- Mega suite report: [analysis/MEGA_SUITE_REPORT.md](../analysis/MEGA_SUITE_REPORT.md)
+- Sobol sensitivity: [analysis/SOBOL_SENSITIVITY_REPORT.md](../analysis/SOBOL_SENSITIVITY_REPORT.md)
 - Reproduce gate: [REPRODUCE.md](../REPRODUCE.md)
+
+---
+
+*Traceability: [rtm/verification_matrix.md](../rtm/verification_matrix.md) · M&S: NOT VALIDATION*
 

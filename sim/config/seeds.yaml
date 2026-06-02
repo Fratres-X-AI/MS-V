@@ -6,7 +6,9 @@
 campaign:
   id: mega_suite_140M
   model_version_baseline: phase1_v3_cl_ramp
-  model_version_current: phase1_v4_sensor
+  model_version_current: phase2_v1_full_physics
+  physics_tier: phase2
+  sensor_model: v6_probabilistic_lock
   disclaimer: LITERATURE-PARAMETER SENSITIVITY STUDY — NOT VALIDATION
 
 global:

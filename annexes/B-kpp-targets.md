@@ -109,3 +109,7 @@ Transmittance at fixed LOS remains a useful test metric but is not a hard gating
 | KPP-12 (irritation) | Better than HC | Worse than TA | Accepted for performance |
 
 See [Annex C — Trades Matrix](C-trades-matrix.md) for design option analysis.
+
+---
+
+*Traceability: [rtm/verification_matrix.md](../rtm/verification_matrix.md) · M&S: NOT VALIDATION · Primary envelope: v2 KPP (850 g, 7.1 × 3.1 in)*

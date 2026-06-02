@@ -1,4 +1,4 @@
-.PHONY: one-pass reproduce install test ci lint mega report sobol audit figures all pull
+.PHONY: one-pass reproduce install test ci lint check typecheck mega report sobol audit figures all pull
 
 one-pass:
 	bash one_pass.sh 31 8192
@@ -11,6 +11,13 @@ install:
 
 lint:
 	ruff check sim models analysis tests
+
+typecheck:
+	mypy
+
+# Fast elite gate — safe on laptop (~10s)
+check: lint typecheck test validate
+	pytest tests/test_repo_invariants.py tests/test_linkedin_readiness.py tests/test_canonical_renders.py tests/test_golden_manifest.py -q
 
 reproduce:
 	python -m sim.reproduce

@@ -19,6 +19,62 @@ def test_psd_settling_increases_with_diameter() -> None:
     assert float(v[1]) > float(v[0])
 
 
+def test_phase2_duration_uses_psd_settling_per_sample() -> None:
+    from models.cloud_physics.geometry_settling import duration_until_cl_below_threshold
+
+    params = load_params()
+    rng = np.random.default_rng(99)
+    n = 400
+    r = run_phase2_physics(
+        rng, n, params,
+        filler_mass_g=np.full(n, 650.0),
+        burn_rate_base=np.full(n, 3.5),
+        yield_base=np.full(n, 0.35),
+        area_m2=np.full(n, 30.0),
+        depth_m=np.full(n, 3.0),
+        wind_mph=np.full(n, 5.0),
+        temp_c=np.full(n, 20.0),
+        humidity_rh=np.full(n, 60.0),
+        n_grenades=2,
+        n_hc=1,
+    )
+    cl_peak = r.cl_center_ms_v
+    cl_req = cl_peak * 0.4
+    build = np.full(n, 10.0)
+    raw = np.full(n, 140.0)
+    t0 = np.zeros(n)
+    thick = np.ones(n, dtype=bool)
+    d_fast = duration_until_cl_below_threshold(
+        cl_peak, cl_req, build, raw, t0, thick,
+        settling_velocity_m_s=np.full(n, 0.01), depth_m=np.full(n, 3.0),
+    )
+    d_slow = duration_until_cl_below_threshold(
+        cl_peak, cl_req, build, raw, t0, thick,
+        settling_velocity_m_s=np.full(n, 0.12), depth_m=np.full(n, 3.0),
+    )
+    assert float(np.median(d_slow)) < float(np.median(d_fast))
+
+
+def test_phase2_humidity_alpha_chain_diagnostic() -> None:
+    params = load_params()
+    rng = np.random.default_rng(3)
+    r = run_phase2_physics(
+        rng, 200, params,
+        filler_mass_g=np.full(200, 650.0),
+        burn_rate_base=np.full(200, 3.5),
+        yield_base=np.full(200, 0.35),
+        area_m2=np.full(200, 30.0),
+        depth_m=np.full(200, 3.0),
+        wind_mph=np.full(200, 5.0),
+        temp_c=np.full(200, 20.0),
+        humidity_rh=np.full(200, 85.0),
+        n_grenades=1,
+        n_hc=1,
+    )
+    assert "humidity_alpha_chain_p50" in r.diagnostics
+    assert r.diagnostics["humidity_alpha_chain_p50"] > 0.0
+
+
 def test_phase2_pipeline_runs() -> None:
     params = load_params()
     rng = np.random.default_rng(0)

@@ -1,6 +1,7 @@
 # CONOPS Monte Carlo Report — Five Use Cases
 
-> **MATURITY:** Phase 2 full physics + probabilistic MoE — **NOT VALIDATION**
+> **Generated from:** `analysis/results/conops_summary.json` (regenerate via CONOPS runner when scenarios change)  
+> **MATURITY:** Phase 2 full physics + probabilistic MoE — **NOT VALIDATION**  
 > **Model:** phase2_v1_full_physics · 1,000,000 samples per case
 
 | Use Case | MS-V | HC | Window (s) | Lock Met | Obscured | Edge Plume | Core | Friendly Blind |

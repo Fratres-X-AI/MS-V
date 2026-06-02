@@ -2,6 +2,8 @@
 
 **For primes, fill vendors, and labs reviewing the public repo**
 
+> **Onboarding:** [External review ready](../docs/EXTERNAL_REVIEW_READY.md) · **Capture:** [capture-brief.md](capture-brief.md)
+
 ---
 
 ## Can we use this repo commercially?

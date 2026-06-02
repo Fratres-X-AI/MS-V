@@ -2,29 +2,35 @@
 
 > **MATURITY:** Parametric digital representation — **NOT VALIDATION**
 > No ergonomic range test · No issued-pouch verification
+> **Variant:** `v2_kpp` — primary external envelope
 
 ## Envelope (volume budget)
 
 | Parameter | Value |
 |-----------|-------|
-| Outer L × D | 145 × 64 mm (5.7" × 2.5") |
-| Inner chamber | 319 cm³ |
-| Fill volume (mid) | 301 cm³ @ 0.97 g/cm³ |
-| Mass | 680 g |
+| Outer L × D | 180 × 79 mm (7.1" × 3.1") |
+| Inner chamber | 660 cm³ |
+| Fill volume (mid) | 676 cm³ @ 0.97 g/cm³ |
+| Mass | 850 g |
 
 ## KPP-08 Throw
 
-| Spec | Sim p50 |
-|------|---------|
-| 20–25 m | 24.0 m (phase2 deployment model) |
+| Metric | Value |
+|--------|-------|
+| KPP band | 20–25 m |
+| Design authority p50 | 21.5 m |
+| MC stressed p10 / p50 / p90 | 20.0 / 21.5 / 23.5 m |
+| Lateral dispersion p50 / p90 | 2.35 / 3.35 m |
+
+Source: [`models/system/kinematics.py`](../models/system/kinematics.py) + phase2 deployment model.
 
 ## Pouch fit (typical MOLLE grenade pouch)
 
 | Check | Pass | Clearance |
 |-------|------|-----------|
-| Width | ✓ | 26 mm |
-| Depth | ✓ | 32 mm |
-| Height | ✓ | 40 mm |
+| Width | ✓ | 11 mm |
+| Depth | ✓ | 16 mm |
+| Height | ✓ | 5 mm |
 | Mass | ✓ | ≤ 900 g |
 
 **Overall:** PASS (estimate)

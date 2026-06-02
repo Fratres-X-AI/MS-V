@@ -162,7 +162,7 @@ def run_use_case(
         alpha_vis, alpha_nir, alpha_mwir = p2_result.alpha_vis, p2_result.alpha_nir, p2_result.alpha_mwir
         raw_dur = p2_result.raw_burn_duration_s
         build_up = build_up + p2_result.build_up_delay_s
-        settling = float(np.median(p2_result.settling_velocity_m_s))
+        settling = p2_result.settling_velocity_m_s
         phase2_diag = p2_result.diagnostics
         model_version = "phase2_v1_full_physics"
     else:

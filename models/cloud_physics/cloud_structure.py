@@ -52,8 +52,15 @@ def multi_grenade_merge_factor(
     if n_grenades <= 1:
         return np.ones_like(throw_offsets_m)
     spread = np.abs(throw_offsets_m)
-    overlap = np.clip(1.0 - spread / (merge_radius_m * max(n_grenades - 1, 1)), 0.5, 1.0)
-    return overlap * (1.0 + 0.06 * max(n_grenades - 1, 0))
+    # Tighter throws → stronger overlap during CL build-up (P2)
+    proximity = np.clip(1.0 - spread / merge_radius_m, 0.35, 1.0)
+    overlap = np.clip(
+        1.0 - spread / (merge_radius_m * max(n_grenades - 1, 1)),
+        0.5,
+        1.0,
+    )
+    n_bonus = 1.0 + 0.10 * max(n_grenades - 1, 0) * proximity
+    return overlap * n_bonus
 
 
 def buoyancy_rise_m(

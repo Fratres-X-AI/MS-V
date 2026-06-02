@@ -68,7 +68,7 @@ def moe_threat_lock_obscured(
     cl_nir: np.ndarray,
     cl_mwir: np.ndarray,
     visual_smoke_boost: np.ndarray | float = 1.0,
-) -> tuple[np.ndarray, dict[str, np.ndarray]]:
+) -> tuple[np.ndarray, dict[str, float]]:
     """
     Threat lock broken when band-integrated transmitted contrast falls below threshold + NETD.
 

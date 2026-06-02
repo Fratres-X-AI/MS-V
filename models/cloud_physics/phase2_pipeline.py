@@ -165,10 +165,13 @@ def run_phase2_physics(
     def pct(x: np.ndarray, q: float) -> float:
         return float(np.percentile(x, q))
 
+    humidity_alpha_chain = aerosol.alpha_scale * atm.extinction_humidity_factor
     diag = {
         "psd_diameter_um_p50": pct(aerosol.diameter_um, 50),
         "settling_velocity_p50_m_s": pct(aerosol.settling_velocity_m_s, 50),
         "hygroscopic_growth_p50": pct(aerosol.hygroscopic_growth, 50),
+        "humidity_alpha_chain_p50": pct(humidity_alpha_chain, 50),
+        "extinction_humidity_factor_p50": pct(atm.extinction_humidity_factor, 50),
         "coagulation_factor_p50": pct(aerosol.coagulation_factor, 50),
         "wind_shear_dilution_p50": pct(structure.dilution_factor, 50),
         "merge_factor_p50": pct(structure.merge_factor, 50),

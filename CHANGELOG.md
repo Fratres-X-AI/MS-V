@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.1.0 — Gap closure & quality gates (2026-06-02)
+
+- **External review pack:** [`docs/EXTERNAL_REVIEW_READY.md`](docs/EXTERNAL_REVIEW_READY.md), expanded SRD/TEMP, v2 `FORM_FACTOR_REPORT`, [`models/system/kinematics.py`](models/system/kinematics.py).
+- **Quality:** `make check`, `tests/test_repo_invariants.py`, CI split (fast `quality` job + `simulation`).
+- **Physics/docs:** phase2 PSD settling per sample, sensor [`INTEGRATION.md`](models/sensors/INTEGRATION.md), MasterPlan + docs 00–08 footers, A-013 v6 framing.
+- **Agent guide:** [`AGENTS.md`](AGENTS.md).
+
 ## v2.0.2 — LinkedIn readiness closure (2026-06-02)
 
 - Conservative **LinkedIn campaign brief** (Options C/B/A, MoE surrogate framing, no pod required).

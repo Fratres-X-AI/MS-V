@@ -41,3 +41,11 @@ def test_visual_verification_pass_status() -> None:
     assert "PASS" in text
     assert "850 g" in text
     assert "7.1" in text
+
+
+def test_form_factor_report_v2_kpp_numbers() -> None:
+    text = (ROOT / "analysis/FORM_FACTOR_REPORT.md").read_text(encoding="utf-8")
+    assert "850" in text
+    assert "7.1" in text
+    assert "v2_kpp" in text
+    assert "3.1" in text

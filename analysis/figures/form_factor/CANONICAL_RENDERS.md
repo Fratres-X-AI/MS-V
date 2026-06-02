@@ -21,4 +21,6 @@ Gallery: [`renders/v2_kpp/index.html`](renders/v2_kpp/index.html)
 
 Supporting engineering set: `engineering/` (exploded, dimensioned cutaway, stencil guide).
 
+**Regeneration:** `analysis/generate_form_factor_assets.py` writes Tier B plots under `analysis/figures/form_factor/` — it does **not** overwrite the three SHA256-pinned files above. `analysis/generate_engineering_drawings.py` may refresh `engineering/` only; do not run it against `scale_comparison_v2_inventory.png` or `renders/v2_kpp/*` without updating `tests/test_canonical_renders.py`.
+
 Policy: [`analysis/VISUAL_CONCEPT_ASSESSMENT.md`](../../VISUAL_CONCEPT_ASSESSMENT.md)

@@ -31,7 +31,7 @@ you have written approval from Fratres-X-AI (see
 
 1. Fork and branch from `main`
 2. Keep changes scoped to one topic per pull request
-3. Run `python -m ruff check sim models analysis tests` and `pytest tests/ -q`
+3. Run **`make check`** (lint, mypy, tests, validate-only, invariants) — laptop-safe
 4. If touching RTM: update both `rtm/verification_matrix.md` and `rtm/requirements_traceability.csv`
 5. Open a PR with a short summary and which annexes/docs you updated
 

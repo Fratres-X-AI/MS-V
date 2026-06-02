@@ -23,6 +23,7 @@ from models.system.envelope import (  # noqa: E402
     load_form_factor,
     loadout_mass_g,
 )
+from models.system.kinematics import impact_dispersion_summary  # noqa: E402
 from models.system.stl_export import export_comparison_stl, export_ms_v_stl  # noqa: E402
 
 FIG = ROOT / "analysis" / "figures" / "form_factor"
@@ -41,12 +42,17 @@ def _load_plume_spread() -> float:
     return float(params.get("phase1b", {}).get("plume_spread_factor", 3.2))
 
 
-def plot_scale_comparison(out: Path) -> Path:
+def plot_scale_comparison(out: Path, spec: dict) -> Path:
     data = _load_baselines()
+    ms_v = {
+        "length_in": spec["ms_v"]["body"]["length_in"],
+        "diameter_in": spec["ms_v"]["body"]["diameter_in"],
+        "weight_g": spec["ms_v"]["mass_g"],
+    }
     grenades = [
         ("AN-M8 HC", data["grenades"]["AN-M8"], "#718096"),
         ("M83 TA", data["grenades"]["M83"], "#a0aec0"),
-        ("MS-V (proposed)", data["MS-V_target"], "#2b6cb0"),
+        ("MS-V v2 KPP", ms_v, "#2b6cb0"),
     ]
     fig, ax = plt.subplots(figsize=(10, 5))
     x = 0.0
@@ -73,9 +79,12 @@ def plot_scale_comparison(out: Path) -> Path:
     ax.set_ylim(-5, max_h + 35)
     ax.set_aspect("equal")
     ax.axis("off")
-    ax.set_title("Form factor scale comparison (true dimensions)")
-    fig.text(0.5, 0.02, "Engineering estimate — NOT VALIDATION · TM 43-0001-29 + MS-V v2 target",
-             ha="center", fontsize=8, style="italic")
+    ax.set_title("Form factor scale comparison (v2 KPP vs inventory)")
+    fig.text(
+        0.5, 0.02,
+        "Engineering estimate — NOT VALIDATION · MS-V v2 KPP 850 g / 7.1×3.1 in",
+        ha="center", fontsize=8, style="italic",
+    )
     fig.tight_layout()
     path = out / "scale_comparison.png"
     fig.savefig(path, dpi=180, bbox_inches="tight")
@@ -206,13 +215,22 @@ def plot_pouch_fit(out: Path, env, pouch_fit) -> Path:
     return path
 
 
-def write_report(spec: dict, env, pouch_fit, paths: list[Path], stl_paths: dict) -> None:
+def write_report(
+    spec: dict,
+    env,
+    pouch_fit,
+    paths: list[Path],
+    stl_paths: dict,
+    throw_stats: dict[str, float],
+) -> None:
     throw = spec["throw"]
+    variant = spec.get("variant_key", "v2_kpp")
     lines = [
         "# MS-V Form Factor Report (Tier B)",
         "",
         "> **MATURITY:** Parametric digital representation — **NOT VALIDATION**",
         "> No ergonomic range test · No issued-pouch verification",
+        f"> **Variant:** `{variant}` — primary external envelope",
         "",
         "## Envelope (volume budget)",
         "",
@@ -225,9 +243,14 @@ def write_report(spec: dict, env, pouch_fit, paths: list[Path], stl_paths: dict)
         "",
         "## KPP-08 Throw",
         "",
-        "| Spec | Sim p50 |",
-        "|------|---------|",
-        f"| {throw['range_m']['min']}–{throw['range_m']['max']} m | {throw['sim_p50_m']} m (phase2 deployment model) |",
+        "| Metric | Value |",
+        "|--------|-------|",
+        f"| KPP band | {throw['range_m']['min']}–{throw['range_m']['max']} m |",
+        f"| Design authority p50 | {throw['sim_p50_m']} m |",
+        f"| MC stressed p10 / p50 / p90 | {throw_stats['throw_p10_m']:.1f} / {throw_stats['throw_p50_m']:.1f} / {throw_stats['throw_p90_m']:.1f} m |",
+        f"| Lateral dispersion p50 / p90 | {throw_stats['lateral_p50_m']:.2f} / {throw_stats['lateral_p90_m']:.2f} m |",
+        "",
+        "Source: [`models/system/kinematics.py`](../models/system/kinematics.py) + phase2 deployment model.",
         "",
         "## Pouch fit (typical MOLLE grenade pouch)",
         "",
@@ -260,12 +283,13 @@ def write_report(spec: dict, env, pouch_fit, paths: list[Path], stl_paths: dict)
 def main() -> None:
     FIG.mkdir(parents=True, exist_ok=True)
     STL.mkdir(parents=True, exist_ok=True)
-    spec = load_form_factor()
+    spec = load_form_factor("v2_kpp")
     env = derive_envelope(spec)
     pouch_fit = check_pouch_fit(env, spec["ms_v"]["mass_g"], spec["pouch"])
+    throw_stats = impact_dispersion_summary()
 
     fig_paths = [
-        plot_scale_comparison(FIG),
+        plot_scale_comparison(FIG, spec),
         plot_cutaway(FIG, spec, env),
         plot_employment(FIG, spec),
         plot_load_layout(FIG, spec),
@@ -275,7 +299,7 @@ def main() -> None:
         "ms_v_assembly": export_ms_v_stl(STL / "ms_v_assembly.stl"),
         **export_comparison_stl(STL),
     }
-    write_report(spec, env, pouch_fit, fig_paths, stl_paths)
+    write_report(spec, env, pouch_fit, fig_paths, stl_paths, throw_stats)
     for p in fig_paths:
         print(f"Wrote {p}")
     for k, p in stl_paths.items():

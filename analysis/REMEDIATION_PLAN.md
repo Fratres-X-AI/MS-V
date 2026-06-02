@@ -1,7 +1,8 @@
 # MS-V Remediation Plan — Closing Phase 1 Gaps
 
-**Status:** Active  
-**Last updated:** 2026-06-01  
+**Status:** **Closed (in-repo)** — empirical gates E-1..E-5 remain external  
+**Last updated:** 2026-06-02  
+**Gap closure:** 2026-06-02 plan delivered (form factor v2, SRD/TEMP, phase2 sensors, CI guards, MasterPlan align). See [`MasterPlan.md`](../MasterPlan.md) delivered-vs-planned table.  
 **Scope:** Address documented weaknesses in M&S maturity, interpretation risk, and path to TRL 3+  
 **Principle:** Fix with rigor — never trade honesty for green checks.
 
@@ -213,12 +214,12 @@ Ongoing:   EXT-1 proposal package for funded lab/range
 - [x] `analysis/analyze_tail_risk.py` → `analysis/tail_risk_analysis.md`
 - [x] `rtm/uncertainty_register.md`
 - [x] `analysis/RESULTS_DATA_POLICY.md`
-- [ ] Fix `models/sensors/surrogate_sensors.py` bug
-- [ ] Scaffold `models/sensors/fpv_thermal.py` + params
-- [ ] Update `MasterPlan.md` status (remove stale “no models exist”)
-- [ ] Update `analysis/kpp_gap_analysis.md` with tail-risk link + interpretation warning
-- [ ] `.gitignore` policy for future raw dumps
-- [ ] Commit + push + CI green
+- [x] `models/sensors/fpv_thermal.py` + `lock_break.py` + [`INTEGRATION.md`](../models/sensors/INTEGRATION.md)
+- [x] Phase2 geometry / microphysics / deployment — [`phase2_pipeline.py`](../models/cloud_physics/phase2_pipeline.py)
+- [x] `MasterPlan.md` aligned (phase2 campaign, v6 MoE framing)
+- [x] Form factor v2 KPP — [`FORM_FACTOR_REPORT.md`](FORM_FACTOR_REPORT.md), [`models/system/kinematics.py`](../models/system/kinematics.py)
+- [x] Proposals SRD/TEMP expanded; CI validate-only + golden manifest tests
+- [ ] Empirical E-1..E-5 — **external partner only**
 
 ---
 

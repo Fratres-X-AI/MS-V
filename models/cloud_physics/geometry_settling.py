@@ -230,12 +230,22 @@ def resolve_threat_geometry_cl(
     )
 
 
+def _broadcast_settling(
+    settling_velocity_m_s: float | np.ndarray,
+    cl_peak: np.ndarray,
+) -> np.ndarray:
+    v = np.asarray(settling_velocity_m_s, dtype=float)
+    if v.ndim == 0:
+        return np.full_like(cl_peak, float(v))
+    return v
+
+
 def cl_at_time(
     cl_peak: np.ndarray,
     time_s: np.ndarray | float,
     build_up_s: np.ndarray,
     *,
-    settling_velocity_m_s: float,
+    settling_velocity_m_s: float | np.ndarray,
     depth_m: np.ndarray,
     ramp_exponent: float = 1.0,
 ) -> np.ndarray:
@@ -246,7 +256,8 @@ def cl_at_time(
     during_ramp = t <= build_up_s
     ramp = cl_peak * np.power(np.clip(t / np.maximum(build_up_s, 0.1), 0.0, 1.0), exp)
     after = np.maximum(t - build_up_s, 0.0)
-    decay = np.exp(-settling_velocity_m_s * after / np.maximum(depth_m, 0.1))
+    v_settle = _broadcast_settling(settling_velocity_m_s, cl_peak)
+    decay = np.exp(-v_settle * after / np.maximum(depth_m, 0.1))
     uniform = cl_peak * decay
     return np.where(during_ramp, ramp, uniform)
 
@@ -259,11 +270,12 @@ def duration_until_cl_below_threshold(
     time_at_threshold_s: np.ndarray,
     thickness_met: np.ndarray,
     *,
-    settling_velocity_m_s: float,
+    settling_velocity_m_s: float | np.ndarray,
     depth_m: np.ndarray,
 ) -> np.ndarray:
+    v_settle = _broadcast_settling(settling_velocity_m_s, cl_peak)
     with np.errstate(divide="ignore", invalid="ignore"):
-        t_cross = build_up_s + (depth_m / max(settling_velocity_m_s, 1e-6)) * np.log(
+        t_cross = build_up_s + (depth_m / np.maximum(v_settle, 1e-6)) * np.log(
             np.maximum(cl_peak / np.maximum(cl_required, 1e-12), 1.0)
         )
     t_end = np.minimum(raw_burn_s, t_cross)

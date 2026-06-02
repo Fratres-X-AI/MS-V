@@ -4,15 +4,15 @@
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
 **Current maturity:** TRL 2 — **Sensitivity study complete** (140M samples, full RTM, partner handoff pack v2.0)  
 **Realistic ceiling (internal):** TRL 2–3 — literature-parameter M&S + path to analytical TRL 3 after partner bench/range  
-**Last updated:** 2026-06-01
+**Last updated:** 2026-06-02
 
 ---
 
 ## Status Summary
 
-Phase 0 complete. Phase 1 v3 Monte Carlo complete (140M mega suite — **all KPP pass inside literature bounds only**). Phase 1B remediation plan active to close sensor, geometry, and uncertainty gaps before Phase 3 CONOPS.
+Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite — KPP pass inside literature bounds only). Phase 1B sensor, geometry, and CONOPS items **delivered via phase2 pipeline** (not a separate active sprint). Partner handoff pack v2.0: proposals, CEL licensing, LinkedIn readiness, v2 KPP form factor.
 
-**Critical:** Sim pass ≠ design confirmation. See [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md).
+**Critical:** Sim pass ≠ design confirmation. Gap closure tracked in [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) (many items **closed** in-repo; empirical E-1..E-5 remain external).
 
 ### What We Can Reach (Cursor + RunPod Python/GPU + GitHub)
 
@@ -64,22 +64,37 @@ Phase 0 complete. Phase 1 v3 Monte Carlo complete (140M mega suite — **all KPP
 
 ---
 
-### Phase 1 — v3 COMPLETE | Phase 1B — IN PROGRESS
+### Phase 1 — v3 + phase2/v6 COMPLETE
 
 **Goal:** Quantitative KPP sensitivity **within stated uncertainty** — not field validation.
 
 | Task | Output | Status |
 |------|--------|--------|
 | Cloud physics v3 CL-ramp | [`models/cloud_physics/`](models/cloud_physics/) | Done |
-| Mega suite 140M samples | [`analysis/MEGA_SUITE_REPORT.md`](analysis/MEGA_SUITE_REPORT.md) | Done |
+| Mega suite 140M samples (phase2 + v6) | [`analysis/MEGA_SUITE_REPORT.md`](analysis/MEGA_SUITE_REPORT.md) | Done |
 | Tail-risk + uncertainty | [`analysis/tail_risk_analysis.md`](analysis/tail_risk_analysis.md), [`rtm/uncertainty_register.md`](rtm/uncertainty_register.md) | Done |
-| Sensor models FPV + thermal | [`models/sensors/fpv_thermal.py`](models/sensors/fpv_thermal.py) | **1B-2 scaffold** |
-| Geometry / settling / combined plumes | TBD | **1B-3 planned** |
-| Remediation plan | [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) | Active |
+| Sensor stack (FPV + v6 lock-break) | [`models/sensors/`](models/sensors/) · [`INTEGRATION.md`](models/sensors/INTEGRATION.md) | **Done (phase2 path)** |
+| Geometry / settling / combined plumes | [`geometry_settling.py`](models/cloud_physics/geometry_settling.py), [`phase2_pipeline.py`](models/cloud_physics/phase2_pipeline.py) | **Done (phase2)** |
+| CONOPS kill chain | [`sim/conops/kill_chain.py`](sim/conops/kill_chain.py) | Done |
+| Remediation plan | [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) | Closed for in-repo items |
 
-**Gap/Risk:** MoE saturates 100% in v3; no empirical fill data. **Do not advance Phase 3 until 1B freeze.**
+**Gap/Risk:** v3-tier MoE could saturate ~100%; **v6 probabilistic lock** reports ~80%/55% nominal/adversarial surrogate lock-met — still **not** field validation (A-013). No empirical fill data.
 
-**Maturity after 1B:** Honest analytical TRL 3 characterization.
+**Maturity:** Analytical TRL 2–3 characterization; empirical TRL 4 requires partner gates E-1..E-5.
+
+### Delivered vs planned (artifact truth table)
+
+| Artifact | Path | Status |
+|----------|------|--------|
+| 140M mega manifest | `analysis/results/mega_suite/manifest.json` | **Done** |
+| Verification matrix | `rtm/verification_matrix.md` | **Done** |
+| Form factor v2 KPP report | `analysis/FORM_FACTOR_REPORT.md` | **Done** (regenerated) |
+| SRD / TEMP (expanded) | `proposals/srd/`, `proposals/temp/` | **Done** (review-ready) |
+| Partner pack | `proposals/capture-brief.md`, `docs/licensing-and-partnership.md` | **Done** |
+| MasterPlan (this file) | `MasterPlan.md` | **Done** (aligned 2026-06-02) |
+| Empirical validation JSON | `data/partner_validation_results.json` | **Planned** (template only) |
+| Cost model / safety folder | `analysis/cost_model/`, `analysis/safety/` | **Planned** (Phase 4) |
+| TRL 4 range data | External partner | **Planned** |
 
 ---
 
@@ -219,7 +234,7 @@ Sensitivity data from the 140M mega suite **dictates** physical test priority �
 
 ### Explicit non-claims
 
-- 100% MoE pass across 38 jobs is **surrogate saturation**, not lock-break confirmation.
+- v3-era **~100% MoE pass** is **surrogate saturation**; v6 reports **spread** (~80%/55%) — still not lock-break confirmation.
 - KPP-06 tri-band pass is **non-discriminative** until α(λ) is measured on MS-V fill.
 - Sim pass inside literature bounds ≠ design confirmation.
 
@@ -266,7 +281,7 @@ Sensitivity data from the 140M mega suite **dictates** physical test priority �
 | Burn rate drives duration variance | `analysis/SOBOL_SENSITIVITY_REPORT.md` | Sobol ST(burn)≈0.83 |
 | 38/38 jobs KPP-pass (literature bounds) | `analysis/MEGA_SUITE_REPORT.md` | 140M mega suite |
 | Adversarial tail margin +19.7% | `analysis/tail_risk_analysis.md` | `baseline_10M_adversarial_g3` |
-| MoE 100% pass | `rtm/assumption_register.md` A-013 | **Surrogate saturation — not validation** |
+| MoE v6 lock-met spread | `rtm/assumption_register.md` A-013 | **Planning surrogate — not validation** |
 | Reproducible baseline stats | `python -m sim.reproduce` | `analysis/reproduce_golden.json` |
 | TRL 3 test priority | `proposals/temp/MS-V-TEMP-outline.md` | Sobol + OAT ranked |
 | Requirements mapping | `rtm/requirements_traceability.csv` | per-row job provenance |
