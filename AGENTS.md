@@ -12,6 +12,7 @@ Everything in-repo we control should pass **`make check`** (lint, tests, validat
 4. **Canonical renders:** Do not overwrite SHA256-pinned PNGs without updating `tests/test_canonical_renders.py`.
 5. **RTM:** KPP/MoE claims need `rtm/verification_matrix.md` job ID.
 6. **Labels:** M&S outputs = literature-parameter sensitivity — **NOT VALIDATION**.
+7. **No platform/social collateral** in this repo — partner and RTM artifacts only.
 
 ## Key paths
 

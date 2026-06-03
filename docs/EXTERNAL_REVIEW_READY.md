@@ -58,9 +58,9 @@ Full golden reproduce (heavier): `python -m sim.reproduce` · See [REPRODUCE.md]
 | You may say | You may not say |
 |-------------|-----------------|
 | Model-supported under literature bounds | Field validated / military ready |
-| 38/38 KPP pass in M&S (with matrix caveats) | MoE % = drone defeat rate |
+| 38/38 KPP pass in M&S (with matrix caveats) | MoE % = defeat rate |
 | v2 KPP design authority (850 g, 7.1×3.1 in) | MIT open source (repo is **CEL**) |
-| v6 lock-met ~80% / ~55% **planning surrogate** | 100% MoE without A-013 context |
+| v6 lock-met ~80% / ~55% **planning surrogate (A-013)** | Unqualified performance percentages |
 
 ---
 

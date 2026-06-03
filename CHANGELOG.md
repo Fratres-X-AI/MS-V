@@ -1,10 +1,10 @@
 # Changelog
 
-## v2.1.1 — Remove platform-specific outreach docs (2026-06-03)
+## v2.1.1 — Professional packaging cleanup (2026-06-03)
 
-- Removed posting guide, campaign brief, and dedicated outreach tests/scripts.
-- Renamed visual verification to [`analysis/VISUAL_VERIFICATION.md`](analysis/VISUAL_VERIFICATION.md).
-- Pod refresh script: `sim/run_evidence_refresh.sh` → `analysis/results/evidence_refresh.json`.
+- Consolidated external visuals under [`analysis/VISUAL_VERIFICATION.md`](analysis/VISUAL_VERIFICATION.md).
+- Evidence refresh: `sim/run_evidence_refresh.sh` → `analysis/results/evidence_refresh.json`.
+- Removed non–defense-engineering collateral from the tree.
 
 ## v2.1.0 — Gap closure & quality gates (2026-06-02)
 
@@ -12,10 +12,6 @@
 - **Quality:** `make check`, `tests/test_repo_invariants.py`, CI split (fast `quality` job + `simulation`).
 - **Physics/docs:** phase2 PSD settling per sample, sensor [`INTEGRATION.md`](models/sensors/INTEGRATION.md), MasterPlan + docs 00–08 footers, A-013 v6 framing.
 - **Agent guide:** [`AGENTS.md`](AGENTS.md).
-
-## v2.0.2 — Public outreach pack (2026-06-02) — superseded
-
-- Outreach docs later removed in v2.1.1; use **capture brief** + **visual verification** only.
 
 ## v2.0.1 — CEL license (2026-06-01)
 

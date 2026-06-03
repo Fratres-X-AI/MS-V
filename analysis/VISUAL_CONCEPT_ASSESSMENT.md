@@ -1,6 +1,6 @@
 # Visual Concept Assessment — MS-V Grenade Render
 
-> **Maturity:** Conceptual product visualization / marketing-style mockup when applied to AI-generated or photographic-style renders. **Not** a technical illustration, engineering drawing, or manufacturing reference unless explicitly labeled and cross-checked against dimensioned figures in `analysis/figures/form_factor/engineering/`.
+> **Maturity:** Conceptual product visualization / briefing-style mockup when applied to AI-generated or photographic-style renders. **Not** a technical illustration, engineering drawing, or manufacturing reference unless explicitly labeled and cross-checked against dimensioned figures in `analysis/figures/form_factor/engineering/`.
 
 ---
 

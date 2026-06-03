@@ -5,7 +5,7 @@
 **MS-V** generates a dense **visual + infrared** cloud to break fused FPV/thermal UAS lock when paired with standard visual smoke. Carried **in addition to** inventory smoke. Employed as **2–3 MS-V + visual smoke** against FPV and fiber-optic guided drones.
 
 **Status:** TRL 2 — Sensitivity study complete (140M samples)  
-**Version:** 2.1.0
+**Version:** 2.1.1
 
 > **Reviewers start here:** [External review ready](docs/EXTERNAL_REVIEW_READY.md) → [Capture brief](proposals/capture-brief.md) → [Verification matrix](rtm/verification_matrix.md)
 
@@ -137,7 +137,7 @@ See [CONOPS](docs/04-conops-use-cases.md) · [Limitations](docs/07-limitations-a
 | [SOBOL_SENSITIVITY_REPORT.md](analysis/SOBOL_SENSITIVITY_REPORT.md) | Global sensitivity |
 | [CONOPS_REPORT.md](analysis/CONOPS_REPORT.md) | Five use cases |
 
-### Outreach & partner handoff
+### Partner diligence
 
 | Doc | Purpose |
 |-----|---------|
