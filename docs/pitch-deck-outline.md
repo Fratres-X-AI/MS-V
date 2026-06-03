@@ -112,4 +112,4 @@ Detect → EW → MS-V + smoke → kinetic window
 - Comparison table vs. AN-M8 / M83 / vehicle obscurants (Annex A)  
 - Five CONOPS use cases + MoE windows ([CONOPS_REPORT](../analysis/CONOPS_REPORT.md))  
 - Full KPP traceability matrix  
-- LinkedIn carousel assets ([LINKEDIN_CAMPAIGN_BRIEF](../analysis/LINKEDIN_CAMPAIGN_BRIEF.md))
+- Canonical concept trio ([visuals/README](../visuals/README.md), [VISUAL_VERIFICATION](../analysis/VISUAL_VERIFICATION.md))

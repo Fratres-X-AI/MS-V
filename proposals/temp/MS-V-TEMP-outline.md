@@ -158,12 +158,12 @@ Assumes government or prime facility access; university lab may reduce burn-cup 
 |------|------------|--------|------------|-----|
 | Fill cannot meet duration + tox | Med | High | Annex C trades; P0-1 before P0-3 | A-002, KPP-12 |
 | MWIR α insufficient | Med | High | P0-2 before P0-3 | A-005, KPP-06 |
-| **Surrogate MoE misread as validation** | **High** | **High** | A-013 on all briefings; matrix `surrogate_saturated`; no LinkedIn % without caveat | A-013, MOE-01 |
+| **Surrogate MoE misread as validation** | **High** | **High** | A-013 on all briefings; matrix `surrogate_saturated`; no public % without caveat | A-013, MOE-01 |
 | v3-era 100% MoE saturation confusion | Med | High | Disclose v6 spread (~80%/55%) is still **not** field MoE | A-013 |
 | Throw fails at 850 g | Med | Med | P2-1 before down-select; envelope trade only if p10 < 18 m | KPP-08, E-2 |
 | Export / ITAR on range data | Med | Med | CEL review; partner JSON template only | — |
 | Schedule slip (funding) | High | Med | Phased gates 2A→2B→2C→2D→2E | — |
-| Public over-claim before E-1 | High | High | [`linkedin-posting-guide.md`](../../docs/linkedin-posting-guide.md); Option C only | GOV |
+| Public over-claim before E-1 | High | High | [`capture-brief.md`](../capture-brief.md); conservative framing only | GOV |
 
 ## 9. MoE / sensor surrogate disclosure (mandatory in test reports)
 

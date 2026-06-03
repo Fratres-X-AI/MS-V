@@ -2,7 +2,7 @@
 
 > **Required caption (exact):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
 
-**Verification status:** PASS — see [`LINKEDIN_VISUAL_VERIFICATION.md`](../../LINKEDIN_VISUAL_VERIFICATION.md). SHA256-pinned in `tests/test_canonical_renders.py`.
+**Verification status:** PASS — see [`VISUAL_VERIFICATION.md`](../../VISUAL_VERIFICATION.md). SHA256-pinned in `tests/test_canonical_renders.py`.
 
 These three figures are the approved repo set for briefings and external concept materials.
 **SHA256-pinned** in `tests/test_canonical_renders.py` — do not overwrite via script regen without explicit approval.
@@ -13,7 +13,7 @@ These three figures are the approved repo set for briefings and external concept
 | 2 | Product hero | [`renders/v2_kpp/ms_v_v2_hero.png`](renders/v2_kpp/ms_v_v2_hero.png) | v2 photoreal with M201 fuze + multispectral markings |
 | 3 | Cutaway | [`renders/v2_kpp/ms_v_v2_cutaway_photoreal.png`](renders/v2_kpp/ms_v_v2_cutaway_photoreal.png) | Interior — fuze, starter, bispectral filler |
 
-### GitHub raw URLs (LinkedIn / slides)
+### GitHub raw URLs (slides / briefings)
 
 1. https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png
 2. https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png

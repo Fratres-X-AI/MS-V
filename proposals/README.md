@@ -14,7 +14,6 @@ This folder holds **draft submission and partner-diligence artifacts**. They are
 |----------|------------|------|
 | **Capture / prime** | [`capture-brief.md`](capture-brief.md) | SRD → verification matrix → TEMP |
 | **Repo technical reviewer** | [`../docs/EXTERNAL_REVIEW_READY.md`](../docs/EXTERNAL_REVIEW_READY.md) | Partner FAQ → reproduce |
-| **LinkedIn / public** | [`../docs/linkedin-posting-guide.md`](../docs/linkedin-posting-guide.md) | Option C in campaign brief only |
 | **Lab / range partner** | [`temp/MS-V-TEMP-outline.md`](temp/MS-V-TEMP-outline.md) | DOC-11 gates 2A–2E |
 
 ---
@@ -55,13 +54,12 @@ This folder holds **draft submission and partner-diligence artifacts**. They are
 
 ---
 
-## Public outreach (LinkedIn)
+## External visuals
 
 | Doc | Role |
 |-----|------|
-| [Posting guide](../docs/linkedin-posting-guide.md) | Mandatory read before any post |
-| [Campaign brief](../analysis/LINKEDIN_CAMPAIGN_BRIEF.md) | **Option C first** (most conservative) |
-| [Visual verification](../analysis/LINKEDIN_VISUAL_VERIFICATION.md) | v2 KPP image checklist |
+| [Visual verification](../analysis/VISUAL_VERIFICATION.md) | v2 KPP canonical trio checklist |
+| [Canonical renders](../analysis/figures/form_factor/CANONICAL_RENDERS.md) | Approved paths + caption |
 
 **Required visual caption:** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
 

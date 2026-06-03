@@ -25,7 +25,7 @@ MS-V is a **hand-thrown multispectral obscurant grenade concept** (~**850 g**, *
 | 7 | [MEGA_SUITE_REPORT](../analysis/MEGA_SUITE_REPORT.md) | Campaign summary |
 | 8 | [Limitations](../docs/07-limitations-and-risks.md) | Forbidden claims |
 
-**Public outreach only after:** [LinkedIn posting guide](linkedin-posting-guide.md).
+**External visuals:** [Visual verification](../analysis/VISUAL_VERIFICATION.md) — mandatory caption on all concept art.
 
 ---
 

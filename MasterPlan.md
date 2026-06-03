@@ -10,7 +10,7 @@
 
 ## Status Summary
 
-Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite — KPP pass inside literature bounds only). Phase 1B sensor, geometry, and CONOPS items **delivered via phase2 pipeline** (not a separate active sprint). Partner handoff pack v2.0: proposals, CEL licensing, LinkedIn readiness, v2 KPP form factor.
+Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite — KPP pass inside literature bounds only). Phase 1B sensor, geometry, and CONOPS items **delivered via phase2 pipeline** (not a separate active sprint). Partner handoff pack v2.0: proposals, CEL licensing, v2 KPP form factor, external review pack.
 
 **Critical:** Sim pass ≠ design confirmation. Gap closure tracked in [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) (many items **closed** in-repo; empirical E-1..E-5 remain external).
 

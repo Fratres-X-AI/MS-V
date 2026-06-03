@@ -70,6 +70,6 @@ Copy [`data/partner_validation_results.template.json`](../data/partner_validatio
 
 ---
 
-## LinkedIn / public posts
+## Public communications
 
-Use [linkedin-posting-guide.md](../docs/linkedin-posting-guide.md). **Do not** represent M&S as field performance.
+Use [`capture-brief.md`](capture-brief.md) and [`docs/07-limitations-and-risks.md`](../docs/07-limitations-and-risks.md). **Do not** represent M&S as field performance. MoE percentages require **A-013** surrogate disclosure.

@@ -17,7 +17,7 @@ typecheck:
 
 # Fast elite gate — safe on laptop (~10s)
 check: lint typecheck test validate
-	pytest tests/test_repo_invariants.py tests/test_linkedin_readiness.py tests/test_canonical_renders.py tests/test_golden_manifest.py -q
+	pytest tests/test_repo_invariants.py tests/test_visual_standards.py tests/test_canonical_renders.py tests/test_golden_manifest.py -q
 
 reproduce:
 	python -m sim.reproduce

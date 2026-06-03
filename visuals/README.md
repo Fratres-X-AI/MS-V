@@ -5,13 +5,13 @@ Concept art and reference imagery. Figures are **notional** until hardware exist
 > **Required caption (external use — exact text):**  
 > *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
 
-**Verification:** [`../analysis/LINKEDIN_VISUAL_VERIFICATION.md`](../analysis/LINKEDIN_VISUAL_VERIFICATION.md) · **Status:** PASS (2026-06-02) · **Pins:** [`tests/test_canonical_renders.py`](../tests/test_canonical_renders.py)
+**Verification:** [`../analysis/VISUAL_VERIFICATION.md`](../analysis/VISUAL_VERIFICATION.md) · **Status:** PASS (2026-06-02) · **Pins:** [`tests/test_canonical_renders.py`](../tests/test_canonical_renders.py)
 
 ---
 
 ## Grenade — v2 KPP (authoritative trio)
 
-User-approved **authoritative** set for briefings, LinkedIn, and prime diligence. SHA256-pinned in [`tests/test_canonical_renders.py`](../tests/test_canonical_renders.py).
+User-approved **authoritative** set for briefings and prime diligence. SHA256-pinned in [`tests/test_canonical_renders.py`](../tests/test_canonical_renders.py).
 
 | # | Asset | Role |
 |---|-------|------|
@@ -23,13 +23,13 @@ User-approved **authoritative** set for briefings, LinkedIn, and prime diligence
 **Gallery:** [`../analysis/figures/form_factor/renders/v2_kpp/index.html`](../analysis/figures/form_factor/renders/v2_kpp/index.html)  
 **Index:** [`../analysis/figures/form_factor/CANONICAL_RENDERS.md`](../analysis/figures/form_factor/CANONICAL_RENDERS.md)
 
-### GitHub raw URLs (download for slides / LinkedIn)
+### GitHub raw URLs (download for slides / briefings)
 
 1. https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_hero.png  
 2. https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/engineering/scale_comparison_v2_inventory.png  
 3. https://raw.githubusercontent.com/Fratres-X-AI/MS-V/main/analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png  
 
-**LinkedIn carousel order:** hero → scale → cutaway
+**Recommended display order:** hero → scale → cutaway
 
 ---
 

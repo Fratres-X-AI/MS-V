@@ -101,7 +101,7 @@ MS-V is the **multispectral obscuration layer** at squad level. Vehicle systems 
 
 **Limitations upfront:** No MS-V fill empirical data. MoE is a **planning surrogate** (A-013), not UAS test data.
 
-**Repository:** https://github.com/Fratres-X-AI/MS-V (CEL — evaluation only) · **Review path:** [`EXTERNAL_REVIEW_READY.md`](EXTERNAL_REVIEW_READY.md) · **Public posts:** [`linkedin-posting-guide.md`](linkedin-posting-guide.md)
+**Repository:** https://github.com/Fratres-X-AI/MS-V (CEL — evaluation only) · **Review path:** [`EXTERNAL_REVIEW_READY.md`](EXTERNAL_REVIEW_READY.md)
 
 ---
 

@@ -9,8 +9,6 @@
 
 > **Reviewers start here:** [External review ready](docs/EXTERNAL_REVIEW_READY.md) → [Capture brief](proposals/capture-brief.md) → [Verification matrix](rtm/verification_matrix.md)
 
-> **Public posting:** See [`docs/linkedin-posting-guide.md`](docs/linkedin-posting-guide.md) before LinkedIn. **Recommended first post:** Option C in [`analysis/LINKEDIN_CAMPAIGN_BRIEF.md`](analysis/LINKEDIN_CAMPAIGN_BRIEF.md).
-
 > **Conceptual design — NOT validation.** Literature-parameter M&S only.  
 > **Master plan:** [MasterPlan.md](MasterPlan.md) · **One-pager:** [Executive Brief](docs/00-executive-brief.md)  
 > **Local quality gate:** `make check` or `.\scripts\check.ps1` (~10 s, laptop-safe)
@@ -144,8 +142,7 @@ See [CONOPS](docs/04-conops-use-cases.md) · [Limitations](docs/07-limitations-a
 | Doc | Purpose |
 |-----|---------|
 | [**External review ready**](docs/EXTERNAL_REVIEW_READY.md) | **Prime/sponsor onboarding (start here)** |
-| [**LinkedIn posting guide**](docs/linkedin-posting-guide.md) | **Read before any public post** |
-| [LinkedIn campaign brief](analysis/LINKEDIN_CAMPAIGN_BRIEF.md) | Approved copy (Options B/C) |
+| [Visual verification](analysis/VISUAL_VERIFICATION.md) | v2 KPP canonical trio checklist |
 | [One-pager](docs/MS-V-one-pager.md) | Single-page concept summary |
 | [Pitch deck outline](docs/pitch-deck-outline.md) | 8–10 slide structure |
 | [Licensing & partnership](docs/licensing-and-partnership.md) | CEL tiers, PCA path, inquiry |

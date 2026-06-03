@@ -108,7 +108,7 @@ Authoritative observed values and margins: **matrix only**. Table below is navig
 | Requires visual smoke (not standalone) | LIM-01 | Doctrine only |
 | No RF defeat | LIM-02 | Obscuration path only |
 
-### 6.3 Forbidden language (LinkedIn, briefings, capture)
+### 6.3 Forbidden language (external communications, briefings, capture)
 
 Do **not** use: validated, proven, field-tested, military-ready, defeats drones, 100% MoE, MIT open source, Phase 2 **validated** physics.
 
@@ -181,4 +181,4 @@ Do **not** describe the repository as “open source MIT.” Partner diligence: 
 |----------|----------|
 | Capture / primes | [`capture-brief.md`](../capture-brief.md) |
 | Repo reviewers | [`partner-evaluation-faq.md`](../partner-evaluation-faq.md) |
-| Public posting | [`linkedin-posting-guide.md`](../docs/linkedin-posting-guide.md) |
+| External review | [`EXTERNAL_REVIEW_READY.md`](../docs/EXTERNAL_REVIEW_READY.md) |

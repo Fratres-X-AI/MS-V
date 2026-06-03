@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.1 — Remove platform-specific outreach docs (2026-06-03)
+
+- Removed posting guide, campaign brief, and dedicated outreach tests/scripts.
+- Renamed visual verification to [`analysis/VISUAL_VERIFICATION.md`](analysis/VISUAL_VERIFICATION.md).
+- Pod refresh script: `sim/run_evidence_refresh.sh` → `analysis/results/evidence_refresh.json`.
+
 ## v2.1.0 — Gap closure & quality gates (2026-06-02)
 
 - **External review pack:** [`docs/EXTERNAL_REVIEW_READY.md`](docs/EXTERNAL_REVIEW_READY.md), expanded SRD/TEMP, v2 `FORM_FACTOR_REPORT`, [`models/system/kinematics.py`](models/system/kinematics.py).
@@ -7,11 +13,9 @@
 - **Physics/docs:** phase2 PSD settling per sample, sensor [`INTEGRATION.md`](models/sensors/INTEGRATION.md), MasterPlan + docs 00–08 footers, A-013 v6 framing.
 - **Agent guide:** [`AGENTS.md`](AGENTS.md).
 
-## v2.0.2 — LinkedIn readiness closure (2026-06-02)
+## v2.0.2 — Public outreach pack (2026-06-02) — superseded
 
-- Conservative **LinkedIn campaign brief** (Options C/B/A, MoE surrogate framing, no pod required).
-- **Posting guide**, **visual verification** checklist, **capture brief**, **partner FAQ**.
-- CI: `tests/test_linkedin_readiness.py`.
+- Outreach docs later removed in v2.1.1; use **capture brief** + **visual verification** only.
 
 ## v2.0.1 — CEL license (2026-06-01)
 
@@ -30,7 +34,7 @@
 
 - Pod rounds 2–3: MoE Sobol phase2 (N=8192), CONOPS 1M, tail-risk deep dives (50M burn-worst stable).
 - Full RTM: KPP-01–14, MOE-01/02, LIM-01–03; `REPRODUCE.md`; phase2/v6 mega suite.
-- KPP-08 throw model; LinkedIn campaign brief; deep dive reports.
+- KPP-08 throw model; deep dive reports.
 
 ## v1.8.0 — v2 canonical renders & form factor (2026-05)
 
