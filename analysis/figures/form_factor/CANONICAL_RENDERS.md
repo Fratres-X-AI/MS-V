@@ -1,6 +1,8 @@
 # Canonical MS-V v2 Visuals
 
-> **Concept visualization only** — v2 KPP envelope (850 g, 7.1 × 3.1 in per Annex B). **NOT VALIDATION.**
+> **Required caption (exact):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
+
+**Verification status:** PASS — see [`LINKEDIN_VISUAL_VERIFICATION.md`](../../LINKEDIN_VISUAL_VERIFICATION.md). SHA256-pinned in `tests/test_canonical_renders.py`.
 
 These three figures are the approved repo set for briefings and external concept materials.
 **SHA256-pinned** in `tests/test_canonical_renders.py` — do not overwrite via script regen without explicit approval.

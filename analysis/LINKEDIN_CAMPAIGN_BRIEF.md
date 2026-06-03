@@ -10,11 +10,11 @@
 
 | Post type | Ready? |
 |-----------|--------|
-| **Option C** — problem only, no numbers | **Yes** (safest first post) |
-| **Option B** — short M&S with surrogate caveats | **Yes** (recommended) |
-| **Carousel** (3 canonical images + caption) | **Yes** |
-| **Option A** — technical deep-dive | **Use with caution** — expert audience only |
-| **Repo link in first post** | **Defer** — see posting guide Phase 2 |
+| **Option C** — problem only, no numbers | **Yes — default first post** |
+| **Option B** — short M&S with surrogate caveats | **Yes — week 2+ only** |
+| **Carousel** (3 canonical images + mandatory caption) | **Yes — pair with Option C or B** |
+| **Option A** — technical deep-dive | **Not recommended publicly** — DMs / reviewer threads only |
+| **Repo link in first post** | **No** — posting guide Phase 2 minimum |
 
 Campaign numbers below are from pod runs `2026-06-01` @ 31 workers (`phase2_v1_full_physics` + v6 probabilistic sensor). **No new pod run required for posting.**
 
@@ -41,7 +41,7 @@ Traceability: assumption **A-013** · matrix note on `surrogate_saturated` · [`
 | Metric | Value | Safe framing |
 |--------|-------|----------------|
 | Mega-suite samples | 140M (38 jobs) | "Monte Carlo sensitivity campaign" |
-| Model stack | phase2 microphysics + v6 probabilistic sensor path | "Literature-bound M&S" |
+| Model stack | phase2 **model tier** + v6 probabilistic sensor path | "Literature-bound M&S — not validated physics" |
 | Duration p10 (3× g3) | ~170 s | "Model p10 at bounded parameters" |
 | vs 120 s KPP | +~42% margin in sim | "Headroom in sensitivity study" |
 | MoE surrogate (nominal / stress) | ~80% / ~55% lock-met **fraction** | "Surrogate metric — not field MoE" |
@@ -91,8 +91,8 @@ Standard smoke is VIS-only. Thermal and fused EO/IR UAS still see you.
 
 We completed a **140-million-sample Monte Carlo sensitivity study** (literature-parameter bounds, **not field test**):
 
-• Model duration margin (p10, 3-grenade employment) ~**2.8 min** vs 120 s requirement — **in sim only**  
-• **Planning surrogate** for fused EO/IR "lock-met" shows spread (**~80%** nominal stack · **~55%** stress stack) — **not measured UAS defeat**  
+• Model duration p10 (~**170 s**, 3-grenade employment) vs 120 s KPP — **literature-bound MC only**  
+• **Planning surrogate (A-013):** lock-met fractions ~**80%** / ~**55%** (nominal / stress stacks) — **not UAS defeat; check `surrogate_saturated` in matrix**  
 • Global sensitivity: **burn rate** dominates — points TRL 3 bench to burn cup first  
 
 Concept art and traceability are on GitHub under **evaluation license (CEL)** — not commercial/production rights.

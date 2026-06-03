@@ -38,6 +38,29 @@ Out of scope: RF defeat, standalone employment without visual smoke, vehicle-mou
 
 Full matrix: [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) · CSV: [`rtm/requirements_traceability.csv`](../rtm/requirements_traceability.csv)
 
+### 3.1 Primary M&S job mapping (140M campaign)
+
+Authoritative observed values and margins: **matrix only**. Table below is navigation — not a second source of truth.
+
+| Req | Primary job ID | Seed | Matrix pass | Saturation caveat |
+|-----|----------------|------|-------------|-------------------|
+| KPP-02 | `baseline_10M_g3_n10000000` | 45 | YES | — |
+| KPP-03 | `baseline_10M_g3_n10000000` | 45 | YES | Duration not fill-validated |
+| KPP-04 | `baseline_10M_g1_n10000000` | 43 | YES | Single-grenade geometry |
+| KPP-05 | `baseline_10M_g2_*`; `baseline_10M_g3_*` | 44; 45 | YES | Doctrine |
+| KPP-06 | `baseline_10M_g3_n10000000` | 45 | YES* | Check `surrogate_saturated` in job JSON |
+| KPP-07 | `baseline_10M_g3_n10000000` | 45 | YES | Fuze model, not lot test |
+| KPP-08 | `baseline_10M_g3_n10000000` | 45 | YES | MC throw — gate **2C** required |
+| KPP-10 | `sweep_temp_hot_g3_n2000000` (tightest) | 735 | YES | Chamber confirmation E-5 |
+| KPP-11 | `baseline_10M_wind_high_g3_n10000000` | 208 | YES | Wind not duration-binding in campaign |
+| MOE-01 | `baseline_10M_g3_n10000000` | 45 | YES* | **A-013:** ~80% lock-met fraction — not field MoE |
+| MOE-01 stress | `baseline_10M_adversarial_g3_n10000000` | 999 | YES* | Adversarial ~55% lock-met — still surrogate |
+| MOE-02 | CONOPS (`sim/run_conops.py`) | — | YES | Scenario MC — [`CONOPS_REPORT`](../analysis/CONOPS_REPORT.md) |
+| KPP-01, KPP-09 | `N/A (design authority)` | — | YES | `models/system/form_factor.yaml` `v2_kpp` |
+| KPP-12, KPP-13 | `N/A` | — | **NO** / PLANNED | External only |
+
+\*When `surrogate_saturated=true`, treat MoE/tri-band row as **non-discriminative** per matrix header and A-013.
+
 ## 4. Key Performance Parameters
 
 | ID | Requirement | M&S Status | Verification Path |
@@ -66,10 +89,34 @@ Full matrix: [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) · CS
 
 ## 6. Known Limitations (mandatory disclosure)
 
-1. No MS-V fill empirical data — all aerosol parameters from open literature.
-2. When `surrogate_saturated=true`, MoE/tri-band pass is non-discriminative (A-013).
-3. Phase2 models combined plume interaction, PSD, humidity growth, and deployment kinematics — still literature-bound.
-4. Sim pass ≠ design confirmation.
+### 6.1 What this SRD is not
+
+- **Not** a validated system specification, ICD, or type-classified munition data package.
+- **Not** evidence of field performance, procurement readiness, or safety certification.
+- **Not** a substitute for [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) — that file is the quantitative authority for M&S pass/fail rows.
+
+### 6.2 Technical limitations (traceable)
+
+| Limitation | RTM / doc | External claim |
+|------------|-----------|----------------|
+| No MS-V fill empirical α(λ), burn rate, PSD, or tox | A-001..A-010; matrix KPP-12 **NO** | None beyond “planned test” |
+| Literature-parameter MC only | Matrix header; LIM-03 | “Model-supported under stated assumptions” |
+| `surrogate_saturated=true` → MoE/tri-band non-discriminative | A-013; matrix note | **Never** cite pass % as defeat rate |
+| v6 lock-met ~80% / ~55% = **planning surrogate** only | MOE-01 row; A-013, A-027 | Directional planning only — requires gate **2D** |
+| Form factor 850 g / 7.1×3.1 in = **design authority**, not weighed prototype | KPP-01, KPP-09; `form_factor.yaml` | “Concept envelope” — gate E-3 |
+| Throw KPP-08 = MC + human_factors model, not range data | KPP-08 job; E-2 | “Model-bound” until gate **2C** |
+| Requires visual smoke (not standalone) | LIM-01 | Doctrine only |
+| No RF defeat | LIM-02 | Obscuration path only |
+
+### 6.3 Forbidden language (LinkedIn, briefings, capture)
+
+Do **not** use: validated, proven, field-tested, military-ready, defeats drones, 100% MoE, MIT open source, Phase 2 **validated** physics.
+
+Do use: literature-parameter sensitivity study, concept visualization, planning surrogate, CEL evaluation access, v2 KPP design authority.
+
+### 6.4 Sim pass ≠ design confirmation
+
+A **YES** in [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) means the requirement was met inside **stated literature bounds** for the cited job ID — not that the hardware will perform so in theater.
 
 ## 7. Traceability (artifacts)
 

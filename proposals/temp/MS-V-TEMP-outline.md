@@ -52,13 +52,14 @@ Define the empirical test program required to convert the literature-parameter s
 
 | Field | Detail |
 |-------|--------|
-| **Resources** | Range or chamber with MS-V + AN-M8 employment; fused EO/IR rig |
+| **Resources** | Range or chamber with MS-V + AN-M8 employment; fused EO/IR rig; safety officer |
 | **Duration** | 4–8 weeks (setup + n≥20 instrumented trials) |
-| **Procedure** | Nominal vs adversarial sensor stacks; measure lock-break duration |
-| **Pass** | Directionally consistent with M&S (≥60 s lock-break in ≥80% trials at TRL 3 — not exact % match to MC) |
+| **Procedure** | Nominal vs adversarial sensor stacks; measure lock-break duration vs smoke-only baseline |
+| **Pass** | **Directional** consistency with M&S — measurable lock-break under instrumented conditions; **do not require** match to MC ~80% nominal / ~55% adversarial **surrogate lock-met** fractions (A-013) |
 | **Fail** | No measurable lock-break vs smoke-only baseline |
-| **Artifacts** | Trial video, sensor logs, JSON → `uas_surrogate` |
+| **Artifacts** | Trial video, sensor logs, JSON → `uas_surrogate`; update matrix MOE-01 row with **measured** status |
 | **Gate link** | [DOC-11 §2D](../../docs/11-partner-validation-and-trl-gates.md) |
+| **M&S reference** | Matrix MOE-01: `baseline_10M_g3_n10000000` (nominal), `baseline_10M_adversarial_g3_n10000000` (stress) — planning only |
 
 ### P0-4 — Respiratory / irritation (KPP-12)
 
@@ -138,17 +139,43 @@ Define the empirical test program required to convert the literature-parameter s
 | MoE lock-break | Surrogate non-binding when saturation off | ≥ 60 s in ≥ 80% of instrumented trials (directional) |
 | Throw p10 | ≥ 20 m stressed MC | Measured p10 ≥ 20 m (n≥30) |
 
-## 7. Risk register
+## 7. Resource and staffing estimates (planning — notional)
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| Fill cannot meet duration + tox | Med | High | Annex C trades; earlier burn cup (P0-1) |
-| MWIR α insufficient | Med | High | Spectrometry before range (P0-2 before P0-3) |
-| Surrogate MoE misread externally | High | High | A-013 disclosure; no “100% defeat” claims |
-| Export / ITAR on range data | Med | Med | CEL review; partner JSON template only |
-| Schedule slip (funding) | High | Med | Phased gates 2A→2B→2C→2D→2E |
+Order-of-magnitude for funded TRL 3 program planning. **Not a cost proposal** — KPP-13 remains PLANNED.
 
-## 8. Budget and schedule (TBD pending funding)
+| Element | P0 lab | P0 range/chamber | P1 | P2 HF |
+|---------|--------|------------------|-----|-------|
+| **Calendar** | 3–6 mo | 3–6 mo (overlap) | 2–4 mo | 1–2 mo |
+| **Staff (FTE)** | 1–2 pyro/chem + 0.5 safety | 1 test director + 2 range techs | 1 optical + 1 lidar | 1 HF lead + 2 throwers |
+| **Major equipment** | Burn cup, chamber, FTIR | UAS rig, smoke baseline | Lidar, wind source | Grid, inert 850 g rounds |
+| **Notional $ (USD)** | $150k–400k | $250k–600k | $80k–200k | $40k–80k |
+
+Assumes government or prime facility access; university lab may reduce burn-cup cost, not range MoE.
+
+## 8. Risk register
+
+| Risk | Likelihood | Impact | Mitigation | RTM |
+|------|------------|--------|------------|-----|
+| Fill cannot meet duration + tox | Med | High | Annex C trades; P0-1 before P0-3 | A-002, KPP-12 |
+| MWIR α insufficient | Med | High | P0-2 before P0-3 | A-005, KPP-06 |
+| **Surrogate MoE misread as validation** | **High** | **High** | A-013 on all briefings; matrix `surrogate_saturated`; no LinkedIn % without caveat | A-013, MOE-01 |
+| v3-era 100% MoE saturation confusion | Med | High | Disclose v6 spread (~80%/55%) is still **not** field MoE | A-013 |
+| Throw fails at 850 g | Med | Med | P2-1 before down-select; envelope trade only if p10 < 18 m | KPP-08, E-2 |
+| Export / ITAR on range data | Med | Med | CEL review; partner JSON template only | — |
+| Schedule slip (funding) | High | Med | Phased gates 2A→2B→2C→2D→2E | — |
+| Public over-claim before E-1 | High | High | [`linkedin-posting-guide.md`](../../docs/linkedin-posting-guide.md); Option C only | GOV |
+
+## 9. MoE / sensor surrogate disclosure (mandatory in test reports)
+
+All TEMP reports referencing M&S must include:
+
+1. **A-013:** v6 `lock_break_probability` is a **planning surrogate**, not a validated UAS defeat model.
+2. **`surrogate_saturated`:** When true in archived jobs, tri-band/MoE MC pass is non-discriminative.
+3. **No equivalence:** Empirical gate **2D** pass/fail is **not** required to reproduce MC percentages.
+
+Cite: [`rtm/assumption_register.md`](../../rtm/assumption_register.md) · [`models/sensors/INTEGRATION.md`](../../models/sensors/INTEGRATION.md).
+
+## 10. Budget and schedule (TBD pending funding)
 
 | Phase | Duration (planning) | Budget | Deliverable |
 |-------|---------------------|--------|-------------|
@@ -157,7 +184,7 @@ Define the empirical test program required to convert the literature-parameter s
 | TRL 3c — HF / fuze | 1–2 mo | **TBD** | P2-1, P2-2 |
 | TRL 4 — Relevant environment | 6–12 mo | **TBD** | Full E-1..E-5 closure |
 
-## 9. Configuration control
+## 11. Configuration control
 
 - Baseline params: `models/cloud_physics/params.yaml`
 - Form factor authority: `models/system/form_factor.yaml` (`v2_kpp`)
@@ -165,7 +192,7 @@ Define the empirical test program required to convert the literature-parameter s
 - Reproduce: `bash run_all.sh` or `make reproduce`
 - Locked deps: `requirements-lock.txt` / `environment.yml`
 
-## 10. Traceability
+## 12. Traceability
 
 - Verification matrix: [`rtm/verification_matrix.md`](../../rtm/verification_matrix.md)
 - Fill physics plan: [`analysis/fill_physics_test_plan.md`](../../analysis/fill_physics_test_plan.md)
@@ -173,7 +200,7 @@ Define the empirical test program required to convert the literature-parameter s
 - TRL gate: [`proposals/trl_gate_external.md`](../trl_gate_external.md)
 - Partner gates: [`docs/11-partner-validation-and-trl-gates.md`](../../docs/11-partner-validation-and-trl-gates.md)
 
-## 11. References
+## 13. References
 
 - [`rtm/verification_matrix.md`](../../rtm/verification_matrix.md)
 - [`rtm/assumption_register.md`](../../rtm/assumption_register.md)

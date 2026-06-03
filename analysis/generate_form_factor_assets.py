@@ -23,7 +23,10 @@ from models.system.envelope import (  # noqa: E402
     load_form_factor,
     loadout_mass_g,
 )
-from models.system.kinematics import impact_dispersion_summary  # noqa: E402
+from models.system.kinematics import (  # noqa: E402
+    human_factors_summary,
+    impact_dispersion_summary,
+)
 from models.system.stl_export import export_comparison_stl, export_ms_v_stl  # noqa: E402
 
 FIG = ROOT / "analysis" / "figures" / "form_factor"
@@ -222,6 +225,7 @@ def write_report(
     paths: list[Path],
     stl_paths: dict,
     throw_stats: dict[str, float],
+    hf_summary: dict,
 ) -> None:
     throw = spec["throw"]
     variant = spec.get("variant_key", "v2_kpp")
@@ -250,7 +254,18 @@ def write_report(
         f"| MC stressed p10 / p50 / p90 | {throw_stats['throw_p10_m']:.1f} / {throw_stats['throw_p50_m']:.1f} / {throw_stats['throw_p90_m']:.1f} m |",
         f"| Lateral dispersion p50 / p90 | {throw_stats['lateral_p50_m']:.2f} / {throw_stats['lateral_p90_m']:.2f} m |",
         "",
-        "Source: [`models/system/kinematics.py`](../models/system/kinematics.py) + phase2 deployment model.",
+        "Source: [`models/system/kinematics.py`](../models/system/kinematics.py) · [`human_factors.yaml`](../models/system/human_factors.yaml).",
+        f"RTM: matrix KPP-08 · job `{hf_summary['rtm_job_kpp08']}` (MC pass — **not** range validation).",
+        "",
+        "## Human factors (notional inputs)",
+        "",
+        "| Input | Value |",
+        "|-------|-------|",
+        f"| Loadout 2× MS-V (est.) | {hf_summary['loadout_2x_ms_v_kg']:.2f} kg |",
+        f"| Throw band (YAML) | {hf_summary['throw_range_m']['min']}–{hf_summary['throw_range_m']['max']} m |",
+        f"| Load range penalty | −{hf_summary['load_penalty']['range_reduction_m']} m |",
+        f"| Stress lateral multiplier | ×{hf_summary['stress']['lateral_error_multiplier']} |",
+        f"| Posture mix (standing / kneel / prone) | {hf_summary['posture']['standing_fraction']:.0%} / {hf_summary['posture']['kneeling_fraction']:.0%} / {hf_summary['posture']['prone_fraction']:.0%} |",
         "",
         "## Pouch fit (typical MOLLE grenade pouch)",
         "",
@@ -287,6 +302,7 @@ def main() -> None:
     env = derive_envelope(spec)
     pouch_fit = check_pouch_fit(env, spec["ms_v"]["mass_g"], spec["pouch"])
     throw_stats = impact_dispersion_summary()
+    hf_summary = human_factors_summary(spec)
 
     fig_paths = [
         plot_scale_comparison(FIG, spec),
@@ -299,7 +315,7 @@ def main() -> None:
         "ms_v_assembly": export_ms_v_stl(STL / "ms_v_assembly.stl"),
         **export_comparison_stl(STL),
     }
-    write_report(spec, env, pouch_fit, fig_paths, stl_paths, throw_stats)
+    write_report(spec, env, pouch_fit, fig_paths, stl_paths, throw_stats, hf_summary)
     for p in fig_paths:
         print(f"Wrote {p}")
     for k, p in stl_paths.items():

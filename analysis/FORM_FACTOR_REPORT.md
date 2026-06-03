@@ -22,7 +22,18 @@
 | MC stressed p10 / p50 / p90 | 20.0 / 21.5 / 23.5 m |
 | Lateral dispersion p50 / p90 | 2.35 / 3.35 m |
 
-Source: [`models/system/kinematics.py`](../models/system/kinematics.py) + phase2 deployment model.
+Source: [`models/system/kinematics.py`](../models/system/kinematics.py) · [`human_factors.yaml`](../models/system/human_factors.yaml).
+RTM: matrix KPP-08 · job `baseline_10M_g3_n10000000` (MC pass — **not** range validation).
+
+## Human factors (notional inputs)
+
+| Input | Value |
+|-------|-------|
+| Loadout 2× MS-V (est.) | 1.70 kg |
+| Throw band (YAML) | 20.0–25.0 m |
+| Load range penalty | −1.0 m |
+| Stress lateral multiplier | ×1.25 |
+| Posture mix (standing / kneel / prone) | 55% / 35% / 10% |
 
 ## Pouch fit (typical MOLLE grenade pouch)
 

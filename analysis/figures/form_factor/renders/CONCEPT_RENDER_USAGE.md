@@ -11,7 +11,7 @@ Location: `renders/v2_kpp/`
 | `ms_v_v2_cutaway_photoreal.png` | Half-section interior — filler, ports, fuze at v2 size |
 
 **Required caption:**
-> Concept visualization only — v2 KPP envelope (850 g, 7.1 × 3.1 in per Annex B). Not validation. Engineering figures: `../engineering/`.
+> Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation. Engineering figures: `../engineering/`.
 
 Cross-check against: `engineering/scale_comparison_v2_inventory.png`
 

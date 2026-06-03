@@ -35,8 +35,10 @@ Source: [`models/system/form_factor.yaml`](../models/system/form_factor.yaml) �
 ## Required caption (all three images)
 
 ```
-Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in per Annex B). Not validation.
+Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.
 ```
+
+This string is **mandatory** — do not add "validated," "proven," or omit "Not validation."
 
 ---
 

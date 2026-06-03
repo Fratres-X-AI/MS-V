@@ -1,21 +1,26 @@
-# MS-V v2 KPP — Copy-paste captions (public / slides)
+# MS-V v2 KPP — Required captions (copy-paste)
 
-Use with canonical renders under `analysis/figures/form_factor/renders/v2_kpp/`.
+## Mandatory (all public use)
 
-## Hero (`ms_v_v2_hero.png`)
+```
+Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.
+```
 
-> Concept visualization only — MS-V Veil v2 KPP envelope (850 g, 7.1 × 3.1 in). Not validation. Literature-parameter M&S; not field performance.
+Do not paraphrase. Do not drop "Not validation." Do not add "validated" or "field tested."
 
-## Scale comparison (`scale_comparison_v2_inventory.png`)
+## Per-asset notes (optional second line only)
 
-> Size comparison vs reference smoke grenades. MS-V v2 KPP is ~25% larger than AN-M8 HC for multispectral fill volume. Concept art — not issued hardware.
+| Asset | Optional context line |
+|-------|------------------------|
+| Hero | Parametric concept art — not issued hardware. |
+| Scale | Size vs AN-M8 HC / M83 for inventory context only. |
+| Cutaway | Interior layout is a design estimate, not measured prototype. |
 
-## Cutaway (`ms_v_v2_cutaway_photoreal.png`)
+## MoE / M&S (if text accompanies visuals)
 
-> Parametric cutaway — port layout and fill chamber are design estimates, not measured prototype. CEL applies to repo content; commercial use requires separate agreement.
+- Do **not** pair these images with MoE percentages as drone defeat rates.
+- If citing M&S: "literature-parameter sensitivity study" + **A-013** surrogate limitation.
 
-## Do not use in captions
+## License
 
-- "Validated" / "proven" / "field tested"
-- MoE percentages as drone defeat rate
-- "Open source MIT" (repo is **CEL**)
+Repo content: **CEL** — not MIT. See [`LICENSE`](../../LICENSE).

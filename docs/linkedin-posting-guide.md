@@ -13,7 +13,7 @@
 | **Images only** (3 canonical + caption) | **Yes** | Use Option B copy from [`LINKEDIN_CAMPAIGN_BRIEF.md`](../analysis/LINKEDIN_CAMPAIGN_BRIEF.md) |
 | **Short concept post** (problem + TRL 2, no numbers) | **Yes** | Option C in brief |
 | **Post with repo link** | **Conditional** | Only after using conservative copy + CEL notice |
-| **Technical deep-dive** (Option A) | **Not recommended** | Too easy to over-claim MoE |
+| **Technical deep-dive** (Option A) | **No** | DMs / invited reviewers only — too easy to over-claim MoE |
 
 Visual verification: [`analysis/LINKEDIN_VISUAL_VERIFICATION.md`](../analysis/LINKEDIN_VISUAL_VERIFICATION.md)
 

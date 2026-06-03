@@ -1,27 +1,45 @@
-# models/system — Form Factor & Ergonomics
+# models/system — Form Factor, Ergonomics & Kinematics
 
-Parametric **v2 KPP** envelope and deployment inputs. **NOT validation.**
+Parametric **v2 KPP** envelope (**850 g**, **7.1 × 3.1 in**). **NOT VALIDATION** — design authority and literature-order MC only.
 
-| Module | Role |
-|--------|------|
-| [`form_factor.yaml`](form_factor.yaml) | Authoritative v2_kpp / v3 tracks |
-| [`envelope.py`](envelope.py) | Volume budget, pouch fit, loadout mass |
-| [`human_factors.yaml`](human_factors.yaml) | Throw range, load, posture fractions |
-| [`kinematics.py`](kinematics.py) | Facade: throw dispersion summaries for reports |
-| [`geometry.md`](geometry.md) | Human-readable envelope notes |
-| [`stl_export.py`](stl_export.py) | Tier B STL export |
-| [`openscad/`](openscad/) | Parametric body source |
+## Module map
 
-## What lives elsewhere
+| Module | Role | RTM |
+|--------|------|-----|
+| [`form_factor.yaml`](form_factor.yaml) | Authoritative `v2_kpp` / `v3_existing_container` tracks | KPP-01, KPP-09 |
+| [`envelope.py`](envelope.py) | Volume budget, pouch fit, loadout mass | KPP-09, Annex F |
+| [`human_factors.yaml`](human_factors.yaml) | Throw band, load, posture, stress | KPP-08, A-012 |
+| [`kinematics.py`](kinematics.py) | Throw MC facade + report summaries | KPP-08 → matrix job |
+| [`geometry.md`](geometry.md) | Human-readable notes | — |
+| [`stl_export.py`](stl_export.py) | Tier B STL | DOC-10 |
+| [`openscad/`](openscad/) | Parametric body | — |
 
-| Concern | Location |
-|---------|------|
-| Throw dispersion in MC | [`models/cloud_physics/deployment_kinematics.py`](../cloud_physics/deployment_kinematics.py) |
-| Phase 2 cloud physics | [`models/cloud_physics/phase2_pipeline.py`](../cloud_physics/phase2_pipeline.py) |
-| EO/IR surrogate | [`models/sensors/`](../sensors/) |
+## Kinematics API
 
-## Primary variant
+```python
+from models.system.kinematics import load_v2_envelope, throw_distribution, impact_dispersion_summary
 
-**v2_kpp:** 850 g, 7.1 × 3.1 in — see [`annexes/F-form-factor-and-ergonomics.md`](../../annexes/F-form-factor-and-ergonomics.md) · [`analysis/FORM_FACTOR_REPORT.md`](../../analysis/FORM_FACTOR_REPORT.md).
+env = load_v2_envelope()  # 850 g, 7.1 x 3.1 in
+stats = impact_dispersion_summary(n=10_000, stressed=True)  # KPP-08 MC percentiles
+```
 
-Regenerate Tier B assets: `python analysis/generate_form_factor_assets.py` (does not overwrite SHA256-pinned canonical renders).
+| Function | Output |
+|----------|--------|
+| `load_v2_envelope()` | `Envelope` dataclass from `v2_kpp` |
+| `throw_distribution(rng, n, stressed=True)` | `throw_range_m`, `throw_offset_m`, `initial_height_m` |
+| `impact_dispersion_summary()` | p10/p50/p90 throw + lateral — feeds [`FORM_FACTOR_REPORT.md`](../../analysis/FORM_FACTOR_REPORT.md) |
+| `human_factors_summary()` | YAML + loadout snapshot for reports |
+
+Physics implementation: [`models/cloud_physics/deployment_kinematics.py`](../cloud_physics/deployment_kinematics.py) (phase2 path in [`sim/engine.py`](../../sim/engine.py)).
+
+## Regeneration
+
+```bash
+python analysis/generate_form_factor_assets.py
+```
+
+Does **not** overwrite SHA256-pinned canonical renders — see [`analysis/figures/form_factor/CANONICAL_RENDERS.md`](../../analysis/figures/form_factor/CANONICAL_RENDERS.md).
+
+## External caption (required on visuals)
+
+*Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*

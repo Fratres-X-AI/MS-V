@@ -26,6 +26,7 @@ REQUIRED_PATHS = [
     "proposals/srd/MS-V-SRD.md",
     "proposals/temp/MS-V-TEMP-outline.md",
     "docs/EXTERNAL_REVIEW_READY.md",
+    "proposals/README.md",
     "docs/linkedin-posting-guide.md",
     "tests/test_canonical_renders.py",
 ]

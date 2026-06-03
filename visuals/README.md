@@ -2,7 +2,10 @@
 
 Concept art and reference imagery. Figures are **notional** until hardware exists.
 
-> **Required caption (external use):** *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in per Annex B). Not validation.*
+> **Required caption (external use — exact text):**  
+> *Concept visualization only — v2 KPP (850 g, 7.1 × 3.1 in). Not validation.*
+
+**Verification:** [`../analysis/LINKEDIN_VISUAL_VERIFICATION.md`](../analysis/LINKEDIN_VISUAL_VERIFICATION.md) · **Status:** PASS (2026-06-02) · **Pins:** [`tests/test_canonical_renders.py`](../tests/test_canonical_renders.py)
 
 ---
 
