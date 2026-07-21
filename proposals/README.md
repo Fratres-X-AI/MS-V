@@ -12,8 +12,9 @@ This folder holds **draft submission and partner-diligence artifacts**. They are
 
 | Audience | Start here | Then |
 |----------|------------|------|
-| **Capture / prime** | [`capture-brief.md`](capture-brief.md) | SRD → verification matrix → TEMP |
+| **Capture / prime** | [`capture-brief.md`](capture-brief.md) | [SOTA Pass 1](../docs/SOTA_PASS_1.md) → SRD → matrix → TEMP |
 | **Repo technical reviewer** | [`../docs/EXTERNAL_REVIEW_READY.md`](../docs/EXTERNAL_REVIEW_READY.md) | Partner FAQ → reproduce |
+| **Fill / tox partner** | [`../docs/E1_FILL_PARTNER_ASK.md`](../docs/E1_FILL_PARTNER_ASK.md) | TEMP P0 cards → DOC-11 2A–2B |
 | **Lab / range partner** | [`temp/MS-V-TEMP-outline.md`](temp/MS-V-TEMP-outline.md) | DOC-11 gates 2A–2E |
 
 ---

@@ -26,6 +26,9 @@ REQUIRED_PATHS = [
     "proposals/srd/MS-V-SRD.md",
     "proposals/temp/MS-V-TEMP-outline.md",
     "docs/EXTERNAL_REVIEW_READY.md",
+    "docs/SOTA_PASS_1.md",
+    "docs/E1_FILL_PARTNER_ASK.md",
+    "docs/laundry_list/effector_catalog.yaml",
     "proposals/README.md",
     "analysis/VISUAL_VERIFICATION.md",
     "tests/test_canonical_renders.py",
@@ -48,7 +51,29 @@ def test_readme_v2_kpp_and_cel() -> None:
     assert "850 g" in text
     assert "7.1" in text
     assert "CEL" in text
-    assert "NOT validation" in text or "NOT VALIDATION" in text
+    assert "not validation" in text.lower()
+    assert "2.2.0" in text
+    assert "A-013" in text
+
+
+def test_sota_and_e1_docs_conservative() -> None:
+    sota = (ROOT / "docs/SOTA_PASS_1.md").read_text(encoding="utf-8")
+    e1 = (ROOT / "docs/E1_FILL_PARTNER_ASK.md").read_text(encoding="utf-8")
+    assert "E-1–E-5 **OPEN**" in sota or "E-1 OPEN" in sota
+    assert "NOT VALIDATION" in sota or "not** empirical" in sota
+    assert "MSV-VEIL-G1" in e1
+    assert "850 g" in e1
+    assert "Kill" in sota
+
+
+def test_effector_catalog_ms_v_entry() -> None:
+    data = yaml.safe_load(
+        (ROOT / "docs/laundry_list/effector_catalog.yaml").read_text(encoding="utf-8")
+    )
+    ids = {item["id"] for item in data["catalog"]}
+    assert "MSV-VEIL-G1" in ids
+    msv = next(i for i in data["catalog"] if i["id"] == "MSV-VEIL-G1")
+    assert msv.get("pairs_with") == "visual_smoke"
 
 
 def test_form_factor_report_v2_authority() -> None:

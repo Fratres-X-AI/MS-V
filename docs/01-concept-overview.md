@@ -20,7 +20,7 @@ MS-V closes that gap. It does not replace the rest of the layered defense.
 
 | Is | Is Not |
 |----|--------|
-| Squad-layer drone manipulation tool | General-purpose smoke grenade |
+| Squad-layer CUAS obscuration tool | General-purpose smoke grenade |
 | VIS + NIR + MWIR obscurant | RF jammer or detector |
 | Carried **with** standard signal smoke | Replacement for AN-M8 / M18 |
 | Hand-thrown, M201A1, pin-pull | New launcher or complex arming |

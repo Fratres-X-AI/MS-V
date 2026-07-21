@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.0 — Professional polish & SOTA framing (2026-07-21)
+
+- Streamlined [README.md](README.md) as prime-grade front door (v2.2.0).
+- Added [SOTA Pass 1](docs/SOTA_PASS_1.md), [E-1 fill partner ask](docs/E1_FILL_PARTNER_ASK.md), effector catalog schema.
+- MasterPlan delivered table + review path updated; quality invariants cover new artifacts.
+
 ## v2.1.1 — Professional packaging cleanup (2026-06-03)
 
 - Consolidated external visuals under [`analysis/VISUAL_VERIFICATION.md`](analysis/VISUAL_VERIFICATION.md).

@@ -17,6 +17,8 @@ MS-V is a **hand-thrown multispectral obscurant grenade concept** (~**850 g**, *
 | Step | Document | Why |
 |------|----------|-----|
 | 1 | [Capture brief](../proposals/capture-brief.md) | Problem, ask, what we have / don't |
+| 1b | [SOTA Pass 1](SOTA_PASS_1.md) | Homeland obscurant vs smoke/EW |
+| 1c | [E-1 fill partner ask](E1_FILL_PARTNER_ASK.md) | Who owns chemistry / tox |
 | 2 | [Partner evaluation FAQ](../proposals/partner-evaluation-faq.md) | CEL, MoE surrogate, reproduce |
 | 3 | [SRD](../proposals/srd/MS-V-SRD.md) | KPP/MoE + traceability legend + E-1..E-5 gaps |
 | 4 | [Verification matrix](../rtm/verification_matrix.md) | 38 jobs, margins, saturation flags |
@@ -29,15 +31,16 @@ MS-V is a **hand-thrown multispectral obscurant grenade concept** (~**850 g**, *
 
 ---
 
-## Reproduce (5 min, laptop-safe)
+## Reproduce (local quality gate)
 
 ```bash
 pip install -r requirements-lock.txt
-python -m sim.reproduce --validate-only   # fast checksum gate
-pytest tests/ -q                          # full unit + invariant suite
+python -m sim.reproduce --validate-only
+pytest tests/ -q
+# or: .\scripts\check.ps1
 ```
 
-Full golden reproduce (heavier): `python -m sim.reproduce` · See [REPRODUCE.md](../REPRODUCE.md).
+Full golden reproduce: `python -m sim.reproduce` · [REPRODUCE.md](../REPRODUCE.md).
 
 ---
 

@@ -4,13 +4,13 @@
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
 **Current maturity:** TRL 2 — **Sensitivity study complete** (140M samples, full RTM, partner handoff pack v2.0)  
 **Realistic ceiling (internal):** TRL 2–3 — literature-parameter M&S + path to analytical TRL 3 after partner bench/range  
-**Last updated:** 2026-06-02
+**Last updated:** 2026-07-21
 
 ---
 
 ## Status Summary
 
-Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite — KPP pass inside literature bounds only). Phase 1B sensor, geometry, and CONOPS items **delivered via phase2 pipeline** (not a separate active sprint). Partner handoff pack v2.0: proposals, CEL licensing, v2 KPP form factor, external review pack.
+Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite — KPP pass inside literature bounds only). Phase 1B sensor, geometry, and CONOPS items **delivered via phase2 pipeline**. Partner handoff pack v2.2: proposals, CEL, v2 KPP form factor, external review pack, SOTA Pass 1, E-1 fill partner ask.
 
 **Critical:** Sim pass ≠ design confirmation. Gap closure tracked in [`analysis/REMEDIATION_PLAN.md`](analysis/REMEDIATION_PLAN.md) (many items **closed** in-repo; empirical E-1..E-5 remain external).
 
@@ -91,7 +91,9 @@ Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite 
 | Form factor v2 KPP report | `analysis/FORM_FACTOR_REPORT.md` | **Done** (regenerated) |
 | SRD / TEMP (expanded) | `proposals/srd/`, `proposals/temp/` | **Done** (review-ready) |
 | Partner pack | `proposals/capture-brief.md`, `docs/licensing-and-partnership.md` | **Done** |
-| MasterPlan (this file) | `MasterPlan.md` | **Done** (aligned 2026-06-02) |
+| SOTA Pass 1 + E-1 ask | `docs/SOTA_PASS_1.md`, `docs/E1_FILL_PARTNER_ASK.md` | **Done** (survey / solicitation) |
+| Effector catalog schema | `docs/laundry_list/effector_catalog.yaml` | **Done** (planning only) |
+| MasterPlan (this file) | `MasterPlan.md` | **Done** (aligned 2026-07-21) |
 | Empirical validation JSON | `data/partner_validation_results.json` | **Planned** (template only) |
 | Cost model / safety folder | `analysis/cost_model/`, `analysis/safety/` | **Planned** (Phase 4) |
 | TRL 4 range data | External partner | **Planned** |

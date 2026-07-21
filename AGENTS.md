@@ -19,6 +19,7 @@ Everything in-repo we control should pass **`make check`** (lint, tests, validat
 | Area | Path |
 |------|------|
 | Reviewer onboarding | `docs/EXTERNAL_REVIEW_READY.md` |
+| SOTA / E-1 ask | `docs/SOTA_PASS_1.md`, `docs/E1_FILL_PARTNER_ASK.md` |
 | Engine | `sim/engine.py` (`physics_tier=phase2`) |
 | Sensors | `models/sensors/INTEGRATION.md` |
 | Form factor | `models/system/form_factor.yaml`, `kinematics.py` |
