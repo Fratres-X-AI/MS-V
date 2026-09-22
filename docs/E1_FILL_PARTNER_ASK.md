@@ -9,7 +9,7 @@
 
 ## 1. What we need
 
-A partner who can own **fill physics and toxicity / environmental screening** for a hand-thrown multispectral (VIS + NIR + MWIR) obscurant concept (~**850 g** class), employed with visual smoke against fused EO/IR UAS.
+A partner who can own **fill physics and toxicity / environmental screening** for a hand-thrown multispectral (VIS + NIR + MWIR) obscurant concept (~**850 g** class). The visual-smoke pairing is a future test scenario against fused EO/IR UAS surrogates, not a fielded employment method.
 
 | Deliverable | Owner |
 |-------------|--------|
@@ -18,7 +18,7 @@ A partner who can own **fill physics and toxicity / environmental screening** fo
 | Tox / environmental screening plan | Partner + counsel |
 | Literature-bound interface to Fratres M&S | Joint |
 
-**Fratres provides:** v2 KPP form factor, CONOPS, 140M-sample sensitivity study, RTM, magazine doctrine schema (`MSV-VEIL-G1`), stack fit.
+**Fratres provides:** v2 KPP form factor, CONOPS sketches marked not-a-drill, 140M-sample sensitivity study, RTM, planning schema entry (`MSV-VEIL-G1`), stack fit.
 
 ---
 

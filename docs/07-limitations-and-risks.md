@@ -2,7 +2,9 @@
 
 ## Bottom Line
 
-MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes of combined visual-thermal cover** when employed correctly (2–3 grenades + visual smoke). It will not defeat every drone, every condition, or every threat alone.
+Read [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md) first.
+
+MS-V is a **model of a concept**, not a counter-UAS system and not a cleared grenade. The ~170 s figure is a model p10. It is not two minutes of cover. No soldier is cleared to throw, breathe, or move through this cloud.
 
 ---
 
@@ -11,22 +13,22 @@ MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes o
 | Limit | Reality |
 |-------|---------|
 | **Not standalone** | MS-V without visual smoke fails MoE vs FPV/fiber-optic |
-| **Not instant** | 12–15 s build-up — throw before you move, not during |
+| **Not instant** | Model build-up is about 12–15 s. That is not an order to throw, then move. |
 | **Not RF defeat** | Jamming is EW's job |
 | **Not kinetic kill** | Attack drones need MKFS / kinetic layer |
 | **Not all-weather** | > 15 mph wind, heavy rain = degraded |
-| **Not friendly-blind** | Degrades own thermal optics in/near cloud |
-| **Heavier** | ~850 g; 20–25 m throw; 1.7 kg for two |
+| **Friendly thermal blackout** | Model puts own troops in a dense MWIR cloud about 70% of the time on most use cases. Unvalidated. Do not enter the cloud. |
+| **Heavier** | ~850 g on paper. Throw distance is not closed. |
 
 ---
 
 ## Accepted Trades
 
-**Respiratory irritation** — stronger IR fill likely irritates more than M83 TA. Non-lethal, documented, minimized where possible. Mask in dense cloud; brief open-air exposure tolerable with PPE guidance.
+**Respiratory exposure** — not characterized. KPP-12 is unverified. Do not call it non-lethal. Do not call a short exposure tolerable. No mask drill is cleared, because there is no fill and no dose.
 
-**Weight** — 850 g is the price of 120+ s dense multispectral burn. Less comfortable than standard smoke; still within 1–2 per soldier load.
+**Weight** — 850 g is the design target for a model duration above 120 s. Less comfortable than standard smoke. Issue quantity is a planning target only, not authorized.
 
-**Build-up** — 12–15 s means the drone may hold lock briefly. Doctrine: employ early.
+**Build-up** — 12–15 s is a model build-up target. It is not an order to employ early.
 
 ---
 
@@ -34,8 +36,8 @@ MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes o
 
 | Threat | MS-V alone | MS-V + visual smoke | Other layer needed |
 |--------|------------|---------------------|-------------------|
-| FPV (RF + EO/IR) | Partial | **Effective (target)** | EW optional |
-| Fiber-optic guided | Partial | **Effective (target)** | None for RF |
+| FPV (RF + EO/IR) | Not shown | Design target only — not measured | EW optional |
+| Fiber-optic guided | Not shown | Design target only — not measured | None for RF |
 | RF-linked observer | Partial | Partial | **EW** |
 | Autonomous navigation | None | None | **Kinetic / deception** |
 | One-way attack | Obscuration only | Obscuration only | **Kinetic** |
@@ -49,7 +51,7 @@ MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes o
 |------|------------|
 | Fill won't meet 120+ s + MWIR together | 850 g envelope; ECBC fill path; Option C fallback |
 | Irritation exceeds acceptable threshold | Early safety testing; reformulate if needed |
-| Soldiers skip visual smoke pairing | Doctrine; MoE requires combined employment |
+| Paired-cloud hypothesis fails | Future paired-plume test; do not call visual-smoke pairing doctrine |
 | Cost > $150 | Option C fill; volume scaling |
 | Confusion with signal smoke | Distinct markings; training |
 
@@ -57,7 +59,7 @@ MS-V is a **tactical enabler**, not a counter-UAS system. It buys **~2 minutes o
 
 ## What Success Looks Like
 
-A squad under drone overwatch throws 2–3 MS-V + visual smoke, moves for 60–120 seconds under combined cover, and **breaks or degrades** FPV/fiber-optic observation long enough to recover a casualty, break contact, or reach defilade.
+Not this: a squad throws 2–3 grenades and moves for 60–120 seconds under cover. The model’s casualty-recovery case meets its own lock test about **15%** of the time, and friendlies are thermally blacked out about **70%** of the time. That is not a success case.
 
 What success is **not**: one grenade, no visual smoke, instant opacity, all drone types, all weather, no irritation.
 

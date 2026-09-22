@@ -2,13 +2,13 @@
 
 > **Maturity:** TRL 2–3 literature-parameter sensitivity — **NOT field validation**
 
-MS-V Veil is a squad-portable multispectral obscurant grenade (~850 g, v2 KPP envelope) designed to **break fused EO/IR UAS lock** when employed with standard visual smoke in groups of 2–3.
+MS-V Veil is a squad-portable multispectral obscurant grenade concept (~850 g, v2 KPP envelope) designed to test whether a paired visual + infrared cloud can degrade fused EO/IR UAS observation. The 2–3 MS-V + visual-smoke case is a model scenario, not a cleared employment method or measured lock-break claim.
 
 ## Evidence summary
 
 - **140M-sample** mega suite under **phase2 microphysics + v6 probabilistic sensor** ([`rtm/verification_matrix.md`](../../rtm/verification_matrix.md))
 - **Sobol global sensitivity** on 12 literature-bound parameters
-- **CONOPS** five use cases including CASEVAC window (MOE-02)
+- **CONOPS** five use cases, with MOE-02 explicitly not closed for movement
 - **Form factor** design authority: Annex F, STL, canonical renders
 
 ## Differentiation

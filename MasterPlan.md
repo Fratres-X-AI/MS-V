@@ -4,7 +4,7 @@
 **Repository:** https://github.com/Fratres-X-AI/MS-V  
 **Current maturity:** TRL 2 — **Sensitivity study complete** (140M samples, full RTM, partner handoff pack v2.0)  
 **Realistic ceiling (internal):** TRL 2–3 — literature-parameter M&S + path to analytical TRL 3 after partner bench/range  
-**Last updated:** 2026-07-21
+**Last updated:** 2026-09-22 — soldier-safety pass. Read [SOLDIER_SAFETY.md](SOLDIER_SAFETY.md) before any number.
 
 ---
 
@@ -32,6 +32,8 @@ Phase 0 complete. **Phase 1 v3 + phase2/v6 campaign complete** (140M mega suite 
 | "Military ready" claims | No empirical backing |
 
 **Any claim beyond a high-quality conceptual + M&S package is false.**
+
+**22 Sep 2026:** D-005 (irritation "acceptable, non-lethal") is revoked. KPP-06, KPP-07, KPP-08, KPP-11, KPP-12, KPP-14, MOE-01, and MOE-02 are not closed for briefing. The published throw p10 of 20.0 m was floored at the pass line; the code no longer does that. The 140M files still contain the floored number. Do not re-run that suite to "fix" a sentence.
 
 ---
 
@@ -270,7 +272,7 @@ Sensitivity data from the 140M mega suite **dictates** physical test priority �
 
 - **No "military ready" language** in any external artifact without TRL 4+ evidence
 - **All sim outputs** labeled: literature-parameter sensitivity study, not validation
-- **MoE claims** require combined MS-V + visual smoke in model and doctrine
+- **MoE claims** require measured paired-plume evidence; model pairing is not doctrine
 - **Version control** all params, assumptions, and results under `/rtm/` and `/analysis/`
 
 ---

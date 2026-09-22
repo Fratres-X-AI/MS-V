@@ -17,9 +17,9 @@
 | Today (AN-M8 / M83) | With MS-V + visual smoke |
 |---------------------|--------------------------|
 | Defeats naked eye / day optics | Same |
-| **Thermal sees through smoke** | **Thermal attenuated** |
-| FPV / fiber-optic drones still track | **Both channels degraded** |
-| EW can jam RF-linked drones | Fiber-optic drones: **obscuration is the answer** |
+| **Thermal sees through smoke** | Thermal attenuation is a design target. The model transmittance is saturated. Not measured. |
+| FPV / fiber-optic drones still track | Not shown to be degraded. |
+| EW can jam RF-linked drones | Fiber-optic drones are not solved by this model. |
 
 Soldiers have smoke. They do not have a **squad-portable multispectral screen** in the inventory.
 
@@ -27,13 +27,9 @@ Soldiers have smoke. They do not have a **squad-portable multispectral screen** 
 
 ## How It Works (Employment)
 
-1. Detection or visual contact cues drone overwatch
-2. Grenadier throws **2–3 MS-V + 1–2 standard visual smoke** (AN-M8/M83)
-3. Effective screen in **~12–15 seconds**; dense coverage for **2+ minutes**
-4. Squad moves, recovers casualty, breaks contact, or repositions under cover
-5. Other layers (EW, kinetic) engage if threat persists or attacks
+Not a drill. The model does not clear a throw, a breath, or a movement. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
 
-**Always pair MS-V with visual smoke** — required for FPV and fiber-optic drone MoE.
+A hoped-for pairing is 2–3 MS-V with visual smoke. That pairing has not been shown to degrade FPV or fiber-optic drones.
 
 ---
 
@@ -44,7 +40,7 @@ Soldiers have smoke. They do not have a **squad-portable multispectral screen** 
 | Weight | ~850 g | 680 g |
 | Duration | 120+ s dense | 105–150 s (VIS only) |
 | Spectrum | VIS + NIR + MWIR | VIS only |
-| Issue | +1–2 per soldier | Standard smoke load |
+| Issue | Planning target only; not authorized | Standard smoke load |
 | Cost target | $75–150 | ~$15–25 |
 | Fuze | M201A1-compatible | M201A1 |
 
@@ -54,7 +50,7 @@ Soldiers have smoke. They do not have a **squad-portable multispectral screen** 
 
 - **Soldier-first** — no new launchers, no new kill chain
 - **Complementary** — carried *in addition to* signal smoke
-- **Honest trades** — acceptable non-lethal respiratory irritation; heavier than standard smoke; 12–15 s build-up (not instant)
+- **Honest trades** — toxicology is unverified; heavier than standard smoke; 12–15 s model build-up (not instant). No exposure is cleared.
 - **Built on precedent** — ECBC bispectral obscurant research; inventory grenade architecture
 
 ---

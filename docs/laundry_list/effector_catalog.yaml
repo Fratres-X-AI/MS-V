@@ -24,8 +24,8 @@ catalog:
     class: obscurant_grenade
     role: transient_VIS_IR_obscure
     product: MS-V Veil
-    mount_class: magazine_locker  # stored; hand/remote throw employment
-    lobe_notes: "Cloud volume ~employment doctrine; always pair with visual smoke."
+    mount_class: magazine_locker  # stored only; no throw employment cleared
+    lobe_notes: "Cloud volume planning placeholder; visual-smoke pairing is a model scenario, not doctrine."
     range_band_m: [0, 80]
     magazine_unit: veil_count
     wickedweb_rung: VEIL

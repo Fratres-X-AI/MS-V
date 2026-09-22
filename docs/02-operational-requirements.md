@@ -2,7 +2,7 @@
 
 ## Primary Mission
 
-Squad-level multispectral obscurant to **disrupt UAS observation and targeting** during contact, casualty recovery, and maneuver — employed **with standard visual smoke**, not alone.
+Squad-level multispectral obscurant concept to study whether a paired visual + infrared cloud can disrupt UAS observation and targeting. This document is a requirements sketch, not an employment clearance.
 
 ---
 
@@ -17,9 +17,9 @@ Full definitions: [Annex B](../annexes/B-kpp-targets.md).
 | Screening area | 30–40 sq ft/grenade; **2–3 grenade groups** |
 | Duration | **120+ s** at good thickness |
 | Spectrum | VIS + NIR + MWIR |
-| Deployment | Hand-thrown, pin-pull |
-| Fuze | M201A1 compatible |
-| Issue | 1–2 per soldier + standard smoke |
+| Deployment | Hand-thrown, pin-pull concept; not cleared |
+| Fuze | M201A1-compatible target; not tested |
+| Issue | Planning target only; KPP-14 not closed |
 | Temperature | −20°C to +50°C |
 | Wind | ≤ 15 mph |
 | Throw | ≥ 20 m (≥ 25 m objective) |
@@ -30,18 +30,18 @@ Full definitions: [Annex B](../annexes/B-kpp-targets.md).
 ## Secondary Requirements
 
 - Survives rough handling, 1.5 m drop, moisture exposure  
-- Non-lethal respiratory irritation — documented, minimized where possible  
-- Effective in light crosswind for majority of burn  
-- Training-safe with standard PPE  
-- **Combined with AN-M8/M83** → effective vs FPV and fiber-optic drones  
+- Respiratory exposure is unverified; no non-lethal claim  
+- Wind behavior is not shown; high-wind duration is not evidence of cover  
+- No training-safe claim until toxicity, fuze, and range gates close  
+- **Combined with AN-M8/M83** remains a hypothesis, not a demonstrated FPV/fiber-optic result  
 
 ---
 
 ## Measure of Effectiveness
 
-**2–3 MS-V + signal smoke** must defeat or significantly degrade **FPV and fiber-optic** drone observation during casualty movement, break contact, or reposition.
+The **2–3 MS-V + signal smoke** case is a model scenario only. It must not be described as defeating FPV or fiber-optic drone observation until an instrumented UAS surrogate range test exists.
 
-Single-grenade or MS-V-only employment is **not** the acceptance standard.
+Single-grenade or MS-V-only cases are not cleared either.
 
 ---
 
@@ -49,10 +49,10 @@ Single-grenade or MS-V-only employment is **not** the acceptance standard.
 
 | Sensor | Band | Requirement |
 |--------|------|-------------|
-| FPV / visible camera | VIS | Degraded in combined employment |
-| NVG / low-light | NIR | Degraded |
-| Thermal (cooled/uncooled) | MWIR | Degraded |
-| **Fused EO/IR (FPV, fiber-optic)** | VIS + IR | **Primary MoE** |
+| FPV / visible camera | VIS | Targeted; not shown |
+| NVG / low-light | NIR | Targeted; not shown |
+| Thermal (cooled/uncooled) | MWIR | Targeted; not shown |
+| **Fused EO/IR (FPV, fiber-optic)** | VIS + IR | Primary hypothesis; not closed |
 
 ---
 
@@ -60,10 +60,10 @@ Single-grenade or MS-V-only employment is **not** the acceptance standard.
 
 | Condition | Effect |
 |-----------|--------|
-| −20°C to +50°C | Full performance |
-| 0–15 mph wind | Effective; throw upwind |
-| > 15 mph | Not recommended |
-| Heavy rain | 30–50% duration reduction |
+| −20°C to +50°C | Model duration stays above 120 s. Not measured performance. |
+| 0–15 mph wind | Not shown. High-wind duration in the model does not move. |
+| > 15 mph | Not a recommendation. The model is not wind-sensitive. |
+| Heavy rain | Not measured. Do not use a 30–50% figure. |
 
 ---
 
@@ -71,7 +71,7 @@ Single-grenade or MS-V-only employment is **not** the acceptance standard.
 
 1. Fill screening (α across bands)  
 2. Single-grenade duration and area  
-3. **Combined employment vs FPV/fiber-optic surrogate** (MoE gate)  
+3. **Paired-plume instrumented test vs FPV/fiber-optic surrogate** (future MoE gate)  
 4. Environmental matrix  
 5. Respiratory safety characterization
 

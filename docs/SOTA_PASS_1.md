@@ -34,7 +34,7 @@ Densified homeland and critical-infrastructure sites face Group 1–2 UAS that r
 | ID | Hypothesis | Decision |
 |----|------------|----------|
 | H1 | IR channel required when thermal FPV is present | **Keep** |
-| H2 | Always pair with visual smoke for MoE doctrine | **Keep** |
+| H2 | Paired visual smoke may improve MoE | **Keep as test hypothesis, not doctrine** |
 | H3 | Hand-thrown / magazine form factor for homeland densification | **Keep** |
 | H4 | Invent proprietary fill without a chemistry partner | **Kill** — E-1 requires fill/tox partner |
 | H5 | Claim field MoE from M&S alone | **Kill** — A-013 |
@@ -45,26 +45,26 @@ Densified homeland and critical-infrastructure sites face Group 1–2 UAS that r
 
 | Evidence | Status |
 |----------|--------|
-| 140M-sample sensitivity / verification matrix | **Digital PASS** (literature bounds) |
+| 140M-sample sensitivity / verification matrix | **Digital sensitivity study** (literature bounds; several KPP/MoE rows not closed) |
 | Form-factor v2 KPP (850 g, 7.1 × 3.1 in) | **Design authority** |
 | Fill α(λ), burn, tox | **E-1 OPEN** |
 | Throw / UAS surrogate / chamber | **E-2–E-5 OPEN** |
 
 ---
 
-## 5. Layered employment (doctrine sketch)
+## 5. Layered concept (not doctrine)
 
 ```text
-Detect → persistent deny (optional) → EW (optional) → MS-V + visual smoke → directed EO deny (optional) → kinetic / hold
+Detect → persistent deny (optional) → EW (optional) → MS-V + visual smoke (concept) → directed EO deny (optional) → kinetic / hold
 ```
 
-Employment doctrine: **2–3 MS-V + visual smoke**. Placement / magazine tools may list `MSV-VEIL-G1`; throw authorization remains doctrine- and wind-gated. Range bands in the effector catalog are **planning schema only** — not certified engagement performance.
+Not a doctrine. No throw is authorized. Placement / magazine tools may list `MSV-VEIL-G1` as a planning schema entry only — not certified engagement performance, not a wind gate that has been validated. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
 
 ---
 
 ## 6. Ask of reviewers
 
-1. Confirm homeland magazine employment (2–3 Veil + smoke) for stadium / utility / data-center classes.  
+1. Review the homeland magazine paired-cloud hypothesis (2–3 Veil + smoke) for stadium / utility / data-center classes; do not treat it as employment.  
 2. Name fill / tox partners for gate **E-1** ([partner ask](E1_FILL_PARTNER_ASK.md)).  
 3. State what evidence earns manufacture LOI interest (inert mockup vs chamber).
 

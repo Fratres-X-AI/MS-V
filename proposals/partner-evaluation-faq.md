@@ -14,13 +14,13 @@
 
 ## Is the 140M campaign validation?
 
-**No.** It is a **literature-parameter sensitivity study** (TRL 2). All KPP rows marked SENSITIVITY_PASS mean "passes inside modeled bounds," not "passes test."
+**No.** It is a **literature-parameter sensitivity study** (TRL 2). Some legacy rows say SENSITIVITY_PASS for model thresholds, but KPP-05, KPP-06, KPP-07, KPP-08, KPP-11, KPP-12, KPP-14, MOE-01, and MOE-02 are not closed for briefing. Always use the current verification matrix.
 
 ---
 
 ## What does "80% MoE" mean?
 
-It is the fraction of Monte Carlo samples where a **planning surrogate** (fused EO/IR transmittance below τ = 0.15) stays "lock-met" for ≥60 s under **nominal** employment. It is **not** a measured UAS kill or defeat rate. Under an **adversarial** parameter stack the same surrogate reports **~55%**. See assumption **A-013** in [`rtm/assumption_register.md`](../rtm/assumption_register.md).
+It is the fraction of Monte Carlo samples where a **planning surrogate** (fused EO/IR transmittance below τ = 0.15) stays "lock-met" for ≥60 s under the **nominal model scenario**. It is **not** a measured UAS kill or defeat rate. Under an **adversarial** parameter stack the same surrogate reports **~55%**. See assumption **A-013** in [`rtm/assumption_register.md`](../rtm/assumption_register.md).
 
 ---
 

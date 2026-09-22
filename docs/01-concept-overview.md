@@ -2,7 +2,7 @@
 
 ## In One Sentence
 
-MS-V is a hand-thrown multispectral obscurant grenade that lets squads **break drone visual and thermal locks** when nothing else in the kit can — carried alongside standard smoke, thrown the same way, focused only on obscuration.
+MS-V is a hand-thrown multispectral obscurant grenade concept studying whether a squad-portable cloud can degrade drone visual and thermal observation alongside standard smoke. It is focused only on obscuration, and it is not cleared for throw, exposure, or movement.
 
 ---
 
@@ -12,7 +12,7 @@ Persistent drone observation shapes small-unit fights. When detection, EW, and k
 
 Inventory smoke (AN-M8, M83) handles visible screening. **Thermal imagers see through it.** FPV and fiber-optic drones fuse visible and IR — visual smoke alone or EW alone is not enough.
 
-MS-V closes that gap. It does not replace the rest of the layered defense.
+MS-V targets that gap. It does not replace the rest of the layered defense, and the target is not yet proven.
 
 ---
 
@@ -20,11 +20,11 @@ MS-V closes that gap. It does not replace the rest of the layered defense.
 
 | Is | Is Not |
 |----|--------|
-| Squad-layer CUAS obscuration tool | General-purpose smoke grenade |
-| VIS + NIR + MWIR obscurant | RF jammer or detector |
-| Carried **with** standard signal smoke | Replacement for AN-M8 / M18 |
-| Hand-thrown, M201A1, pin-pull | New launcher or complex arming |
-| 2+ min dense screen (with 2–3 grenades) | Instant or area-denial weapon |
+| Squad-layer CUAS obscuration concept | General-purpose smoke grenade |
+| VIS + NIR + MWIR target | RF jammer or detector |
+| Modeled with standard signal smoke | Replacement for AN-M8 / M18 |
+| Hand-thrown, M201A1, pin-pull target | Cleared fuze or throw |
+| 120+ s model duration target | Instant or area-denial weapon |
 
 ---
 
@@ -34,21 +34,21 @@ MS-V closes that gap. It does not replace the rest of the layered defense.
 |--------|------|
 | AN-M8 / M83 | Visual screening, signaling |
 | M18 | Colored marking |
-| **MS-V** | Multispectral screen — the IR layer inventory smoke lacks |
+| **MS-V** | Hypothesized multispectral screen — the IR layer inventory smoke lacks |
 
-Typical event: **2–3 MS-V + 1–2 visual smoke.** Primary targets: **FPV and fiber-optic drones** that resist jamming.
+Modeled scenario: **2–3 MS-V + 1–2 visual smoke.** Primary test targets: **FPV and fiber-optic drone surrogates** that resist jamming.
 
 ---
 
 ## Design Philosophy
 
-1. **Reliable** — burning-type architecture, M201A1 fuze, existing smoke TTPs  
+1. **Simple target architecture** — burning-type concept, M201A1-compatible target, no new launcher  
 2. **Producible** — $75–150 target; ECBC-validated bispectral fill path  
-3. **Soldier-portable** — ~850 g; 1–2 per soldier alongside standard smoke  
+3. **Soldier-portable target** — ~850 g; issue quantity not authorized  
 4. **Obscuration only** — no detection, jamming, or kinetic defeat  
-5. **Honest** — non-lethal respiratory irritation accepted; 12–15 s build-up; not standalone  
+5. **Honest** — toxicology is not done; 12–15 s model build-up; not standalone; not cleared for soldiers  
 
-**Priority:** density + duration (2+ min thick cloud) over ultra-fast opacity.
+**Priority:** density + model duration over ultra-fast opacity. That is not a cover-time claim.
 
 ---
 

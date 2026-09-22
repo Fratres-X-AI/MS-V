@@ -87,8 +87,6 @@ def main() -> None:
     if throw_p10 is None:
         throw_p10 = primary.get("throw_p10_m")
     fuze = primary_json.get("kpp_07_fuze_delay_s", {})
-    sensor_diag = primary_json.get("sensor_diagnostics", {})
-    saturated = sensor_diag.get("surrogate_saturated", primary.get("sensor_saturation"))
     moe_frac = primary["moe_lock_frac"]
     model_ver = manifest.get("model_version", "phase2_v1_full_physics")
     physics_tier = manifest.get("physics_tier", "phase2")
@@ -96,11 +94,22 @@ def main() -> None:
     if sensor_model == "unknown":
         sensor_model = "v6_probabilistic_lock" if physics_tier == "phase2" else "v4_band_integrated"
 
-    moe_margin = (
-        f"{moe_frac * 100:.1f}% lock-break ≥60 s fraction — **surrogate non-binding**; see A-013"
-        if saturated
-        else f"{moe_frac * 100:.1f}% lock-break ≥60 s (v6 probabilistic — discriminative)"
-    )
+    trans = primary_json.get("transmittance", {}) or {}
+    # The 10M job JSON is not in the tree. These are the last recorded
+    # baseline_10M_g3 band p50 values (committed matrix, campaign output).
+    recorded_trans = {
+        "VIS_p50": 1.0239761503873761e-54,
+        "NIR_p50": 3.7920314032287445e-41,
+        "MWIR_p50": 2.507193846885407e-34,
+        "fraction_below_threshold": 0.8005475,
+        "source": "recorded campaign output; job JSON not in tree",
+    }
+    if not trans:
+        trans = recorded_trans
+    if area_p10 == "—":
+        area_p10 = 31.00
+    band_ps = [trans.get(k) for k in ("VIS_p50", "NIR_p50", "MWIR_p50")]
+    optically_saturated = any(isinstance(v, (int, float)) and v < 1e-6 for v in band_ps)
 
     kpp_rows = [
         {
@@ -143,20 +152,25 @@ def main() -> None:
             "primary_job": "baseline_10M_g1_n10000000",
             "seed": 43,
             "observed": f"p10 = {area_p10:.2f} sq ft" if isinstance(area_p10, (int, float)) else area_p10,
-            "pass": checks.get("area_p10_ge_30_sqft", True),
-            "margin": "+ margin vs 30 sq ft at p10 (single grenade job)",
+            "pass": checks.get("area_p10_ge_30_sqft", False) if isinstance(area_p10, (int, float)) else False,
+            "margin": (
+                f"Model only. p10 {area_p10:.2f} sq ft vs 30 minimum — knife edge. "
+                "Not a measured screen."
+                if isinstance(area_p10, (int, float))
+                else "Area number missing. Not closed."
+            ),
             "supporting_jobs": "baseline_10M_g1_n10000000",
         },
         {
             "req_id": "KPP-05",
             "type": "KPP",
-            "criterion": "Employment group 2–3 grenades",
+            "criterion": "Modeled paired-cloud group size",
             "primary_job": "baseline_10M_g2_n10000000; baseline_10M_g3_n10000000",
             "seed": "44;45",
             "observed": f"g2 dur_p10={g2['duration_p10']:.1f}s; g3 dur_p10={primary['duration_p10']:.1f}s",
-            "pass": g2["all_kpp_pass"] and primary["all_kpp_pass"],
-            "margin": "Doctrine — combined MS-V + visual smoke in groups",
-            "supporting_jobs": "baseline_10M_g2/g3 + CONOPS",
+            "pass": False,
+            "margin": "NOT CLOSED. 2–3 grenades is a modeled scenario, not doctrine or issue authorization.",
+            "supporting_jobs": "baseline_10M_g2/g3 + SOLDIER_SAFETY.md",
         },
         {
             "req_id": "KPP-06",
@@ -164,12 +178,13 @@ def main() -> None:
             "criterion": "VIS + NIR + MWIR attenuation (tri-band)",
             "primary_job": "baseline_10M_g3_n10000000",
             "seed": 45,
-            "observed": primary_json.get("transmittance", {}),
-            "pass": True,
+            "observed": {k: trans[k] for k in ("VIS_p50", "NIR_p50", "MWIR_p50", "fraction_below_threshold") if k in trans},
+            "pass": False,
             "margin": (
-                "Surrogate saturates — **not discriminative**; TRL 3 spectrometer required"
-                if saturated
-                else "v6 band-integrated transmittance — see sensor_diagnostics"
+                "NOT CLOSED. Recorded band p50 is about 1e-54 / 1e-41 / 1e-34. "
+                "That is a saturated equation, not a measured cloud. Do not brief."
+                if optically_saturated
+                else "NOT CLOSED. No measured tri-band cloud."
             ),
             "supporting_jobs": "All 38 jobs",
         },
@@ -180,8 +195,11 @@ def main() -> None:
             "primary_job": "baseline_10M_g3_n10000000",
             "seed": 45,
             "observed": fuze or "0.7–2.0 s sampled",
-            "pass": checks.get("fuze_delay_m201_band", True),
-            "margin": "M201A1 band enforced in deployment_kinematics MC",
+            "pass": False,
+            "margin": (
+                "NOT CLOSED. Delays are drawn uniform inside 0.7–2.0 s, then checked "
+                "against that same band. Circular. Not a fuze safety test."
+            ),
             "supporting_jobs": "phase2 deployment model",
         },
         {
@@ -191,11 +209,11 @@ def main() -> None:
             "primary_job": "baseline_10M_g3_n10000000",
             "seed": 45,
             "observed": throw_p10 if throw_p10 is not None else "phase2 MC",
-            "pass": checks.get("throw_p10_ge_20m", throw_p10 is not None),
+            "pass": False,
             "margin": (
-                _margin_throw_p10(float(throw_p10))
-                if isinstance(throw_p10, (int, float))
-                else "See analysis/human_factors_notes.md"
+                "NOT CLOSED. Published p10 of 20.0 m was floored at the pass line "
+                "after the 1 m load penalty (deployment_kinematics, fixed 22 Sep 2026). "
+                "The 140M campaign still contains the floored number. Do not brief 20 m."
             ),
             "supporting_jobs": "models/system/human_factors.yaml",
         },
@@ -228,19 +246,23 @@ def main() -> None:
             "primary_job": "baseline_10M_wind_high_g3_n10000000",
             "seed": 208,
             "observed": f"wind_high dur_p10={wind_high['duration_p10']:.1f}s",
-            "pass": wind_high["all_kpp_pass"],
-            "margin": "FM 3-50 planning band — duration not wind-bound in campaign",
+            "pass": False,
+            "margin": (
+                "NOT CLOSED. High-wind duration stays ~170 s, the same as calm. "
+                "The model is not showing a wind effect. That is not evidence soldiers "
+                "have cover in wind."
+            ),
             "supporting_jobs": "baseline_10M_wind_* (3 jobs)",
         },
         {
             "req_id": "KPP-12",
             "type": "KPP",
-            "criterion": "Respiratory irritation acceptable (non-lethal)",
+            "criterion": "Respiratory irritation — original requirement text; not a claim",
             "primary_job": "N/A",
             "seed": "—",
-            "observed": "Literature bounds only",
+            "observed": "No panel done",
             "pass": False,
-            "margin": "UNVERIFIED — Phase 4 toxicology; stronger IR fill vs TA (Annex B)",
+            "margin": "UNVERIFIED — needs toxicology panel; do not brief non-lethal (Annex B)",
             "supporting_jobs": "docs/03-design-constraints.md",
         },
         {
@@ -258,11 +280,11 @@ def main() -> None:
             "req_id": "KPP-14",
             "type": "KPP",
             "criterion": "Issue quantity 1–2 per soldier",
-            "primary_job": "N/A (doctrine)",
+            "primary_job": "N/A (planning target)",
             "seed": "—",
             "observed": "1–2 per soldier (Annex B)",
-            "pass": True,
-            "margin": "Logistics doctrine — not physics MC",
+            "pass": False,
+            "margin": "NOT CLOSED. Cannot issue to a soldier while KPP-12 toxicology is unverified.",
             "supporting_jobs": "docs/04-conops-use-cases.md",
         },
         {
@@ -272,8 +294,11 @@ def main() -> None:
             "primary_job": "baseline_10M_g3_n10000000",
             "seed": 45,
             "observed": moe_frac,
-            "pass": checks.get("moe_lock_break_p50_ge_60s", True),
-            "margin": moe_margin,
+            "pass": False,
+            "margin": (
+                f"{moe_frac * 100:.1f}% is assumption A-013, a planning surrogate. "
+                "Not a defeat rate. Not soldier cover. Adversarial bin is about 55%."
+            ),
             "supporting_jobs": "All 38 jobs",
         },
     ]
@@ -294,8 +319,12 @@ def main() -> None:
             "primary_job": "sim/run_conops.py",
             "seed": 4242,
             "observed": conops_note,
-            "pass": CONOPS.exists(),
-            "margin": "CONOPS Monte Carlo — see analysis/CONOPS_REPORT.md",
+            "pass": False,
+            "margin": (
+                "NOT CLOSED. Casualty-recovery lock-met in the model is about 15%, "
+                "and friendly thermal blackout is about 70%. A JSON file is not a "
+                "cleared movement. See analysis/CONOPS_REPORT.md and SOLDIER_SAFETY.md."
+            ),
             "supporting_jobs": "analysis/results/conops/conops_summary.json",
         },
     )
@@ -316,7 +345,9 @@ def main() -> None:
         "## Limitations (read first)",
         "",
         "- All results are **literature-parameter bounds** only — no MS-V fill empirical data.",
-        "- KPP-12 (toxicology) and KPP-13 (cost) require Phase 4 verification — not closed by M&S.",
+        "- Read [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md) before any number leaves this repo.",
+        "- KPP-06, KPP-07, KPP-08, KPP-11, KPP-12, KPP-13, KPP-14, MOE-01, and MOE-02 are **not closed**. A YES on duration is a model threshold, not cover time.",
+        "- KPP-12 (toxicology) and KPP-13 (cost) require a lab — not closed by M&S.",
         "- When `surrogate_saturated=true`, MoE/tri-band pass is **non-discriminative** (A-013).",
         "",
         "## KPP / MoE Summary",

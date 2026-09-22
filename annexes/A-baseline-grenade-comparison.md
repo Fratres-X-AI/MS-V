@@ -22,7 +22,7 @@ Machine-readable data is available in [`data/baseline_grenades.json`](../data/ba
 | Screening area | ~20–30 sq ft | ~15–25 sq ft | ~15–25 sq ft | Limited | **30–40 sq ft (2–3 grenade groups)** |
 | Primary role | Screening, signaling | Signaling | Practice screening | Incendiary, limited screen | **UAS multispectral screen** |
 | IR defeat | No | No | No | No | **Yes (design goal)** |
-| Toxicity | High (HCl) | Moderate | Low | High (WP) | **Acceptable irritation (non-lethal)** |
+| Toxicity | High (HCl) | Moderate | Low | High (WP) | **Unverified — not a safety claim** |
 | Fire hazard | Yes | Yes | Yes | Yes | **Reduced vs HC/WP** |
 
 \* JPEO lists M83 duration as 55–90 seconds; TM 43-0001-29 lists 25–70 seconds average burn-time.
@@ -84,7 +84,7 @@ All burning-type inventory smoke grenades (AN-M8, M18, M83) share M201A1 fuze, s
 | IR/thermal defeat | None in inventory | Primary design driver |
 | Cloud build-up | HC ~10–20 s | Target ≤ 12–15 s (density + duration priority) |
 | Fill mass | AN-M8 (19 oz) | 22–24 oz bispectral in ~850 g body |
-| Combined employment | AN-M8 visual only | MS-V + signal smoke for FPV/fiber-optic drones |
-| Safety / toxicity | M83 TA (lowest) | Acceptable non-lethal irritation; document + minimize |
+| Paired-cloud hypothesis | AN-M8 visual only | MS-V + signal smoke as future FPV/fiber-optic surrogate test |
+| Safety / toxicity | M83 TA (lowest) | Unverified. Do not rank MS-V as acceptable. |
 
 See [Annex B — KPP Targets](B-kpp-targets.md) for proposed MS-V performance thresholds.

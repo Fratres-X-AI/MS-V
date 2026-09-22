@@ -9,7 +9,7 @@
 
 | Factor | Source | Effect |
 |--------|--------|--------|
-| Combat load | `load_penalty.range_reduction_m` (−1.5 m) | Reduces mean throw |
+| Combat load | `load_penalty.range_reduction_m` (−1.0 m) | Was floored away at 20 m until 22 Sep 2026. Published p10 of 20.0 m is void. |
 | Load dispersion | `load_penalty.lateral_error_multiplier` (×1.12) | Wider lateral error |
 | Stress (under fire) | `stress.lateral_error_multiplier` (×1.25) | Wider dispersion |
 | Posture mix | standing 55% / kneeling 35% / prone 10% | Initial release height |
@@ -18,7 +18,7 @@ Fuze delay **0.7–2.0 s** (M201A1 band) is sampled independently — closes **K
 
 ## KPP-08 pass rule
 
-Mega-suite job `baseline_10M_g3_n10000000`: **p10(throw_range_m) ≥ 20 m** (`kpp_checks.throw_p10_ge_20m`).
+The mega-suite job reported p10 = 20.0 m because throws were floored at 20 m after the load penalty. **KPP-08 is not closed.** Do not brief it.
 
 Evidence: [`rtm/verification_matrix.md`](../rtm/verification_matrix.md) · job JSON `kpp_08_throw_range_m`.
 

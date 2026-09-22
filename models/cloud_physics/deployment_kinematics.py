@@ -71,7 +71,10 @@ def resolve_deployment_state(
     posture_spec = hf.get("posture", {})
 
     t_range = throw_range_m(rng, n, throw_spec)
-    t_range = np.maximum(t_range - float(load.get("range_reduction_m", 0.0)), throw_spec.get("min", 20.0))
+    # Load penalty must be allowed to miss the KPP line. Flooring at `min`
+    # made every published p10 equal 20.0 m and erased the penalty.
+    penalty_m = float(load.get("range_reduction_m", 0.0))
+    t_range = np.maximum(t_range - penalty_m, 0.0)
 
     lat_spec = dep.get("lateral_dispersion", {})
     lat_frac = float(lat_spec.get("lateral_error_fraction", 0.12))

@@ -122,7 +122,7 @@ MS-V (concept + 140M M&S + RTM) pairs well with partners who have:
 ## Honest limits
 
 - This repo **cannot** substitute for bench or range data.  
-- Until `partner_validation_results.json` is populated, all KPP pass rows remain **SENSITIVITY_PASS** or **UNVERIFIED** per RTM.  
+- Until `partner_validation_results.json` is populated, model-passing rows remain literature-bound only, and the current RTM controls which KPP/MoE rows are **not closed**.  
 - KPP-12 (toxicology) and KPP-13 (cost) require Phase 4 manufacturing/safety programs — not closed by M&S.
 
 ---

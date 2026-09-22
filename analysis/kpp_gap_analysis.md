@@ -46,7 +46,7 @@ Full report: [`SOBOL_SENSITIVITY_REPORT.md`](SOBOL_SENSITIVITY_REPORT.md) · Fig
 | MoE surrogate saturation | 100% pass non-discriminative | UAS instrumented test |
 | No MS-V α(λ) empirical | KPP-06 pass is literature-only | Spectrometry |
 | Throw / deployment | Cloud centering unmodeled | HF range (850 g) |
-| Combined plume spatial | Doctrine requires MS-V + smoke | Phase 1B geometry |
+| Paired plume spatial | MoE hypothesis uses MS-V + smoke | Phase 1B geometry |
 | Toxicity / irritation | KPP-11 qualitative | Safety panel |
 
 ## Honest external statement

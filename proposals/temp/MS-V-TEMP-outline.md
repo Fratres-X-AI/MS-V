@@ -52,7 +52,7 @@ Define the empirical test program required to convert the literature-parameter s
 
 | Field | Detail |
 |-------|--------|
-| **Resources** | Range or chamber with MS-V + AN-M8 employment; fused EO/IR rig; safety officer |
+| **Resources** | Range or chamber with MS-V + AN-M8 paired-plume test setup; fused EO/IR rig; safety officer |
 | **Duration** | 4–8 weeks (setup + n≥20 instrumented trials) |
 | **Procedure** | Nominal vs adversarial sensor stacks; measure lock-break duration vs smoke-only baseline |
 | **Pass** | **Directional** consistency with M&S — measurable lock-break under instrumented conditions; **do not require** match to MC ~80% nominal / ~55% adversarial **surrogate lock-met** fractions (A-013) |
@@ -68,8 +68,8 @@ Define the empirical test program required to convert the literature-parameter s
 | **Resources** | Program safety office, toxicology contractor |
 | **Duration** | 8–16 weeks (program-dependent) |
 | **Procedure** | Panel per non-lethal obscurant requirements; compare to TA-25 / IR fill literature |
-| **Pass** | Meets program non-lethal criteria |
-| **Fail** | Exceeds acceptable exposure → formulation or employment change |
+| **Pass** | A future panel, not this repo. Nothing here is non-lethal until that panel exists. |
+| **Fail** | Exceeds exposure threshold or remains unknown → hold all exposure and issue claims |
 | **Artifacts** | Tox report (controlled distribution), matrix row KPP-12 update |
 | **Gate link** | E-1 closure in [`trl_gate_external.md`](../trl_gate_external.md) |
 
@@ -137,7 +137,7 @@ Define the empirical test program required to convert the literature-parameter s
 | Build-up p90 | ≤ 15 s | Measured ≤ 15 s |
 | α(λ) bands | Literature bounds | Measured within ±20% of model mid |
 | MoE lock-break | Surrogate non-binding when saturation off | ≥ 60 s in ≥ 80% of instrumented trials (directional) |
-| Throw p10 | ≥ 20 m stressed MC | Measured p10 ≥ 20 m (n≥30) |
+| Throw p10 | Published 20.0 m was floored at the pass line. Not a prediction. | Measured p10 ≥ 20 m (n≥30), or the requirement fails |
 
 ## 7. Resource and staffing estimates (planning — notional)
 

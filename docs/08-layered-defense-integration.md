@@ -1,6 +1,6 @@
 # 08 — Layered Defense Integration
 
-MS-V = **multispectral obscuration layer**. Always with visual smoke. Never alone for MoE.
+MS-V is a **modeled concept**, not a fielded layer. Nothing below is a cleared integration. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
 
 ```
 Detect → EW (optional) → MS-V + Signal Smoke → Kinetic (MKFS)
@@ -8,23 +8,23 @@ Detect → EW (optional) → MS-V + Signal Smoke → Kinetic (MKFS)
 
 | Layer | MS-V role |
 |-------|-----------|
-| Detection | Cues when to throw — MS-V does not detect |
-| EW | Jams RF; MS-V defeats EO/IR — complementary |
-| Visual smoke | **Required partner** for FPV/fiber-optic MoE |
-| Kinetic | MS-V buys time; kinetic closes kill chain |
+| Detection | MS-V does not detect. No throw is cleared. |
+| EW | Jams RF; MS-V's EO/IR effect is not measured |
+| Visual smoke | A modeled pairing, not a required partner — no MoE closed |
+| Kinetic | Not shown to buy time |
 
-**Primary target:** FPV and fiber-optic drones (EW-resistant → obscuration is the answer).
+Not shown against FPV or fiber-optic drones specifically. This is a target hypothesis, not a result.
 
 ---
 
 ## Layer 1: Detection
 
-MS-V does **not** detect threats. Detection cues the decision to employ MS-V.
+MS-V does **not** detect threats. Detection would cue a future test scenario only after the concept passes safety and range gates.
 
-| System | Cues MS-V Employment When... |
+| System | Would cue future test scenario when... |
 |--------|------------------------------|
 | Acoustic | Drone audible overhead |
-| RF detector | Control link detected (employ MS-V + EW) |
+| RF detector | Control link detected (paired-cloud test case) |
 | Soldier observation | Visual contact with UAS |
 | EO/IR spotter | Thermal signature of orbiting UAS |
 
@@ -35,31 +35,31 @@ MS-V does **not** detect threats. Detection cues the decision to employ MS-V.
 | Aspect | Detail |
 |--------|--------|
 | EW role | Jam RF datalink; degrade RF-controlled drones |
-| MS-V role | Degrade EO/IR sensors |
-| Combined | EW + MS-V + visual smoke for RF-linked FPV drones |
-| Fiber-optic drones | **EW ineffective** — MS-V + visual smoke is primary defeat |
-| Redundancy | Complementary, not redundant — different kill chain links |
+| MS-V role | Hypothesized EO/IR obscuration; not measured |
+| Combined | Future test case only |
+| Fiber-optic drones | EW ineffective; MS-V + visual smoke remains unproven |
+| Redundancy | Conceptual complement only |
 
 ---
 
-## Layer 2: Non-Kinetic — Signal Smoke + MS-V (Combined Obscuration Package)
+## Layer 2: Non-Kinetic — Signal Smoke + MS-V (Paired-Cloud Hypothesis)
 
-MS-V is **never the sole obscurant**. Standard employment pairs:
+MS-V is **never the sole obscurant** in the model. There is no standard employment pair:
 
 | Component | System | Function |
 |-----------|--------|----------|
-| Multispectral core | 2–3 × MS-V | VIS + NIR + MWIR attenuation |
-| Visual supplement | 1–2 × AN-M8 / M83 | Enhanced visible opacity; signaling |
-| Combined MoE | Both | Defeat/degrade FPV and fiber-optic drones |
+| Multispectral core | 2–3 × MS-V | Modeled VIS + NIR + MWIR attenuation |
+| Visual supplement | 1–2 × AN-M8 / M83 | Modeled visible-opacity supplement |
+| Combined MoE | Both | Future UAS surrogate test; not closed |
 
 ### Why Both Are Required
 
 | Drone Type | Visual Smoke Alone | MS-V Alone | Combined |
 |------------|-------------------|------------|----------|
-| FPV (visible + thermal) | Partial | Partial | **Effective** |
-| Fiber-optic guided | Partial (VIS) | Partial (IR) | **Effective** |
-| Thermal-only loitering | None | Partial | **Effective** |
-| Visible-only commercial | Effective | Overkill | Effective |
+| FPV (visible + thermal) | Partial | Not shown | Not shown |
+| Fiber-optic guided | Partial (VIS) | Not shown | Not shown |
+| Thermal-only loitering | None | Not shown | Not shown |
+| Visible-only commercial | Effective | Overkill | Not an MS-V claim |
 
 AN-M8/M18/M83 remain in the basic load for signaling, marking, and visual screening. MS-V adds the IR channel inventory smoke cannot provide.
 
@@ -96,66 +96,22 @@ MS-V does not replace kinetic defeat. It buys time and degrades sensors so kinet
 
 | Threat Profile | Detection | EW | Visual Smoke | MS-V | Kinetic |
 |---------------|-----------|-----|-------------|------|---------|
-| FPV drone (RF + EO/IR) | Required | Recommended | **Required** | **Required (2–3×)** | If attack |
-| Fiber-optic guided | Required | N/A | **Required** | **Required (2–3×)** | If attack |
-| Observation UAS (EO/IR) | Required | Optional | Recommended | **Required (2–3×)** | No |
-| Loitering munition | Required | Optional | **Required** | **Required (2–3×)** | **Required** |
-| CASEVAC under UAS | Required | Optional | **Required** | **Required (2–3×)** | If attack |
-| Break contact | Required | Optional | **Required** | **Required (2–3×)** | If attack |
+*Not a cleared table. MS-V is not shown against any of these threats. No throw quantity is authorized.*
+
+| FPV drone (RF + EO/IR) | Not shown | Not shown | Not shown | Not shown | N/A |
+| Fiber-optic guided | Not shown | N/A | Not shown | Not shown | N/A |
+| Observation UAS (EO/IR) | Not shown | Not shown | Not shown | Not shown | N/A |
+| Loitering munition | Not shown | Not shown | Not shown | Not shown | N/A |
+| CASEVAC under UAS | Not shown | Not shown | Not shown | Not shown | N/A |
+| Break contact | Not shown | Not shown | Not shown | Not shown | N/A |
 
 ---
 
-## Issue Doctrine
+## Issue and Employment — Not Written
 
-### Basic Load (per soldier)
+There is no issue quantity, employment authority, or mission procedure. MS-V is not a fielded item. KPP-14 (issue quantity) is not closed while KPP-12 (toxicology) is open. Writing a load table or a mission checklist here would read as authorization that does not exist.
 
-| Item | Quantity | Notes |
-|------|----------|-------|
-| AN-M8 / M83 (standard smoke) | Per unit SOP | Unchanged |
-| M18 (signaling) | Per unit SOP | Unchanged |
-| **MS-V** | **1–2** | Added to load; ~850 g each |
-| EW device | Per TOE | Not every soldier |
-
-**Load impact:** Two MS-V = 1.7 kg additional weight. Commanders must balance MS-V issue against mission duration and soldier load.
-
-### Employment Authority
-
-| Echelon | Authority |
-|---------|-----------|
-| Team leader | Immediate self-defense against drone observation |
-| Squad leader | Per approved CONOPS |
-| **Platoon sergeant** | **Primary employment authority** |
-| Company | Allocation and resupply |
-
-### Resupply
-
-Company-level resupply through standard ammunition chain. MS-V expenditure tracked separately from signal smoke.
-
----
-
-## Coordination Procedures
-
-### Pre-Mission
-
-1. Brief MS-V availability and combined employment requirement (MS-V + visual smoke)
-2. Identify expected drone types (FPV, fiber-optic, RF-linked, attack)
-3. Assign MS-V grenadiers (minimum 2 per platoon)
-4. Coordinate EW if attached
-5. Brief respiratory irritation and PPE guidance
-
-### During Mission
-
-1. Detection cues employment decision
-2. Throw 2–3 MS-V + 1–2 visual smoke per event
-3. Wait 12–15 s for effective density before movement
-4. Report expenditure for resupply
-
-### Post-Mission
-
-1. Report MS-V and smoke expenditure separately
-2. Debrief effectiveness (drone type, wind, combined employment, outcome)
-
-See [04 — CONOPS / Use Cases](04-conops-use-cases.md) for scenario-level detail.
+See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md) and [04 — CONOPS / Use Cases](04-conops-use-cases.md), which is also marked not a drill.
 
 ---
 

@@ -13,10 +13,10 @@
 | A-004 | Screening area 30–40 sq ft per grenade | Annex B; scaled from AN-M8 | uniform 30–40 sq ft × overlap^0.72 | **Low** in duration; Medium area | KPP-04 Medium | P1 — lidar / geometry | UNVALIDATED |
 | A-005 | Beer-Lambert T=exp(−α·CL) planning adequate | FM 3-50 App G; Annex D | CL-threshold duration model | **Medium** (defines KPP-03 clock) | KPP-03,06 Medium | P1 — compare to line-of-sight meters | LITERATURE |
 | A-006 | Mass extinction α literature applies to MS-V fill | COMBIC/ECBC open literature | see A-001 bands | **Low** in OAT sweeps | KPP-06 High | **P0** with A-001 | LITERATURE |
-| A-007 | Wind 0–15 mph operating envelope | User req; FM 3-50 planning | uniform 0–15 mph | **Low** on duration (v3) | KPP-11 Medium | P2 — range plume | VALIDATED (req) |
+| A-007 | Wind 0–15 mph operating envelope | User req; FM 3-50 planning | uniform 0–15 mph | **Low** on duration (v3) | KPP-11 Medium | P2 — range plume | UNVALIDATED |
 | A-008 | FPV + fiber-optic threats fuse VIS + thermal | Open-source UAS reporting; Annex D | fused MoE mask | N/A (threat model) | MOE-01 High | P1 — threat spec review | LITERATURE |
-| A-009 | Combined MS-V + AN-M8 required for MoE | docs/04, 07; Annex D | visual_smoke_factor 1.3 (sweep 1.0–1.6) | **Low** on duration/MoE fraction | MOE-01 High | **P0** — combined plume test | VALIDATED (doctrine) |
-| A-010 | Respiratory irritation acceptable non-lethal | Design acceptance | not in MC | N/A | KPP-12 High | **P0** — tox panel | UNVALIDATED |
+| A-009 | Paired MS-V + AN-M8 plume improves MoE | docs/04, 07; Annex D | visual_smoke_factor 1.3 (sweep 1.0–1.6) | **Low** on duration/MoE fraction | MOE-01 High | **P0** — paired-plume test | UNVALIDATED |
+| A-010 | Respiratory irritation acceptable non-lethal | **REVOKED 22 Sep 2026.** Was a design hope. | not in MC | N/A | KPP-12 High | **P0** — tox panel | UNVALIDATED |
 | A-011 | M201A1 fuze compatible | Inventory commonality | fuze delay 0.7–2 s (not MC) | N/A | KPP-07 Medium | P2 — fuze interface | UNVALIDATED |
 | A-012 | Throw 20–25 m for 850 g under stress | KPP-08; heavier than AN-M8 | not in MC | N/A | KPP-08 High | **P0** — HF range test | UNVALIDATED |
 | A-013 | Surrogate MoE / v6 probabilistic lock-break | Planning surrogate only; **not** field defeat rate | v6: ~**80%** nominal / ~**55%** adversarial lock-met (phase2 mega); v3 tier often **saturated** | **Discriminative in v6** when `surrogate_saturated=false`; still UNVALIDATED empirically | MOE-01 **Critical gap** | **P0** — UAS surrogate test (gate 2D) | UNVALIDATED |

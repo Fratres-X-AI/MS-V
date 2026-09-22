@@ -8,32 +8,32 @@ All values in this annex are **proposed design goals** for the MS-V concept (rev
 
 | ID | Parameter | Threshold | Objective | Baseline Reference | Rationale |
 |----|-----------|-----------|-----------|-------------------|-----------|
-| KPP-01 | Total weight | ~850 g | 850 g | AN-M8: 680 g; M83: 454 g | ~25% larger envelope for fill mass; soldier-portable at 1–2 per soldier |
+| KPP-01 | Total weight | ~850 g | 850 g | AN-M8: 680 g; M83: 454 g | ~25% larger envelope for fill mass; issue quantity not authorized |
 | KPP-02 | Cloud build-up to effective density | ≤ 15 s | ≤ 12 s | HC: ~10–20 s | Realistic with thicker/longer-burning fill; moderate priority |
 | KPP-03 | Effective duration at good thickness | 120 s min | 130+ s | AN-M8: 105–150 s | User priority: 2+ minute dense screen |
 | KPP-04 | Screening area (single grenade) | 30 sq ft | 40 sq ft | AN-M8: ~20–30 sq ft est. | Larger body + fill; used in 2–3 grenade groups |
-| KPP-05 | Employment group size | 2 grenades min | 3 grenades | — | MoE requires combined MS-V + visual smoke in groups |
-| KPP-06 | Spectral coverage | VIS + NIR + MWIR | Same | AN-M8: VIS only | Defeat common drone EO/IR sensors |
+| KPP-05 | Modeled group size | 2 grenades min | 3 grenades | — | Paired-cloud scenario only; not doctrine |
+| KPP-06 | Spectral coverage | VIS + NIR + MWIR | Same | AN-M8: VIS only | Target common drone EO/IR sensors; not measured |
 | KPP-07 | Fuze delay | 0.7–2.0 s | M201A1 standard | Inventory common | Training and logistics commonality |
 | KPP-08 | Throw range | ≥ 20 m | ≥ 25 m | M18: ~35 m | Heavier grenade; realistic under stress |
 | KPP-09 | Form factor | ~25% larger than AN-M8/M83 | ~7.1 × 3.1 in | 5.7 × 2.5 in baseline | Necessary for fill mass |
 | KPP-10 | Operating temperature | −20°C to +50°C | Same | Military standard | Broad environmental coverage |
 | KPP-11 | Wind tolerance | ≤ 15 mph | Same | FM 3-50 planning | Light to moderate crosswind for majority of burn |
-| KPP-12 | Respiratory irritation | Acceptable (non-lethal) | Documented + minimized | M83: low; AN-M8: high | Stronger IR fill likely more irritating than TA |
+| KPP-12 | Respiratory irritation | **Unverified — no target set** | No panel yet | M83: low; AN-M8: high | Do not claim non-lethal. See SOLDIER_SAFETY.md |
 | KPP-13 | Unit cost at scale | ≤ $150 | $75–100 | Vehicle systems: $10k+ | Ambitious but achievable with proven bispectral tech |
-| KPP-14 | Issue quantity | 1–2 per soldier | Same | — | In addition to standard signal smoke |
+| KPP-14 | Issue quantity | Planning target only | Same | — | Not authorized while KPP-12 is open |
 
 ---
 
 ## Measures of Effectiveness (MoE)
 
-When employed in **groups of 2–3 MS-V grenades** in combination with **standard visual smoke** (AN-M8/M83), MS-V must:
+For a future paired-cloud test case using **groups of 2–3 MS-V grenades** in combination with **standard visual smoke** (AN-M8/M83), MS-V would need to:
 
-1. Create sufficient multispectral obscuration to **defeat or significantly degrade** observation from FPV and fiber-optic guided drones
-2. Provide adequate screening during the critical window for casualty movement, break contact, or reposition under observation
-3. Maintain effective cloud thickness for the **majority of the 120+ second burn** in light to moderate crosswind (≤ 15 mph)
+1. Create measured multispectral obscuration against FPV and fiber-optic guided drone surrogate sensors
+2. Avoid implying a casualty-movement, break-contact, or reposition procedure until MOE-02 closes
+3. Demonstrate effective cloud thickness in measured wind, not only model duration
 
-MoE is assessed against UAS surrogate sensors (visible camera + uncooled/cooled thermal) in operational demonstration tests, not against RF-linked or autonomous navigation-only threats.
+MoE remains unclosed until assessed against UAS surrogate sensors (visible camera + uncooled/cooled thermal) in instrumented tests.
 
 ---
 
@@ -61,9 +61,9 @@ MoE is assessed against UAS surrogate sensors (visible camera + uncooled/cooled 
 
 ### KPP-12: Respiratory Irritation
 
-**Definition:** Acceptable non-lethal respiratory effects from obscurant cloud at standard employment standoff (≥ 5 m from ignition point).
+**Definition:** Respiratory effect of the cloud at employment distance. Not measured.
 
-**Acceptance:** Irritation acceptable with standard protective measures (mask when entering dense cloud; brief exposure tolerable in open terrain). Full safety characterization and employment guidelines required before fielding. Must remain below acute toxicity thresholds for non-lethal employment.
+**Acceptance:** None. No standoff, no mask drill, and no “brief exposure” is cleared. KPP-12 stays open until a toxicology panel on the actual fill says otherwise.
 
 ---
 
@@ -71,13 +71,13 @@ MoE is assessed against UAS surrogate sensors (visible camera + uncooled/cooled 
 
 | Condition | Effective Range | Degradation Notes |
 |-----------|----------------|-------------------|
-| Wind 0–5 mph | Full KPP performance | Optimal |
-| Wind 5–10 mph | Full to slightly reduced coverage | Throw upwind of protected position |
-| Wind 10–15 mph | Reduced coverage; cloud elongates | Effective for majority of burn if thrown correctly |
-| Wind > 15 mph | Not recommended | Rapid dissipation |
-| Temperature −20 to +50°C | Full performance | Standard operating range |
-| Humidity 20–95% | Full performance | Fill must be humidity-stable |
-| Heavy rain | Duration reduced 30–50% | Degraded; not primary employment condition |
+| Wind 0–5 mph | Not measured | Future range case |
+| Wind 5–10 mph | Not measured | Do not write throw guidance |
+| Wind 10–15 mph | Not measured | KPP-11 not closed |
+| Wind > 15 mph | Not measured | No recommendation |
+| Temperature −20 to +50°C | Model duration above threshold | Chamber still required |
+| Humidity 20–95% | Not measured | Fill must be humidity-stable |
+| Heavy rain | Not measured | Do not use a duration-reduction figure |
 | Drop from 1.5 m | No functional degradation | Durability requirement |
 
 ---
@@ -91,10 +91,10 @@ Based on ECBC bispectral obscurant grenade program metrics:
 | Mass extinction coefficient (α) | Extinction per unit mass (m²/g), wavelength-dependent | Fill down-select |
 | Cloud geometry | Height, width, area vs. time | KPP-04 verification |
 | Duration at effective thickness | Time above density threshold | KPP-03 verification |
-| Combined employment test | 2–3 MS-V + AN-M8 vs. FPV/fiber-optic surrogate | MoE verification |
+| Paired-cloud test | 2–3 MS-V + AN-M8 vs. FPV/fiber-optic surrogate | Future MoE verification |
 | Respiratory exposure assessment | Irritation characterization | KPP-12 safety gate |
 
-Transmittance at fixed LOS remains a useful test metric but is not a hard gating KPP in v2 — operational MoE (drone observation defeat in combined employment) takes precedence.
+Transmittance at fixed LOS remains a useful test metric. The current tri-band value is numerically saturated and not a measured cloud; no operational defeat claim takes precedence over that gap.
 
 ---
 

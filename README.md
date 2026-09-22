@@ -2,7 +2,9 @@
 
 **Hand-thrown · Pin-pull · VIS + NIR + MWIR · Squad / site magazine**
 
-**MS-V** is a multispectral obscurant **concept** that generates a dense visual + infrared cloud to degrade fused FPV/thermal UAS observation when **paired with standard visual smoke**. Employed as **2–3 MS-V + visual smoke**. Not a standalone smoke replacement.
+**MS-V** is a multispectral obscurant **concept** intended to study whether a dense visual + infrared cloud could degrade fused FPV/thermal UAS observation when paired with standard visual smoke. The 2–3 MS-V + visual smoke case is a modeled design target, not a cleared employment method. Not a standalone smoke replacement.
+
+**Soldier safety (22 Sep 2026):** nothing here is cleared to throw, breathe, or move through. Published throw p10 of 20.0 m was floored at the pass line. Toxicology is unverified. Read [SOLDIER_SAFETY.md](SOLDIER_SAFETY.md) before the numbers below.
 
 | | |
 |--|--|
@@ -38,8 +40,8 @@ Catalog: [visuals/README.md](visuals/README.md) · [VISUAL_VERIFICATION.md](anal
 | Envelope | **7.1 × 3.1 in** (180 × 79 mm) | Design authority |
 | Spectrum | **VIS + NIR + MWIR** | Locked |
 | Duration | **≥ 120 s** dense (p10) | M&S sensitivity pass |
-| Employment | **2–3 MS-V + visual smoke** | Locked |
-| Throw (KPP-08) | **≥ 20 m** p10 (objective 25 m) | MC model; range TBD |
+| Modeled pairing | **2–3 MS-V + visual smoke** | Design target; not doctrine |
+| Throw (KPP-08) | **≥ 20 m** p10 (objective 25 m) | **Not closed** — old MC was floored |
 | Fuze | **M201A1-compatible** | Locked |
 | Build-up | **≤ 15 s** p90 | M&S sensitivity pass |
 | Cost target | **$75–150** at scale | PLANNED |
@@ -82,8 +84,8 @@ Reproduce: [REPRODUCE.md](REPRODUCE.md) · Campaign: [RUNPOD.md](RUNPOD.md)
 | Weight | 680 g | **850 g** |
 | Spectrum | VIS | **VIS + NIR + MWIR** |
 | vs thermal UAS | Transparent | **Attenuation (concept)** |
-| Employment | As needed | **2–3 + visual smoke** |
-| TTP | Pin-pull throw | **Same** |
+| Modeled pairing | As needed | **2–3 + visual smoke** (not doctrine) |
+| TTP | Pin-pull throw | **Not cleared** |
 
 ---
 

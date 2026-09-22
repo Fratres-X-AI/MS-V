@@ -16,6 +16,7 @@ MS-V is a **hand-thrown multispectral obscurant grenade concept** (~**850 g**, *
 
 | Step | Document | Why |
 |------|----------|-----|
+| 0 | [Soldier safety](../SOLDIER_SAFETY.md) | What is not cleared. Read before any number. |
 | 1 | [Capture brief](../proposals/capture-brief.md) | Problem, ask, what we have / don't |
 | 1b | [SOTA Pass 1](SOTA_PASS_1.md) | Homeland obscurant vs smoke/EW |
 | 1c | [E-1 fill partner ask](E1_FILL_PARTNER_ASK.md) | Who owns chemistry / tox |
@@ -61,7 +62,7 @@ Full golden reproduce: `python -m sim.reproduce` · [REPRODUCE.md](../REPRODUCE.
 | You may say | You may not say |
 |-------------|-----------------|
 | Model-supported under literature bounds | Field validated / military ready |
-| 38/38 KPP pass in M&S (with matrix caveats) | MoE % = defeat rate |
+| Sensitivity study with explicit open KPP/MoE rows | MoE % = defeat rate |
 | v2 KPP design authority (850 g, 7.1×3.1 in) | MIT open source (repo is **CEL**) |
 | v6 lock-met ~80% / ~55% **planning surrogate (A-013)** | Unqualified performance percentages |
 

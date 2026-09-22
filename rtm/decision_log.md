@@ -4,9 +4,9 @@
 |----|------|----------|-----------|--------|--------|
 | D-001 | v2 | Weight ~850 g | Density + 120+ s burn requires fill mass | **Locked** | User / Annex C |
 | D-002 | v2 | Build-up ≤ 12–15 s (moderate priority) | Trade for multispectral + duration | **Locked** | User / Annex C |
-| D-003 | v2 | Employment: 2–3 MS-V + visual smoke | FPV/fiber-optic MoE | **Locked** | docs/04, doc 07 |
+| D-003 | v2 | Modeled pairing: 2–3 MS-V + visual smoke | FPV/fiber-optic MoE hypothesis | **REVOKED 22 Sep 2026 as doctrine** — remains a test scenario only | docs/04, doc 07, SOLDIER_SAFETY.md |
 | D-004 | v2 | Fill Option A (unified bispectral) baseline | ECBC precedent | **Open** — pending Phase 1 sensitivity |
-| D-005 | v2 | Respiratory irritation acceptable (non-lethal) | IR performance trade | **Locked** | docs/03, doc 07 |
+| D-005 | v2 | Respiratory irritation acceptable (non-lethal) | IR performance trade | **REVOKED 22 Sep 2026** — hope, not a measurement. KPP-12 stays open. | docs/03, doc 07, SOLDIER_SAFETY.md |
 | D-006 | 2026-05-24 | Phase 1 before external engagement | Highest internal leverage | **Locked** | MasterPlan |
 | D-007 | 2026-05-24 | Parallel Phase 0 audit + Phase 1 skeleton | Don't block modeling on perfect audit | **Accepted** | MasterPlan |
 | D-008 | 2026-05-24 | CL-threshold duration (v2) | Remove arbitrary thickness fractions | **Superseded by D-009** | sim/engine.py |

@@ -81,7 +81,7 @@ def main() -> None:
         "| Driver | Observation | Tail-risk note |",
         "|--------|-------------|----------------|",
         "| **Burn rate (upper bound)** | Dominant — 4.4 g/s max → ~152 s p10; 3.6 → ~183 s | Formulation must hold ≤4.2 g/s design cap |",
-        "| **Temperature (hot)** | 35–50°C bin → ~153 s p10 | High ambient shortens screen; doctrine/timing |",
+        "| **Temperature (hot)** | 35–50°C bin → ~153 s p10 | High ambient shortens model duration; no doctrine |",
         "| **Adversarial stack** | 10M stacked corners → lowest MoE ~55% | Worst modeled envelope still passes duration KPP |",
         "| **Yield (lower bound)** | 0.18–0.34 sweeps: modest MoE spread | Duration flat; MoE varies ~79–80% |",
         "| **Visual smoke factor** | 1.0–1.6: negligible duration spread | Partner smoke affects MoE definition |",
@@ -100,7 +100,7 @@ def main() -> None:
         "",
         "1. Empirical α(λ) and particle size for candidate fill",
         "2. Sensor transmittance curves with degradation thresholds",
-        "3. Geometry/settling model coupled to employment doctrine",
+        "3. Geometry/settling model coupled to measured paired-plume test data",
         "4. External lab/range campaign (TRL 3→4 gate)",
         "",
     ])

@@ -8,7 +8,7 @@
 | **α(λ)** | m²/g | Mass extinction coefficient at band λ | `extinction.py` |
 | **T(λ)** | — | Spectral transmittance, Beer–Lambert: exp(−α·CL) | `extinction.py` |
 | **τ** | — | Transmittance threshold for obscuration (default 0.15) | `params.yaml` moe |
-| **VSF** | — | Visual smoke factor (AN-M8 partner boost, default 1.3) | `params.yaml` employment |
+| **VSF** | — | Visual smoke factor (AN-M8 partner boost, default 1.3); model parameter only | `params.yaml` |
 | **MoE** | — | Measure of Effectiveness | docs/02 |
 | **KPP** | — | Key Performance Parameter | annexes/B |
 | **Build-up** | s | Time to effective cloud density (KPP-02) | `cloud_evolution.py` |
@@ -32,7 +32,7 @@
 | VIS / NIR / MWIR | Visible / near-IR / mid-wave IR bands |
 | HC | Hexachloroethane (AN-M8 smoke) |
 | ECBC | Edgewood Chemical Biological Center |
-| COMBIC | Combined obscuration planning doctrine |
+| COMBIC | Combined obscuration planning concept |
 | TRL | Technology Readiness Level |
 | RTM | Requirements Traceability Matrix |
 | TEMP | Test & Evaluation Master Plan |

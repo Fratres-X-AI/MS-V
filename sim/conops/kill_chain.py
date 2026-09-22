@@ -101,7 +101,7 @@ def _evaluate_window_lock(
 
     effective_lock = min(duration, window_end - max(window_start, build_up))
     """
-    screen_ready = build_up <= window_start + 3.0  # allow 3s slack past doctrine T+15
+    screen_ready = build_up <= window_start + 3.0  # model-window slack, not doctrine
     window_dur = np.maximum(window_end - np.maximum(window_start, build_up), 0.0)
     effective = np.minimum(duration, window_dur)
     lock_met = obscured & screen_ready & (effective >= min_lock)

@@ -19,6 +19,6 @@
 - **Edge Plume** — fraction of samples where threat sits at r/R ≥ 0.75
 - **Core** — threat inside dense core (r/R ≤ 0.35)
 - **Friendly Blind** — squad inside dense MWIR cloud (hard constraint on movement)
-- Values **< 100%** indicate hardened MoE is discriminating (A-013 partially addressed)
+- Lock-met of 14.9% on casualty recovery is a miss, not a feature. Friendly thermal blackout is 56–70%. Do not brief this table as a cleared movement. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
 
 Source: `sim/conops/kill_chain.py` · `docs/04-conops-use-cases.md`

@@ -1,6 +1,6 @@
 # Annex E — References and Bibliography
 
-Sources used in the MS-V design package. MS-V performance targets reflect **revision v2** (density + duration priority, ~850 g form factor, combined employment with visual smoke).
+Sources used in the MS-V design package. MS-V performance targets reflect **revision v2** (density + duration priority, ~850 g form factor, paired-cloud model scenario with visual smoke).
 
 ---
 
@@ -65,7 +65,7 @@ URLs: see v1 bibliography entries in project history; primary TM at [militarynew
 | Version | Date | Changes |
 |---------|------|---------|
 | v1 | Initial build | 500 g, ≤8 s build-up, 60–90 s duration |
-| v2 | Spec revision | ~850 g, 12–15 s build-up, 120+ s duration, density+duration priority, combined employment MoE |
+| v2 | Spec revision | ~850 g, 12–15 s build-up, 120+ s model duration, density+duration priority, paired-cloud MoE hypothesis |
 | v2.1 | Tightening pass | Executive brief, sharper README/concept/CONOPS/limitations for external sharing |
 
 ---

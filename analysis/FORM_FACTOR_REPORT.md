@@ -19,11 +19,11 @@
 |--------|-------|
 | KPP band | 20–25 m |
 | Design authority p50 | 21.5 m |
-| MC stressed p10 / p50 / p90 | 20.0 / 21.5 / 23.5 m |
+| Archived MC stressed p10 / p50 / p90 | 20.0 / 21.5 / 23.5 m (old p10 was floored) |
 | Lateral dispersion p50 / p90 | 2.35 / 3.35 m |
 
 Source: [`models/system/kinematics.py`](../models/system/kinematics.py) · [`human_factors.yaml`](../models/system/human_factors.yaml).
-RTM: matrix KPP-08 · job `baseline_10M_g3_n10000000` (MC pass — **not** range validation).
+RTM: matrix KPP-08 · job `baseline_10M_g3_n10000000` (archived MC number is **not closed**; old p10 was floored and is **not** range validation).
 
 ## Human factors (notional inputs)
 

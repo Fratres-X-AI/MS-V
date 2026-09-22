@@ -57,7 +57,7 @@ The ~850 g target allows sufficient fill mass for 2+ minute dense burn while rem
 
 | Constraint | Specification |
 |------------|---------------|
-| Respiratory irritation | **Acceptable (non-lethal)** — document and minimize where possible |
+| Respiratory irritation | **Unverified.** Not acceptable until a tox panel says so. KPP-12 is open. |
 | Toxicity | Must not pose unacceptable toxicity or burn risks during normal handling, storage, or deployment with standard PPE |
 | Fire hazard | Reduced vs. AN-M8 HC and M15 WP; must not ignite dry vegetation at standard standoff |
 | HC / WP content | Zero |
@@ -72,10 +72,10 @@ MS-V will likely be **more irritating than M83 TA smoke** due to stronger IR obs
 
 | Constraint | Specification |
 |------------|---------------|
-| Employment TTPs | Integrate into existing smoke grenade TTPs with **minimal additional training** |
-| MS-V-specific training | Identification (markings), combined employment with visual smoke, respiratory guidance, friendly IR impact |
-| Packaging | Compatible with current ammunition supply chains; 16 per packing box target |
-| Resupply | Company-level, same chain as smoke grenades |
+| Employment TTPs | Not written. No throw or movement is cleared. |
+| MS-V-specific training | Not written. Toxicology, fuze, and range gates are open. |
+| Packaging | Future target only; 16 per packing box target |
+| Resupply | Future target only |
 | Markings | Distinct from AN-M8/M18/M83 to prevent employment confusion |
 
 ---

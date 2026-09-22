@@ -44,49 +44,34 @@ MS-V is a burning-type hand grenade (~850 g, ~25% larger than standard smoke) th
 
 ## Functioning Sequence
 
+> Model sketch. Not a functioning round. Fuze, ignition, and screen times below are design hopes. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
+
 | Phase | Time | Event |
 |-------|------|-------|
-| Employment | T+0 | Pin pull; throw 20–25 m; seek cover ≥ 5 m |
-| Fuze delay | T+0–2 s | Striker → primer → delay → ignition |
-| Ignition | T+2 s | Starter ignites fill; port tape blown off |
-| Streamer | T+2–5 s | Initial emission jets |
-| Build-up | T+5–12 s | Streamers merge; density increasing |
-| **Effective density** | **T+12–15 s** | **Combined multispectral screen operational** |
-| Uniform | T+15–135 s | 120+ s at good thickness |
-| Terminal | T+135 s+ | Density declining; rescreen if needed |
+| Employment | T+0 | Not cleared. Published 20 m throw was floored. |
+| Fuze delay | T+0–2 s | Not a fuze test. Delays in the model are drawn inside the pass band. |
+| Ignition | T+2 s | No fill has been burned. |
+| Build-up | T+5–15 s | Model p90 only. Not a screen. |
+| Duration | ~170 s model p10 | Not cover time. |
 
 ---
 
-## Combined Employment
+## Paired-Cloud Model Scenario
 
-MS-V is designed for **combined use with standard visual smoke**:
+MS-V is modeled with standard visual smoke. This is not a cleared employment method:
 
-| Grenade | Quantity (typical) | Function |
+| Grenade | Quantity (model) | Function |
 |---------|-------------------|----------|
-| MS-V | 2–3 | Multispectral core (VIS + NIR + MWIR) |
-| AN-M8 or M83 | 1–2 | Visual opacity; FPV video degradation |
+| MS-V | 2–3 | Multispectral core hypothesis (VIS + NIR + MWIR) |
+| AN-M8 or M83 | 1–2 | Visual-opacity supplement hypothesis |
 
-**Throw pattern:** Overlapping triangular or linear layout upwind of protected position. MS-V and visual smoke may be thrown at same point or offset 5–10 m for coverage extension.
+There is no cleared throw pattern.
 
 ---
 
 ## Basic Employment
 
-1. Identify drone observation axis
-2. Select MS-V (by marking) and visual smoke from load
-3. Pull pins; throw 2–3 MS-V + 1–2 visual smoke in pattern
-4. Wait for effective density (~12–15 s)
-5. Execute maneuver under combined screen
-6. Rescreen if action exceeds 120 s
-
-### Throw Technique
-
-| Parameter | Guidance |
-|-----------|----------|
-| Distance | 20–25 m (heavier than standard smoke) |
-| Direction | Between friendly force and threat sensor; upwind |
-| Arc | Low arc preferred for ground-hugging cloud |
-| Standoff | ≥ 5 m from ignition point |
+Not written. Toxicology is open, the throw number was floored, and the CONOPS model does not clear a movement. Do not pull a pin on this concept.
 
 ---
 
@@ -94,9 +79,9 @@ MS-V is designed for **combined use with standard visual smoke**:
 
 | Topic | Guidance |
 |-------|----------|
-| Respiratory irritation | Acceptable non-lethal; **mask in dense cloud** |
-| Brief exposure | Tolerable in open terrain at ≥ 10 m standoff |
-| Friendly thermal | Degraded inside/near cloud — employment doctrine mitigates |
+| Respiratory irritation | Unverified. No exposure is tolerable. |
+| Brief exposure | Not cleared at any standoff. |
+| Friendly thermal | Model blackout about 70% on most use cases. Do not enter the cloud. |
 | Fire hazard | Reduced vs HC; avoid dry grass at minimum standoff |
 | Identification | MS-V marking band + stencil — do not confuse with signal smoke |
 | Storage | 1.3G; standard ammunition storage |
@@ -110,7 +95,7 @@ MS-V is designed for **combined use with standard visual smoke**:
 | Individual container | 1 per container |
 | Packing box | 16 per box (target) |
 | Hazard class | 1.3G |
-| Issue | 1–2 per soldier, plus standard signal smoke |
+| Issue | Not authorized. KPP-14 is not closed. |
 
 ---
 
@@ -118,12 +103,7 @@ MS-V is designed for **combined use with standard visual smoke**:
 
 | Event | Content |
 |-------|---------|
-| Familiarization (30 min) | ID, handling, irritation, friendly IR impact |
-| Combined employment (1 hr) | MS-V + visual smoke patterns; CONOPS scenarios |
-| Layered defense (1 hr) | EW, kinetic coordination |
-| Live throw | Per unit SOP; 2 throws minimum |
-
-Basic fuze operation requires no training beyond standard smoke grenade qualification (FM 23-30).
+No training course. There is no round to throw and no fuze that has been tested. Do not teach FM 23-30 as if it covers MS-V.
 
 See [Annex B](../annexes/B-kpp-targets.md) for KPP acceptance criteria.
 

@@ -22,7 +22,7 @@ Output: `analysis/CONOPS_REPORT.md` · `analysis/results/conops/conops_summary.j
 
 ## Key metrics
 
-- **Lock Met** — operational MoE inside doctrine window (discriminates ~20–99% across use cases)
+- **Lock Met** — model MoE inside scenario window; not doctrine and not a cleared movement
 - **Obscured** — threat sensor cannot maintain fused lock at LOS CL
 - **Friendly Blind** — squad thermal masking inside dense cloud (hard constraint)
 

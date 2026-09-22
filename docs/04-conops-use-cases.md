@@ -1,6 +1,8 @@
 # 04 — CONOPS / Use Cases
 
-Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/M83). **Timeline:** effective at T+12–15 s; plan through T+135 s. **Wind:** throw upwind. **Authority:** platoon sergeant.
+> **Not a drill.** These timelines are sketches. The model’s casualty-recovery lock-met is **14.9%**, and friendly thermal blackout on that case is **70.5%**. Toxicology is unverified. Do not train this. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
+
+Squad / fireteam **concept** only. Sketches below assume 2–3 MS-V + 1–2 visual smoke. They are not cleared steps.
 
 ---
 
@@ -10,9 +12,9 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 
 | Time | Action |
 |------|--------|
-| T+0 | Throw **2 MS-V + 1 AN-M8** at casualty area |
-| T+12–15 s | Screen effective — move to casualty |
-| T+15–120 s | Extract under cover |
+| T+0 | Sketch only. Do not throw. |
+| T+12–15 s | Model does not show a screen. Do not move to the casualty on this timeline. |
+| T+15–120 s | Model lock-met on this case is 14.9%. Not a recovery window. |
 
 **Goal:** Break visual + thermal lock long enough to recover and reach cover.
 
@@ -24,9 +26,9 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 
 | Time | Action |
 |------|--------|
-| T+0 | Rear element throws **2–3 MS-V + 2 AN-M8** in rear arc |
-| T+15–120 s | First bound under screen |
-| T+90 s+ | Rescreen for next bound if needed |
+| T+0 | Sketch only. Do not throw. |
+| T+15–120 s | Model lock-met on this case is 31.6%. Not a bound. |
+| T+90 s+ | Not a rescreen drill. |
 
 **Goal:** Mask withdrawal; successive screens for multi-bound exfil. One 120 s screen will not cover 300+ m alone.
 
@@ -38,11 +40,11 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 
 | Time | Action |
 |------|--------|
-| T−60 s | Identify drone pattern and corridor |
-| T+0 | **2 MS-V + 1 AN-M8** ahead or to flank |
-| T+15–90 s | Move through or behind screen |
+| T−60 s | Sketch only. |
+| T+0 | Do not throw. |
+| T+15–90 s | Model lock-met on this case is 14.9%. Do not move through the cloud. |
 
-**Goal:** Reduce observation window. High value vs **fiber-optic / FPV** (EW-resistant).
+**Goal:** A hoped-for shorter observation window. Not shown against fiber-optic or FPV.
 
 ---
 
@@ -52,9 +54,9 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 
 | Time | Action |
 |------|--------|
-| T+0 | Lead throws **2 MS-V + 1 AN-M8** between positions |
-| T+15–60 s | Lead bound |
-| T+60–120 s | Trail follows or second volley |
+| T+0 | Sketch only. Do not throw. |
+| T+15–60 s | Model lock-met on this case is 14.9%. Not a bound. |
+| T+60–120 s | Not a second-volley drill. |
 
 **Goal:** Temporary windows of reduced drone effectiveness per bound.
 
@@ -66,9 +68,9 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 
 | Time | Action |
 |------|--------|
-| T+0 | **2 MS-V + 1–2 AN-M8** at position perimeter |
-| T+12–15 s | Acquisition degraded |
-| T+15–120 s | Improve cover, security, counter-UAS prep |
+| T+0 | Sketch only. Do not throw. |
+| T+12–15 s | Acquisition is not shown to be degraded. |
+| T+15–120 s | Model lock-met on this case is 61.1%, and friendly thermal blackout is about 70%. Do not occupy the cloud. |
 
 **Goal:** Buy time to improve position without immediate engagement. Avoid cloud center — friendly thermal degraded inside.
 
@@ -77,18 +79,15 @@ Squad / fireteam employment. **Always:** 2–3 MS-V + 1–2 visual smoke (AN-M8/
 ## Quick Reference
 
 ```
-T+0        Throw (2–3 MS-V + 1–2 visual smoke)
-T+12–15 s  Screen effective → MOVE
-T+15–135 s Primary action window
-T+135 s+   Rescreen if needed
+Not a drill. Do not throw. Do not move on these times.
 ```
 
 | Rule | Detail |
 |------|--------|
-| Never solo | MS-V alone ≠ MoE vs FPV/fiber-optic |
-| Typical volley | 2–3 MS-V + 1–2 visual smoke |
-| Fiber-optic | Obscuration primary — EW N/A |
-| FPV | Combined MS-V + visual smoke |
+| Never solo | MS-V alone is not shown to beat FPV or fiber-optic |
+| Typical volley | A sketch of 2–3 MS-V + 1–2 visual smoke. Not an issue quantity. |
+| Fiber-optic | Not shown. |
+| FPV | Not shown. |
 
 See [08 — Layered Defense Integration](08-layered-defense-integration.md).
 

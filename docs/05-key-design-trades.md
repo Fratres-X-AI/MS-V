@@ -6,7 +6,7 @@ Developing MS-V requires balancing competing factors. The following are the prim
 
 ## Trade 1: Cloud Density vs. Burn Duration
 
-**Goal:** Thick, effective obscuration for 2+ minutes.
+**Goal:** A model duration above 120 s. That number is not cover time. See SOLDIER_SAFETY.md.
 
 **Reality:** Longer burn times often come at the cost of initial density. Fast-burning fills create thick clouds quickly but do not last. Slower-burning fills last longer but may not reach peak density as fast.
 
@@ -26,7 +26,7 @@ Developing MS-V requires balancing competing factors. The following are the prim
 
 **Reality:** Stronger IR/thermal obscuration generally requires more aggressive chemistry. These materials increase respiratory irritation compared to basic TA visual smoke (M83).
 
-**Decision:** MS-V will likely be **more irritating than M83**. This is **accepted as long as it remains non-lethal**. Full safety characterization and clear employment guidelines are required. Minimize irritation where possible without sacrificing core multispectral performance.
+**Decision (revoked 22 Sep 2026):** An earlier note accepted extra irritation “as long as it remains non-lethal.” That is not a measurement. Toxicology is open. No fill is cleared. Do not trade soldier lungs for a model duration.
 
 ---
 
@@ -34,7 +34,7 @@ Developing MS-V requires balancing competing factors. The following are the prim
 
 **Trade:** ~850 g (~25% bigger than standard smoke) provides room for fill material supporting density + duration. Larger/heavier grenades are less comfortable in quantity and slightly harder to throw accurately under stress.
 
-**Decision:** **850 g is an acceptable compromise** to achieve 2+ minute dense multispectral burn. Issue 1–2 per soldier; not a replacement for entire smoke basic load.
+**Decision:** 850 g is the design target to reach a model duration above 120 s. Issue quantity (1–2 per soldier, KPP-14) is a planning target, not authorized — it cannot be while KPP-12 toxicology is open.
 
 ---
 
@@ -77,8 +77,8 @@ Developing MS-V requires balancing competing factors. The following are the prim
 | Build-up | ≤ 12–15 s |
 | Duration | 120+ s at good thickness |
 | Spectrum | VIS + NIR + MWIR |
-| Employment | 2–3 MS-V + visual smoke per event |
-| Irritation | Acceptable non-lethal |
+| Modeled pairing | 2–3 MS-V + visual smoke; not doctrine |
+| Irritation | Unverified — KPP-12 open |
 | Fuze | M201A1-compatible |
 
 See [Annex C — Trades Matrix](../annexes/C-trades-matrix.md) for scored option analysis.

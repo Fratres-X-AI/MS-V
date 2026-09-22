@@ -56,7 +56,7 @@ Decision matrix for MS-V design options. Scoring: 1 (poor) to 5 (excellent). **R
 | Simplicity | 5 | Lowest complexity |
 | **Total** | **26/30** | |
 
-**Decision:** Option A baseline for multispectral performance; Option C fallback if cost or MWIR KPP not met at acceptable irritation levels.
+**Decision:** Option A is the model baseline. Option C is a fallback if cost or the MWIR model misses. Irritation is not "acceptable" until KPP-12 is measured.
 
 ---
 
@@ -91,8 +91,8 @@ Decision matrix for MS-V design options. Scoring: 1 (poor) to 5 (excellent). **R
 | Fill fallback | Option C (IR additive) | Cost reduction | May sacrifice MWIR depth |
 | Build-up vs. duration | v2 baseline | 12–15 s / 120+ s | Not sub-8 s instant opacity |
 | Weight vs. filler | 850 g / 22–24 oz | 2+ min dense burn | Heavier throw; pouch load |
-| Multispectral vs. toxicity | Accept irritation | Document + PPE | Worse than M83 TA |
-| Employment | 2–3 MS-V + visual smoke | FPV/fiber-optic MoE | Not standalone |
+| Multispectral vs. toxicity | Toxicology open | No exposure cleared | Worse-than-M83 risk unmeasured |
+| Paired-cloud hypothesis | 2–3 MS-V + visual smoke | Future FPV/fiber-optic MoE test | Not doctrine |
 | Simplicity | M201A1 + burning type | No new launchers | Larger body only change |
 
 ---
@@ -109,8 +109,8 @@ Decision matrix for MS-V design options. Scoring: 1 (poor) to 5 (excellent). **R
 | Spectrum | VIS + NIR + MWIR |
 | Form factor | ~7.1 × 3.1 in (~25% larger than AN-M8/M83) |
 | Fuze | M201A1-compatible |
-| Employment | 2–3 MS-V + standard visual smoke per event |
-| Irritation | Acceptable non-lethal; safety data required |
+| Modeled pairing | 2–3 MS-V + standard visual smoke; not doctrine |
+| Irritation | Unverified; safety data required before any exposure |
 | Cost target | $75–150 |
 
 ---
@@ -122,8 +122,8 @@ Decision matrix for MS-V design options. Scoring: 1 (poor) to 5 (excellent). **R
 | Build-up exceeds 15 s | Optimize port design; accept up to 18 s if duration KPP met |
 | Duration below 120 s | Increase fill mass within 850 g envelope; optimize burn rate |
 | MWIR KPP not met (Option A) | Hybrid A+C; or Option B for Block II |
-| Irritation exceeds acceptable threshold | Reformulate; add employment standoff guidance |
+| Toxicology fails or remains unknown | Hold exposure claims; reformulate only after a panel |
 | Cost exceeds $150 | Switch to Option C; increase production volume |
-| 850 g too heavy for issue doctrine | Reduce to 1 per soldier; increase platoon pool |
+| 850 g too heavy for future issue target | Treat KPP-14 as unclosed; do not invent issue doctrine |
 
 See [05 — Key Design Trades](../docs/05-key-design-trades.md) for narrative analysis.

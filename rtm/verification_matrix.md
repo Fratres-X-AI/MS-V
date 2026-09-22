@@ -1,13 +1,15 @@
 # Verification Matrix — MS-V Phase 1 M&S
 
 > **MATURITY:** Sensitivity Study Complete (140M samples) — **NOT VALIDATION**
-> **Campaign model:** `phase2_v1_full_physics` · **physics_tier:** `phase2` · **sensor:** `unknown`
+> **Campaign model:** `phase2_v1_full_physics` · **physics_tier:** `phase2` · **sensor:** `v6_probabilistic_lock`
 > **Evidence index:** `analysis/results/mega_suite/manifest.json` · **Seeds:** `sim/config/seeds.yaml`
 
 ## Limitations (read first)
 
 - All results are **literature-parameter bounds** only — no MS-V fill empirical data.
-- KPP-12 (toxicology) and KPP-13 (cost) require Phase 4 verification — not closed by M&S.
+- Read [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md) before any number leaves this repo.
+- KPP-06, KPP-07, KPP-08, KPP-11, KPP-12, KPP-13, KPP-14, MOE-01, and MOE-02 are **not closed**. A YES on duration is a model threshold, not cover time.
+- KPP-12 (toxicology) and KPP-13 (cost) require a lab — not closed by M&S.
 - When `surrogate_saturated=true`, MoE/tri-band pass is **non-discriminative** (A-013).
 
 ## KPP / MoE Summary
@@ -17,19 +19,19 @@
 | KPP-01 | Total weight ~850 g | `N/A (design authority)` | — | 850 g (v2_kpp envelope) | YES | Form-factor design authority — `models/system/form_factor.yaml`; TRL 3 mass measurement |
 | KPP-02 | Build-up p90 ≤ 15 s | `baseline_10M_g3_n10000000` | 45 | 12.58481854456294 | YES | 16.1% headroom below 15.0s cap (p90=12.6s) |
 | KPP-03 | Duration p10 ≥ 120 s at good thickness | `baseline_10M_g3_n10000000` | 45 | 169.9150843689387 | YES | +41.6% above 120.0s threshold (p10=169.9s) |
-| KPP-04 | Screening area p10 ≥ 30 sq ft (single grenade) | `baseline_10M_g1_n10000000` | 43 | p10 = 31.00 sq ft | YES | + margin vs 30 sq ft at p10 (single grenade job) |
-| KPP-05 | Employment group 2–3 grenades | `baseline_10M_g2_n10000000; baseline_10M_g3_n10000000` | 44;45 | g2 dur_p10=170.0s; g3 dur_p10=169.9s | YES | Doctrine — combined MS-V + visual smoke in groups |
-| KPP-06 | VIS + NIR + MWIR attenuation (tri-band) | `baseline_10M_g3_n10000000` | 45 | {'VIS_p50': 1.0239761503873761e-54, 'NIR_p50': 3.7920314032287445e-41, 'MWIR_p50': 2.507193846885407e-34, 'fraction_below_threshold': 0.8005475} | YES | v6 band-integrated transmittance — see sensor_diagnostics |
-| KPP-07 | Fuze delay M201A1 (0.7–2.0 s) | `baseline_10M_g3_n10000000` | 45 | {'p10': 0.829991823333638, 'p50': 1.3503545284840563, 'p90': 1.8699703657287716} | YES | M201A1 band enforced in deployment_kinematics MC |
-| KPP-08 | Throw range ≥ 20 m (stressed) | `baseline_10M_g3_n10000000` | 45 | 20.0 | YES | +0.0% above 20.0 m threshold (p10=20.0 m) |
+| KPP-04 | Screening area p10 ≥ 30 sq ft (single grenade) | `baseline_10M_g1_n10000000` | 43 | p10 = 31.00 sq ft | YES | Model only. p10 31.00 sq ft vs 30 minimum — knife edge. Not a measured screen. |
+| KPP-05 | Modeled paired-cloud group size | `baseline_10M_g2_n10000000; baseline_10M_g3_n10000000` | 44;45 | g2 dur_p10=170.0s; g3 dur_p10=169.9s | NO | NOT CLOSED. 2–3 grenades is a modeled scenario, not doctrine or issue authorization. |
+| KPP-06 | VIS + NIR + MWIR attenuation (tri-band) | `baseline_10M_g3_n10000000` | 45 | {'VIS_p50': 1.0239761503873761e-54, 'NIR_p50': 3.7920314032287445e-41, 'MWIR_p50': 2.507193846885407e-34, 'fraction_below_threshold': 0.8005475} | NO | NOT CLOSED. Recorded band p50 is about 1e-54 / 1e-41 / 1e-34. That is a saturated equation, not a measured cloud. Do not brief. |
+| KPP-07 | Fuze delay M201A1 (0.7–2.0 s) | `baseline_10M_g3_n10000000` | 45 | 0.7–2.0 s sampled | NO | NOT CLOSED. Delays are drawn uniform inside 0.7–2.0 s, then checked against that same band. Circular. Not a fuze safety test. |
+| KPP-08 | Throw range ≥ 20 m (stressed) | `baseline_10M_g3_n10000000` | 45 | 20.0 | NO | NOT CLOSED. Published p10 of 20.0 m was floored at the pass line after the 1 m load penalty (deployment_kinematics, fixed 22 Sep 2026). The 140M campaign still contains the floored number. Do not brief 20 m. |
 | KPP-09 | Form factor ~7.1 × 3.1 in (v2 KPP) | `N/A (design authority)` | — | v2_kpp envelope in form_factor.yaml | YES | Annex F + STL assets — not physics MC |
 | KPP-10 | Operating temp −20°C to +50°C | `sweep_temp_cold_g3_n2000000; sweep_temp_hot_g3_n2000000` | 680;735 | cold p10=180.6s; hot p10=162.6s | YES | +35.5% above 120.0s threshold (p10=162.6s) (hot bin tightest) |
-| KPP-11 | Wind tolerance ≤ 15 mph | `baseline_10M_wind_high_g3_n10000000` | 208 | wind_high dur_p10=169.8s | YES | FM 3-50 planning band — duration not wind-bound in campaign |
-| KPP-12 | Respiratory irritation acceptable (non-lethal) | `N/A` | — | Literature bounds only | NO | UNVERIFIED — Phase 4 toxicology; stronger IR fill vs TA (Annex B) |
+| KPP-11 | Wind tolerance ≤ 15 mph | `baseline_10M_wind_high_g3_n10000000` | 208 | wind_high dur_p10=169.8s | NO | NOT CLOSED. High-wind duration stays ~170 s, the same as calm. The model is not showing a wind effect. That is not evidence soldiers have cover in wind. |
+| KPP-12 | Respiratory irritation — original requirement text; not a claim | `N/A` | — | No panel done | NO | UNVERIFIED — needs toxicology panel; do not brief non-lethal (Annex B) |
 | KPP-13 | Unit cost $75–150 at scale | `N/A` | — | Cost model not in MC | NO | PLANNED — Phase 4 manufacturing study |
-| KPP-14 | Issue quantity 1–2 per soldier | `N/A (doctrine)` | — | 1–2 per soldier (Annex B) | YES | Logistics doctrine — not physics MC |
-| MOE-01 | Fused EO/IR lock-break ≥ 60 s (2–3 MS-V + visual smoke) | `baseline_10M_g3_n10000000` | 45 | 0.8005475 | YES | 80.1% lock-break ≥60 s (v6 probabilistic — discriminative) |
-| MOE-02 | CASEVAC / movement window T+15–135 s | `sim/run_conops.py` | 4242 | casualty_recovery: lock_met=0.149 | YES | CONOPS Monte Carlo — see analysis/CONOPS_REPORT.md |
+| KPP-14 | Issue quantity 1–2 per soldier | `N/A (planning target)` | — | 1–2 per soldier (Annex B) | NO | NOT CLOSED. Cannot issue to a soldier while KPP-12 toxicology is unverified. |
+| MOE-01 | Fused EO/IR lock-break ≥ 60 s (2–3 MS-V + visual smoke) | `baseline_10M_g3_n10000000` | 45 | 0.8005475 | NO | 80.1% is assumption A-013, a planning surrogate. Not a defeat rate. Not soldier cover. Adversarial bin is about 55%. |
+| MOE-02 | CASEVAC / movement window T+15–135 s | `sim/run_conops.py` | 4242 | casualty_recovery: lock_met=0.149 | NO | NOT CLOSED. Casualty-recovery lock-met in the model is about 15%, and friendly thermal blackout is about 70%. A JSON file is not a cleared movement. See analysis/CONOPS_REPORT.md and SOLDIER_SAFETY.md. |
 
 *YES* = pass with surrogate saturation caveat. PARTIAL = design authority or planned verification.
 

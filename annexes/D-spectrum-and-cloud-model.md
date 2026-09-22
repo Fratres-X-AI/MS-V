@@ -1,6 +1,6 @@
 # Annex D — Spectrum and Cloud Model (v2)
 
-Electromagnetic spectrum bands, cloud development phases, and planning metrics for MS-V. Revised for v2 priorities: **density + duration**, 12–15 s build-up, 120+ s uniform phase, combined employment with visual smoke.
+Electromagnetic spectrum bands, cloud development phases, and planning metrics for MS-V. Revised for v2 priorities: **density + duration**, 12–15 s build-up, and 120+ s model duration. Pairing with visual smoke is a model scenario, not employment doctrine.
 
 ---
 
@@ -12,7 +12,7 @@ Electromagnetic spectrum bands, cloud development phases, and planning metrics f
 | NIR | 0.7 – 1.4 | Low-light, NVGs, some FPV | Required |
 | MWIR | 3 – 5 | Cooled thermal, military UAS FLIR | Required |
 
-MS-V must work in combination with standard visual smoke to defeat drones that fuse visible and thermal channels (FPV, fiber-optic guided).
+MS-V would need measured performance in combination with standard visual smoke before any claim against drones that fuse visible and thermal channels (FPV, fiber-optic guided).
 
 ---
 
@@ -20,12 +20,12 @@ MS-V must work in combination with standard visual smoke to defeat drones that f
 
 | Drone Type | Primary Sensors | Jam Resistance | MS-V + Visual Smoke Role |
 |------------|----------------|----------------|--------------------------|
-| RF-linked FPV | Visible camera + often uncooled thermal | EW may jam RF | MS-V breaks thermal; visual smoke breaks video link quality |
-| Fiber-optic guided | Visible + thermal (no RF datalink) | **Immune to EW** | **Obscuration primary** — MS-V + visual smoke combined |
-| Loitering munition (EO/IR) | Fused EO/IR seeker | Partial EW effect | Combined multispectral screen degrades seeker |
-| Commercial quadcopter | Visible + uncooled LWIR | Variable | MS-V MWIR/NIR + AN-M8 VIS |
+| RF-linked FPV | Visible camera + often uncooled thermal | EW may jam RF | Targeted; not shown |
+| Fiber-optic guided | Visible + thermal (no RF datalink) | **Immune to EW** | Targeted; not shown |
+| Loitering munition (EO/IR) | Fused EO/IR seeker | Partial EW effect | Targeted; not shown |
+| Commercial quadcopter | Visible + uncooled LWIR | Variable | Targeted; not shown |
 
-Fiber-optic and FPV drones that rely on both visual and thermal observation are the **primary MoE target** for combined MS-V + signal smoke employment.
+Fiber-optic and FPV drones that rely on both visual and thermal observation are the **primary MoE target** for a future paired-cloud test.
 
 ---
 
@@ -43,30 +43,30 @@ Per FM 3-50 Appendix G: **Streamer → Build-up → Uniform → Terminal**
 | Uniform (effective thickness) | 80–120 s | **120+ s** | **High priority** |
 | Terminal | 10–20 s | 10–15 s | Comparable |
 
-### Planning Timeline
+### Notional Model Timing
 
 ```
-T+0 s     Pin pull, throw (MS-V + visual smoke pattern)
-T+2 s     Ignition (fuze delay)
+T+0 s     Modeled release event
+T+2 s     Modeled ignition delay
 T+2–12 s  Streamer + build-up
-T+12–15 s Effective density achieved — MOVEMENT WINDOW OPENS
-T+15–135 s Effective screening (120+ s at good thickness)
-T+135 s+  Terminal phase — plan for rescreen or completion of maneuver
+T+12–15 s Model density threshold reached
+T+15–135 s Model duration window, not cover time
+T+135 s+  Terminal phase
 ```
 
-**Planning rule:** Plan movement and CASEVAC actions between **T+15 s and T+135 s**. Do not rely on single grenade beyond terminal phase without rescreen.
+**Safety rule:** Do not plan movement or CASEVAC from these times. MOE-02 is not closed.
 
 ---
 
-## Combined Employment Pattern
+## Paired-Cloud Scenario
 
-MS-V alone does not meet full MoE against FPV/fiber-optic drones. Standard employment:
+MS-V alone does not close the MoE. The paired-cloud scenario remains unvalidated:
 
 | Element | Grenade Type | Function |
 |---------|-------------|----------|
-| Multispectral core | 2–3 × MS-V | VIS + NIR + MWIR attenuation |
-| Visual supplement | 1–2 × AN-M8 or M83 | Enhanced visible opacity; signaling if needed |
-| Pattern | Triangular or linear overlap | 30–40 sq ft per MS-V; combined area covers fire team |
+| Multispectral core | 2–3 × MS-V | Modeled VIS + NIR + MWIR attenuation |
+| Visual supplement | 1–2 × AN-M8 or M83 | Modeled visible-opacity supplement |
+| Pattern | Not written | No cleared throw pattern |
 
 Throw MS-V slightly **upwind** of protected position when wind is present. Visual smoke may be thrown at same point or offset for coverage extension.
 
@@ -86,12 +86,10 @@ Throw MS-V slightly **upwind** of protected position when wind is present. Visua
 
 ## Friendly Force Impact
 
-MS-V multispectral clouds degrade friendly thermal optics inside or near the cloud. Employment doctrine:
+MS-V multispectral clouds degrade friendly thermal optics inside or near the cloud (model puts friendly blackout near 70% on most use cases). There is no cleared employment doctrine. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
 
-- Throw **between threat sensor and friendly force**
-- Brief friendly UAS operators on cloud location
-- Mask when passing through dense cloud; brief exposure tolerable per KPP-12
-- Combined visual smoke further degrades friendly visible optics — coordinate employment
+- No throw is cleared.
+- Do not enter the cloud. KPP-12 does not clear any exposure.
 
 ---
 
@@ -102,7 +100,7 @@ MS-V multispectral clouds degrade friendly thermal optics inside or near the clo
 | Wind ≤ 15 mph | Effective for majority of burn | Throw upwind |
 | Wind > 15 mph | Rapid dissipation | Not recommended |
 | Temperature −20 to +50°C | Full performance | Standard range |
-| Rain | Washout; duration reduced | Degraded employment |
+| Rain | Washout; duration reduced | Not measured |
 | Urban canyon | Channeling; extended visible opacity | Useful for FPV defeat in streets |
 
 See [docs/04-conops-use-cases.md](../docs/04-conops-use-cases.md) for scenario application.

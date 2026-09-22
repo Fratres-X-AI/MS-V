@@ -24,21 +24,19 @@
 
 ## Slide 3 — System overview
 
-- Hand-thrown **850 g** grenade · **M201A1-compatible** fuze  
-- **VIS + NIR + MWIR** bispectral fill (concept)  
-- **2–3 MS-V + visual smoke** employment doctrine  
+- Hand-thrown concept, **850 g** design target · fuze not tested  
+- **VIS + NIR + MWIR** fill (concept, not synthesized)  
+- **2–3 MS-V + visual smoke** is a modeled pairing, not a doctrine  
 - Visual: [Cutaway](../analysis/figures/form_factor/renders/v2_kpp/ms_v_v2_cutaway_photoreal.png)  
 
 ---
 
-## Slide 4 — How the squad fights (sequence)
+## Slide 4 — What the model shows (not a drill)
 
-1. Threat cue → grenadier throws MS-V + AN-M8/M83  
-2. **~12–15 s** build-up → **2+ min** dense screen (design targets)  
-3. Squad moves / CASEVAC / breaks contact under layered stack  
-4. EW + kinetic if threat persists  
-
-- Emphasize **complementary** to inventory smoke — not standalone  
+- Model duration p10 is ~170 s on the nominal case. That is a threshold, not cover time.
+- Nothing here is cleared to throw, breathe, or move through. See [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md).
+- Toxicology (KPP-12) is unverified. Throw range (KPP-08) is not closed.
+- Say "concept" and "model," not "fights" or "employs."
 
 ---
 
@@ -56,8 +54,8 @@ Detect → EW → MS-V + smoke → kinetic window
 ## Slide 6 — M&S evidence (honest framing)
 
 - **140M Monte Carlo** · 38 scenarios · phase2 microphysics + v6 probabilistic lock  
-- Duration p10 **~170 s** (3 grenades) · **+42%** headroom on 120 s KPP  
-- MoE **80%** nominal · **55%** adversarial — **discriminative, not saturated**  
+- Duration p10 **~170 s** (3 grenades, model only) · **+42%** vs 120 s threshold  
+- MoE **80%** nominal · **55%** adversarial — planning surrogate (A-013), not a defeat rate  
 - **Literature-parameter bounds — NOT field validation**  
 - Ref: [MEGA_SUITE_REPORT](../analysis/MEGA_SUITE_REPORT.md) · [verification matrix](../rtm/verification_matrix.md)  
 
@@ -75,7 +73,7 @@ Detect → EW → MS-V + smoke → kinetic window
 ## Slide 8 — Form factor & ergonomics
 
 - v2 KPP: **7.1 × 3.1 in** — ~25% larger than AN-M8  
-- MOLLE pouch fit studied · throw model p10 ≥ 20 m stressed  
+- MOLLE pouch fit studied · throw p10 of 20.0 m was floored. Do not brief it.  
 - Ref: [Annex F](../annexes/F-form-factor-and-ergonomics.md) · [V2-KPP-SPEC](../visuals/grenade/V2-KPP-SPEC.md)  
 
 ---

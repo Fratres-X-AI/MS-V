@@ -26,11 +26,11 @@ def test_human_factors_summary_v2_mass() -> None:
     assert hf["throw_range_m"]["min"] == 20.0
 
 
-def test_throw_distribution_stressed_p10_meets_kpp() -> None:
+def test_throw_distribution_stressed_p10_not_floored_at_kpp() -> None:
     rng = np.random.default_rng(123)
     dist = throw_distribution(rng, 5000, stressed=True)
     p10 = float(np.percentile(dist["throw_range_m"], 10))
-    assert p10 >= 20.0
+    assert p10 < 20.0
 
 
 def test_impact_dispersion_summary_keys() -> None:

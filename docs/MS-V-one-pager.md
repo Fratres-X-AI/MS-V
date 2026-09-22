@@ -11,16 +11,11 @@ Squad and SOF face **FPV, fiber-optic, and thermal UAS** that see through standa
 
 ## Solution
 
-**MS-V Veil** — hand-thrown, pin-pull, **~850 g** obscurant grenade generating **VIS + NIR + MWIR** cloud. Employed as **2–3 MS-V + visual smoke** to break fused EO/IR lock and enable movement under the layered defense stack.
+**MS-V Veil** — hand-thrown, pin-pull, **~850 g** obscurant grenade concept intended to study a **VIS + NIR + MWIR** cloud. The 2–3 MS-V + visual smoke case is a model scenario, not a cleared method to break fused EO/IR lock or enable movement.
 
 ## How it works (employment)
 
-1. Threat cue → grenadier throws **2–3 MS-V + 1–2 AN-M8/M83**
-2. Build-up **~12–15 s** · dense screen **120+ s** (design target)
-3. Squad moves, CASEVAC, or breaks contact under combined obscuration
-4. EW / kinetic layers engage if threat persists
-
-**Always pair with visual smoke** — required for FPV and fiber-optic MoE.
+Not a drill. Read [SOLDIER_SAFETY.md](../SOLDIER_SAFETY.md). No throw, no CASEVAC movement, and no “required for FPV” claim is cleared.
 
 ## Locked specs (summary)
 
@@ -28,9 +23,9 @@ Squad and SOF face **FPV, fiber-optic, and thermal UAS** that see through standa
 |------|--------|
 | Form factor (v2 KPP) | **850 g**, **7.1 × 3.1 in** |
 | Spectrum | **VIS + NIR + MWIR** |
-| Duration (KPP) | **≥ 120 s** dense (p10 MC) |
-| Employment | **2–3 grenades** + visual smoke |
-| Throw (KPP-08) | **≥ 20 m** (objective 25 m) |
+| Duration (KPP) | **≥ 120 s** is a model threshold, not measured cover |
+| Modeled pairing | **2–3 grenades** + visual smoke; not doctrine |
+| Throw (KPP-08) | **Not closed.** Published 20.0 m was floored at the pass line. |
 | Fuze | **M201A1-compatible** |
 | Cost target | **$75–150** at scale (not modeled) |
 
@@ -40,7 +35,7 @@ Squad and SOF face **FPV, fiber-optic, and thermal UAS** that see through standa
 |--------|--------|--------|
 | Mega suite | **38/38 pass** | phase2 + v6 probabilistic lock |
 | Duration p10 (3× g3) | **~170 s** | +42% vs 120 s KPP |
-| MoE lock-break ≥60 s | **80%** nominal · **55%** adversarial | Not field validation |
+| MoE lock-break ≥60 s | **80%** nominal · **55%** adversarial | Planning surrogate only. Not a defeat rate. Not soldier cover. |
 | Top Sobol driver | **burn_rate** ST≈0.83 | Guides TRL 3 burn cup |
 
 ## Repo & partnership
